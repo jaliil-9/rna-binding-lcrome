@@ -13,6 +13,8 @@ import re
 import shutil
 import subprocess
 import sys
+import time
+import requests
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -64,6 +66,60 @@ def ensembl_gene(description):
     if not m:
         raise ValueError('No Ensembl gene:ENSG... field found in FASTA header: ' + description[:200])
     return m.group(1).split('.')[0]
+
+def uniprot_mapped_ensembl_proteins(protein_ids, batch_size=500):
+    """Return ENSP IDs that have at least one UniProtKB mapping."""
+    session = requests.Session()
+    mapped_ids = set()
+    protein_ids = sorted(set(protein_ids))
+
+    for start in range(0, len(protein_ids), batch_size):
+        batch = protein_ids[start:start + batch_size]
+
+        submit = session.post(
+            "https://rest.uniprot.org/idmapping/run",
+            data={
+                "from": "Ensembl_Protein",
+                "to": "UniProtKB",
+                "ids": ",".join(batch),
+            },
+            timeout=120,
+        )
+        submit.raise_for_status()
+        job_id = submit.json()["jobId"]
+
+        for _ in range(120):
+            status = session.get(
+                f"https://rest.uniprot.org/idmapping/status/{job_id}",
+                timeout=120,
+            )
+            status.raise_for_status()
+            payload = status.json()
+
+            if payload.get("jobStatus") in {"FAILED", "ERROR"}:
+                raise RuntimeError(f"UniProt mapping job failed: {job_id}")
+
+            if "results" in payload or payload.get("jobStatus") == "FINISHED":
+                break
+
+            time.sleep(1)
+        else:
+            raise TimeoutError(f"UniProt mapping job timed out: {job_id}")
+
+        results = session.get(
+            f"https://rest.uniprot.org/idmapping/uniprotkb/results/{job_id}",
+            params={"format": "json", "size": 500},
+            timeout=120,
+        )
+        results.raise_for_status()
+
+        for result in results.json().get("results", []):
+            mapped_ids.add(result["from"])
+
+        done = min(start + batch_size, len(protein_ids))
+        print(f"UniProt checked {done}/{len(protein_ids)} domain-positive isoforms")
+
+    return mapped_ids
 
 def parse_domtbl(path, seqs, e_cutoff):
     rows = []
@@ -170,24 +226,72 @@ def main():
     hits = hits.rename(columns={'query_name':'pfam_name','target_accession':'pfam_accession',
                                 'name':'candidate_name'})
     # Each passing domain instance counts once. Select isoform with most domains; then longest.
-    counts = hits.groupby('human_sequence_id').size().rename('number_of_domains').reset_index()
-    proteins = pd.DataFrame([{'human_sequence_id': k, 'ensembl_gene_id': ensembl_gene(v['fasta_description']),
-                              'protein_length': len(v['sequence']), 'full_sequence': v['sequence'],
-                              'fasta_description': v['fasta_description']} for k,v in seqs.items()])
-    scored = proteins.merge(counts, how='left', on='human_sequence_id')
-    scored['number_of_domains'] = scored['number_of_domains'].fillna(0).astype(int)
-    winners = (scored.sort_values(['ensembl_gene_id','number_of_domains','protein_length','human_sequence_id'],
-                                  ascending=[True,False,False,True])
-                     .drop_duplicates('ensembl_gene_id', keep='first'))
-    winners['selection_rule'] = 'maximum passing Pfam-domain instances; tie: longest protein; final tie: lexical ENSP ID'
-    selected_ids = set(winners.loc[winners.number_of_domains.gt(0), 'human_sequence_id'])
-    selected_hits = hits[hits.human_sequence_id.isin(selected_ids)].copy()
+    counts = (
+        hits.groupby("human_sequence_id")
+        .size()
+        .rename("number_of_domains")
+        .reset_index()
+    )
+
+    proteins = pd.DataFrame([
+        {
+            "human_sequence_id": k,
+            "ensembl_gene_id": ensembl_gene(v["fasta_description"]),
+            "protein_length": len(v["sequence"]),
+            "full_sequence": v["sequence"],
+            "fasta_description": v["fasta_description"],
+        }
+        for k, v in seqs.items()
+    ])
+
+    scored = proteins.merge(counts, how="left", on="human_sequence_id")
+    scored["number_of_domains"] = scored["number_of_domains"].fillna(0).astype(int)
+
+    # Query UniProt only for isoforms with at least one passing RNA-domain hit.
+    domain_positive_ids = scored.loc[
+        scored["number_of_domains"].gt(0),
+        "human_sequence_id",
+    ].tolist()
+
+    mapped_ids = uniprot_mapped_ensembl_proteins(domain_positive_ids)
+    scored["uniprot_mapped"] = scored["human_sequence_id"].isin(mapped_ids)
+
+    # Mapping is an eligibility condition. Rank only mapped, domain-positive isoforms.
+    eligible = scored[
+        scored["number_of_domains"].gt(0) & scored["uniprot_mapped"]
+    ].copy()
+
+    winners = (
+        eligible.sort_values(
+            [
+                "ensembl_gene_id",
+                "number_of_domains",
+                "protein_length",
+                "human_sequence_id",
+            ],
+            ascending=[True, False, False, True],
+        )
+        .drop_duplicates("ensembl_gene_id", keep="first")
+    )
+
+    winners["selection_rule"] = (
+        "UniProtKB mapping required; among mapped domain-positive isoforms: "
+        "maximum passing Pfam-domain instances; tie: longest protein; "
+        "final tie: lexical ENSP ID"
+    )
+
+    selected_ids = set(winners["human_sequence_id"])
+    selected_hits = hits[hits["human_sequence_id"].isin(selected_ids)].copy()
     domain_summary = (selected_hits.groupby(['pfam_accession','pfam_name','candidate_name','evidence_tier'])
                       .agg(human_proteins=('human_sequence_id','nunique'), domain_instances=('human_sequence_id','size'),
                            best_independent_domain_evalue=('i_evalue','min'), best_domain_score=('domain_score','max'))
                       .reset_index().sort_values('human_proteins', ascending=False))
     metadata = pd.DataFrame({'field':['run_utc','pfam_hmm','pfam_hmm_sha256','candidates_xlsx','candidates_sha256','ensembl_fasta','ensembl_fasta_sha256','evalue_cutoff','hmmscan_command','selection_rule'],
-     'value':[datetime.now(timezone.utc).isoformat(),str(args.pfam_hmm),sha256(args.pfam_hmm),str(args.candidates_xlsx),sha256(args.candidates_xlsx),str(args.ensembl_fasta),sha256(args.ensembl_fasta),str(args.evalue),f'{hmmscan} -E {args.evalue} --domE {args.evalue}', winners.selection_rule.iloc[0]]})
+     'value':[datetime.now(timezone.utc).isoformat(),str(args.pfam_hmm),sha256(args.pfam_hmm),str(args.candidates_xlsx),sha256(args.candidates_xlsx),str(args.ensembl_fasta),sha256(args.ensembl_fasta),str(args.evalue),f'{hmmscan} -E {args.evalue} --domE {args.evalue}', (
+    winners.selection_rule.iloc[0]
+    if not winners.empty
+    else "No domain-positive isoform mapped to UniProtKB"
+)]})
     with pd.ExcelWriter(args.output, engine='openpyxl') as xw:
         selected_hits.sort_values(['ensembl_gene_id','human_sequence_id','pfam_accession','ali_from']).to_excel(xw, sheet_name='selected_isoform_hits', index=False)
         hits.sort_values(['ensembl_gene_id','human_sequence_id','pfam_accession','ali_from']).to_excel(xw, sheet_name='all_isoform_hits', index=False)
