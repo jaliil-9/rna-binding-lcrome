@@ -1,0 +1,165 @@
+RUN PlaToLoCo — local checklist
+===============================
+
+Purpose
+-------
+Run low-complexity-region (LCR) detection on an RBP FASTA collection using a
+self-hosted PlaToLoCo API.
+
+Current analysis configuration
+------------------------------
+Selected callers:
+- SEG strict
+- CAST
+- fLPS strict
+
+Expected outputs:
+- SEG_strict.csv and SEG_strict.fasta
+- CAST.csv and CAST.fasta
+- fLPS_strict.csv and fLPS_strict.fasta
+- platoloco_request.json (exact submitted parameters)
+
+Each CSV/FASTA record represents one detected LCR interval. A protein with
+multiple calls therefore appears in multiple records.
+
+Prerequisites (one-time)
+------------------------
+- Docker Desktop is installed and running with the WSL 2 backend.
+- Ubuntu-24.04 WSL integration is enabled in Docker Desktop.
+- The PlaToLoCo repository is cloned at:
+  ~/projects/lcr-metaserver/platolocorestapi
+- The image has been built with the corrected Dockerfile.
+- src/utils/cafs.py contains this line:
+  os.makedirs('./data', exist_ok=True)
+
+The corrected Dockerfile must contain COPY . . so that src/, bin/, and data/
+are included in the container image. Keep a backup of these local fixes.
+
+Start PlaToLoCo
+---------------
+Open Ubuntu/WSL and run:
+
+  cd ~/projects/lcr-metaserver/platolocorestapi
+  docker start platoloco-api
+
+If the container does not exist, create it:
+
+  docker run -d \
+    --name platoloco-api \
+    --restart unless-stopped \
+    -p 127.0.0.1:5002:5002 \
+    platoloco-api
+
+Verify that it is running:
+
+  docker ps
+
+Expected relevant output:
+
+  platoloco-api ... Up ... 127.0.0.1:5002->5002/tcp
+
+Inspect recent logs if needed:
+
+  docker logs --tail 50 platoloco-api
+
+The local API URL is:
+
+  http://127.0.0.1:5002/restapi
+
+Run the LCR pipeline
+--------------------
+Open Windows PowerShell in the RNA-binder project directory and activate the
+Python environment:
+
+  .venv\Scripts\Activate.ps1
+
+If requests is missing:
+
+  python -m pip install requests
+
+Run the script:
+
+  python rbp_lcrs\run_platoloco.py `
+    datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta `
+    platoloco_result
+
+The script submits one asynchronous PlaToLoCo job, polls until it completes,
+retrieves each protein result, and writes the per-method CSV/FASTA outputs.
+
+During execution
+----------------
+Expected messages include:
+
+  Submitted job: <token>
+  Job status: PROCESSING
+  Job status: FINISHED
+  Retrieved <n>/<total> proteins
+  Detected <n> LCR intervals.
+
+Do not stop Docker Desktop or close the WSL session while the job is running.
+Do not submit multiple PlaToLoCo jobs concurrently: the legacy tool wrappers
+use shared temporary filenames and are not safe for parallel jobs.
+
+Post-run checks
+---------------
+1. Confirm that all expected files exist:
+
+   dir platoloco_result
+
+2. Confirm that each CSV has the expected columns:
+
+   protein_id, header, method, start, end, length, sequence, description
+
+3. Record the following with the results:
+   - input FASTA filename and checksum
+   - PlaToLoCo Git commit: git rev-parse HEAD
+   - Docker image ID: docker image inspect platoloco-api --format='{{.Id}}'
+   - exact request payload: platoloco_result/platoloco_request.json
+   - date and caller configuration
+
+4. Check that coordinates are interpreted as 1-based inclusive coordinates.
+   The extracted sequence should equal sequence[start - 1:end].
+
+Troubleshooting
+---------------
+Container is absent or stopped:
+
+  docker start platoloco-api
+  docker ps -a
+  docker logs platoloco-api
+
+The API returns HTTP 500:
+
+  wsl -d Ubuntu-24.04 docker logs --tail 150 platoloco-api
+
+If logs report FileExistsError for ./data, verify cafs.py contains:
+
+  os.makedirs('./data', exist_ok=True)
+
+Then rebuild and recreate the container:
+
+  docker rm -f platoloco-api
+  cd ~/projects/lcr-metaserver/platolocorestapi
+  docker build -t platoloco-api .
+  docker run -d --name platoloco-api --restart unless-stopped \
+    -p 127.0.0.1:5002:5002 platoloco-api
+
+If the script cannot connect from Windows, first verify the container port:
+
+  wsl -d Ubuntu-24.04 docker ps
+
+It must show 127.0.0.1:5002->5002/tcp.
+
+If a caller yields zero intervals, do not assume a technical failure. First
+check that the API result includes that method and then evaluate whether the
+strict parameterization is biologically appropriate for the target protein
+set.
+
+Stop the service (optional)
+---------------------------
+
+  docker stop platoloco-api
+
+The container can be started again later with:
+
+  docker start platoloco-api

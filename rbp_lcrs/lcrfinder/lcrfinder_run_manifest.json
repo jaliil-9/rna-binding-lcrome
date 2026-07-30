@@ -1,0 +1,14 @@
+{
+  "tool": "LCRFinder",
+  "resolution": "Medium",
+  "input_fasta": "/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta",
+  "lcrfinder_dir": "/home/jbouziane/projects/LCRFinder",
+  "engine": "/usr/bin/octave",
+  "command": [
+    "/usr/bin/octave",
+    "--quiet",
+    "--eval",
+    "addpath('/home/jbouziane/projects/LCRFinder'); run_lcrfinder_batch('/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta', '/mnt/c/Users/jbouziane/low-complexity/rna-binders/lcrfinder_result', 'Medium');"
+  ],
+  "started_utc": "2026-07-30T10:03:33.556351+00:00"
+}

@@ -1,0 +1,29 @@
+{
+  "tool": "AlcoR",
+  "subcommand": "mapper",
+  "input_fasta": "/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta",
+  "alcor_executable": "/mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/alcor/alcor/src/build/AlcoR",
+  "models": "6:10:0:0:10:0.9/3:1:0.9",
+  "window": 5,
+  "threshold": null,
+  "ignore": null,
+  "command": [
+    "/mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/alcor/alcor/src/build/AlcoR",
+    "mapper",
+    "-v",
+    "-w",
+    "5",
+    "-m",
+    "6:10:0:0:10:0.9/3:1:0.9",
+    "-k",
+    "-o",
+    "/mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor/AlcoR_masked.fasta",
+    "/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta"
+  ],
+  "started_utc": "2026-07-30T12:03:17.269799+00:00",
+  "completed_utc": "2026-07-30T12:03:28.658365+00:00",
+  "lcr_count": 2804,
+  "masked_fasta": "/mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor/AlcoR_masked.fasta",
+  "csv": "/mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor/AlcoR.csv",
+  "lcr_fasta": "/mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor/AlcoR.fasta"
+}

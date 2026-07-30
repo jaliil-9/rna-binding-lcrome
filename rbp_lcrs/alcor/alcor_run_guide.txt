@@ -1,0 +1,161 @@
+AlcoR run guide (WSL / Ubuntu)
+================================
+
+Purpose
+-------
+Run AlcoR on the combined RNA-binding-protein FASTA and create results that match the project format used for CAST, SEG, FLPS, and LCRFinder:
+
+  - AlcoR.csv
+  - AlcoR.fasta
+
+The wrapper also preserves AlcoR's masked FASTA output and writes a JSON run manifest for reproducibility.
+
+Expected project layout
+-----------------------
+This guide assumes the following layout:
+
+  /mnt/c/Users/jbouziane/low-complexity/rna-binders/
+  ├── datasets/
+  │   └── combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta
+  └── rbp_lcrs/
+      ├── alcor/
+      │   ├── run_alcor.py
+      │   └── alcor/
+      │       └── src/
+      │           └── build/AlcoR
+      └── results/
+
+Important: run the commands below in Ubuntu/WSL, not Windows PowerShell.
+
+One-time WSL setup
+------------------
+Open Ubuntu and install required packages:
+
+  sudo apt update
+  sudo apt install -y build-essential cmake python3
+
+Build AlcoR (one time, or after updating its source)
+-----------------------------------------------------
+
+  cd /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/alcor/alcor/src
+  rm -rf build
+  cmake -S . -B build '-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5'
+  cmake --build build -j"$(nproc)"
+
+Confirm that the compiled executable works:
+
+  ./build/AlcoR mapper -h
+
+The executable should be located here:
+
+  /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/alcor/alcor/src/build/AlcoR
+
+Run the AlcoR wrapper
+---------------------
+Go to the directory containing run_alcor.py:
+
+  cd /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/alcor
+
+Run the analysis:
+
+  python3 run_alcor.py \
+    /mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta \
+    /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor \
+    --alcor ./alcor/src/build/AlcoR
+
+Expected output files
+---------------------
+The output directory is:
+
+  /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor/
+
+It will contain:
+
+  AlcoR.csv
+      Columns: protein_id, header, method, start, end, length, sequence, description.
+      Coordinates are one-based and inclusive.
+
+  AlcoR.fasta
+      One FASTA record per called AlcoR region. The original protein header is
+      retained, with method=AlcoR, start, end, and length appended.
+
+  AlcoR_masked.fasta
+      Raw AlcoR output. Low-complexity regions are lowercase.
+
+  alcor_run_manifest.json
+      Records the executable path, command, input file, model settings, and
+      output paths for reproducibility.
+
+Default AlcoR settings used by run_alcor.py
+-------------------------------------------
+The wrapper uses AlcoR's protein example models by default:
+
+  -w 5
+  -m 6:10:0:0:10:0.9/3:1:0.9
+  -k
+
+The -k option creates a masked FASTA, which the wrapper converts to regions.
+Contiguous lowercase stretches become AlcoR calls in AlcoR.csv and AlcoR.fasta.
+
+Optional settings
+-----------------
+Use a different smoothing-window size:
+
+  --window 7
+
+Set an AlcoR segmentation threshold:
+
+  --threshold 0.5
+
+Ignore AlcoR calls shorter than a specified length:
+
+  --ignore 15
+
+Example with an explicit minimum region length:
+
+  python3 run_alcor.py \
+    /mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta \
+    /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor_ignore15 \
+    --alcor ./alcor/src/build/AlcoR \
+    --ignore 15
+
+Notes on interpretation
+-----------------------
+- AlcoR's masked output represents the union of detected low-complexity positions.
+  Therefore, the wrapper reports non-overlapping contiguous regions for each protein.
+- CAST can report overlapping or nested calls; AlcoR calls should not be expected to
+  reproduce that nesting behavior.
+- The wrapper labels a call as, for example, "P rich region" using the most abundant
+  amino-acid residue in the extracted region. This is a descriptive label added by the
+  wrapper, not an AlcoR-native annotation.
+- Keep the run manifest and record any non-default --window, --threshold, --ignore,
+  or --models values when comparing methods.
+
+Troubleshooting
+---------------
+Error: AlcoR executable was not found
+
+From the rbp_lcrs/alcor directory, verify the path:
+
+  ls -l ./alcor/src/build/AlcoR
+
+If it is missing, rebuild AlcoR from the nested source directory:
+
+  cd ./alcor/src
+  rm -rf build
+  cmake -S . -B build '-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5'
+  cmake --build build -j"$(nproc)"
+
+Error: Input FASTA not found
+
+Verify the input path:
+
+  ls -l /mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta
+
+Error: Permission denied for AlcoR
+
+Make the executable runnable:
+
+  chmod +x ./alcor/src/build/AlcoR
+
+Then rerun the wrapper command.

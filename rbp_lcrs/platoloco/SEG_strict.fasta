@@ -1,0 +1,990 @@
+>Q9Y2T7|ensembl_protein_id=ENSP00000007699|entry=YBOX2_HUMAN|source=pfam27|protein_name=Y-box-binding method=SEG_strict start=39 end=55 length=17
+KGGGAGGGGGAASGPAA
+>Q9H6S0|ensembl_protein_id=ENSP00000161863|entry=YTDC2_HUMAN|source=pfam27|protein_name=3'-5' method=SEG_strict start=13 end=30 length=18
+APGGGGGGGPSPCGPGGG
+>Q8N1G1|ensembl_protein_id=ENSP00000170168|entry=REXO1_HUMAN|source=pfam27|protein_name=RNA method=SEG_strict start=571 end=592 length=22
+KASPPPSPAPSSSSSSSSSTSS
+>Q9BRR8|ensembl_protein_id=ENSP00000170564|entry=GPTC1_HUMAN|source=pfam27|protein_name=G method=SEG_strict start=893 end=909 length=17
+KSSSSESSDSSDSQSDE
+>Q9H501|ensembl_protein_id=ENSP00000202816|entry=ESF1_HUMAN|source=pfam27|protein_name=ESF1 method=SEG_strict start=267 end=297 length=31
+GDDDGSEDDEEEDEDEEEDEDEDSEDDDKSD
+>Q8N8D1|ensembl_protein_id=ENSP00000204549|entry=PDCD7_HUMAN|source=pfam27|protein_name=Programmed method=SEG_strict start=235 end=251 length=17
+ARRRLERVRRRRLRLRE
+>O15371|ensembl_protein_id=ENSP00000216190|entry=EIF3D_HUMAN|source=pfam27|protein_name=Eukaryotic method=SEG_strict start=529 end=546 length=18
+SDEDEEEEEEEEEEEEEE
+>Q86U42|ensembl_protein_id=ENSP00000216727|entry=PABP2_HUMAN|source=pfam27|protein_name=Polyadenylate-binding method=SEG_strict start=1 end=15 length=15
+MAAAAAAAAAAGAAG
+>Q86U42|ensembl_protein_id=ENSP00000216727|entry=PABP2_HUMAN|source=pfam27|protein_name=Polyadenylate-binding method=SEG_strict start=49 end=80 length=32
+GLESEELEPEELLLEPEPEPEPEEEPPRPRAP
+>Q9H307|ensembl_protein_id=ENSP00000216832|entry=PININ_HUMAN|source=pfam27|protein_name=Pinin method=SEG_strict start=569 end=637 length=69
+KTSKSRSRSSSSSSSSSSSTSSSSGSSSSSGSSSSRSSSSSSSSTSGSSSRDSSSSTSSSSESRSRSRG
+>P14866|ensembl_protein_id=ENSP00000221419|entry=HNRPL_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=38 end=55 length=18
+AGGGGGGGRYYGGGSEGG
+>P14866|ensembl_protein_id=ENSP00000221419|entry=HNRPL_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=70 end=88 length=19
+HGGGGGGGGGAGAAGGGGG
+>Q15428|ensembl_protein_id=ENSP00000221494|entry=SF3A2_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=250 end=265 length=16
+SLPPPPPGGLPLPPMP
+>Q9NW13|ensembl_protein_id=ENSP00000223073|entry=RBM28_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=223 end=243 length=21
+REEEDMEEEENDDDDDDDDEE
+>Q7Z417|ensembl_protein_id=ENSP00000225388|entry=NUFP2_HUMAN|source=pfam27|protein_name=FMR1-interacting method=SEG_strict start=6 end=34 length=29
+GQPQPQHHHSHHHPHHHPQQQQQQPHHHH
+>Q7Z417|ensembl_protein_id=ENSP00000225388|entry=NUFP2_HUMAN|source=pfam27|protein_name=FMR1-interacting method=SEG_strict start=372 end=385 length=14
+NSSVSPTSSSSSSS
+>Q9NY12|ensembl_protein_id=ENSP00000226796|entry=GAR1_HUMAN|source=pfam27|protein_name=H/ACA method=SEG_strict start=2 end=23 length=22
+SFRGGGRGGFNRGGGGGGFNRG
+>Q9NY12|ensembl_protein_id=ENSP00000226796|entry=GAR1_HUMAN|source=pfam27|protein_name=H/ACA method=SEG_strict start=28 end=58 length=31
+HFRGGGGGGGGGNFRGGGRGGFGRGGGRGGF
+>Q9NY12|ensembl_protein_id=ENSP00000226796|entry=GAR1_HUMAN|source=pfam27|protein_name=H/ACA method=SEG_strict start=168 end=215 length=48
+PRGGGRGGRGGGRGGGGRGGGRGGGFRGGRGGGGGGFRGGRGGGFRGR
+>Q5XG87|ensembl_protein_id=ENSP00000230859|entry=PAPD7_HUMAN|source=pfam27|protein_name=Terminal method=SEG_strict start=104 end=116 length=13
+KSPSLSSSSSSSS
+>Q4ZG55|ensembl_protein_id=ENSP00000234142|entry=GREB1_HUMAN|source=pfam38|protein_name=Protein method=SEG_strict start=1216 end=1231 length=16
+TSSCSQLSSSSGSSSS
+>Q13247|ensembl_protein_id=ENSP00000244020|entry=SRSF6_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=187 end=229 length=43
+HRRSYSGSRSRSRSRRRSRSRSRRSSRSRSRSISKSRSRSRSR
+>Q13247|ensembl_protein_id=ENSP00000244020|entry=SRSF6_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=323 end=342 length=20
+TSRSRSRSRSKSRSRSRSSS
+>Q8WVK2|ensembl_protein_id=ENSP00000244227|entry=SNR27_HUMAN|source=pfam27|protein_name=U4/U6.U5 method=SEG_strict start=2 end=17 length=16
+GRSRSRSPRRERRRSR
+>Q8WVK2|ensembl_protein_id=ENSP00000244227|entry=SNR27_HUMAN|source=pfam27|protein_name=U4/U6.U5 method=SEG_strict start=9 end=44 length=36
+PRRERRRSRSTSRERERRRRERSRSRERDRRRSRSR
+>Q8WVK2|ensembl_protein_id=ENSP00000244227|entry=SNR27_HUMAN|source=pfam27|protein_name=U4/U6.U5 method=SEG_strict start=37 end=58 length=22
+DRRRSRSRSPHRRRSRSPRRHR
+>P09234|ensembl_protein_id=ENSP00000244520|entry=RU1C_HUMAN|source=pfam27|protein_name=U1 method=SEG_strict start=96 end=117 length=22
+HMGGPPMMPMMGPPPPGMMPVG
+>Q9BQ67|ensembl_protein_id=ENSP00000253237|entry=GRWD1_HUMAN|source=pfam27|protein_name=Glutamate-rich method=SEG_strict start=122 end=135 length=14
+SDEEEEEEDEEDEE
+>Q96EY7|ensembl_protein_id=ENSP00000254630|entry=PTCD3_HUMAN|source=pfam27|protein_name=Small method=SEG_strict start=669 end=685 length=17
+LTSDSDTDSSSDSDSDT
+>Q9NQZ2|ensembl_protein_id=ENSP00000254803|entry=SAS10_HUMAN|source=pfam27|protein_name=Something method=SEG_strict start=150 end=168 length=19
+SQQEAEEEEREEEEEAQII
+>O95218|ensembl_protein_id=ENSP00000254821|entry=ZRAB2_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=199 end=253 length=55
+NRRSRSKSRSSHSRSSSRSSSPSSSRSRSRSRSRSSSSSQSRSRSSSRERSRSRG
+>O95218|ensembl_protein_id=ENSP00000254821|entry=ZRAB2_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=309 end=326 length=18
+ERRHRSSSGSSHSGSRSS
+>Q8NAV1|ensembl_protein_id=ENSP00000257181|entry=PR38A_HUMAN|source=pfam27|protein_name=Pre-mRNA-splicing method=SEG_strict start=229 end=251 length=23
+LRYRRSRSRSPRRRSRSPKRRSP
+>Q96K80|ensembl_protein_id=ENSP00000257940|entry=ZC3HA_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=336 end=355 length=20
+GAPAAPPTNAAPPAAPPPPP
+>Q07955|ensembl_protein_id=ENSP00000258962|entry=SRSF1_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=89 end=112 length=24
+PRSGRGTGRGGGGGGGGGAPRGRY
+>Q07955|ensembl_protein_id=ENSP00000258962|entry=SRSF1_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=203 end=226 length=24
+GRSRSRSRSRSRSRSRSNSRSRSY
+>O60563|ensembl_protein_id=ENSP00000261900|entry=CCNT1_HUMAN|source=pfam27|protein_name=Cyclin-T1 method=SEG_strict start=512 end=530 length=19
+THPSNHHHHHNHHSHKHSH
+>O60563|ensembl_protein_id=ENSP00000261900|entry=CCNT1_HUMAN|source=pfam27|protein_name=Cyclin-T1 method=SEG_strict start=707 end=724 length=18
+KPRPPPLPSEPPPPLPPL
+>O15105|ensembl_protein_id=ENSP00000262158|entry=SMAD7_HUMAN|source=pfam27|protein_name=SMAD method=SEG_strict start=19 end=40 length=22
+PGGEDEEEGAGGGGGGGELRGE
+>Q8TDI0|ensembl_protein_id=ENSP00000262450|entry=CHD5_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=96 end=115 length=20
+NKKKKKKLKDKKEKKAKRKK
+>Q8TDI0|ensembl_protein_id=ENSP00000262450|entry=CHD5_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=205 end=216 length=12
+SAAAAAAAVAAA
+>Q6ZRS2|ensembl_protein_id=ENSP00000262518|entry=SRCAP_HUMAN|source=pfam38|protein_name=Chromatin method=SEG_strict start=1141 end=1157 length=17
+PAAATTTSTTTATATTT
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=327 end=356 length=30
+IAATTAATASSSASSSSLSSSSSSSSSSSS
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=432 end=451 length=20
+APPPEPPEPGGGGGGGGPSP
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=593 end=615 length=23
+SPPPAPTPPQQPPPPPPPPPPPP
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=634 end=653 length=20
+LPPRPDGPPPPEYPPPPPPP
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=970 end=991 length=22
+QESSSEKDEEDDEEDEEDEDRE
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1030 end=1068 length=39
+TSDSESSSSSSSSSSSSSSSSSSSSSSSSESSSEDEEEE
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1358 end=1386 length=29
+REEGEEEGEEEGEEEEEESSDSSSSSDGE
+>O15047|ensembl_protein_id=ENSP00000262519|entry=SET1A_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1398 end=1412 length=15
+ARRRRPPPPPPPPPP
+>Q8IXZ2|ensembl_protein_id=ENSP00000262577|entry=ZC3H3_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=863 end=884 length=22
+GSASPSSSKASSSSSSSSSPPA
+>Q9UKV3|ensembl_protein_id=ENSP00000262710|entry=ACINU_HUMAN|source=pfam27|protein_name=Apoptotic method=SEG_strict start=269 end=291 length=23
+TEEEEEEEEEEEEDDEEEEGDDE
+>Q9UKV3|ensembl_protein_id=ENSP00000262710|entry=ACINU_HUMAN|source=pfam27|protein_name=Apoptotic method=SEG_strict start=575 end=602 length=28
+DSSSSRSSSSSSSSSRSRSRSPDSSGSR
+>Q9UKV3|ensembl_protein_id=ENSP00000262710|entry=ACINU_HUMAN|source=pfam27|protein_name=Apoptotic method=SEG_strict start=1284 end=1319 length=36
+SRERDRERERERERDRGDRDRDRERDRERGRERDRR
+>Q92900|ensembl_protein_id=ENSP00000262803|entry=RENT1_HUMAN|source=pfam27|protein_name=Regulator method=SEG_strict start=46 end=71 length=26
+TPPGGPGGPGGGGAGGPGGAGAGAAA
+>Q9UPR6|ensembl_protein_id=ENSP00000262961|entry=ZFR2_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=218 end=239 length=22
+YPPAQPPPPPGPPQQLPPPPAP
+>Q9UNW9|ensembl_protein_id=ENSP00000263257|entry=NOVA2_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=309 end=323 length=15
+LAAVAAGANPAAAAA
+>Q9UNW9|ensembl_protein_id=ENSP00000263257|entry=NOVA2_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=333 end=351 length=19
+EAGAGPAGGAAPPPPPPPG
+>Q9UNW9|ensembl_protein_id=ENSP00000263257|entry=NOVA2_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=366 end=378 length=13
+LGAGAGGGAGGGG
+>O60583|ensembl_protein_id=ENSP00000264157|entry=CCNT2_HUMAN|source=pfam27|protein_name=Cyclin-T2 method=SEG_strict start=631 end=649 length=19
+HSKMSKSSKSSGSSSSSSS
+>Q15032|ensembl_protein_id=ENSP00000264160|entry=R3HD1_HUMAN|source=pfam27|protein_name=R3H method=SEG_strict start=588 end=612 length=25
+APPPHPPPPPPPPPPPPPLPPGQPV
+>Q9Y2X3|ensembl_protein_id=ENSP00000264279|entry=NOP58_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=464 end=480 length=17
+IKVKVEEEEEEKVAEEE
+>O15234|ensembl_protein_id=ENSP00000264645|entry=CASC3_HUMAN|source=pfam27|protein_name=Protein method=SEG_strict start=31 end=46 length=16
+RGGGSCSGSAGGGGSG
+>Q96KR1|ensembl_protein_id=ENSP00000265069|entry=ZFR_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=280 end=301 length=22
+YQQQQQQQKQAAAAAAAAAATA
+>Q9P2N5|ensembl_protein_id=ENSP00000265271|entry=RBM27_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=316 end=357 length=42
+FPPPPPGLPPPPPPGMLMPPMPGPGPGPGPGPGPGPGPGPGP
+>Q9P2N5|ensembl_protein_id=ENSP00000265271|entry=RBM27_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=950 end=963 length=14
+QGRGRGRGRGGRGR
+>Q9P2N5|ensembl_protein_id=ENSP00000265271|entry=RBM27_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=1022 end=1036 length=15
+STETEEEEVKEEETE
+>P51531|ensembl_protein_id=ENSP00000265773|entry=SMCA2_HUMAN|source=pfam38|protein_name=SWI/SNF-related method=SEG_strict start=215 end=253 length=39
+LQQQQQQQQQQQQQQQQQQQQQQQPQQQPPQPQTQQQQQ
+>P51531|ensembl_protein_id=ENSP00000265773|entry=SMCA2_HUMAN|source=pfam38|protein_name=SWI/SNF-related method=SEG_strict start=1508 end=1530 length=23
+KEEESEDESNEEEEEEDEEESES
+>P31942|ensembl_protein_id=ENSP00000265866|entry=HNRH3_HUMAN|source=pfam27;pfam38|protein_name=Heterogeneous method=SEG_strict start=271 end=285 length=15
+PGGGSGMGGSGMGGY
+>P31942|ensembl_protein_id=ENSP00000265866|entry=HNRH3_HUMAN|source=pfam27;pfam38|protein_name=Heterogeneous method=SEG_strict start=316 end=335 length=20
+DGLGGYGRGGGGSGGYYGQG
+>A7MD48|ensembl_protein_id=ENSP00000267260|entry=SRRM4_HUMAN|source=pfam27|protein_name=Serine/arginine method=SEG_strict start=533 end=575 length=43
+TSSWYSSSSSRSASRSYSRSRSRSRSRRRSRTRTSSSSSSRSP
+>A7MD48|ensembl_protein_id=ENSP00000267260|entry=SRRM4_HUMAN|source=pfam27|protein_name=Serine/arginine method=SEG_strict start=566 end=601 length=36
+TSSSSSSRSPSPGSRSRSRSRSRSRSRSRSQSRSYS
+>Q5VZF2|ensembl_protein_id=ENSP00000267287|entry=MBNL2_HUMAN|source=pfam27|protein_name=Muscleblind-like method=SEG_strict start=245 end=264 length=20
+KAAQHQANQAAVAAQAAAAA
+>P37108|ensembl_protein_id=ENSP00000267884|entry=SRP14_HUMAN|source=pfam27|protein_name=Signal method=SEG_strict start=101 end=134 length=34
+NKTKKTKAAAAAAAAAPAAAATAPTTAATTAATA
+>Q9H0W8|ensembl_protein_id=ENSP00000270066|entry=SMG9_HUMAN|source=pfam27|protein_name=Nonsense-mediated method=SEG_strict start=78 end=92 length=15
+QPPPPTAPAAPPAPA
+>Q9HC10|ensembl_protein_id=ENSP00000272371|entry=OTOF_HUMAN|source=pfam38|protein_name=Otoferlin method=SEG_strict start=1964 end=1982 length=19
+WLLLKLLLLLLLLLLLALF
+>Q96HR8|ensembl_protein_id=ENSP00000274054|entry=NAF1_HUMAN|source=pfam27|protein_name=H/ACA method=SEG_strict start=113 end=144 length=32
+TSDSDSDSDSETDSDSSSSSSSSSSSSSSSSS
+>Q96HR8|ensembl_protein_id=ENSP00000274054|entry=NAF1_HUMAN|source=pfam27|protein_name=H/ACA method=SEG_strict start=459 end=482 length=24
+HPLLNLPYSLPPPPPPPPLPPPPS
+>Q8IZD4|ensembl_protein_id=ENSP00000280665|entry=DCP1B_HUMAN|source=pfam27|protein_name=mRNA-decapping method=SEG_strict start=251 end=260 length=10
+HQQQQQQQQQ
+>Q5T200|ensembl_protein_id=ENSP00000282007|entry=ZC3HD_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=668 end=705 length=38
+VDDRRDERARERDRERERDRERERERERERDREREKER
+>Q5T200|ensembl_protein_id=ENSP00000282007|entry=ZC3HD_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=734 end=779 length=46
+DRERERERERDREKEREREREERERERERERERERERERERERARE
+>Q2TBE0|ensembl_protein_id=ENSP00000282251|entry=C19L2_HUMAN|source=pfam27|protein_name=CWF19-like method=SEG_strict start=76 end=95 length=20
+VKKKKKKDKHSKKAKKEKKK
+>Q2TBE0|ensembl_protein_id=ENSP00000282251|entry=C19L2_HUMAN|source=pfam27|protein_name=CWF19-like method=SEG_strict start=83 end=100 length=18
+DKHSKKAKKEKKKKSKKQ
+>P47974|ensembl_protein_id=ENSP00000282388|entry=TISD_HUMAN|source=pfam27|protein_name=mRNA method=SEG_strict start=287 end=315 length=29
+TPPPPSCSSASSCSSSASSCSSASAASTP
+>O95104|ensembl_protein_id=ENSP00000286835|entry=SCAF4_HUMAN|source=pfam27|protein_name=SR-related method=SEG_strict start=444 end=474 length=31
+KRRRSRSGSRSRRSRHRRSRSRSRDRRRHSP
+>O95104|ensembl_protein_id=ENSP00000286835|entry=SCAF4_HUMAN|source=pfam27|protein_name=SR-related method=SEG_strict start=706 end=723 length=18
+IPPPGFGPGVPPPPPPPP
+>O95104|ensembl_protein_id=ENSP00000286835|entry=SCAF4_HUMAN|source=pfam27|protein_name=SR-related method=SEG_strict start=917 end=933 length=17
+RPGGMPGLGGPGPGPGG
+>O95104|ensembl_protein_id=ENSP00000286835|entry=SCAF4_HUMAN|source=pfam27|protein_name=SR-related method=SEG_strict start=940 end=981 length=42
+RQQPPQQPQQQPQPQAPQQPQQQQQQQPPPSQQPPPTQQQPQ
+>O60841|ensembl_protein_id=ENSP00000289371|entry=IF2P_HUMAN|source=pfam27|protein_name=Eukaryotic method=SEG_strict start=309 end=334 length=26
+NEGDKKKKDKKKKKGEKEEKEKEKKK
+>O60841|ensembl_protein_id=ENSP00000289371|entry=IF2P_HUMAN|source=pfam27|protein_name=Eukaryotic method=SEG_strict start=531 end=566 length=36
+PEEEEEEEEEEEEDEESEEEEEEEGESEGSEGDEED
+>Q86SE8|ensembl_protein_id=ENSP00000289820|entry=NPM2_HUMAN|source=pfam27|protein_name=Nucleoplasmin-2 method=SEG_strict start=128 end=149 length=22
+WEEEEEEEGEEEEEEEEDDEDE
+>Q5SZQ8|ensembl_protein_id=ENSP00000290585|entry=CELF3_HUMAN|source=pfam27|protein_name=CUGBP method=SEG_strict start=351 end=372 length=22
+AQQPPPPPQQQQQQQQQQQQQQ
+>Q9NQ29|ensembl_protein_id=ENSP00000293872|entry=LUC7L_HUMAN|source=pfam27|protein_name=Putative method=SEG_strict start=261 end=287 length=27
+GSRTRDRRRSRSRDRRRRRSRSTSRER
+>A0AV96|ensembl_protein_id=ENSP00000295971|entry=RBM47_HUMAN|source=pfam38|protein_name=RNA-binding method=SEG_strict start=486 end=501 length=16
+PASAAAAAAAAAAAAA
+>O14776|ensembl_protein_id=ENSP00000296702|entry=TCRG1_HUMAN|source=pfam27|protein_name=Transcription method=SEG_strict start=177 end=255 length=79
+LAAQAQVQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQVQAQVQAQVQAQA
+>O14776|ensembl_protein_id=ENSP00000296702|entry=TCRG1_HUMAN|source=pfam27|protein_name=Transcription method=SEG_strict start=270 end=290 length=21
+VSTSTSSSTPSSTTSTTTTAT
+>O95391|ensembl_protein_id=ENSP00000297151|entry=SLU7_HUMAN|source=pfam27|protein_name=Pre-mRNA-splicing method=SEG_strict start=491 end=506 length=16
+QEKLKEEKKKKKKKKK
+>Q8TA86|ensembl_protein_id=ENSP00000297157|entry=RP9_HUMAN|source=pfam27|protein_name=Retinitis method=SEG_strict start=181 end=213 length=33
+GKEKHKKKKKKEKHKKRKKEKKKKKKRKHKSSK
+>P62314|ensembl_protein_id=ENSP00000300413|entry=SMD1_HUMAN|source=pfam27;pfam38|protein_name=Small method=SEG_strict start=96 end=118 length=23
+AGRGRGRGRGRGRGRGRGRGGPR
+>Q15287|ensembl_protein_id=ENSP00000301730|entry=RNPS1_HUMAN|source=pfam38|protein_name=RNA-binding method=SEG_strict start=64 end=129 length=66
+KRRSASSGSSSTRSRSSSTSSSGSSTSTGSSSGSSSSSASSRSGSSSTSRSSSSSSSSGSPSPSRR
+>Q1KMD3|ensembl_protein_id=ENSP00000301785|entry=HNRL2_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=73 end=95 length=23
+GDEEEDEEEEEEDEEALLEDEDE
+>P51608|ensembl_protein_id=ENSP00000301948|entry=MECP2_HUMAN|source=pfam27|protein_name=Methyl-CpG-binding method=SEG_strict start=380 end=396 length=17
+VPLLPPLPPPPPEPESS
+>P17480|ensembl_protein_id=ENSP00000302640|entry=UBF1_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=677 end=697 length=21
+SEEDDEEDEDDEDEDEEEEDD
+>P17480|ensembl_protein_id=ENSP00000302640|entry=UBF1_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=718 end=743 length=26
+SEDGDENEEDDEDEDDDEDDDEDEDN
+>P17480|ensembl_protein_id=ENSP00000302640|entry=UBF1_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=741 end=763 length=23
+EDNESEGSSSSSSSSGDSSDSDS
+>Q15696|ensembl_protein_id=ENSP00000303015|entry=U2AFM_HUMAN|source=pfam27|protein_name=U2 method=SEG_strict start=426 end=469 length=44
+NRDRSRDRSRGRGSRSRSRSRSRRSRRSRSQSSSRSRSRGRRRS
+>Q7Z570|ensembl_protein_id=ENSP00000303252|entry=Z804A_HUMAN|source=pfam38|protein_name=Zinc method=SEG_strict start=1106 end=1118 length=13
+HAAAAAAAAAAAA
+>Q9NZJ5|ensembl_protein_id=ENSP00000307235|entry=E2AK3_HUMAN|source=pfam27|protein_name=Eukaryotic method=SEG_strict start=7 end=25 length=19
+PGLLVRALLLLLLLLGLAA
+>Q9BWF3|ensembl_protein_id=ENSP00000309166|entry=RBM4_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=281 end=298 length=18
+GAAATAAAAAAAAAAVTA
+>Q32MZ4|ensembl_protein_id=ENSP00000310109|entry=LRRF1_HUMAN|source=pfam27|protein_name=Leucine-rich method=SEG_strict start=566 end=579 length=14
+QKKTKNKKKKNKKK
+>Q9BQ04|ensembl_protein_id=ENSP00000310471|entry=RBM4B_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=280 end=296 length=17
+GAAATSAAMAAAAATTS
+>Q8IY37|ensembl_protein_id=ENSP00000311135|entry=DHX37_HUMAN|source=pfam27|protein_name=Probable method=SEG_strict start=159 end=181 length=23
+AEEEEEEEEESESELEEESELDE
+>Q9UHB9|ensembl_protein_id=ENSP00000312066|entry=SRP68_HUMAN|source=pfam27|protein_name=Signal method=SEG_strict start=8 end=34 length=27
+PGGGGGGGSGGGGGSGGGGSGGGRGAG
+>Q86YN6|ensembl_protein_id=ENSP00000312649|entry=PRGC2_HUMAN|source=pfam27|protein_name=Peroxisome method=SEG_strict start=429 end=449 length=21
+QEEEDEEEEEEEEEEEKEEEE
+>Q86YN6|ensembl_protein_id=ENSP00000312649|entry=PRGC2_HUMAN|source=pfam27|protein_name=Peroxisome method=SEG_strict start=806 end=823 length=18
+PEEEEEEGEEEEEDDEEE
+>Q13151|ensembl_protein_id=ENSP00000316042|entry=ROA0_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=180 end=203 length=24
+YSGGGGGGSRSSRGGRGGRGRGGG
+>Q13151|ensembl_protein_id=ENSP00000316042|entry=ROA0_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=211 end=240 length=30
+KGGGGGYNSYGGYGGGGGGGYNAYGGGGGG
+>Q13151|ensembl_protein_id=ENSP00000316042|entry=ROA0_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=269 end=287 length=19
+KSGGGGGGGGSSWGGRSNS
+>Q13151|ensembl_protein_id=ENSP00000316042|entry=ROA0_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=286 end=303 length=18
+NSGPYRGGYGGGGGYGGS
+>Q15022|ensembl_protein_id=ENSP00000316578|entry=SUZ12_HUMAN|source=pfam27|protein_name=Polycomb method=SEG_strict start=6 end=27 length=22
+HGGGGGGGSGPSAGSGGGGFGG
+>Q15022|ensembl_protein_id=ENSP00000316578|entry=SUZ12_HUMAN|source=pfam27|protein_name=Polycomb method=SEG_strict start=36 end=52 length=17
+ASGGKSGGGSCGGGGSY
+>Q15022|ensembl_protein_id=ENSP00000316578|entry=SUZ12_HUMAN|source=pfam27|protein_name=Polycomb method=SEG_strict start=46 end=66 length=21
+CGGGGSYSASSSSSAAAAAGA
+>Q7Z6E9|ensembl_protein_id=ENSP00000317872|entry=RBBP6_HUMAN|source=pfam27|protein_name=E3 method=SEG_strict start=334 end=351 length=18
+KQLPPPPPPIPPPRPLIQ
+>Q7Z6E9|ensembl_protein_id=ENSP00000317872|entry=RBBP6_HUMAN|source=pfam27|protein_name=E3 method=SEG_strict start=1726 end=1749 length=24
+SKKKKKKKEKKKHKKHKKHKKHKK
+>P19338|ensembl_protein_id=ENSP00000318195|entry=NUCL_HUMAN|source=pfam27|protein_name=Nucleolin method=SEG_strict start=142 end=168 length=27
+KEDSDEEEDDDSEEDEEDDEDEDEDED
+>P19338|ensembl_protein_id=ENSP00000318195|entry=NUCL_HUMAN|source=pfam27|protein_name=Nucleolin method=SEG_strict start=183 end=208 length=26
+ASEDEDDEDDEDDEDDDDDEEDDSEE
+>P19338|ensembl_protein_id=ENSP00000318195|entry=NUCL_HUMAN|source=pfam27|protein_name=Nucleolin method=SEG_strict start=233 end=270 length=38
+AEDEDEEEDDEDEDDDDDEDDEDDDDEDDEEEEEEEEE
+>P19338|ensembl_protein_id=ENSP00000318195|entry=NUCL_HUMAN|source=pfam27|protein_name=Nucleolin method=SEG_strict start=650 end=697 length=48
+EGGFGGRGGGRGGFGGRGGGRGGRGGFGGRGRGGFGGRGGFRGGRGGG
+>Q13435|ensembl_protein_id=ENSP00000318861|entry=SF3B2_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=90 end=119 length=30
+IPMPPPPLGLPPLQPPPPPPPPPPGLGLGF
+>Q13435|ensembl_protein_id=ENSP00000318861|entry=SF3B2_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=709 end=729 length=21
+GELEPSDEESSEEEEEEESDE
+>Q7KZ85|ensembl_protein_id=ENSP00000319104|entry=SPT6H_HUMAN|source=pfam27|protein_name=Transcription method=SEG_strict start=31 end=42 length=12
+VEEEDDDEEEEE
+>Q8NAF0|ensembl_protein_id=ENSP00000320188|entry=ZN579_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=15 end=35 length=21
+HRGRGRGRGRGRGRGRGRGRG
+>Q9BWU0|ensembl_protein_id=ENSP00000323837|entry=NADAP_HUMAN|source=pfam27|protein_name=Kanadaptin method=SEG_strict start=587 end=615 length=29
+MKDEPEVEEEEEEEEEEEKEKEEHEKKKL
+>Q8NDV7|ensembl_protein_id=ENSP00000326900|entry=TNR6A_HUMAN|source=pfam27|protein_name=Trinucleotide method=SEG_strict start=92 end=126 length=35
+NQQPQQQQQQQQPQQQQPQQQPQPQPQQQQPQQQP
+>Q6P9B9|ensembl_protein_id=ENSP00000327889|entry=INT5_HUMAN|source=pfam27|protein_name=Integrator method=SEG_strict start=253 end=267 length=15
+HGGAGGGAGSSGGSS
+>P98175|ensembl_protein_id=ENSP00000328848|entry=RBM10_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=112 end=124 length=13
+GEEEEEEEDEEEE
+>Q6ZN04|ensembl_protein_id=ENSP00000329918|entry=MEX3B_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=12 end=24 length=13
+NGSGGGGGGSSGG
+>Q6ZN04|ensembl_protein_id=ENSP00000329918|entry=MEX3B_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=392 end=407 length=16
+VSSSCSSSASSSASSS
+>Q6ZN04|ensembl_protein_id=ENSP00000329918|entry=MEX3B_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=490 end=508 length=19
+TSGSSSSSSSSSSSSSSSS
+>B0QYK0|ensembl_protein_id=ENSP00000330516|entry=B0QYK0_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=428 end=453 length=26
+MPPPLRGGPGGPGGPGGPMGRMGGRG
+>B0QYK0|ensembl_protein_id=ENSP00000330516|entry=B0QYK0_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=521 end=538 length=18
+PGGDRGRGGPGGMRGGRG
+>B0QYK0|ensembl_protein_id=ENSP00000330516|entry=B0QYK0_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=549 end=565 length=17
+MFRGGRGGDRGGFRGGR
+>Q00577|ensembl_protein_id=ENSP00000332706|entry=PURA_HUMAN|source=pfam27|protein_name=Transcriptional method=SEG_strict start=17 end=52 length=36
+SGGSLGHPGSGSGSGGGGGGGGGGGGSGGGGGGAPG
+>F8W6I7|ensembl_protein_id=ENSP00000333504|entry=F8W6I7_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=289 end=303 length=15
+QGGYGGSSSSSSYGS
+>Q8WXA9|ensembl_protein_id=ENSP00000334538|entry=SREK1_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=278 end=294 length=17
+DREKEREREKEREKEKE
+>Q8WXA9|ensembl_protein_id=ENSP00000334538|entry=SREK1_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=370 end=395 length=26
+ASRRSRSSSRERRRRRSRSSSRSPRT
+>Q92973|ensembl_protein_id=ENSP00000336712|entry=TNPO1_HUMAN|source=pfam27|protein_name=Transportin-1 method=SEG_strict start=357 end=375 length=19
+HDEDGIEEEDDDDDEIDDD
+>Q6PKG0|ensembl_protein_id=ENSP00000336721|entry=LARP1_HUMAN|source=pfam27|protein_name=La-related method=SEG_strict start=91 end=111 length=21
+DGEEGGGEPGAGGGAAGAAGA
+>Q6PKG0|ensembl_protein_id=ENSP00000336721|entry=LARP1_HUMAN|source=pfam27|protein_name=La-related method=SEG_strict start=337 end=356 length=20
+FRGRGRGRGRGRGRGRGGTR
+>Q13523|ensembl_protein_id=ENSP00000337194|entry=PRP4K_HUMAN|source=pfam27|protein_name=Serine/threonine-protein method=SEG_strict start=40 end=60 length=21
+HSRHKKKKHKHRSKHKKHKHS
+>Q13523|ensembl_protein_id=ENSP00000337194|entry=PRP4K_HUMAN|source=pfam27|protein_name=Serine/threonine-protein method=SEG_strict start=63 end=78 length=16
+EDKDKKHKHKHKHKKH
+>Q13523|ensembl_protein_id=ENSP00000337194|entry=PRP4K_HUMAN|source=pfam27|protein_name=Serine/threonine-protein method=SEG_strict start=447 end=472 length=26
+IRRRSRSPLRRSRSPRRRSRSPRRRD
+>Q13523|ensembl_protein_id=ENSP00000337194|entry=PRP4K_HUMAN|source=pfam27|protein_name=Serine/threonine-protein method=SEG_strict start=468 end=496 length=29
+PRRRDRGRRSRSRLRRRSRSRGGRRRRSR
+>Q9Y388|ensembl_protein_id=ENSP00000339090|entry=RBMX2_HUMAN|source=pfam27;pfam38|protein_name=RNA-binding method=SEG_strict start=155 end=173 length=19
+TKKHKKDKKEKKKKKKEKE
+>Q86U06|ensembl_protein_id=ENSP00000339220|entry=RBM23_HUMAN|source=pfam27|protein_name=Probable method=SEG_strict start=384 end=399 length=16
+TAAAAAAAAAQAAALQ
+>P06748|ensembl_protein_id=ENSP00000341168|entry=NPM_HUMAN|source=pfam27|protein_name=Nucleophosmin method=SEG_strict start=158 end=187 length=30
+LAADEDDDDDDEEDDDEDDDDDDFDDEEAE
+>Q13485|ensembl_protein_id=ENSP00000341551|entry=SMAD4_HUMAN|source=pfam27|protein_name=SMAD method=SEG_strict start=445 end=465 length=21
+RQMQQQAATAQAAAAAQAAAV
+>Q04637|ensembl_protein_id=ENSP00000343450|entry=IF4G1_HUMAN|source=pfam27|protein_name=Eukaryotic method=SEG_strict start=453 end=476 length=24
+QEEEMEEEEEEEEGEAGEAGEAES
+>Q96MT3|ensembl_protein_id=ENSP00000345064|entry=PRIC1_HUMAN|source=pfam38|protein_name=Prickle-like method=SEG_strict start=756 end=774 length=19
+GEDDDSWCSSSSSSSDSEE
+>Q9UJV8|ensembl_protein_id=ENSP00000345168|entry=PURG_HUMAN|source=pfam27|protein_name=Purine-rich method=SEG_strict start=4 end=16 length=13
+ARRRGGGGGRGRG
+>Q14157|ensembl_protein_id=ENSP00000345308|entry=UBP2L_HUMAN|source=pfam27|protein_name=Ubiquitin-associated method=SEG_strict start=171 end=189 length=19
+ERGRRGRGRGRGGSGRRGG
+>Q8WW36|ensembl_protein_id=ENSP00000345633|entry=ZCH13_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=20 end=34 length=15
+PRGGAGGRRGGGHGR
+>P22626|ensembl_protein_id=ENSP00000346694|entry=ROA2_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=256 end=276 length=21
+FGGSPGYGGGRGGYGGGGPGY
+>P18583|ensembl_protein_id=ENSP00000348984|entry=SON_HUMAN|source=pfam27|protein_name=Protein method=SEG_strict start=105 end=129 length=25
+TKKSKKHKKHKNKKKKKKKEKEKKY
+>P18583|ensembl_protein_id=ENSP00000348984|entry=SON_HUMAN|source=pfam27|protein_name=Protein method=SEG_strict start=1857 end=1884 length=28
+HRSQTRSRSRSRRRRRSSRSRSKSRGRR
+>P23246|ensembl_protein_id=ENSP00000349748|entry=SFPQ_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=8 end=26 length=19
+SRGGGGGGFHRRGGGGGRG
+>P23246|ensembl_protein_id=ENSP00000349748|entry=SFPQ_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=57 end=103 length=47
+KPPIPPPPPHQQQQQPPPQQPPPQQPPPHQPPPHPQPHQQQQPPPPP
+>P78362|ensembl_protein_id=ENSP00000349863|entry=SRPK2_HUMAN|source=pfam27|protein_name=SRSF method=SEG_strict start=20 end=47 length=28
+APLVPPPPPPPPPPPPPLPDPTPPEPEE
+>O75179|ensembl_protein_id=ENSP00000351416|entry=ANR17_HUMAN|source=pfam27|protein_name=Ankyrin method=SEG_strict start=87 end=115 length=29
+ESSSDSDNSGGGGGGGGGGGGGGGTSSNN
+>O75179|ensembl_protein_id=ENSP00000351416|entry=ANR17_HUMAN|source=pfam27|protein_name=Ankyrin method=SEG_strict start=112 end=133 length=22
+SSNNSEEEEDDDDEEEEVSEVE
+>Q6P2E9|ensembl_protein_id=ENSP00000351811|entry=EDC4_HUMAN|source=pfam27|protein_name=Enhancer method=SEG_strict start=610 end=628 length=19
+ASPSSSSSGSSSSSSSSSS
+>Q9NTZ6|ensembl_protein_id=ENSP00000352668|entry=RBM12_HUMAN|source=pfam27;pfam38|protein_name=RNA-binding method=SEG_strict start=204 end=233 length=30
+SIPPIPVPPPVPTLPPVPPVPPIPPVPSVP
+>Q9H7N4|ensembl_protein_id=ENSP00000353769|entry=SFR19_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=183 end=222 length=40
+GPAPPPAPSSASSSPSPSPSSSSPSPPPPPPPPAPPAPPA
+>Q9H7N4|ensembl_protein_id=ENSP00000353769|entry=SFR19_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=267 end=287 length=21
+PEEEEEEEEEEEEEEEDEEEE
+>Q9H7N4|ensembl_protein_id=ENSP00000353769|entry=SFR19_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=565 end=593 length=29
+HASSSARRRSRSRSRSRSTRRRSRSTDRR
+>Q9H7N4|ensembl_protein_id=ENSP00000353769|entry=SFR19_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=596 end=613 length=18
+GSRRSRSREKRRRRRRSA
+>Q9H7N4|ensembl_protein_id=ENSP00000353769|entry=SFR19_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=776 end=789 length=14
+GDRDRDRDRDRDRD
+>Q9H7N4|ensembl_protein_id=ENSP00000353769|entry=SFR19_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=813 end=827 length=15
+VSSGSGSSSSSSSCS
+>Q9H7N4|ensembl_protein_id=ENSP00000353769|entry=SFR19_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=1021 end=1038 length=18
+AEEEEEEEEEEEEEEEEE
+>Q8IWZ3|ensembl_protein_id=ENSP00000354085|entry=ANKH1_HUMAN|source=pfam27|protein_name=Ankyrin method=SEG_strict start=53 end=70 length=18
+ASGVGSSGGGGSGSGTGG
+>Q8IWZ3|ensembl_protein_id=ENSP00000354085|entry=ANKH1_HUMAN|source=pfam27|protein_name=Ankyrin method=SEG_strict start=1451 end=1472 length=22
+AKREKRKEKRKKKKEEQKRKQE
+>P49760|ensembl_protein_id=ENSP00000354856|entry=CLK2_HUMAN|source=pfam27|protein_name=Dual method=SEG_strict start=108 end=125 length=18
+YRSQRSSRRKHRRRRRRS
+>Q9NVH2|ensembl_protein_id=ENSP00000355961|entry=INT7_HUMAN|source=pfam27|protein_name=Integrator method=SEG_strict start=941 end=954 length=14
+LQQQQAQQPLQQQQ
+>Q9UPN6|ensembl_protein_id=ENSP00000356154|entry=SCAF8_HUMAN|source=pfam27|protein_name=SR-related method=SEG_strict start=687 end=711 length=25
+QPPPGFMPPPVPPPVVPPPTIPPVV
+>P12270|ensembl_protein_id=ENSP00000356448|entry=TPR_HUMAN|source=pfam27|protein_name=Nucleoprotein method=SEG_strict start=1960 end=1977 length=18
+GEHEDYEEDEEDDDDDED
+>Q08211|ensembl_protein_id=ENSP00000356520|entry=DHX9_HUMAN|source=pfam27;pfam38|protein_name=ATP-dependent method=SEG_strict start=1175 end=1201 length=27
+RGGSSYSGGGYGGGYSSGGYGSGGYGG
+>Q9Y3Y2|ensembl_protein_id=ENSP00000357683|entry=CHTOP_HUMAN|source=pfam27|protein_name=Chromatin method=SEG_strict start=171 end=203 length=33
+AMGRGGIGGRGRGMIGRGRGGFGGRGRGRGRGR
+>Q14152|ensembl_protein_id=ENSP00000358140|entry=EIF3A_HUMAN|source=pfam27|protein_name=Eukaryotic method=SEG_strict start=1259 end=1295 length=37
+WRDSSRRDDRDRDDRRRERDDRRDLRERRDLRDDRDR
+>Q5T481|ensembl_protein_id=ENSP00000358532|entry=RBM20_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=41 end=54 length=14
+MQQPPPPPQPPPPP
+>Q96IP4|ensembl_protein_id=ENSP00000358769|entry=TET5A_HUMAN|source=pfam27|protein_name=Terminal method=SEG_strict start=23 end=49 length=27
+LGGDFGGGDFGGGDFGGGDFGGGGSFG
+>A0A0A0MRM9|ensembl_protein_id=ENSP00000359024|entry=A0A0A0MRM9_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=214 end=228 length=15
+ASSSSSSSSSSSSDD
+>A0A0A0MRM9|ensembl_protein_id=ENSP00000359024|entry=A0A0A0MRM9_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=328 end=344 length=17
+VESSEDSSDESDSSSEE
+>A0A0A0MRM9|ensembl_protein_id=ENSP00000359024|entry=A0A0A0MRM9_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=368 end=383 length=16
+AESSSDSSDSDSSEDD
+>A0A0A0MRM9|ensembl_protein_id=ENSP00000359024|entry=A0A0A0MRM9_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=431 end=444 length=14
+DSSSSEEESSSSEE
+>A0A0A0MRM9|ensembl_protein_id=ENSP00000359024|entry=A0A0A0MRM9_HUMAN|source=pfam27|protein_name=Nucleolar method=SEG_strict start=476 end=491 length=16
+RDSSSDSDSSSSEEEE
+>X6R7H2|ensembl_protein_id=ENSP00000359029|entry=X6R7H2_HUMAN|source=pfam27|protein_name=Peroxisome method=SEG_strict start=407 end=423 length=17
+ASSSSSSSSSSSRSRSR
+>X6R7H2|ensembl_protein_id=ENSP00000359029|entry=X6R7H2_HUMAN|source=pfam27|protein_name=Peroxisome method=SEG_strict start=432 end=483 length=52
+WRRSSCSSSGRSRRCSSSSSSSSSSSSSSSSSSSSRSRSRSPSPRRRSDRRR
+>Q5VTL8|ensembl_protein_id=ENSP00000359042|entry=PR38B_HUMAN|source=pfam27|protein_name=Pre-mRNA-splicing method=SEG_strict start=325 end=342 length=18
+LERRRSRSRERHRSRSRS
+>O75607|ensembl_protein_id=ENSP00000359128|entry=NPM3_HUMAN|source=pfam27|protein_name=Nucleoplasmin-3 method=SEG_strict start=144 end=163 length=20
+NDVSEEESEEEEEDSDEEEV
+>Q9UKA9|ensembl_protein_id=ENSP00000359217|entry=PTBP2_HUMAN|source=pfam27|protein_name=Polypyrimidine method=SEG_strict start=314 end=323 length=10
+NAAAAAAAAA
+>Q06787|ensembl_protein_id=ENSP00000359506|entry=FMR1_HUMAN|source=pfam27|protein_name=Fragile method=SEG_strict start=526 end=548 length=23
+LRRGDGRRRGGGGRGQGGRGRGG
+>Q8NC51|ensembl_protein_id=ENSP00000360029|entry=SERB1_HUMAN|source=pfam27|protein_name=SERPINE1 method=SEG_strict start=162 end=183 length=22
+IRGRGGLGRGRGGRGRGMGRGD
+>Q8NC51|ensembl_protein_id=ENSP00000360029|entry=SERB1_HUMAN|source=pfam27|protein_name=SERPINE1 method=SEG_strict start=362 end=384 length=23
+LGRPGRGGRGGRGGRGRGGRPNR
+>P46100|ensembl_protein_id=ENSP00000362441|entry=ATRX_HUMAN|source=pfam38|protein_name=Chromatin method=SEG_strict start=1433 end=1470 length=38
+DSSSENKSNSEEEEEEKEEEEEEEEEEEEEEEDENDDS
+>Q08170|ensembl_protein_id=ENSP00000362900|entry=SRSF4_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=178 end=207 length=30
+GSRRRRSYSRSRSHSRSRSRSRHSRKSRSR
+>Q6BEB4|ensembl_protein_id=ENSP00000364430|entry=SP5_HUMAN|source=pfam38|protein_name=Transcription method=SEG_strict start=223 end=234 length=12
+PASAAAAAAAAA
+>Q96T58|ensembl_protein_id=ENSP00000364912|entry=MINT_HUMAN|source=pfam27|protein_name=Msx2-interacting method=SEG_strict start=266 end=308 length=43
+TRSPSGSGSRSRSSSSDSISSSSSTSSDSSDSSSSSSDDSPAR
+>Q5VYS8|ensembl_protein_id=ENSP00000365130|entry=TUT7_HUMAN|source=pfam27|protein_name=Terminal method=SEG_strict start=844 end=858 length=15
+SDEEEEDDEEEEEEE
+>P05388|ensembl_protein_id=ENSP00000366471|entry=RLA0_HUMAN|source=pfam27|protein_name=Large method=SEG_strict start=275 end=295 length=21
+FVAAAPVAAATTAAPAAAAAP
+>O60293|ensembl_protein_id=ENSP00000368017|entry=ZC3H1_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=62 end=78 length=17
+RGGGSGGGGGSSSSSSS
+>O60293|ensembl_protein_id=ENSP00000368017|entry=ZC3H1_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=591 end=609 length=19
+SLEPLPPLPPLPPLPPEDP
+>Q9BX46|ensembl_protein_id=ENSP00000368341|entry=RBM24_HUMAN|source=pfam38|protein_name=RNA-binding method=SEG_strict start=154 end=179 length=26
+GAAYAQYSAAAAAAAAAAAYDQYPYA
+>Q9BX46|ensembl_protein_id=ENSP00000368341|entry=RBM24_HUMAN|source=pfam38|protein_name=RNA-binding method=SEG_strict start=202 end=220 length=19
+TAAAPGTAAAAAAAAAAAA
+>Q01081|ensembl_protein_id=ENSP00000369629|entry=U2AF1_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=201 end=229 length=29
+ERRSRSRDRGRGGGGGGGGGGGGRERDRR
+>Q9NWH9|ensembl_protein_id=ENSP00000369887|entry=SLTM_HUMAN|source=pfam27|protein_name=SAFB-like method=SEG_strict start=638 end=658 length=21
+AERERRERERIRIIREREERE
+>Q16594|ensembl_protein_id=ENSP00000370193|entry=TAF9_HUMAN|source=pfam27|protein_name=Transcription method=SEG_strict start=249 end=261 length=13
+EDDDDDDDDDDDY
+>P62995|ensembl_protein_id=ENSP00000371626|entry=TRA2B_HUMAN|source=pfam27|protein_name=Transformer-2 method=SEG_strict start=42 end=65 length=24
+DSRRSRSKSRSRSESRSRSRRSSR
+>P62995|ensembl_protein_id=ENSP00000371626|entry=TRA2B_HUMAN|source=pfam27|protein_name=Transformer-2 method=SEG_strict start=69 end=87 length=19
+TRSRSRSRSHRRSRSRSYS
+>A0A5K1VW79|ensembl_protein_id=ENSP00000371838|entry=A0A5K1VW79_HUMAN|source=pfam27|protein_name=Cytoplasmic method=SEG_strict start=349 end=368 length=20
+HPGGGGGGGGGGPPGGGGGG
+>A0A5K1VW79|ensembl_protein_id=ENSP00000371838|entry=A0A5K1VW79_HUMAN|source=pfam27|protein_name=Cytoplasmic method=SEG_strict start=389 end=419 length=31
+SPPPQPQQPPPTQPQQQPPPPQQPPQPQPQP
+>A0A5K1VW79|ensembl_protein_id=ENSP00000371838|entry=A0A5K1VW79_HUMAN|source=pfam27|protein_name=Cytoplasmic method=SEG_strict start=507 end=521 length=15
+IPQQQPPPPAAPQQP
+>A0A140T8Y2|ensembl_protein_id=ENSP00000372942|entry=A0A140T8Y2_HUMAN|source=pfam27|protein_name=Guanine method=SEG_strict start=351 end=369 length=19
+DEEEEEEEELSSSCEEEGE
+>Q53F19|ensembl_protein_id=ENSP00000373657|entry=NCBP3_HUMAN|source=pfam27|protein_name=Nuclear method=SEG_strict start=339 end=358 length=20
+PEEPIEEEEEEEEEEEEEEE
+>Q96L91|ensembl_protein_id=ENSP00000374212|entry=EP400_HUMAN|source=pfam38|protein_name=E1A-binding method=SEG_strict start=425 end=436 length=12
+IEEEEEEEEEEE
+>Q96L91|ensembl_protein_id=ENSP00000374212|entry=EP400_HUMAN|source=pfam38|protein_name=E1A-binding method=SEG_strict start=2534 end=2566 length=33
+KAQQPAVAQPPPPQPQPPPPPQQPPPPLPQPQA
+>Q96L91|ensembl_protein_id=ENSP00000374212|entry=EP400_HUMAN|source=pfam38|protein_name=E1A-binding method=SEG_strict start=2755 end=2783 length=29
+RQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+>Q7Z6M4|ensembl_protein_id=ENSP00000375840|entry=MTEF4_HUMAN|source=pfam27|protein_name=Transcription method=SEG_strict start=339 end=380 length=42
+LDEDEDDDDEEDNDEDDNDEDDDDEDDDEAEDNDEDEDDDEE
+>Q9BUJ2|ensembl_protein_id=ENSP00000375863|entry=HNRL1_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=611 end=625 length=15
+NRGGGGFRGRGGGGG
+>Q9BUJ2|ensembl_protein_id=ENSP00000375863|entry=HNRL1_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=691 end=714 length=24
+APQQQPPPQQPPPPQPPPQQPPPP
+>Q9NYF8|ensembl_protein_id=ENSP00000376159|entry=BCLF1_HUMAN|source=pfam27|protein_name=Bcl-2-associated method=SEG_strict start=5 end=30 length=26
+NSRSHSSRSKSRSQSSSRSRSRSHSR
+>Q9NYF8|ensembl_protein_id=ENSP00000376159|entry=BCLF1_HUMAN|source=pfam27|protein_name=Bcl-2-associated method=SEG_strict start=120 end=150 length=31
+VSSQRSRSRSRRSYRSSRSPRSSSSRSSSPY
+>Q9NYF8|ensembl_protein_id=ENSP00000376159|entry=BCLF1_HUMAN|source=pfam27|protein_name=Bcl-2-associated method=SEG_strict start=748 end=763 length=16
+HSRSSSSSASPSSPSS
+>Q66PJ3|ensembl_protein_id=ENSP00000376230|entry=AR6P4_HUMAN|source=pfam27|protein_name=ADP-ribosylation method=SEG_strict start=73 end=97 length=25
+RSSSSSSSSSSSSSSSSSSSSSSSS
+>Q66PJ3|ensembl_protein_id=ENSP00000376230|entry=AR6P4_HUMAN|source=pfam27|protein_name=ADP-ribosylation method=SEG_strict start=100 end=127 length=28
+GRKKRGKYKDKRRKKKKKRKKLKKKGKE
+>Q13595|ensembl_protein_id=ENSP00000376290|entry=TRA2A_HUMAN|source=pfam27|protein_name=Transformer-2 method=SEG_strict start=215 end=230 length=16
+SGGGGGGGGGGGGGGG
+>Q9UIF8|ensembl_protein_id=ENSP00000376533|entry=BAZ2B_HUMAN|source=pfam27|protein_name=Bromodomain method=SEG_strict start=602 end=633 length=32
+KDSEDSNEDEEEDDEEEDEEDDEDDESDDSQS
+>Q9UIF8|ensembl_protein_id=ENSP00000376533|entry=BAZ2B_HUMAN|source=pfam27|protein_name=Bromodomain method=SEG_strict start=1293 end=1319 length=27
+KGGDSDYDDDDDDDSDDQGDEDDEDEE
+>J3KPP4|ensembl_protein_id=ENSP00000376919|entry=J3KPP4_HUMAN|source=pfam27|protein_name=Luc7-like method=SEG_strict start=247 end=282 length=36
+LKKEKQEREEREKEREREREERERKRRREEEEREKE
+>J3KPP4|ensembl_protein_id=ENSP00000376919|entry=J3KPP4_HUMAN|source=pfam27|protein_name=Luc7-like method=SEG_strict start=315 end=338 length=24
+KRSRSRERRRSRSRDRRRSRSHDR
+>O14647|ensembl_protein_id=ENSP00000377747|entry=CHD2_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=50 end=69 length=20
+GSESNSSSESSESQSESESE
+>P35269|ensembl_protein_id=ENSP00000377969|entry=T2FA_HUMAN|source=pfam27|protein_name=General method=SEG_strict start=308 end=327 length=20
+SEESEEEKPPEEDKEEEEEK
+>Q5T760|ensembl_protein_id=ENSP00000378568|entry=Q5T760_HUMAN|source=pfam27|protein_name=Serine method=SEG_strict start=11 end=30 length=20
+AGPGPSGGPGGGGGGGGGGG
+>Q5T760|ensembl_protein_id=ENSP00000378568|entry=Q5T760_HUMAN|source=pfam27|protein_name=Serine method=SEG_strict start=245 end=258 length=14
+KRRHSRSRSRSRRR
+>Q5T760|ensembl_protein_id=ENSP00000378568|entry=Q5T760_HUMAN|source=pfam27|protein_name=Serine method=SEG_strict start=261 end=288 length=28
+PSSSRHRRSRSRSRRRSHSKSRSRRRSK
+>P51825|ensembl_protein_id=ENSP00000378578|entry=AFF1_HUMAN|source=pfam27|protein_name=AF4/FMR2 method=SEG_strict start=469 end=493 length=25
+AESESTSDSDSSSDSESESSSSDSE
+>Q99613|ensembl_protein_id=ENSP00000378953|entry=EIF3C_HUMAN|source=pfam27|protein_name=Eukaryotic method=SEG_strict start=215 end=229 length=15
+MDDEDEDSEDSEDDE
+>Q96QR8|ensembl_protein_id=ENSP00000379051|entry=PURB_HUMAN|source=pfam27|protein_name=Transcriptional method=SEG_strict start=200 end=213 length=14
+LAGGPGGGAGGPGG
+>P50914|ensembl_protein_id=ENSP00000379506|entry=RL14_HUMAN|source=pfam27|protein_name=Large method=SEG_strict start=142 end=164 length=23
+KAPGTKGTAAAAAAAAAAKVPAK
+>Q52LJ0|ensembl_protein_id=ENSP00000380734|entry=FA98B_HUMAN|source=pfam27|protein_name=tRNA-splicing method=SEG_strict start=330 end=385 length=56
+EGGGGRGGWGGGGGGGGRGGGGGGGGRGGWGGGGGGWGGGGGGGGGWGGGGGGGRG
+>Q52LJ0|ensembl_protein_id=ENSP00000380734|entry=FA98B_HUMAN|source=pfam27|protein_name=tRNA-splicing method=SEG_strict start=388 end=411 length=24
+QGRGDYGGRGGYGGRGGYGGRGYG
+>Q52LJ0|ensembl_protein_id=ENSP00000380734|entry=FA98B_HUMAN|source=pfam27|protein_name=tRNA-splicing method=SEG_strict start=402 end=432 length=31
+RGGYGGRGYGDPYGGGGGGGGGGGGGGGYRR
+>Q92945|ensembl_protein_id=ENSP00000381216|entry=FUBP2_HUMAN|source=pfam27|protein_name=Far method=SEG_strict start=6 end=37 length=32
+TGGPPPGPPPPAGGGGGAGGAGGGPPPGPPGA
+>Q92945|ensembl_protein_id=ENSP00000381216|entry=FUBP2_HUMAN|source=pfam27|protein_name=Far method=SEG_strict start=31 end=57 length=27
+PPGPPGAGDRGGGGPGGGGPGGGSAGG
+>Q92945|ensembl_protein_id=ENSP00000381216|entry=FUBP2_HUMAN|source=pfam27|protein_name=Far method=SEG_strict start=395 end=415 length=21
+SGPPGPPGGPGMPPGGRGRGR
+>Q3L8U1|ensembl_protein_id=ENSP00000381522|entry=CHD9_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=2133 end=2197 length=65
+DSDSDSERSSCSSRSSSSSSSSSCSHSRSGSSSSSSSSCSSASSSSSSSTSSSSSSSSSSSEESD
+>Q6P6C2|ensembl_protein_id=ENSP00000382091|entry=ALKB5_HUMAN|source=pfam27|protein_name=RNA method=SEG_strict start=29 end=47 length=19
+EAAAAAAAAVAAAAAAAAA
+>Q86XN8|ensembl_protein_id=ENSP00000384398|entry=MEX3D_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=9 end=24 length=16
+DGGGGGGGGGGGVGAA
+>Q86XN8|ensembl_protein_id=ENSP00000384398|entry=MEX3D_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=80 end=97 length=18
+EGAAGDGAAAAGGADGGA
+>Q12906|ensembl_protein_id=ENSP00000384660|entry=ILF3_HUMAN|source=pfam27|protein_name=Interleukin method=SEG_strict start=692 end=718 length=27
+NGGHSGNASGGGGGGGGGSSGYGSYYQ
+>Q12906|ensembl_protein_id=ENSP00000384660|entry=ILF3_HUMAN|source=pfam27|protein_name=Interleukin method=SEG_strict start=830 end=845 length=16
+PGSHGGYGGGSGGGSS
+>Q9UPQ9|ensembl_protein_id=ENSP00000384795|entry=TNR6B_HUMAN|source=pfam27|protein_name=Trinucleotide method=SEG_strict start=820 end=833 length=14
+HQQQQPPQQPPPPQ
+>Q9UPQ9|ensembl_protein_id=ENSP00000384795|entry=TNR6B_HUMAN|source=pfam27|protein_name=Trinucleotide method=SEG_strict start=1276 end=1297 length=22
+PQFQLACQLLLQQQQQQQLLQN
+>Q5U5Q3|ensembl_protein_id=ENSP00000385610|entry=MEX3C_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=6 end=34 length=29
+SAALALAAAPAPLPQPPPPPPPPPPPLPP
+>B5MCU0|ensembl_protein_id=ENSP00000385839|entry=B5MCU0_HUMAN|source=pfam27|protein_name=R3H method=SEG_strict start=417 end=426 length=10
+AQQQQQQQQQ
+>A0A7N4I394|ensembl_protein_id=ENSP00000386458|entry=A0A7N4I394_HUMAN|source=pfam27|protein_name=Pre-mRNA-processing method=SEG_strict start=308 end=334 length=27
+MAAAEAAAAVVAAAAAAAAAAAAANAN
+>Q9Y4B4|ensembl_protein_id=ENSP00000386520|entry=ARIP4_HUMAN|source=pfam38|protein_name=Helicase method=SEG_strict start=15 end=34 length=20
+PDVELEDAEEEEEEEEVAVE
+>B8ZZ98|ensembl_protein_id=ENSP00000386608|entry=B8ZZ98_HUMAN|source=pfam38|protein_name=U4/U6.U5 method=SEG_strict start=2 end=17 length=16
+GRSRSRSPRRERRRSR
+>B8ZZ98|ensembl_protein_id=ENSP00000386608|entry=B8ZZ98_HUMAN|source=pfam38|protein_name=U4/U6.U5 method=SEG_strict start=9 end=44 length=36
+PRRERRRSRSTSRERERRRRERSRSRERDRRRSRSR
+>B8ZZ98|ensembl_protein_id=ENSP00000386608|entry=B8ZZ98_HUMAN|source=pfam38|protein_name=U4/U6.U5 method=SEG_strict start=37 end=58 length=22
+DRRRSRSRSPHRRRSRSPRRHR
+>C9JAB2|ensembl_protein_id=ENSP00000386806|entry=C9JAB2_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=120 end=141 length=22
+HRYSRRRRSRSRSRSHSRSRGR
+>E7ETU5|ensembl_protein_id=ENSP00000387280|entry=E7ETU5_HUMAN|source=pfam27|protein_name=RNA method=SEG_strict start=3 end=20 length=18
+PPSPSTTSSNNNSSSSSN
+>Q16630|ensembl_protein_id=ENSP00000391774|entry=CPSF6_HUMAN|source=pfam27|protein_name=Cleavage method=SEG_strict start=235 end=262 length=28
+TPPRPPLGPPGPPGPPGPPPPGQVLPPP
+>Q16630|ensembl_protein_id=ENSP00000391774|entry=CPSF6_HUMAN|source=pfam27|protein_name=Cleavage method=SEG_strict start=286 end=301 length=16
+QPPLGPLPPGPPPPVP
+>Q16630|ensembl_protein_id=ENSP00000391774|entry=CPSF6_HUMAN|source=pfam27|protein_name=Cleavage method=SEG_strict start=289 end=311 length=23
+LGPLPPGPPPPVPGYGPPPGPPP
+>Q16630|ensembl_protein_id=ENSP00000391774|entry=CPSF6_HUMAN|source=pfam27|protein_name=Cleavage method=SEG_strict start=300 end=333 length=34
+VPGYGPPPGPPPPQQGPPPPPGPFPPRPPGPLGP
+>Q16630|ensembl_protein_id=ENSP00000391774|entry=CPSF6_HUMAN|source=pfam27|protein_name=Cleavage method=SEG_strict start=525 end=548 length=24
+SRERERHRDRDRDRDRERDREREY
+>O00571|ensembl_protein_id=ENSP00000392494|entry=DDX3X_HUMAN|source=pfam27|protein_name=ATP-dependent method=SEG_strict start=604 end=623 length=20
+QSSGASSSSFSSSRASSSRS
+>Q5GAN6|ensembl_protein_id=ENSP00000392996|entry=RNS10_HUMAN|source=pfam27|protein_name=Inactive method=SEG_strict start=10 end=26 length=17
+FMLLMLLLGLGMGLGLG
+>Q00839|ensembl_protein_id=ENSP00000393151|entry=HNRPU_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=76 end=94 length=19
+QEAAAGGDEEEEEEEEEEE
+>Q00839|ensembl_protein_id=ENSP00000393151|entry=HNRPU_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=160 end=175 length=16
+EQQPQPPATQQQQPQQ
+>Q15637|ensembl_protein_id=ENSP00000396793|entry=SF01_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=467 end=484 length=18
+KGMMPPPPMGMMPPPPPP
+>Q15637|ensembl_protein_id=ENSP00000396793|entry=SF01_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=478 end=498 length=21
+MPPPPPPPSGQPPPPPSGPLP
+>Q15637|ensembl_protein_id=ENSP00000396793|entry=SF01_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=495 end=512 length=18
+GPLPPWQQQQQQPPPPPP
+>Q15637|ensembl_protein_id=ENSP00000396793|entry=SF01_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=574 end=589 length=16
+QPPLPPGAPPPPPPPP
+>Q8NE35|ensembl_protein_id=ENSP00000398310|entry=CPEB3_HUMAN|source=pfam27|protein_name=Cytoplasmic method=SEG_strict start=12 end=27 length=16
+TQPQPQQQQRQQQQPQ
+>Q8NE35|ensembl_protein_id=ENSP00000398310|entry=CPEB3_HUMAN|source=pfam27|protein_name=Cytoplasmic method=SEG_strict start=163 end=188 length=26
+HQQPPPPAPAPQPAQPAQPPQAQPPQ
+>Q8NE35|ensembl_protein_id=ENSP00000398310|entry=CPEB3_HUMAN|source=pfam27|protein_name=Cytoplasmic method=SEG_strict start=220 end=240 length=21
+PSSSSAVAAAAAAAAASSASS
+>Q5RKV6|ensembl_protein_id=ENSP00000398597|entry=EXOS6_HUMAN|source=pfam27|protein_name=Exosome method=SEG_strict start=156 end=171 length=16
+SALAAALTAAALALAD
+>Q6P158|ensembl_protein_id=ENSP00000405111|entry=DHX57_HUMAN|source=pfam38|protein_name=Putative method=SEG_strict start=34 end=48 length=15
+HGSGGGGGGGGGGGG
+>A0A0A0MSN9|ensembl_protein_id=ENSP00000407528|entry=A0A0A0MSN9_HUMAN|source=pfam27|protein_name=Negative method=SEG_strict start=190 end=237 length=48
+NRDRDRDRERDRDRDRDRDRERDRDRDRDRDRDRERDRDRERDRDRDR
+>P51991|ensembl_protein_id=ENSP00000408487|entry=ROA3_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=224 end=247 length=24
+MGRGGNFGGGGGNFGRGGNFGGRG
+>P51991|ensembl_protein_id=ENSP00000408487|entry=ROA3_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=237 end=266 length=30
+FGRGGNFGGRGGYGGGGGGSRGSYGGGDGG
+>P51991|ensembl_protein_id=ENSP00000408487|entry=ROA3_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=286 end=315 length=30
+RGGYGGGGPGYGNQGGGYGGGGGYDGYNEG
+>P51991|ensembl_protein_id=ENSP00000408487|entry=ROA3_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=354 end=374 length=21
+RSSGSPYGGGYGSGGGSGGYG
+>Q13428|ensembl_protein_id=ENSP00000409944|entry=TCOF_HUMAN|source=pfam27|protein_name=Treacle method=SEG_strict start=266 end=281 length=16
+PEEESESSEEGSESEE
+>Q13428|ensembl_protein_id=ENSP00000409944|entry=TCOF_HUMAN|source=pfam27|protein_name=Treacle method=SEG_strict start=335 end=351 length=17
+PEEDSESSSEESSDSEE
+>Q13428|ensembl_protein_id=ENSP00000409944|entry=TCOF_HUMAN|source=pfam27|protein_name=Treacle method=SEG_strict start=541 end=556 length=16
+WEEDSESSSEESSDSS
+>Q13428|ensembl_protein_id=ENSP00000409944|entry=TCOF_HUMAN|source=pfam27|protein_name=Treacle method=SEG_strict start=1140 end=1158 length=19
+PESSDDSEDSSDSSSGSEE
+>Q13428|ensembl_protein_id=ENSP00000409944|entry=TCOF_HUMAN|source=pfam27|protein_name=Treacle method=SEG_strict start=1436 end=1466 length=31
+PKSKKEKKKSDKRKKDKEKKEKKKKAKKAST
+>Q5QJE6|ensembl_protein_id=ENSP00000411010|entry=TDIF2_HUMAN|source=pfam27|protein_name=Deoxynucleotidyltransferase method=SEG_strict start=516 end=532 length=17
+IEEEKEEEEDEKSEEDS
+>Q8NE71|ensembl_protein_id=ENSP00000412553|entry=ABCF1_HUMAN|source=pfam27|protein_name=ATP-binding method=SEG_strict start=59 end=75 length=17
+LKEKEQQQQQQQQQQKK
+>Q8NE71|ensembl_protein_id=ENSP00000412553|entry=ABCF1_HUMAN|source=pfam27|protein_name=ATP-binding method=SEG_strict start=228 end=242 length=15
+SEEEGEGEEEEEEGG
+>Q8WUQ7|ensembl_protein_id=ENSP00000415078|entry=CATIN_HUMAN|source=pfam27|protein_name=Splicing method=SEG_strict start=32 end=62 length=31
+HGRRNRRRREDEGRRRRRRRSRERRSDSEEE
+>Q5QPL9|ensembl_protein_id=ENSP00000415973|entry=Q5QPL9_HUMAN|source=pfam27|protein_name=RALY method=SEG_strict start=204 end=236 length=33
+DGKKKGDGGGAGGGGGGGGSGGGGSGGGGGGGS
+>P54253|ensembl_protein_id=ENSP00000416360|entry=ATX1_HUMAN|source=pfam27|protein_name=Ataxin-1 method=SEG_strict start=196 end=225 length=30
+EQQQQQQQQQQQQHQHQQQQQQQQQQQQQQ
+>Q9UHC7|ensembl_protein_id=ENSP00000416369|entry=MKRN1_HUMAN|source=pfam27|protein_name=E3 method=SEG_strict start=39 end=53 length=15
+LGAGGGGGGSDGSGG
+>A0A0C4DG89|ensembl_protein_id=ENSP00000416534|entry=A0A0C4DG89_HUMAN|source=pfam27;pfam38|protein_name=Probable method=SEG_strict start=68 end=105 length=38
+LRRSRSRERDRSRERRRSRSRDRRRSRSRSRGRRSRSS
+>C9JE40|ensembl_protein_id=ENSP00000416673|entry=PATL2_HUMAN|source=pfam27|protein_name=Protein method=SEG_strict start=25 end=50 length=26
+QLEKEEENEGEEEEEEEDEEDLDPDL
+>Q9H2U1|ensembl_protein_id=ENSP00000417078|entry=DHX36_HUMAN|source=pfam27|protein_name=ATP-dependent method=SEG_strict start=27 end=55 length=29
+AGGHGGNRGSGGGGGGGGGGRGGRGRHPG
+>Q86TG7|ensembl_protein_id=ENSP00000417587|entry=PEG10_HUMAN|source=pfam27|protein_name=Retrotransposon-derived method=SEG_strict start=680 end=702 length=23
+RQPPVPQYPPPQPPPPPPPPPPP
+>Q5T7N2|ensembl_protein_id=ENSP00000419901|entry=LITD1_HUMAN|source=pfam27|protein_name=LINE-1 method=SEG_strict start=403 end=419 length=17
+LEEEEEEPSGLEEEEEE
+>C9JP00|ensembl_protein_id=ENSP00000420327|entry=C9JP00_HUMAN|source=pfam27|protein_name=Muscleblind method=SEG_strict start=255 end=272 length=18
+NQAAAAQAAATAAAMTQS
+>D6R9W6|ensembl_protein_id=ENSP00000422850|entry=D6R9W6_HUMAN|source=pfam27|protein_name=La method=SEG_strict start=148 end=163 length=16
+FRGRGRGRGRGRGRGR
+>F6VAP0|ensembl_protein_id=ENSP00000423243|entry=F6VAP0_HUMAN|source=pfam27|protein_name=RNA method=SEG_strict start=448 end=463 length=16
+PASAAAAAAAAAAAAA
+>Q9NP92|ensembl_protein_id=ENSP00000424328|entry=RT30_HUMAN|source=pfam27|protein_name=Large method=SEG_strict start=118 end=135 length=18
+LPPPPAEPEPEPEPEPEP
+>Q99729|ensembl_protein_id=ENSP00000425031|entry=ROAA_HUMAN|source=pfam27|protein_name=Heterogeneous method=SEG_strict start=242 end=262 length=21
+SGGRGNRNRGNRGSGGGGGGG
+>P49756|ensembl_protein_id=ENSP00000431150|entry=RBM25_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=305 end=346 length=42
+IEKERRERERERERERERREREREREREREREKEKERERERE
+>P49756|ensembl_protein_id=ENSP00000431150|entry=RBM25_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=355 end=372 length=18
+KERDRDRDRERDRDRDRE
+>P49756|ensembl_protein_id=ENSP00000431150|entry=RBM25_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=390 end=425 length=36
+DRERERERERERERERERERERERERERERERERER
+>P49756|ensembl_protein_id=ENSP00000431150|entry=RBM25_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=577 end=599 length=23
+IKQEPESEEEEEEKQEKEEKREE
+>E9PIF2|ensembl_protein_id=ENSP00000432032|entry=E9PIF2_HUMAN|source=pfam27|protein_name=ATP-dependent method=SEG_strict start=579 end=593 length=15
+NEEQEEEEDDEEEME
+>A1L020|ensembl_protein_id=ENSP00000432845|entry=MEX3A_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=68 end=100 length=33
+GAPAQPAAPPQPAPPPPPAAPPAAPTAAPAAQT
+>A1L020|ensembl_protein_id=ENSP00000432845|entry=MEX3A_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=405 end=415 length=11
+FSSASSSSSSS
+>E9PMM9|ensembl_protein_id=ENSP00000433034|entry=E9PMM9_HUMAN|source=pfam27|protein_name=Small method=SEG_strict start=29 end=52 length=24
+FGSGIRGRGRGRGRGRGRGRGARG
+>Q9Y2W1|ensembl_protein_id=ENSP00000433825|entry=TR150_HUMAN|source=pfam27|protein_name=Thyroid method=SEG_strict start=6 end=27 length=22
+KSKSGSRSSRSRSASRSRSRSF
+>Q9Y2W1|ensembl_protein_id=ENSP00000433825|entry=TR150_HUMAN|source=pfam27|protein_name=Thyroid method=SEG_strict start=145 end=167 length=23
+NSDKSSSDRSRRSSSSRSSSNHS
+>H0YDK8|ensembl_protein_id=ENSP00000433850|entry=H0YDK8_HUMAN|source=pfam27|protein_name=Pumilio method=SEG_strict start=301 end=322 length=22
+ISSSAAQAAVAAAAASANGAAG
+>P51513|ensembl_protein_id=ENSP00000438875|entry=NOVA1_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=343 end=362 length=20
+GALAAAAASANPAAAAANLL
+>A0A0C4DGG8|ensembl_protein_id=ENSP00000439252|entry=A0A0C4DGG8_HUMAN|source=pfam27|protein_name=Cell method=SEG_strict start=62 end=87 length=26
+QLTQTAALQQQAAAAAAALQQLQQPQ
+>A0A0C4DGG8|ensembl_protein_id=ENSP00000439252|entry=A0A0C4DGG8_HUMAN|source=pfam27|protein_name=Cell method=SEG_strict start=302 end=317 length=16
+DRSRERERERRRSRER
+>Q8IWX8|ensembl_protein_id=ENSP00000439856|entry=CHERP_HUMAN|source=pfam27|protein_name=Calcium method=SEG_strict start=329 end=342 length=14
+AQQQQQQQQQQQQL
+>Q8IWX8|ensembl_protein_id=ENSP00000439856|entry=CHERP_HUMAN|source=pfam27|protein_name=Calcium method=SEG_strict start=352 end=373 length=22
+KATPPPPAPPPAPAPAPAIPPT
+>Q8IWX8|ensembl_protein_id=ENSP00000439856|entry=CHERP_HUMAN|source=pfam27|protein_name=Calcium method=SEG_strict start=762 end=803 length=42
+GSYSRSRSRSCSRSYSRSRSRSRSRSRSSRSRSRSQSRSRSK
+>Q15233|ensembl_protein_id=ENSP00000441364|entry=NONO_HUMAN|source=pfam27|protein_name=Non-POU method=SEG_strict start=18 end=39 length=22
+KHHQHHHQQQHHQQQQQQPPPP
+>Q9Y4C8|ensembl_protein_id=ENSP00000442053|entry=RBM19_HUMAN|source=pfam27|protein_name=Probable method=SEG_strict start=713 end=724 length=12
+MEEEEEEEEEEE
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=676 end=728 length=53
+APTLPLPPPPGFPPLPPPPPPPPPQPGFPMPPPLPPPPPPPPPAHPAVTVPPP
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=725 end=739 length=15
+VPPPPLPAPPGVPPP
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1039 end=1064 length=26
+ESLSASSSSSASSSSGSSTTSPSSSA
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1067 end=1086 length=20
+KEEEQESTEEEEEAEEEEEE
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1093 end=1120 length=28
+LSSSSTSSTSDKDDDDDDSDDRDESEND
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1153 end=1179 length=27
+TSSSESSESSEFESSSESSPSSSEDEE
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1175 end=1198 length=24
+SEDEEEVVAREEEEEEEEEEMVAE
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1316 end=1340 length=25
+MLPLPLQPPLPPPRPPRPPSPPPEP
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1471 end=1487 length=17
+GLPLPLPLPLPLPLALP
+>Q9UPS6|ensembl_protein_id=ENSP00000442924|entry=SET1B_HUMAN|source=pfam27|protein_name=Histone-lysine method=SEG_strict start=1579 end=1600 length=22
+IPAPPPPLPPQPPPPPPPPPVE
+>P56270|ensembl_protein_id=ENSP00000443956|entry=MAZ_HUMAN|source=pfam27|protein_name=Myc-associated method=SEG_strict start=89 end=118 length=30
+LAAAQESAAAAAAAAAAAAAVAAAPPAPAA
+>P56270|ensembl_protein_id=ENSP00000443956|entry=MAZ_HUMAN|source=pfam27|protein_name=Myc-associated method=SEG_strict start=129 end=146 length=18
+QPPAPPPPPPPVSAPAAE
+>P56270|ensembl_protein_id=ENSP00000443956|entry=MAZ_HUMAN|source=pfam27|protein_name=Myc-associated method=SEG_strict start=242 end=265 length=24
+SGAGGGGGEAGAGGGAAAVAAGGV
+>P56270|ensembl_protein_id=ENSP00000443956|entry=MAZ_HUMAN|source=pfam27|protein_name=Myc-associated method=SEG_strict start=434 end=450 length=17
+MAAAAAAAAAAAAAAVA
+>Q7Z5Q1|ensembl_protein_id=ENSP00000443985|entry=CPEB2_HUMAN|source=pfam38|protein_name=Cytoplasmic method=SEG_strict start=70 end=84 length=15
+IPQQQPPPPAAPQQP
+>Q9NP64|ensembl_protein_id=ENSP00000444742|entry=ZCC17_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=223 end=239 length=17
+SKAAKKKKKKKKHKKKH
+>Q5JTH9|ensembl_protein_id=ENSP00000446184|entry=RRP12_HUMAN|source=pfam27|protein_name=RRP12-like method=SEG_strict start=1053 end=1063 length=11
+VEEEEEEEEEE
+>F8VU11|ensembl_protein_id=ENSP00000448073|entry=F8VU11_HUMAN|source=pfam27|protein_name=Pre-mRNA-processing method=SEG_strict start=15 end=32 length=18
+APFPPGPPMMPPPFMPPP
+>F8VU11|ensembl_protein_id=ENSP00000448073|entry=F8VU11_HUMAN|source=pfam27|protein_name=Pre-mRNA-processing method=SEG_strict start=212 end=229 length=18
+LQPQPPQPQPDPPPVPPG
+>Q13243|ensembl_protein_id=ENSP00000451391|entry=SRSF5_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=183 end=232 length=50
+HSRSRSRSRSRTRSSSRSRSRSRSRSRKSYSRSRSRSRSRSRSKSRSVSR
+>Q9HCK8|ensembl_protein_id=ENSP00000451601|entry=CHD8_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=2078 end=2093 length=16
+LSPSSSSSSSSSSSSS
+>Q9HCK8|ensembl_protein_id=ENSP00000451601|entry=CHD8_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=2492 end=2508 length=17
+LHHHHHHPHPHHHHHHH
+>Q9H6T0|ensembl_protein_id=ENSP00000454554|entry=ESRP2_HUMAN|source=pfam27|protein_name=Epithelial method=SEG_strict start=2 end=22 length=21
+TPPPPPPPPPGPDPAADPAAD
+>H3BPE7|ensembl_protein_id=ENSP00000455282|entry=H3BPE7_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=162 end=174 length=13
+NSSSGGGGGGGGG
+>H3BPE7|ensembl_protein_id=ENSP00000455282|entry=H3BPE7_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=212 end=237 length=26
+DRGGRGRGGSGGGGGGGGGGYNRSSG
+>H3BPE7|ensembl_protein_id=ENSP00000455282|entry=H3BPE7_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=236 end=260 length=25
+SGGYEPRGRGGGRGGRGGMGGSDRG
+>H3BPE7|ensembl_protein_id=ENSP00000455282|entry=H3BPE7_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=377 end=401 length=25
+NRGGGNGRGGRGRGGPMGRGGYGGG
+>H3BPE7|ensembl_protein_id=ENSP00000455282|entry=H3BPE7_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=389 end=419 length=31
+RGGPMGRGGYGGGGSGGGGRGGFPSGGGGGG
+>H3BPE7|ensembl_protein_id=ENSP00000455282|entry=H3BPE7_HUMAN|source=pfam27|protein_name=RNA-binding method=SEG_strict start=485 end=507 length=23
+YRGRGGDRGGFRGGRGGGDRGGF
+>J3QL05|ensembl_protein_id=ENSP00000463317|entry=J3QL05_HUMAN|source=pfam27|protein_name=Serine/arginine-rich method=SEG_strict start=100 end=129 length=30
+HSRRGPPPRSRSRSRSRSRSRSRSRYSRSK
+>Q9C0B9|ensembl_protein_id=ENSP00000464791|entry=ZCHC2_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=71 end=87 length=17
+VAGGAAAGAGMPGGGGG
+>Q15029|ensembl_protein_id=ENSP00000465058|entry=U5S1_HUMAN|source=pfam27|protein_name=116 method=SEG_strict start=31 end=50 length=20
+KDLDEMDDDDDDDDVGDHDD
+>K7EJB9|ensembl_protein_id=ENSP00000465105|entry=K7EJB9_HUMAN|source=pfam27|protein_name=Calreticulin method=SEG_strict start=308 end=339 length=32
+RKEEEEAEDKEDDEDKDEDEEDEEDKEEDEEE
+>D6W5Y5|ensembl_protein_id=ENSP00000465558|entry=D6W5Y5_HUMAN|source=pfam27;pfam38|protein_name=Cold-inducible method=SEG_strict start=98 end=118 length=21
+AGGRGFFRGGRGRGRGFSRGG
+>Q9UKJ3|ensembl_protein_id=ENSP00000467556|entry=GPTC8_HUMAN|source=pfam27;pfam38|protein_name=G method=SEG_strict start=670 end=691 length=22
+GKSHRHKKKKKHKKSSKHKRKH
+>O00267|ensembl_protein_id=ENSP00000469090|entry=SPT5H_HUMAN|source=pfam27|protein_name=Transcription method=SEG_strict start=36 end=63 length=28
+SEKEEEPEDEEEEEEEEEYDEEEEEEDD
+>M0QY97|ensembl_protein_id=ENSP00000469684|entry=M0QY97_HUMAN|source=pfam27|protein_name=Zinc method=SEG_strict start=226 end=250 length=25
+RPMQGGPPPPPPPPPPPPGPPQMPM
+>M0R1H0|ensembl_protein_id=ENSP00000471867|entry=M0R1H0_HUMAN|source=pfam27|protein_name=Fibrillarin method=SEG_strict start=7 end=50 length=44
+PRGGGFGGRGGFGDRGGRGGFRGRGRGGGGGGGGGGGGGRGGGG
+>Q9NW07|ensembl_protein_id=ENSP00000472305|entry=ZN358_HUMAN|source=pfam38|protein_name=Zinc method=SEG_strict start=399 end=415 length=17
+GAAAAAAAAAAAAAAAA
+>P08621|ensembl_protein_id=ENSP00000472998|entry=RU17_HUMAN|source=pfam27|protein_name=U1 method=SEG_strict start=250 end=269 length=20
+KERERRRSRSRDRRRRSRSR
+>P08621|ensembl_protein_id=ENSP00000472998|entry=RU17_HUMAN|source=pfam27|protein_name=U1 method=SEG_strict start=360 end=376 length=17
+SERERRRDRDRDRDRDR
+>A6NHQ2|ensembl_protein_id=ENSP00000473383|entry=FBLL1_HUMAN|source=pfam27|protein_name=RNA method=SEG_strict start=8 end=50 length=43
+RGGGGGGRGGGGWGSWGGGRGGGGGAGKGGGGDGGGQGGKGGF
+>A6NHQ2|ensembl_protein_id=ENSP00000473383|entry=FBLL1_HUMAN|source=pfam27|protein_name=RNA method=SEG_strict start=47 end=77 length=31
+KGGFGARARGFGGGGRGRGRGGGDGKDRGGG
+>A6NFI3|ensembl_protein_id=ENSP00000477706|entry=ZN316_HUMAN|source=pfam38|protein_name=Zinc method=SEG_strict start=27 end=49 length=23
+DQEEEEEEEEKGEEVQEVEEEEE
+>A6NFI3|ensembl_protein_id=ENSP00000477706|entry=ZN316_HUMAN|source=pfam38|protein_name=Zinc method=SEG_strict start=38 end=62 length=25
+GEEVQEVEEEEEEIVVEEEEEGVAE
+>A6NFI3|ensembl_protein_id=ENSP00000477706|entry=ZN316_HUMAN|source=pfam38|protein_name=Zinc method=SEG_strict start=130 end=149 length=20
+RDEDLEEEEEEEEDEDEDDL
+>A0A087WVF4|ensembl_protein_id=ENSP00000479403|entry=A0A087WVF4_HUMAN|source=pfam38|protein_name=Chromodomain method=SEG_strict start=19 end=57 length=39
+QSDDDSGSASGSGSGSSSGSSSDGSSSQSGSSDSDSGSE
+>A0A087WVF4|ensembl_protein_id=ENSP00000479403|entry=A0A087WVF4_HUMAN|source=pfam38|protein_name=Chromodomain method=SEG_strict start=121 end=137 length=17
+GSEEDSSSSEDSDDSSS
+>A0A0D9SF53|ensembl_protein_id=ENSP00000486306|entry=A0A0D9SF53_HUMAN|source=pfam38|protein_name=RNA method=SEG_strict start=604 end=623 length=20
+QSSGASSSSFSSSRASSSRS
+>A0A2R8Y4L2|ensembl_protein_id=ENSP00000493805|entry=RA1L3_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=302 end=316 length=15
+QGGYGGSSSSSSYGS
+>Q9HBD4|ensembl_protein_id=ENSP00000495368|entry=Q9HBD4_HUMAN|source=pfam38|protein_name=SWI/SNF method=SEG_strict start=228 end=246 length=19
+TGPGPGPGPGPGPGPGPAP
+>Q9HBD4|ensembl_protein_id=ENSP00000495368|entry=Q9HBD4_HUMAN|source=pfam38|protein_name=SWI/SNF method=SEG_strict start=571 end=592 length=22
+HKAAQVAKEKKKKKKKKKAENA
+>Q9HBD4|ensembl_protein_id=ENSP00000495368|entry=Q9HBD4_HUMAN|source=pfam38|protein_name=SWI/SNF method=SEG_strict start=656 end=671 length=16
+DSEESGSEEEEEEEEE
+>Q9HBD4|ensembl_protein_id=ENSP00000495368|entry=Q9HBD4_HUMAN|source=pfam38|protein_name=SWI/SNF method=SEG_strict start=1598 end=1621 length=24
+KEDDSEGEESEEEEEGEEEGSESE
+>Q14839|ensembl_protein_id=ENSP00000496634|entry=CHD4_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=219 end=236 length=18
+KGSSGASVAAAAAAAVAV
+>Q9ULG1|ensembl_protein_id=ENSP00000497609|entry=INO80_HUMAN|source=pfam38|protein_name=Chromatin-remodeling method=SEG_strict start=1453 end=1479 length=27
+TAGSAAAMAGAKAGAAAASAAAYAAYG
+>A0A8I5KSH6|ensembl_protein_id=ENSP00000509891|entry=A0A8I5KSH6_HUMAN|source=pfam38|protein_name=ATP-dependent method=SEG_strict start=629 end=643 length=15
+NEEQEEEEDDEEEME
+>A0A8V8TR54|ensembl_protein_id=ENSP00000515165|entry=A0A8V8TR54_HUMAN|source=pfam38|protein_name=Chromodomain method=SEG_strict start=7 end=26 length=20
+DEEEEEEEMVVSEEEEEEEE
+>A0A8V8TR54|ensembl_protein_id=ENSP00000515165|entry=A0A8V8TR54_HUMAN|source=pfam38|protein_name=Chromodomain method=SEG_strict start=18 end=40 length=23
+SEEEEEEEEEGDEEEEEEVEAAD
+>A0A8V8TR54|ensembl_protein_id=ENSP00000515165|entry=A0A8V8TR54_HUMAN|source=pfam38|protein_name=Chromodomain method=SEG_strict start=73 end=91 length=19
+FPPPPPPPPPLPPPPPPPP
+>A0A8V8TR54|ensembl_protein_id=ENSP00000515165|entry=A0A8V8TR54_HUMAN|source=pfam38|protein_name=Chromodomain method=SEG_strict start=264 end=286 length=23
+SAAAVAAAAAAAAAAVAEQVSAA
+>A0A8V8TR54|ensembl_protein_id=ENSP00000515165|entry=A0A8V8TR54_HUMAN|source=pfam38|protein_name=Chromodomain method=SEG_strict start=489 end=510 length=22
+WEAKEEEEEYEEEGEEEGEKEE
+>A0ABB0MN55|ensembl_protein_id=ENSP00000516066|entry=A0ABB0MN55_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=197 end=220 length=24
+YSGGGGGGSRSSRGGRGGRGRGGG
+>A0ABB0MN55|ensembl_protein_id=ENSP00000516066|entry=A0ABB0MN55_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=228 end=257 length=30
+KGGGGGYNSYGGYGGGGGGGYNAYGGGGGG
+>A0ABB0MN55|ensembl_protein_id=ENSP00000516066|entry=A0ABB0MN55_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=286 end=304 length=19
+KSGGGGGGGGSSWGGRSNS
+>A0ABB0MN55|ensembl_protein_id=ENSP00000516066|entry=A0ABB0MN55_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=303 end=320 length=18
+NSGPYRGGYGGGGGYGGS
+>A0ABB0MV08|ensembl_protein_id=ENSP00000520548|entry=A0ABB0MV08_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=272 end=292 length=21
+FGGSPGYGGGRGGYGGGGPGY
+>A0ACI8Q806|ensembl_protein_id=ENSP00000536991|entry=A0ACI8Q806_HUMAN|source=pfam38|protein_name=Splicing method=SEG_strict start=284 end=299 length=16
+SLPPPPPGGLPLPPMP
+>A0ACI8PX57|ensembl_protein_id=ENSP00000539612|entry=A0ACI8PX57_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=290 end=310 length=21
+YNNGGGGGFGGGSGSNFGGGG
+>A0ACI8PX57|ensembl_protein_id=ENSP00000539612|entry=A0ACI8PX57_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=359 end=374 length=16
+FSGGYGGSSSSSSYGS
+>A0ACI8QLY8|ensembl_protein_id=ENSP00000555178|entry=A0ACI8QLY8_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=29 end=45 length=17
+PAGAGTGAAAGAGGATA
+>A0ACI8QLY8|ensembl_protein_id=ENSP00000555178|entry=A0ACI8QLY8_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=231 end=251 length=21
+SGGRGNRNRGNRGSGGGGGGG
+>A0ACI8QUJ1|ensembl_protein_id=ENSP00000559174|entry=A0ACI8QUJ1_HUMAN|source=pfam38|protein_name=Epithelial method=SEG_strict start=2 end=22 length=21
+TPPPPPPPPPGPDPAADPAAD
+>A0ACI8RX58|ensembl_protein_id=ENSP00000566199|entry=A0ACI8RX58_HUMAN|source=pfam38|protein_name=Nucleolin method=SEG_strict start=142 end=168 length=27
+KEDSDEEEDDDSEEDEEDDEDEDEDED
+>A0ACI8RX58|ensembl_protein_id=ENSP00000566199|entry=A0ACI8RX58_HUMAN|source=pfam38|protein_name=Nucleolin method=SEG_strict start=184 end=204 length=21
+SEDEDDEDDEDDEDDDDDEED
+>A0ACI8RX58|ensembl_protein_id=ENSP00000566199|entry=A0ACI8RX58_HUMAN|source=pfam38|protein_name=Nucleolin method=SEG_strict start=273 end=310 length=38
+AEDEDEEEDDEDEDDDDDEDDEDDDDEDDEEEEEEEEE
+>A0ACI8RX58|ensembl_protein_id=ENSP00000566199|entry=A0ACI8RX58_HUMAN|source=pfam38|protein_name=Nucleolin method=SEG_strict start=690 end=737 length=48
+EGGFGGRGGGRGGFGGRGGGRGGRGGFGGRGRGGFGGRGGFRGGRGGG
+>A0ACI8RR28|ensembl_protein_id=ENSP00000569980|entry=A0ACI8RR28_HUMAN|source=pfam38|protein_name=La method=SEG_strict start=148 end=163 length=16
+FRGRGRGRGRGRGRGR
+>A0ACI8QY88|ensembl_protein_id=ENSP00000573927|entry=A0ACI8QY88_HUMAN|source=pfam38|protein_name=Cytoplasmic method=SEG_strict start=12 end=27 length=16
+TQPQPQQQQRQQQQPQ
+>A0ACI8QY88|ensembl_protein_id=ENSP00000573927|entry=A0ACI8QY88_HUMAN|source=pfam38|protein_name=Cytoplasmic method=SEG_strict start=163 end=188 length=26
+HQQPPPPAPAPQPAQPAQPPQAQPPQ
+>A0ACI8QY88|ensembl_protein_id=ENSP00000573927|entry=A0ACI8QY88_HUMAN|source=pfam38|protein_name=Cytoplasmic method=SEG_strict start=220 end=240 length=21
+PSSSSAVAAAAAAAAASSASS
+>A0ACI8T9E2|ensembl_protein_id=ENSP00000595223|entry=A0ACI8T9E2_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=202 end=218 length=17
+MGRGGNFGGGGGNFGRG
+>A0ACI8T9E2|ensembl_protein_id=ENSP00000595223|entry=A0ACI8T9E2_HUMAN|source=pfam38|protein_name=Heterogeneous method=SEG_strict start=215 end=232 length=18
+FGRGGYGSGGGSGGYGSR
+>A0ACI8TMU3|ensembl_protein_id=ENSP00000602450|entry=A0ACI8TMU3_HUMAN|source=pfam38|protein_name=DEAH-box method=SEG_strict start=27 end=55 length=29
+AGGHGGNRGSGGGGGGGGGGRGGRGRHPG
+>A0ACI8TSY6|ensembl_protein_id=ENSP00000605202|entry=A0ACI8TSY6_HUMAN|source=pfam38|protein_name=YTH method=SEG_strict start=13 end=30 length=18
+APGGGGGGGPSPCGPGGG
+>A0ACI8TXE9|ensembl_protein_id=ENSP00000606511|entry=A0ACI8TXE9_HUMAN|source=pfam38|protein_name=BLM method=SEG_strict start=551 end=565 length=15
+YDIDNFDIDDFDDDD
+>A0ACI8U1B9|ensembl_protein_id=ENSP00000608475|entry=A0ACI8U1B9_HUMAN|source=pfam38|protein_name=Interleukin method=SEG_strict start=700 end=726 length=27
+NGGHSGNASGGGGGGGGGSSGYGSYYQ
+>A0ACI8U1B9|ensembl_protein_id=ENSP00000608475|entry=A0ACI8U1B9_HUMAN|source=pfam38|protein_name=Interleukin method=SEG_strict start=838 end=853 length=16
+PGSHGGYGGGSGGGSS
+>A0ACI8UMC2|ensembl_protein_id=ENSP00000621520|entry=A0ACI8UMC2_HUMAN|source=pfam38|protein_name=VPS41 method=SEG_strict start=10 end=26 length=17
+GSLEESTDESEEEESEE
+>A0ACI8VCM9|ensembl_protein_id=ENSP00000633500|entry=A0ACI8VCM9_HUMAN|source=pfam38|protein_name=Zinc method=SEG_strict start=71 end=87 length=17
+VAGGAAAGAGMPGGGGG
+>A0ACI8VQD2|ensembl_protein_id=ENSP00000640467|entry=A0ACI8VQD2_HUMAN|source=pfam38|protein_name=RNA method=SEG_strict start=713 end=724 length=12
+MEEEEEEEEEEE
+>A0ACI8VSD4|ensembl_protein_id=ENSP00000641622|entry=A0ACI8VSD4_HUMAN|source=pfam38|protein_name=Decapping method=SEG_strict start=251 end=260 length=10
+HQQQQQQQQQ
+>O43251|ensembl_protein_id=ENSP00000262829|entry=RFOX2_HUMAN|source=rbpdb|protein_name=RNA method=SEG_strict start=333 end=347 length=15
+PATATAATAAAAAAA
+>P09651|ensembl_protein_id=ENSP00000341826|entry=ROA1_HUMAN|source=rbpdb|protein_name=Heterogeneous method=SEG_strict start=290 end=310 length=21
+YNNGGGGGFGGGSGSNFGGGG
+>P09651|ensembl_protein_id=ENSP00000341826|entry=ROA1_HUMAN|source=rbpdb|protein_name=Heterogeneous method=SEG_strict start=354 end=368 length=15
+QGGYGGSSSSSSYGS
+>P18615|ensembl_protein_id=ENSP00000364574|entry=NELFE_HUMAN|source=rbpdb|protein_name=Negative method=SEG_strict start=195 end=242 length=48
+NRDRDRDRERDRDRDRDRDRERDRDRDRDRDRDRERDRDRERDRDRDR
+>P22087|ensembl_protein_id=ENSP00000221801|entry=FBRL_HUMAN|source=modomics|protein_name=rRNA method=SEG_strict start=7 end=63 length=57
+PRGGGFGGRGGFGDRGGRGGRGGFGGGRGRGGGFRGRGRGGGGGGGGGGGGGRGGGG
+>P26651|ensembl_protein_id=ENSP00000469647|entry=TTP_HUMAN|source=rbpdb|protein_name=mRNA method=SEG_strict start=205 end=221 length=17
+GPSLSSSSFSPSSSPPP
+>P29558|ensembl_protein_id=ENSP00000294904|entry=RBMS1_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=36 end=53 length=18
+PPSPSTTSSNNNSSSSSN
+>P35637|ensembl_protein_id=ENSP00000254108|entry=FUS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=162 end=174 length=13
+NSSSGGGGGGGGG
+>P35637|ensembl_protein_id=ENSP00000254108|entry=FUS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=212 end=237 length=26
+DRGGRGRGGSGGGGGGGGGGYNRSSG
+>P35637|ensembl_protein_id=ENSP00000254108|entry=FUS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=236 end=260 length=25
+SGGYEPRGRGGGRGGRGGMGGSDRG
+>P35637|ensembl_protein_id=ENSP00000254108|entry=FUS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=376 end=400 length=25
+NRGGGNGRGGRGRGGPMGRGGYGGG
+>P35637|ensembl_protein_id=ENSP00000254108|entry=FUS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=388 end=418 length=31
+RGGPMGRGGYGGGGSGGGGRGGFPSGGGGGG
+>P35637|ensembl_protein_id=ENSP00000254108|entry=FUS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=484 end=506 length=23
+YRGRGGDRGGFRGGRGGGDRGGF
+>P84103|ensembl_protein_id=ENSP00000362820|entry=SRSF3_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=104 end=119 length=16
+YRRRSPPPRRRSPRRR
+>Q01130|ensembl_protein_id=ENSP00000353089|entry=SRSF2_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=116 end=151 length=36
+GRRSRSPRRRRRSRSRSRSRSRSRSRSRYSRSKSRS
+>Q01130|ensembl_protein_id=ENSP00000353089|entry=SRSF2_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=166 end=195 length=30
+ARRSKSKSSSVSRSRSRSRSRSRSRSPPPV
+>Q01844|ensembl_protein_id=ENSP00000327456|entry=EWS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=308 end=325 length=18
+DRGGMSRGGRGGGRGGMG
+>Q01844|ensembl_protein_id=ENSP00000327456|entry=EWS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=466 end=491 length=26
+MPPPLRGGPGGPGGPGGPMGRMGGRG
+>Q01844|ensembl_protein_id=ENSP00000327456|entry=EWS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=559 end=576 length=18
+PGGDRGRGGPGGMRGGRG
+>Q01844|ensembl_protein_id=ENSP00000327456|entry=EWS_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=587 end=603 length=17
+MFRGGRGGDRGGFRGGR
+>Q05519|ensembl_protein_id=ENSP00000359987|entry=SRS11_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=11 end=30 length=20
+AGPGPSGGPGGGGGGGGGGG
+>Q05519|ensembl_protein_id=ENSP00000359987|entry=SRS11_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=245 end=258 length=14
+KRRHSRSRSRSRRR
+>Q05519|ensembl_protein_id=ENSP00000359987|entry=SRS11_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=261 end=288 length=28
+PSSSRHRRSRSRSRRRSHSKSRSRRRSK
+>Q05519|ensembl_protein_id=ENSP00000359987|entry=SRS11_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=332 end=349 length=18
+TARRSRSASRERRRRRSR
+>Q14011|ensembl_protein_id=ENSP00000322887|entry=CIRBP_HUMAN|source=rbpdb|protein_name=Cold-inducible method=SEG_strict start=98 end=118 length=21
+AGGRGFFRGGRGRGRGFSRGG
+>Q14671|ensembl_protein_id=ENSP00000257075|entry=PUM1_HUMAN|source=rbpdb|protein_name=Pumilio method=SEG_strict start=589 end=610 length=22
+ISSSAAQAAVAAAAASANGAAG
+>Q15459|ensembl_protein_id=ENSP00000215793|entry=SF3A1_HUMAN|source=rbpdb|protein_name=Splicing method=SEG_strict start=253 end=267 length=15
+QERERKKEEEEKEKE
+>Q16629|ensembl_protein_id=ENSP00000325905|entry=SRSF7_HUMAN|source=rbpdb|protein_name=Serine/arginine-rich method=SEG_strict start=120 end=141 length=22
+HRYSRRRRSRSRSRSHSRSRGR
+>Q5VV67|ensembl_protein_id=ENSP00000278070|entry=PPRC1_HUMAN|source=rbpdb|protein_name=Peroxisome method=SEG_strict start=1440 end=1456 length=17
+ASSSSSSSSSSSRSRSR
+>Q5VV67|ensembl_protein_id=ENSP00000278070|entry=PPRC1_HUMAN|source=rbpdb|protein_name=Peroxisome method=SEG_strict start=1465 end=1516 length=52
+WRRSSCSSSGRSRRCSSSSSSSSSSSSSSSSSSSSRSRSRSPSPRRRSDRRR
+>Q659C4|ensembl_protein_id=ENSP00000321997|entry=LAR1B_HUMAN|source=rbpdb|protein_name=La-related method=SEG_strict start=148 end=163 length=16
+FRGRGRGRGRGRGRGR
+>Q69YN4|ensembl_protein_id=ENSP00000297591|entry=VIR_HUMAN|source=modomics|protein_name=Protein method=SEG_strict start=138 end=152 length=15
+SPPPPPPPPPPPQPQ
+>Q69YN4|ensembl_protein_id=ENSP00000297591|entry=VIR_HUMAN|source=modomics|protein_name=Protein method=SEG_strict start=245 end=266 length=22
+QEEGEEDEDDVDVEEEEDEDED
+>Q69YN4|ensembl_protein_id=ENSP00000297591|entry=VIR_HUMAN|source=modomics|protein_name=Protein method=SEG_strict start=275 end=296 length=22
+PEEEEEDEEEEGEEDEEGEGDD
+>Q7Z739|ensembl_protein_id=ENSP00000473496|entry=YTHD3_HUMAN|source=rbpdb;modomics|protein_name=YTH method=SEG_strict start=314 end=341 length=28
+VQSQLPQQQPQPPQPQQQQGPQPQAQPH
+>Q86VM9|ensembl_protein_id=ENSP00000301011|entry=ZCH18_HUMAN|source=rbpdb|protein_name=Zinc method=SEG_strict start=412 end=442 length=31
+NRQRERERERERDRERERRQRERERERERER
+>Q86VM9|ensembl_protein_id=ENSP00000301011|entry=ZCH18_HUMAN|source=rbpdb|protein_name=Zinc method=SEG_strict start=544 end=592 length=49
+TSASSASASNSSRSSSRSSSYSGSGSSRSRSRSSSYSSYSSRSSRHSSF
+>Q86VM9|ensembl_protein_id=ENSP00000301011|entry=ZCH18_HUMAN|source=rbpdb|protein_name=Zinc method=SEG_strict start=683 end=705 length=23
+TLSGSGSGSGSSYSGSSSRSRSL
+>Q86VM9|ensembl_protein_id=ENSP00000301011|entry=ZCH18_HUMAN|source=rbpdb|protein_name=Zinc method=SEG_strict start=695 end=714 length=20
+YSGSSSRSRSLSVSSVSSVS
+>Q86VM9|ensembl_protein_id=ENSP00000301011|entry=ZCH18_HUMAN|source=rbpdb|protein_name=Zinc method=SEG_strict start=703 end=725 length=23
+RSLSVSSVSSVSSATSSSSSAHS
+>Q8IX12|ensembl_protein_id=ENSP00000265872|entry=CCAR1_HUMAN|source=rbpdb|protein_name=Cell method=SEG_strict start=62 end=82 length=21
+QLTQTAALQQQAAAAAAALQQ
+>Q8IX12|ensembl_protein_id=ENSP00000265872|entry=CCAR1_HUMAN|source=rbpdb|protein_name=Cell method=SEG_strict start=317 end=332 length=16
+DRSRERERERRRSRER
+>Q8IYB3|ensembl_protein_id=ENSP00000326261|entry=SRRM1_HUMAN|source=rbpdb|protein_name=Serine/arginine method=SEG_strict start=309 end=330 length=22
+YSPRRRPSPRRRPSPRRRTPPR
+>Q8IYB3|ensembl_protein_id=ENSP00000326261|entry=SRRM1_HUMAN|source=rbpdb|protein_name=Serine/arginine method=SEG_strict start=346 end=368 length=23
+RRRRRSSASLSGSSSSSSSSRSR
+>Q8IYB3|ensembl_protein_id=ENSP00000326261|entry=SRRM1_HUMAN|source=rbpdb|protein_name=Serine/arginine method=SEG_strict start=564 end=594 length=31
+APPPRRRRTPTPPPRRRTPSPPPRRRSPSPR
+>Q8IYB3|ensembl_protein_id=ENSP00000326261|entry=SRRM1_HUMAN|source=rbpdb|protein_name=Serine/arginine method=SEG_strict start=808 end=832 length=25
+GKKKKKKKDKKHKKDKKHKKHKKHK
+>Q8IYB3|ensembl_protein_id=ENSP00000326261|entry=SRRM1_HUMAN|source=rbpdb|protein_name=Serine/arginine method=SEG_strict start=835 end=855 length=21
+KAVAAAAAAAVTPAAIAAATT
+>Q8N2M8|ensembl_protein_id=ENSP00000221455|entry=CLASR_HUMAN|source=rbpdb|protein_name=CLK4-associating method=SEG_strict start=338 end=347 length=10
+EAAAAAAAAA
+>Q8N2M8|ensembl_protein_id=ENSP00000221455|entry=CLASR_HUMAN|source=rbpdb|protein_name=CLK4-associating method=SEG_strict start=370 end=403 length=34
+NASARRRSSSSSSSSSASRTSSSRSSSRSSSRSR
+>Q8N2M8|ensembl_protein_id=ENSP00000221455|entry=CLASR_HUMAN|source=rbpdb|protein_name=CLK4-associating method=SEG_strict start=415 end=440 length=26
+ARSRSRSWSRSRSRSRRYSRSRSRGR
+>Q8TB72|ensembl_protein_id=ENSP00000338173|entry=PUM2_HUMAN|source=rbpdb|protein_name=Pumilio method=SEG_strict start=471 end=489 length=19
+ISSAAAQAAAAAAAGGTAS
+>Q96AE4|ensembl_protein_id=ENSP00000294623|entry=FUBP1_HUMAN|source=rbpdb|protein_name=Far method=SEG_strict start=10 end=25 length=16
+PSSGSAGGGGGGGGGG
+>Q96EV2|ensembl_protein_id=ENSP00000287912|entry=RBM33_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=309 end=330 length=22
+LPTQPPVVPQAPPPPPPPPQQQ
+>Q96EV2|ensembl_protein_id=ENSP00000287912|entry=RBM33_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=580 end=640 length=61
+GPLHPPLPPPHQPQPQQPQQQPPPQHQPPHQPPHQPPPQHQPPPQHPPQHPPQHQHHHHHH
+>Q96MU7|ensembl_protein_id=ENSP00000339245|entry=YTDC1_HUMAN|source=rbpdb|protein_name=YTH method=SEG_strict start=198 end=227 length=30
+TENEEEGVEEDVEEDEEVEEDAEEDEEVDE
+>Q96MU7|ensembl_protein_id=ENSP00000339245|entry=YTDC1_HUMAN|source=rbpdb|protein_name=YTH method=SEG_strict start=215 end=253 length=39
+VEEDAEEDEEVDEDGEEEEEEEEEEEEEEEEEEEEYEQD
+>Q96N46|ensembl_protein_id=ENSP00000296015|entry=TTC14_HUMAN|source=rbpdb|protein_name=Tetratricopeptide method=SEG_strict start=476 end=496 length=21
+TSSSSVSSADESVSSSSSSSS
+>Q9H4Z3|ensembl_protein_id=ENSP00000361486|entry=CAPAM_HUMAN|source=modomics|protein_name=mRNA method=SEG_strict start=669 end=683 length=15
+QSGRSHSSGSSSSSS
+>Q9HCJ0|ensembl_protein_id=ENSP00000512514|entry=TNR6C_HUMAN|source=rbpdb|protein_name=Trinucleotide method=SEG_strict start=1 end=15 length=15
+MEEKKKKKQEEKKKK
+>Q9HCJ0|ensembl_protein_id=ENSP00000512514|entry=TNR6C_HUMAN|source=rbpdb|protein_name=Trinucleotide method=SEG_strict start=963 end=981 length=19
+QSSTTTNTTTTTTTTTSNT
+>Q9NR56|ensembl_protein_id=ENSP00000282486|entry=MBNL1_HUMAN|source=rbpdb|protein_name=Muscleblind-like method=SEG_strict start=255 end=272 length=18
+NQAAAAQAAATAAAMTQS
+>Q9UKM9|ensembl_protein_id=ENSP00000246194|entry=RALY_HUMAN|source=rbpdb|protein_name=RNA-binding method=SEG_strict start=220 end=252 length=33
+DGKKKGDGGGAGGGGGGGGSGGGGSGGGGGGGS
+>Q9UPT8|ensembl_protein_id=ENSP00000253048|entry=ZC3H4_HUMAN|source=rbpdb|protein_name=Zinc method=SEG_strict start=7 end=33 length=27
+TPPPPPSESPPPPSPPPPSTPSPPPCS
+>Q9UPT8|ensembl_protein_id=ENSP00000253048|entry=ZC3H4_HUMAN|source=rbpdb|protein_name=Zinc method=SEG_strict start=535 end=559 length=25
+RPMQGGPPPPPPPPPPPPGPPQMPM
+>Q9UQ35|ensembl_protein_id=ENSP00000301740|entry=SRRM2_HUMAN|source=rbpdb|protein_name=Serine/arginine method=SEG_strict start=2531 end=2566 length=36
+RSSSSSSSSSSSSSSSSSSSSSSSSSGSSSSDSEGS
+>Q9UQ35|ensembl_protein_id=ENSP00000301740|entry=SRRM2_HUMAN|source=rbpdb|protein_name=Serine/arginine method=SEG_strict start=2606 end=2647 length=42
+RSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+>Q9Y2U8|ensembl_protein_id=ENSP00000308369|entry=MAN1_HUMAN|source=rbpdb|protein_name=Inner method=SEG_strict start=71 end=86 length=16
+TAAATVAAAGPAAAAA

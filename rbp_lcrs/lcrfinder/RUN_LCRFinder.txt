@@ -1,0 +1,203 @@
+RUN LCRFinder — local guide
+===========================
+
+Purpose
+-------
+Run LCRFinder on a protein FASTA and produce interval-level outputs compatible
+with the PlaToLoCo LCR callsets:
+
+- LCRFinder.csv
+- LCRFinder.fasta
+- lcrfinder_run_manifest.json
+
+This workflow uses Windows PowerShell as the user-facing terminal. The actual
+LCRFinder code runs inside Ubuntu-24.04 WSL using GNU Octave.
+
+Important
+---------
+LCRFinder is MATLAB code. The public release requires small compatibility
+patches to run in GNU Octave. Keep the patched copy under version control and
+record the repository commit plus all patch changes in the final methods log.
+
+Directory layout
+----------------
+WSL directory:
+
+  ~/projects/LCRFinder/
+  ├── run_lcrfinder.py
+  ├── run_lcrfinder_batch.m
+  └── source/
+      ├── run_LCRFinder.m
+      ├── analyze_CO.m
+      ├── extract_LCR.m
+      ├── sort_FEs.m
+      └── ...
+
+Windows project directory:
+
+  C:\Users\jbouziane\low-complexity\rna-binders\
+  ├── datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta
+  └── lcrfinder_result\
+
+One-time setup
+--------------
+1. Install Octave and the statistics package in Ubuntu WSL. From PowerShell:
+
+   wsl -d Ubuntu-24.04 -- sudo apt update
+   wsl -d Ubuntu-24.04 -- sudo apt install -y octave octave-statistics
+
+2. Clone the LCRFinder repository in WSL:
+
+   wsl -d Ubuntu-24.04 -- bash -lc "cd ~/projects && git clone https://github.com/erezpersi/LCRFinder.git"
+   wsl -d Ubuntu-24.04 -- bash -lc "cd ~/projects/LCRFinder && unzip LCRFinder.zip -d source"
+
+3. Copy the two project wrapper files into ~/projects/LCRFinder/:
+
+   - run_lcrfinder.py
+   - run_lcrfinder_batch.m
+
+   If they are stored on Windows, copy them from Ubuntu, for example:
+
+   cp /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/run_lcrfinder.py ~/projects/LCRFinder/
+   cp /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/run_lcrfinder_batch.m ~/projects/LCRFinder/
+
+4. Verify the required files:
+
+   wsl -d Ubuntu-24.04 -- bash -lc "cd ~/projects/LCRFinder && ls run_lcrfinder.py run_lcrfinder_batch.m source/run_LCRFinder.m"
+
+Required Octave patches
+-----------------------
+Apply these only once, after extracting source/.
+
+1. Load the Octave statistics package in run_lcrfinder_batch.m.
+
+   Insert this as line 2, immediately below the function declaration:
+
+   if exist('OCTAVE_VERSION', 'builtin'), pkg load statistics; end
+
+   PowerShell command:
+
+   wsl -d Ubuntu-24.04 -- sed -i "2i if exist('OCTAVE_VERSION', 'builtin'), pkg load statistics; end" /home/jbouziane/projects/LCRFinder/run_lcrfinder_batch.m
+
+2. Preserve all 20 canonical amino acids, including asparagine (N), in
+   source/get_Kmers_stat_with_HashTable.m.
+
+   Replace the original MATLAB-only test:
+
+   if contains(tmp_element, 'N')
+
+   with:
+
+   if ~isempty(regexp(tmp_element, '[^ACDEFGHIKLMNPQRSTVWY]', 'once'))
+
+   PowerShell command:
+
+   wsl -d Ubuntu-24.04 -- sed -i "s|if contains(tmp_element, 'N')|if ~isempty(regexp(tmp_element, '[^ACDEFGHIKLMNPQRSTVWY]', 'once'))|" /home/jbouziane/projects/LCRFinder/source/get_Kmers_stat_with_HashTable.m
+
+   This is necessary because N is a valid amino acid in proteins, not an
+   ambiguous character to exclude.
+
+3. Make sortrows compatible with Octave in source/sort_FEs.m.
+
+   Replace:
+
+   [X, id_lead]  = sortrows(tmp_order, 'descend');
+
+   with:
+
+   [X, id_lead]  = sortrows(tmp_order, -[1:size(tmp_order, 2)]);
+
+   PowerShell command:
+
+   wsl -d Ubuntu-24.04 -- sed -i "s|\[X, id_lead\]  = sortrows(tmp_order, 'descend');|[X, id_lead]  = sortrows(tmp_order, -[1:size(tmp_order, 2)]);|" /home/jbouziane/projects/LCRFinder/source/sort_FEs.m
+
+Optional compatibility check:
+
+  wsl -d Ubuntu-24.04 -- grep -R -n contains\( /home/jbouziane/projects/LCRFinder/source
+
+No output means no remaining unsupported contains() calls.
+
+Run configuration
+-----------------
+Use the protein mode implemented by LCRFinder:
+
+- Alphabet: AA
+- Maximum k-mer size: K = 3
+- Resolution: Medium
+
+Medium is the default balanced setting. It detects recurrence-based LCRs using
+k-mers of length 1–3 and does not allow the additional gap tolerance used by
+High resolution.
+
+Production run
+--------------
+Run this from Windows PowerShell:
+
+  wsl -d Ubuntu-24.04 -- bash -lc "cd ~/projects/LCRFinder && python3 run_lcrfinder.py '/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta' '/mnt/c/Users/jbouziane/low-complexity/rna-binders/lcrfinder_result' --lcrfinder-dir . --engine octave --resolution Medium"
+
+Expected console messages:
+
+  Running LCRFinder...
+  Processed <n>/1924 proteins; intervals=<n>
+  Finished successfully.
+
+Expected output files on Windows:
+
+  C:\Users\jbouziane\low-complexity\rna-binders\lcrfinder_result\
+  ├── LCRFinder.csv
+  ├── LCRFinder.fasta
+  └── lcrfinder_run_manifest.json
+
+Output format
+-------------
+LCRFinder.csv contains one detected interval per row:
+
+  protein_id,header,method,start,end,length,sequence,description
+
+Coordinates are 1-based inclusive. The extracted sequence must equal:
+
+  full_sequence[start - 1:end]
+
+LCRFinder.fasta contains one FASTA entry per detected interval.
+
+Post-run checks
+---------------
+From PowerShell:
+
+  Get-Content C:\Users\jbouziane\low-complexity\rna-binders\lcrfinder_result\LCRFinder.csv -TotalCount 5
+
+Count intervals:
+
+  ((Get-Content C:\Users\jbouziane\low-complexity\rna-binders\lcrfinder_result\LCRFinder.csv).Count - 1)
+
+Confirm that the CSV has the expected header and that the FASTA file is nonempty.
+
+Troubleshooting
+---------------
+Error: binocdf undefined
+  Cause: Octave statistics package is not installed or loaded.
+  Fix: install octave-statistics and ensure the pkg load statistics line is
+  present in run_lcrfinder_batch.m.
+
+Error: contains undefined
+  Cause: GNU Octave does not implement MATLAB contains().
+  Fix: apply the canonical-amino-acid regexp patch above.
+
+Error: sortrows: C must be a numeric vector
+  Cause: Octave does not accept MATLAB's 'descend' shorthand in sortrows.
+  Fix: apply the explicit negative-column-vector patch above.
+
+Warnings that statistics functions shadow core functions
+  These warnings are expected when pkg load statistics runs and are not fatal.
+
+Record for reproducibility
+--------------------------
+For every final LCRFinder run, retain:
+
+- Input FASTA filename and checksum.
+- LCRFinder Git commit: git -C ~/projects/LCRFinder rev-parse HEAD
+- Resolution: Medium.
+- Python wrapper version/checksum.
+- All three Octave compatibility patches listed above.
+- lcrfinder_run_manifest.json.
+- CSV/FASTA outputs.
