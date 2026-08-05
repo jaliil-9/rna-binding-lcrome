@@ -1,0 +1,10 @@
+method,rna_primary_class,n_input,status,min_cluster_size,n_clusters,noise_fraction
+SEG_strict,diverse,2,skipped_n_lt_30,5,,
+SEG_strict,mRNA,289,clustered,5,16.0,0.3979
+SEG_strict,ncRNA,34,clustered,5,2.0,0.5294
+SEG_strict,pre-rRNA,20,skipped_n_lt_30,5,,
+SEG_strict,ribosomal protein,4,skipped_n_lt_30,5,,
+SEG_strict,snRNA,26,skipped_n_lt_30,5,,
+SEG_strict,snoRNA,21,skipped_n_lt_30,5,,
+SEG_strict,tRNA,6,skipped_n_lt_30,5,,
+SEG_strict,unknown,93,clustered,5,2.0,0.2043

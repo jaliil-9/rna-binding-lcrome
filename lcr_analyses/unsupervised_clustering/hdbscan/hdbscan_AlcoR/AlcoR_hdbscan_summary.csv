@@ -1,0 +1,10 @@
+method,rna_primary_class,n_input,status,min_cluster_size,n_clusters,noise_fraction
+AlcoR,diverse,59,clustered,5,2,0.0847
+AlcoR,mRNA,1021,clustered,5,60,0.4456
+AlcoR,ncRNA,192,clustered,5,8,0.3802
+AlcoR,pre-rRNA,128,clustered,5,5,0.4062
+AlcoR,ribosomal protein,94,clustered,5,7,0.4043
+AlcoR,snRNA,85,clustered,5,5,0.3765
+AlcoR,snoRNA,58,clustered,5,2,0.0862
+AlcoR,tRNA,240,clustered,5,15,0.4
+AlcoR,unknown,869,clustered,5,41,0.4534
