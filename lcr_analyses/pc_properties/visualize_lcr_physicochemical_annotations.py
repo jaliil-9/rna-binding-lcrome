@@ -283,11 +283,11 @@ def distribution_label_plot(df: pd.DataFrame, output: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations.xlsx", help="Physicochemical annotation workbook.")
-    parser.add_argument("--features", default="lcr_analyses/pc_properties/lcr_features.xlsx", help="Physicochemical feature workbook.")
+    parser.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations_v2.xlsx", help="Physicochemical annotation workbook.")
+    parser.add_argument("--features", default="lcr_analyses/pc_properties/lcr_features_v2.xlsx", help="Physicochemical feature workbook.")
     parser.add_argument("--position", default=r"lcr_analyses\domain_function\position_based_analysis\lcr_position_classes.csv", help="Domain-position classification workbook or CSV.")
     parser.add_argument("--rna", default=r"rbp_superclasses\rbp_rna_classification.xlsx", help="RNA target superclass workbook.")
-    parser.add_argument("--output", default="lcr_analyses/pc_properties", help="Output directory.")
+    parser.add_argument("--output", default="lcr_analyses/pc_properties/plots_v2", help="Output directory.")
     args = parser.parse_args()
 
     outdir = Path(args.output)

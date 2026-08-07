@@ -94,7 +94,7 @@ Each LCR can receive multiple labels. Rules are applied in order; a label is ass
 - \(f_{+} \geq 0.25\)
 - NCPR ≥ 0.10
 - Charge distribution: **compact**
-
+ 
 **Annotation**: “Basic patch; strong electrostatic interaction potential, likely to interact with negatively charged partners such as RNA backbones or acidic proteins.”
 
 #### B. Acidic patch
