@@ -1,0 +1,10 @@
+method,rna_primary_class,n_input,status,min_cluster_size,n_clusters,noise_fraction
+fLPS_strict,diverse,161,clustered,5,2,0.1988
+fLPS_strict,mRNA,4397,clustered,5,175,0.6525
+fLPS_strict,ncRNA,607,clustered,5,2,0.1186
+fLPS_strict,pre-rRNA,484,clustered,5,2,0.0165
+fLPS_strict,ribosomal protein,220,clustered,5,2,0.0909
+fLPS_strict,snRNA,470,clustered,5,23,0.4936
+fLPS_strict,snoRNA,189,clustered,5,5,0.2011
+fLPS_strict,tRNA,326,clustered,5,6,0.2669
+fLPS_strict,unknown,2249,clustered,5,6,0.0778
