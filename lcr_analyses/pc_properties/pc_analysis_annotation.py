@@ -1,20 +1,25 @@
 #!/usr/bin/env python3
 """
-LCR physicochemical feature extraction and behavior annotation (v2).
+LCR physicochemical feature extraction and behavior annotation (v2.2).
 
-Changes from v1:
-  - "Small?" property replaced with "Disorder?" (TOP-IDP disorder-promoting set)
-  - RG/RGG and SR/RS motif counting added (regex-based)
-  - Single-AA enrichment rules added (Ser, Gln, Gly, Pro)
-  - Aromatic patch rule corrected: dispersed aromatics = LLPS stickers,
-    compact aromatics = aggregation-prone (Martin et al. 2020)
-  - Bulky segment rule dropped (not literature-supported)
-  - Co-occurrence window made length-adaptive; polar-polar and
-    hydrophobic-hydrophobic pairs dropped (no added signal)
-  - Distribution labels simplified: compact / dispersed / insufficient
-    (dropped fragile "periodic-ish")
-  - Output schema includes rna_target_superclass and
-    domain_position_class placeholder columns
+Changes from v2.1 (rule-logic fixes from output review):
+  - Basic/acidic rules: dropped the charge-distribution ("compact")
+    requirement. Neutral interrupters split charge tracks into many runs,
+    causing poly-E tracts (f- ~0.8) and Arg-rich segments to be missed.
+    NCPR sign+magnitude already encodes one-sign dominance at LCR scales.
+  - hydrophobic_region now keyed on strong-hydrophobe fraction
+    (V, I, L, M, F, W, Y) instead of the Taylor/Jalview hydrophobic set,
+    which includes A, G, T and produced false "aggregation-prone" labels
+    on Ala/Thr/Gly homopolymers (and contradictory co-annotations with
+    gs_rich_neutral_region).
+  - polar_linker now requires low charge (fcr <= 0.30): spacers in the
+    stickers-and-spacers sense are UNCHARGED polar residues. Previously
+    poly-E tracts (f_polar ~0.9) and Arg-rich RP segments were mislabeled
+    as polar linkers.
+  - gs_rich_neutral_region fraction path now requires BOTH components
+    (min(frac_G, frac_S) >= 0.10) so pure poly-S tracts fall through to
+    serine_rich_region. The GS-repeat-cluster path is unchanged (a GS|SG
+    cluster contains both by definition).
 
 Inputs:
     - lcr_methods_combined.xlsx  (sheet: "all_results")
@@ -25,12 +30,13 @@ Outputs:
     - lcr_annotations_v2.xlsx (metadata + behavior annotations + evidence)
 
 Literature basis:
-    Das & Pappu (2013) PNAS 110:13392  -- charge patterning, diagram of states
+    Das & Pappu (2013) PNAS 110:13392  -- FCR/NCPR, charge patterning
     Holehouse et al. (2017) Biophys J  -- localCIDER / CIDER toolkit
     Martin et al. (2020) Science 367:694 -- aromatic valence & patterning
-    Holehouse et al. (2021) Biochemistry -- stickers & spacers framework
+    Holehouse et al. (2021) Biochemistry -- stickers & spacers, GS spacers
     Chong, Vernon & Forman-Kay (2018) JMB -- RGG/RG motifs in RNA binding
-    Shepard & Hertel (2009) Genome Biol -- SR/RS domain characterization
+    Gerstberger et al. (2014) Nat Rev Genet -- RG/RGG repeat definition
+    Xiang et al. (2013) Structure -- RS domain phosphorylation switch
 """
 
 import pandas as pd
@@ -48,29 +54,24 @@ LCR_FILE = r"rbp_lcrs\lcr_methods_combined.xlsx"
 AA_PROP_FILE = r"lcr_analyses\pc_properties\aa-physicochemical-properties-v2.csv"
 LCR_SHEET = "all_results"
 
-OUTPUT_FEATURES = "lcr_features_v2.xlsx"
-OUTPUT_ANNOTATIONS = "lcr_annotations_v2.xlsx"
+OUTPUT_FEATURES = "lcr_features_v2_2.xlsx"
+OUTPUT_ANNOTATIONS = "lcr_annotations_v2_2.xlsx"
 
-# Behavior-rule thresholds (v2)
+# Consolidated thresholds (to be calibrated in a dedicated phase)
 THRESHOLDS = {
-    # Charge-driven
-    "f_plus_min": 0.25,
-    "ncpr_basic_min": 0.10,
-    "frac_R_min": 0.12,
-    "f_minus_min": 0.25,
-    "ncpr_acidic_max": -0.10,
-    "fcr_polyampholyte_min": 0.30,
-    "ncpr_polyampholyte_abs_max": 0.05,
+    # Charge
+    "f_charge_min": 0.25,        # enrichment of one charge sign
+    "ncpr_min": 0.10,            # net charge bias for basic/acidic
+    "frac_R_min": 0.12,          # Arg enrichment within basic regions
+    "fcr_min": 0.30,             # polyampholyte (Das & Pappu 2013)
+    "ncpr_neutral_max": 0.05,    # near-neutral net charge
     # Polarity / hydropathy
     "f_polar_min": 0.50,
-    "f_hydro_max_for_polar_linker": 0.20,
-    "f_hydro_min": 0.40,
-    "f_polar_mixed_min": 0.25,
-    "f_polar_mixed_max": 0.55,
-    "f_hydro_mixed_min": 0.25,
-    "f_hydro_mixed_max": 0.55,
-    # Aromatic / stickers
-    "f_aromatic_min": 0.08,
+    "fcr_polar_linker_max": 0.30,  # polar spacers are uncharged (v2.2)
+    "f_hydro_low": 0.20,         # max hydrophobicity for polar linker
+    "frac_strong_hydro_min": 0.30,  # V,I,L,M,F,W,Y fraction (v2.2)
+    # Aromatic
+    "f_arom_min": 0.08,
     # Disorder
     "f_disorder_min": 0.60,
     # Single-AA enrichment
@@ -78,12 +79,23 @@ THRESHOLDS = {
     "frac_Q_min": 0.20,
     "frac_G_min": 0.25,
     "frac_P_min": 0.15,
-    # Motif counting
-    "min_RG_repeats": 3,
-    "min_SR_repeats": 3,
+    # GS-rich neutral signature
+    "f_GS_min": 0.40,            # combined Gly+Ser fraction
+    "frac_GS_each_min": 0.10,    # both G and S must be present (v2.2)
+    # Repeat detection (Gerstberger et al. 2014)
+    "min_repeats": 3,
+    "max_repeat_spacing": 10,
     # Co-occurrence
     "cooc_top_quantile": 0.75,
 }
+
+# Strong hydrophobes used for the aggregation-prone rule (v2.2)
+STRONG_HYDRO = "VILMFWY"
+
+# Motif regexes
+RG_REGEX = r"RG{1,2}|RPR"   # RG, RGG, and Arg-Pro-Arg repeats
+RS_REGEX = r"RS|SR"          # strict: Arg required (fixes SK/TK false positives)
+GS_REGEX = r"GS|SG"
 
 
 # =========================
@@ -167,15 +179,70 @@ def encode_sequence(seq, aa_lookup):
 
 
 # =========================
-# Composition features
+# Repeat detection
 # =========================
 
-def count_motifs(seq):
-    """Count RG/RGG and SR/RS motif occurrences."""
-    rg_matches = re.findall(r"(?:RG{1,2}|RGG)", seq.upper())
-    sr_matches = re.findall(r"[ST][RK]", seq.upper())
-    return len(rg_matches), len(sr_matches)
+def find_repeat_cluster(seq, motif_regex, min_repeats, max_spacing):
+    """
+    Robust repeat-region detection.
 
+    Finds all non-overlapping motif matches, then checks for a cluster of
+    >= min_repeats motifs where consecutive matches are spaced
+    <= max_spacing residues apart (start-to-start), following the
+    Gerstberger et al. (2014) RG/RGG definition.
+
+    Returns:
+        n_motifs   -- total non-overlapping matches in the sequence
+        n_cluster  -- size of the largest qualifying cluster (0 if none)
+        qualifies   -- True if any cluster meets the criterion
+    """
+    starts = [m.start() for m in re.finditer(motif_regex, seq)]
+    n_motifs = len(starts)
+    if n_motifs < min_repeats:
+        return n_motifs, 0, False
+
+    best = run = 1
+    for i in range(1, n_motifs):
+        if starts[i] - starts[i - 1] <= max_spacing:
+            run += 1
+            best = max(best, run)
+        else:
+            run = 1
+
+    qualifies = best >= min_repeats
+    return n_motifs, best if qualifies else 0, qualifies
+
+
+def compute_repeat_features(seq):
+    """Repeat/motif features for RG-like, RS-like, and GS-like patterns."""
+    seq = seq.upper()
+
+    n_rg, rg_cluster, rg_ok = find_repeat_cluster(
+        seq, RG_REGEX, THRESHOLDS["min_repeats"], THRESHOLDS["max_repeat_spacing"]
+    )
+    n_sr, sr_cluster, sr_ok = find_repeat_cluster(
+        seq, RS_REGEX, THRESHOLDS["min_repeats"], THRESHOLDS["max_repeat_spacing"]
+    )
+    n_gs, gs_cluster, gs_ok = find_repeat_cluster(
+        seq, GS_REGEX, THRESHOLDS["min_repeats"], THRESHOLDS["max_repeat_spacing"]
+    )
+
+    return {
+        "n_RG_motifs": n_rg,
+        "RG_repeat_cluster": rg_cluster,
+        "RG_repeat_region": rg_ok,
+        "n_SR_motifs": n_sr,
+        "SR_repeat_cluster": sr_cluster,
+        "SR_repeat_region": sr_ok,
+        "n_GS_motifs": n_gs,
+        "GS_repeat_cluster": gs_cluster,
+        "GS_repeat_region": gs_ok,
+    }
+
+
+# =========================
+# Composition features
+# =========================
 
 def compute_composition_features(seq, aa_lookup):
     """Composition features for one sequence."""
@@ -187,16 +254,15 @@ def compute_composition_features(seq, aa_lookup):
         **{f"frac_{aa}": 0.0 for aa in "ACDEFGHIKLMNPQRSTVWY"},
         "frac_polar": 0.0,
         "frac_hydrophobic": 0.0,
+        "frac_strong_hydro": 0.0,
         "frac_aromatic": 0.0,
         "frac_disorder": 0.0,
         "frac_positive": 0.0,
         "frac_negative": 0.0,
         "fcr": 0.0,
         "ncpr": 0.0,
-        "n_RG_motifs": 0,
-        "n_SR_motifs": 0,
-        "frac_R": 0.0,
-        "frac_K": 0.0,
+        "frac_GS": 0.0,
+        **compute_repeat_features(""),
     }
     if L == 0:
         return empty
@@ -208,7 +274,7 @@ def compute_composition_features(seq, aa_lookup):
 
     features = {"length": L}
     for aa in "ACDEFGHIKLMNPQRSTVWY":
-        features[f"frac_{aa}"] = aa_counts[aa] / L # type: ignore
+        features[f"frac_{aa}"] = aa_counts[aa] / L
 
     n_polar = n_hydro = n_arom = n_disorder = n_pos = n_neg = 0
 
@@ -230,20 +296,18 @@ def compute_composition_features(seq, aa_lookup):
         elif ch == "Neg":
             n_neg += 1
 
-    features["frac_polar"] = n_polar / L # type: ignore
-    features["frac_hydrophobic"] = n_hydro / L # type: ignore
-    features["frac_aromatic"] = n_arom / L # type: ignore
-    features["frac_disorder"] = n_disorder / L # type: ignore
-    features["frac_positive"] = n_pos / L # type: ignore
-    features["frac_negative"] = n_neg / L # type: ignore
-    features["fcr"] = (n_pos + n_neg) / L # type: ignore
-    features["ncpr"] = (n_pos - n_neg) / L # type: ignore
-    features["frac_R"] = features["frac_R"]  # already set above
-    features["frac_K"] = features["frac_K"]
+    features["frac_polar"] = n_polar / L
+    features["frac_hydrophobic"] = n_hydro / L
+    features["frac_strong_hydro"] = sum(aa_counts[a] for a in STRONG_HYDRO) / L
+    features["frac_aromatic"] = n_arom / L
+    features["frac_disorder"] = n_disorder / L
+    features["frac_positive"] = n_pos / L
+    features["frac_negative"] = n_neg / L
+    features["fcr"] = (n_pos + n_neg) / L
+    features["ncpr"] = (n_pos - n_neg) / L
+    features["frac_GS"] = (aa_counts["G"] + aa_counts["S"]) / L
 
-    n_rg, n_sr = count_motifs(seq)
-    features["n_RG_motifs"] = n_rg
-    features["n_SR_motifs"] = n_sr
+    features.update(compute_repeat_features(seq))
 
     return features
 
@@ -316,11 +380,7 @@ def compute_distribution_features(seq, aa_lookup):
 # =========================
 
 def compute_cooccurrence_features(seq, aa_lookup):
-    """
-    Cation-pi co-occurrence score with length-adaptive window.
-    Only the positive-aromatic pair is retained in v2 (the others added
-    no signal beyond what distribution features already capture).
-    """
+    """Cation-pi co-occurrence score with length-adaptive window."""
     tracks, L = encode_sequence(seq, aa_lookup)
 
     if L == 0:
@@ -349,10 +409,20 @@ def compute_cooccurrence_features(seq, aa_lookup):
 
 def assign_behavior_labels(comp, distr, cooc, cooc_quantile=None):
     """
-    Assign behavior labels based on composition, distribution, and
-    co-occurrence features. Rule order matters; first match = primary.
+    Assign behavior labels. Rule order matters; first match = primary.
 
-    Literature basis for each rule is noted inline.
+    Signatures (v2.2):
+      Repeat:    rg_rgg_repeat_region, sr_rs_repeat_region,
+                 gs_rich_neutral_region
+      Charge:    basic_enriched_region, arginine_rich_rna_contact_region,
+                 acidic_region, mixed_charge_polyampholyte
+      Hydropathy: polar_linker, hydrophobic_region
+      Aromatic:  aromatic_sticker_region, aromatic_aggregation_prone_region,
+                 cation_pi_rich_neighborhood
+      Disorder:  disorder_rich_spacer_region
+      Single-AA: serine_rich_region, glutamine_rich_region,
+                 glycine_rich_region, proline_rich_disordered_region
+      Fallback:  unmapped_physicochemical_properties
     """
     labels = []
     evidence = []
@@ -363,133 +433,135 @@ def assign_behavior_labels(comp, distr, cooc, cooc_quantile=None):
     fcr = comp["fcr"]
     f_polar = comp["frac_polar"]
     f_hydro = comp["frac_hydrophobic"]
+    f_sh = comp["frac_strong_hydro"]
     f_arom = comp["frac_aromatic"]
     f_disorder = comp["frac_disorder"]
-    f_S = comp["frac_S"]
-    f_Q = comp["frac_Q"]
-    f_G = comp["frac_G"]
-    f_P = comp["frac_P"]
-    f_R = comp["frac_R"]
-    n_rg = comp["n_RG_motifs"]
-    n_sr = comp["n_SR_motifs"]
+    f_GS = comp["frac_GS"]
 
     charge_label = distr.get("charged_label", "insufficient")
     polar_label = distr.get("polar_label", "insufficient")
     hydro_label = distr.get("hydrophobic_label", "insufficient")
     arom_label = distr.get("aromatic_label", "insufficient")
-    disorder_label = distr.get("disorder_label", "insufficient")
 
-    # ---- Motif-driven signatures (highest specificity first) ----
+    # ---- Repeat-driven signatures (highest specificity first) ----
 
-    # 1. RG/RGG repeat region
-    # Chong, Vernon & Forman-Kay (2018); >1000 human RBPs, G4-RNA binding
-    if n_rg >= THRESHOLDS["min_RG_repeats"]:
+    # 1. RG/RGG/RPR repeat region
+    # Chong et al. (2018); Gerstberger et al. (2014) repeat definition
+    if comp["RG_repeat_region"]:
         labels.append("rg_rgg_repeat_region")
         evidence.append(
-            f"RG/RGG repeats: {n_rg} motifs; RNA-binding and phase-separation driver"
+            f"RG/RGG/RPR repeats: cluster of {comp['RG_repeat_cluster']} motifs "
+            f"(spacing <= {THRESHOLDS['max_repeat_spacing']} aa); "
+            f"RNA-binding and phase-separation driver"
         )
 
     # 2. SR/RS repeat region
-    # Shepard & Hertel (2009); phosphorylation-gated RNA interaction switch
-    if n_sr >= THRESHOLDS["min_SR_repeats"]:
+    # Xiang et al. (2013): phosphorylation-gated RNA interaction switch
+    if comp["SR_repeat_region"]:
         labels.append("sr_rs_repeat_region")
         evidence.append(
-            f"SR/RS repeats: {n_sr} motifs; phosphorylation-sensitive RNA-binding"
+            f"RS/SR repeats: cluster of {comp['SR_repeat_cluster']} motifs; "
+            f"phosphorylation-sensitive RNA-binding"
+        )
+
+    # 3. GS-rich neutral region
+    # Holehouse et al. (2021): GS repeats ~ ideal Gaussian chains.
+    # Fraction path requires BOTH G and S present (v2.2): pure poly-S
+    # tracts fall through to serine_rich_region.
+    gs_cluster_ok = comp["GS_repeat_region"]
+    gs_fraction_ok = (
+        f_GS >= THRESHOLDS["f_GS_min"]
+        and min(comp["frac_G"], comp["frac_S"]) >= THRESHOLDS["frac_GS_each_min"]
+    )
+    if gs_cluster_ok or gs_fraction_ok:
+        labels.append("gs_rich_neutral_region")
+        evidence.append(
+            f"GS-rich: f_GS={f_GS:.2f}, GS-repeat cluster={comp['GS_repeat_cluster']}; "
+            f"chemically neutral spacer (~ideal chain)"
         )
 
     # ---- Charge-driven signatures ----
 
-    # 3. Basic patch (Arg-enriched)
-    # Das & Pappu (2013) strong polyelectrolyte; Arg bidentate H-bonds to RNA
-    if (
-        f_pos >= THRESHOLDS["f_plus_min"]
-        and ncpr >= THRESHOLDS["ncpr_basic_min"]
-        and charge_label == "compact"
-    ):
-        if f_R >= THRESHOLDS["frac_R_min"]:
-            labels.append("arginine_rich_rna_contact_patch")
+    # 4. Basic region (Arg-enriched gets specific label)
+    # Das & Pappu (2013); Chong et al. (2018) Arg-RNA mechanism.
+    # v2.2: no charge-distribution requirement -- neutral interrupters
+    # split charge tracks into runs and caused false negatives.
+    if f_pos >= THRESHOLDS["f_charge_min"] and ncpr >= THRESHOLDS["ncpr_min"]:
+        if comp["frac_R"] >= THRESHOLDS["frac_R_min"]:
+            labels.append("arginine_rich_rna_contact_region")
             evidence.append(
-                f"Arg-rich patch: f_R={f_R:.2f}, f+={f_pos:.2f}, NCPR={ncpr:.2f}"
+                f"Basic Arg-rich region: f_R={comp['frac_R']:.2f}, "
+                f"f+={f_pos:.2f}, NCPR={ncpr:.2f}; RNA-contact"
             )
         else:
-            labels.append("basic_enriched_patch")
+            labels.append("basic_enriched_region")
             evidence.append(
-                f"Basic patch: f+={f_pos:.2f}, NCPR={ncpr:.2f}, charge_dist={charge_label}"
+                f"Basic region: f+={f_pos:.2f}, NCPR={ncpr:.2f}; "
+                f"expanded-coil polyelectrolyte"
             )
 
-    # 4. Acidic patch
-    if (
-        f_neg >= THRESHOLDS["f_minus_min"]
-        and ncpr <= THRESHOLDS["ncpr_acidic_max"]
-        and charge_label == "compact"
-    ):
-        labels.append("acidic_patch")
+    # 5. Acidic region (v2.2: no charge-distribution requirement)
+    if f_neg >= THRESHOLDS["f_charge_min"] and ncpr <= -THRESHOLDS["ncpr_min"]:
+        labels.append("acidic_region")
         evidence.append(
-            f"Acidic patch: f-={f_neg:.2f}, NCPR={ncpr:.2f}, charge_dist={charge_label}"
+            f"Acidic region: f-={f_neg:.2f}, NCPR={ncpr:.2f}; functional module"
         )
 
-    # 5. Mixed-charge polyampholyte
+    # 6. Mixed-charge polyampholyte
     # Das & Pappu (2013) strong polyampholyte regime
     if (
-        fcr >= THRESHOLDS["fcr_polyampholyte_min"]
-        and abs(ncpr) <= THRESHOLDS["ncpr_polyampholyte_abs_max"]
+        fcr >= THRESHOLDS["fcr_min"]
+        and abs(ncpr) <= THRESHOLDS["ncpr_neutral_max"]
         and charge_label == "dispersed"
     ):
         labels.append("mixed_charge_polyampholyte")
         evidence.append(
-            f"Polyampholyte: FCR={fcr:.2f}, |NCPR|={abs(ncpr):.2f}, "
-            f"charge_dist={charge_label}"
+            f"Polyampholyte: FCR={fcr:.2f}, |NCPR|={abs(ncpr):.2f}; "
+            f"salt-tunable chain dimensions"
         )
 
     # ---- Polarity / hydropathy signatures ----
 
-    # 6. Polar linker (spacer signature)
-    # Stickers-and-spacers: polar residues act as spacers between stickers
+    # 7. Polar linker (uncharged polar spacer)
+    # v2.2: FCR cap -- stickers-and-spacers polar spacers are uncharged;
+    # previously poly-E tracts and Arg-rich segments were mislabeled.
     if (
         f_polar >= THRESHOLDS["f_polar_min"]
-        and f_hydro <= THRESHOLDS["f_hydro_max_for_polar_linker"]
+        and f_hydro <= THRESHOLDS["f_hydro_low"]
+        and fcr <= THRESHOLDS["fcr_polar_linker_max"]
         and polar_label == "dispersed"
     ):
         labels.append("polar_linker")
         evidence.append(
-            f"Polar linker: f_polar={f_polar:.2f}, f_hydro={f_hydro:.2f}"
+            f"Polar linker: f_polar={f_polar:.2f}, FCR={fcr:.2f}; uncharged spacer"
         )
 
-    # 7. Hydrophobic patch (aggregation-prone)
-    if f_hydro >= THRESHOLDS["f_hydro_min"] and hydro_label == "compact":
-        labels.append("hydrophobic_patch")
+    # 8. Hydrophobic region (aggregation-prone, atypical for LCRs)
+    # v2.2: keyed on strong hydrophobes (VILMFWY); Taylor/Jalview set
+    # includes A, G, T and produced false positives on homopolymers.
+    if f_sh >= THRESHOLDS["frac_strong_hydro_min"] and hydro_label == "compact":
+        labels.append("hydrophobic_region")
         evidence.append(
-            f"Hydrophobic patch: f_hydro={f_hydro:.2f}, hydro_dist={hydro_label}"
-        )
-
-    # 8. Mixed polar-hydrophobic segment
-    if (
-        (THRESHOLDS["f_polar_mixed_min"] <= f_polar <= THRESHOLDS["f_polar_mixed_max"])
-        and (THRESHOLDS["f_hydro_mixed_min"] <= f_hydro <= THRESHOLDS["f_hydro_mixed_max"])
-    ):
-        labels.append("mixed_polar_hydrophobic_segment")
-        evidence.append(
-            f"Mixed polar-hydro: f_polar={f_polar:.2f}, f_hydro={f_hydro:.2f}"
+            f"Hydrophobic region: f_strong_hydro={f_sh:.2f}, compact; "
+            f"aggregation-prone"
         )
 
     # ---- Aromatic / sticker signatures ----
 
-    # 9a. Aromatic sticker region (dispersed aromatics → LLPS)
-    # Martin et al. (2020): uniform aromatic distribution drives phase separation
-    if f_arom >= THRESHOLDS["f_aromatic_min"] and arom_label == "dispersed":
+    # 9a. Aromatic sticker region (dispersed -> LLPS)
+    # Martin et al. (2020)
+    if f_arom >= THRESHOLDS["f_arom_min"] and arom_label == "dispersed":
         labels.append("aromatic_sticker_region")
         evidence.append(
-            f"Aromatic stickers: f_arom={f_arom:.2f}, arom_dist={arom_label}; "
-            f"uniform distribution supports LLPS (Martin 2020)"
+            f"Aromatic stickers: f_arom={f_arom:.2f}, dispersed; "
+            f"promotes LLPS, inhibits aggregation"
         )
 
-    # 9b. Aromatic aggregation-prone patch (compact aromatics)
-    # Martin et al. (2020): clustered aromatics drive aggregation, not LLPS
-    if f_arom >= THRESHOLDS["f_aromatic_min"] and arom_label == "compact":
-        labels.append("aromatic_aggregation_prone_patch")
+    # 9b. Aromatic aggregation-prone region (compact)
+    if f_arom >= THRESHOLDS["f_arom_min"] and arom_label == "compact":
+        labels.append("aromatic_aggregation_prone_region")
         evidence.append(
-            f"Aromatic cluster: f_arom={f_arom:.2f}, arom_dist={arom_label}; "
-            f"compact patterning suggests aggregation risk"
+            f"Aromatic cluster: f_arom={f_arom:.2f}, compact; aggregation risk"
         )
 
     # 10. Cation-pi rich neighborhood
@@ -498,56 +570,44 @@ def assign_behavior_labels(comp, distr, cooc, cooc_quantile=None):
         if q >= cooc_quantile:
             labels.append("cation_pi_rich_neighborhood")
             evidence.append(
-                f"Cation-pi rich: cooc={q:.2f} (top 25% dataset threshold={cooc_quantile:.2f})"
+                f"Cation-pi rich: cooc={q:.2f} (dataset top-25% cutoff "
+                f"{cooc_quantile:.2f}); ligand/nucleic-acid binding"
             )
 
     # ---- Disorder signature ----
 
     # 11. Disorder-rich spacer region
-    # TOP-IDP disorder-promoting set; CIDER/LLPS literature
     if f_disorder >= THRESHOLDS["f_disorder_min"]:
         labels.append("disorder_rich_spacer_region")
-        evidence.append(
-            f"Disorder-rich: f_disorder={f_disorder:.2f}, disorder_dist={disorder_label}"
-        )
+        evidence.append(f"Disorder-promoting region: f_disorder={f_disorder:.2f}")
 
     # ---- Single-AA enrichment signatures ----
 
     # 12. Serine-rich region
-    if f_S >= THRESHOLDS["frac_S_min"]:
+    if comp["frac_S"] >= THRESHOLDS["frac_S_min"]:
         labels.append("serine_rich_region")
-        evidence.append(f"Serine-rich: f_S={f_S:.2f}")
+        evidence.append(f"Serine-rich: f_S={comp['frac_S']:.2f}")
 
     # 13. Glutamine-rich region
-    if f_Q >= THRESHOLDS["frac_Q_min"]:
+    if comp["frac_Q"] >= THRESHOLDS["frac_Q_min"]:
         labels.append("glutamine_rich_region")
-        evidence.append(f"Glutamine-rich: f_Q={f_Q:.2f}")
+        evidence.append(f"Glutamine-rich: f_Q={comp['frac_Q']:.2f}")
 
     # 14. Glycine-rich region
-    if f_G >= THRESHOLDS["frac_G_min"]:
+    if comp["frac_G"] >= THRESHOLDS["frac_G_min"]:
         labels.append("glycine_rich_region")
-        evidence.append(f"Glycine-rich: f_G={f_G:.2f}")
+        evidence.append(f"Glycine-rich: f_G={comp['frac_G']:.2f}")
 
     # 15. Proline-rich disordered region
-    if f_P >= THRESHOLDS["frac_P_min"]:
+    if comp["frac_P"] >= THRESHOLDS["frac_P_min"]:
         labels.append("proline_rich_disordered_region")
-        evidence.append(f"Proline-rich: f_P={f_P:.2f}")
+        evidence.append(f"Proline-rich: f_P={comp['frac_P']:.2f}")
 
     # ---- Fallback ----
 
-    # 16. Chemically neutral linker
     if len(labels) == 0:
-        extreme = (
-            (f_polar > 0.6) or (f_hydro > 0.5) or (f_arom > 0.15)
-            or (f_disorder > 0.7) or (f_pos > 0.3) or (f_neg > 0.3)
-        )
-        if not extreme:
-            labels.append("chemically_neutral_linker")
-            evidence.append("No strong compositional bias; generic flexible connector")
-
-    if len(labels) == 0:
-        labels.append("unclassified")
-        evidence.append("No behavior rule matched")
+        labels.append("unmapped_physicochemical_properties")
+        evidence.append("No behavior signature matched")
 
     primary = labels[0]
     secondary = labels[1:] if len(labels) > 1 else []
@@ -560,7 +620,7 @@ def assign_behavior_labels(comp, distr, cooc, cooc_quantile=None):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="LCR physicochemical features and behavior annotations (v2)."
+        description="LCR physicochemical features and behavior annotations (v2.2)."
     )
     parser.add_argument("--lcr_file", default=LCR_FILE)
     parser.add_argument("--aa_file", default=AA_PROP_FILE)
@@ -579,8 +639,6 @@ def main():
     distr_rows = []
     cooc_rows = []
     annot_rows = []
-
-    all_cooc = []
 
     for idx, row in lcrs.iterrows():
         seq = row["sequence"]
@@ -603,13 +661,12 @@ def main():
 
         cooc = compute_cooccurrence_features(seq, aa_lookup)
         cooc_rows.append({**base, **cooc})
-        all_cooc.append(cooc)
 
     comp_df = pd.DataFrame(comp_rows)
     distr_df = pd.DataFrame(distr_rows)
     cooc_df = pd.DataFrame(cooc_rows)
 
-    # Compute 75th percentile threshold for cation-pi co-occurrence
+    # 75th percentile threshold for cation-pi co-occurrence
     cooc_vals = cooc_df["cooc_positive_aromatic"].dropna()
     cooc_quantile = (
         float(np.quantile(cooc_vals, THRESHOLDS["cooc_top_quantile"]))

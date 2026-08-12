@@ -10,9 +10,14 @@ python visualize_lcr_physicochemical_annotations.py \
   --output lcr_physicochemical_figures
 
 Expected sheets:
-  annotations workbook: annotations
+  annotations workbook: Sheet1
   features workbook: composition, distribution, co_occurrence
   RNA workbook: all_combined
+
+v2.2 update: figures 05/06 show signature prevalence per RNA-target superclass
+and per domain-position class, split into one panel per calling method.
+Feature/distribution column names aligned with v2 outputs (frac_disorder,
+compact/dispersed/insufficient labels).
 """
 
 from __future__ import annotations
@@ -30,15 +35,15 @@ sns.set_theme(style="whitegrid", context="talk")
 
 ID_COLS = ["protein_id", "method", "start", "end", "length"]
 FEATURE_COLUMNS = [
-    "frac_polar", "frac_hydrophobic", "frac_aromatic", "frac_small",
-    "frac_positive", "frac_negative", "fcr", "ncpr",
-    "cooc_positive_aromatic", "cooc_hydrophobic_hydrophobic",
-    "cooc_polar_polar", "cooc_polar_hydrophobic", "cooc_positive_negative",
+    "frac_polar", "frac_hydrophobic", "frac_strong_hydro", "frac_aromatic",
+    "frac_disorder", "frac_positive", "frac_negative", "fcr", "ncpr",
+    "frac_GS", "cooc_positive_aromatic",
 ]
+DISTRIBUTION_PROPERTIES = ["polar", "hydrophobic", "aromatic", "disorder", "charged"]
 
 
 def clean_text(value: object) -> str:
-    if pd.isna(value): # type: ignore
+    if pd.isna(value):  # type: ignore
         return ""
     return str(value).strip()
 
@@ -70,31 +75,24 @@ def add_join_keys(df: pd.DataFrame, start_col: str, end_col: str) -> pd.DataFram
     out["_end_key"] = coordinate_key(out[end_col])
     return out
 
-def add_lcr_instance_key(
-    df: pd.DataFrame,
-    join_keys: list[str],
-) -> pd.DataFrame:
-    """
-    Distinguish repeated LCR observations that share the same protein,
-    method, start, and end coordinates.
 
-    The original row order is retained. This permits one-to-one joining
-    between feature sheets generated from the same input LCR table.
-    """
+def add_lcr_instance_key(df: pd.DataFrame, join_keys: list[str]) -> pd.DataFrame:
+    """Distinguish repeated LCR observations sharing protein/method/coords."""
     out = df.copy()
-
-    out["_lcr_instance"] = (
-        out.groupby(join_keys, dropna=False)
-        .cumcount()
-    )
-
+    out["_lcr_instance"] = out.groupby(join_keys, dropna=False).cumcount()
     return out
+
 
 def save_figure(path: Path) -> None:
     plt.tight_layout()
     plt.savefig(path.with_suffix(".png"), dpi=300, bbox_inches="tight")
     plt.savefig(path.with_suffix(".pdf"), bbox_inches="tight")
     plt.close()
+
+
+def annotation_color_map(order: list[str]) -> dict[str, tuple]:
+    palette = sns.color_palette("tab20", max(len(order), 1))
+    return {sig: palette[i % len(palette)] for i, sig in enumerate(order)}
 
 
 def stacked_prevalence(df: pd.DataFrame, group_col: str, output: Path, title: str) -> None:
@@ -119,10 +117,78 @@ def stacked_prevalence(df: pd.DataFrame, group_col: str, output: Path, title: st
     save_figure(output)
 
 
+def stacked_prevalence_per_method(
+    df: pd.DataFrame, group_col: str, output: Path, title: str
+) -> None:
+    """
+    One panel per calling method; each panel shows stacked signature
+    prevalence (%) across the levels of group_col. Colors are consistent
+    across panels (fixed by the global signature-frequency order).
+    """
+    use = df.dropna(subset=[group_col, "primary_physicochemical_annotation", "method"]).copy()
+    use = use[(use[group_col].astype(str).str.strip() != "") &
+              (use["primary_physicochemical_annotation"].astype(str).str.strip() != "") &
+              (use["method"].astype(str).str.strip() != "")]
+    if use.empty:
+        print(f"Skipped {title}: no usable data.")
+        return
+
+    sig_order = use["primary_physicochemical_annotation"].value_counts().index.tolist()
+    colors = annotation_color_map(sig_order)
+
+    methods = use["method"].value_counts().index.tolist()
+    n_panels = len(methods)
+
+    fig, axes = plt.subplots(
+        1, n_panels,
+        figsize=(max(6 * n_panels, 8), 7.5),
+        sharey=True,
+    )
+    if n_panels == 1:
+        axes = [axes]
+
+    for ax, method in zip(axes, methods):
+        sub = use[use["method"] == method]
+        counts = pd.crosstab(sub[group_col], sub["primary_physicochemical_annotation"])
+        counts = counts.reindex(columns=sig_order, fill_value=0)
+        counts = counts.loc[counts.sum(axis=1).sort_values(ascending=False).index]
+        proportions = counts.div(counts.sum(axis=1), axis=0).fillna(0) * 100
+
+        bottom = np.zeros(len(proportions))
+        x = np.arange(len(proportions))
+        for sig in sig_order:
+            vals = proportions[sig].values
+            ax.bar(x, vals, bottom=bottom, color=colors[sig], width=0.8)
+            bottom += vals
+
+        ax.set_title(f"{method}\n(n={len(sub)})", fontsize=12)
+        ax.set_xticks(x)
+        ax.set_xticklabels(proportions.index.astype(str), rotation=35, ha="right", fontsize=10)
+        ax.set_ylim(0, 100)
+        ax.set_xlabel("")
+        for i, total in enumerate(counts.sum(axis=1)):
+            ax.text(i, 102, f"n={total}", ha="center", va="bottom", fontsize=8)
+
+    axes[0].set_ylabel("LCRs with primary annotation (%)")
+
+    handles = [plt.Rectangle((0, 0), 1, 1, color=colors[sig]) for sig in sig_order]  # type: ignore
+    fig.legend(
+        handles, sig_order,
+        title="Primary annotation",
+        loc="lower center",
+        ncol=min(4, len(sig_order)),
+        bbox_to_anchor=(0.5, -0.06),
+        frameon=False,
+        fontsize=9,
+    )
+    fig.suptitle(title, y=1.02)
+    save_figure(output)
+
+
 def lcr_counts_by_method(df: pd.DataFrame, output: Path) -> None:
     counts = df["method"].fillna("Unknown").value_counts().sort_values(ascending=False)
     fig, ax = plt.subplots(figsize=(max(7, len(counts) * 1.05), 5.5))
-    bars = ax.bar(counts.index.astype(str), counts.values, color=sns.color_palette("deep", len(counts))) # type: ignore
+    bars = ax.bar(counts.index.astype(str), counts.values, color=sns.color_palette("deep", len(counts)))  # type: ignore
     ax.set_title("LCR observations by calling method")
     ax.set_xlabel("Calling method")
     ax.set_ylabel("Number of LCRs")
@@ -154,7 +220,7 @@ def feature_heatmap(df: pd.DataFrame, output: Path) -> None:
 
 
 def feature_dotplot(df: pd.DataFrame, output: Path) -> None:
-    cols = [c for c in ["frac_polar", "frac_hydrophobic", "frac_aromatic", "frac_small", "fcr", "ncpr"] if c in df.columns]
+    cols = [c for c in ["frac_polar", "frac_hydrophobic", "frac_aromatic", "frac_disorder", "fcr", "ncpr"] if c in df.columns]
     use = df.dropna(subset=["primary_physicochemical_annotation"]).copy()
     use = use[use["primary_physicochemical_annotation"].astype(str).str.strip() != ""]
     if use.empty or not cols:
@@ -180,10 +246,9 @@ def feature_dotplot(df: pd.DataFrame, output: Path) -> None:
     fig.suptitle("Selected composition and charge features by annotation", y=1.02)
     save_figure(output)
 
-def distribution_label_plot(df: pd.DataFrame, output: Path) -> None:
-    properties = ["polar", "hydrophobic", "aromatic", "small", "charged"]
-    label_cols = [f"{prop}_label" for prop in properties]
 
+def distribution_label_plot(df: pd.DataFrame, output: Path) -> None:
+    label_cols = [f"{prop}_label" for prop in DISTRIBUTION_PROPERTIES]
     available = [col for col in label_cols if col in df.columns]
     if not available:
         print("Skipped distribution-label plot: no distribution labels found.")
@@ -192,36 +257,26 @@ def distribution_label_plot(df: pd.DataFrame, output: Path) -> None:
     annotation_col = "primary_physicochemical_annotation"
     use = df.dropna(subset=[annotation_col]).copy()
     use = use[use[annotation_col].astype(str).str.strip() != ""]
-
     if use.empty:
         print("Skipped distribution-label plot: no usable annotation data.")
         return
 
     annotation_order = use[annotation_col].value_counts().index.tolist()
 
-    label_order = [
-        "Compact",
-        "Dispersed",
-        "Periodic-ish",
-        "Insufficient occurrences",
-        "Unassigned",
-    ]
-
+    # v2 labels are lowercase
+    label_order = ["compact", "dispersed", "insufficient", "Unassigned"]
     palette = {
-        "Compact": "#d73027",
-        "Dispersed": "#4575b4",
-        "Periodic-ish": "#74add1",
-        "Insufficient occurrences": "#bdbdbd",
+        "compact": "#d73027",
+        "dispersed": "#4575b4",
+        "insufficient": "#bdbdbd",
         "Unassigned": "#f0f0f0",
     }
 
     fig, axes = plt.subplots(
-        1,
-        len(available),
+        1, len(available),
         figsize=(max(18, len(available) * 4.2), max(6, len(annotation_order) * 0.45)),
         sharey=True,
     )
-
     if len(available) == 1:
         axes = [axes]
 
@@ -231,23 +286,15 @@ def distribution_label_plot(df: pd.DataFrame, output: Path) -> None:
         plot_df = use[[annotation_col, label_col]].copy()
         plot_df[label_col] = plot_df[label_col].fillna("Unassigned")
 
-        counts = pd.crosstab(
-            plot_df[annotation_col],
-            plot_df[label_col],
-        ).reindex(annotation_order, fill_value=0)
-
+        counts = pd.crosstab(plot_df[annotation_col], plot_df[label_col]).reindex(annotation_order, fill_value=0)
         counts = counts.reindex(columns=label_order, fill_value=0)
         proportions = counts.div(counts.sum(axis=1), axis=0).fillna(0) * 100
 
         proportions.plot(
-            kind="barh",
-            stacked=True,
-            ax=ax,
+            kind="barh", stacked=True, ax=ax,
             color=[palette[label] for label in proportions.columns],
-            width=0.8,
-            legend=False,
+            width=0.8, legend=False,
         )
-
         ax.set_title(f"{property_name} distribution")
         ax.set_xlabel("LCRs (%)")
         ax.set_xlim(0, 100)
@@ -259,33 +306,24 @@ def distribution_label_plot(df: pd.DataFrame, output: Path) -> None:
         else:
             ax.set_yticklabels([])
 
-    handles = [
-        plt.Rectangle((0, 0), 1, 1, color=palette[label]) # type: ignore
-        for label in label_order
-    ]
-
+    handles = [plt.Rectangle((0, 0), 1, 1, color=palette[label]) for label in label_order]  # type: ignore
     fig.legend(
-        handles,
-        label_order,
+        handles, label_order,
         title="Distribution label",
         loc="lower center",
         ncol=len(label_order),
         bbox_to_anchor=(0.5, -0.08),
         frameon=False,
     )
-
-    fig.suptitle(
-        "Property-distribution labels by primary physicochemical annotation",
-        y=1.02,
-    )
-
+    fig.suptitle("Property-distribution labels by primary physicochemical annotation", y=1.02)
     save_figure(output)
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations_v2.xlsx", help="Physicochemical annotation workbook.")
-    parser.add_argument("--features", default="lcr_analyses/pc_properties/lcr_features_v2.xlsx", help="Physicochemical feature workbook.")
-    parser.add_argument("--position", default=r"lcr_analyses\domain_function\position_based_analysis\lcr_position_classes.csv", help="Domain-position classification workbook or CSV.")
+    parser.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations.xlsx", help="Physicochemical annotation workbook.")
+    parser.add_argument("--features", default="lcr_analyses/pc_properties/lcr_features.xlsx", help="Physicochemical feature workbook.")
+    parser.add_argument("--position", default=r"lcr_analyses\domain_function\lcr_position_classes.csv", help="Domain-position classification workbook or CSV.")
     parser.add_argument("--rna", default=r"rbp_superclasses\rbp_rna_classification.xlsx", help="RNA target superclass workbook.")
     parser.add_argument("--output", default="lcr_analyses/pc_properties/plots_v2", help="Output directory.")
     args = parser.parse_args()
@@ -321,7 +359,6 @@ def main() -> None:
     distribution = add_lcr_instance_key(distribution, join_keys)
     cooc = add_lcr_instance_key(cooc, join_keys)
 
-    # Position class is coordinate-based, so it does not require an instance key.
     feature_join_keys = join_keys + ["_lcr_instance"]
 
     position_keep = join_keys + [c for c in ["protein_accession", "primary_class", "class_labels", "max_lcr_domain_fraction", "nearest_domain_distance", "nearest_pfam_accession", "nearest_pfam_name", "flanking_left_pfam", "flanking_right_pfam"] if c in position.columns]
@@ -331,40 +368,14 @@ def main() -> None:
     comp_keep = feature_join_keys + feature_cols
     cooc_cols = [c for c in cooc.columns if c.startswith("cooc_")]
     cooc_keep = feature_join_keys + cooc_cols
-    distribution_label_cols = [
-        c for c in distribution.columns
-        if c.endswith("_label")
-    ]
-
+    distribution_label_cols = [c for c in distribution.columns if c.endswith("_label")]
     distribution_keep = feature_join_keys + distribution_label_cols
 
-    merged = annotations.merge(
-        composition[comp_keep],
-        on=feature_join_keys,
-        how="left",
-        validate="one_to_one",
-    )
+    merged = annotations.merge(composition[comp_keep], on=feature_join_keys, how="left", validate="one_to_one")
+    merged = merged.merge(distribution[distribution_keep], on=feature_join_keys, how="left", validate="one_to_one")
+    merged = merged.merge(cooc[cooc_keep], on=feature_join_keys, how="left", validate="one_to_one")
+    merged = merged.merge(position_keep, on=join_keys, how="left", validate="many_to_one")
 
-    merged = merged.merge(
-        distribution[distribution_keep],
-        on=feature_join_keys,
-        how="left",
-        validate="one_to_one",
-    )
-
-    merged = merged.merge(
-        cooc[cooc_keep],
-        on=feature_join_keys,
-        how="left",
-        validate="one_to_one",
-    )
-
-    merged = merged.merge(
-        position_keep,
-        on=join_keys,
-        how="left",
-        validate="many_to_one",
-    )
     rna = rna.copy()
     rna["_accession_key"] = normalized_key(rna["uniprot_accession"])
     rna_keep = [c for c in ["_accession_key", "rna_primary_class", "rna_secondary_class", "confidence", "evidence_source", "evidence_matched"] if c in rna.columns]
@@ -377,13 +388,22 @@ def main() -> None:
 
     merged.drop(columns=[c for c in merged.columns if c.startswith("_")], errors="ignore").to_excel(outdir / "lcr_physicochemical_visualization_data.xlsx", index=False)
 
-    lcr_counts_by_method(merged, outdir / "01_lcr_counts_by_method")
-    stacked_prevalence(merged, "method", outdir / "02_annotations_by_calling_method", "Primary physicochemical annotations by calling method")
-    stacked_prevalence(merged, "rna_target_superclass", outdir / "03_annotations_by_rna_target_superclass", "Primary physicochemical annotations by RNA-target superclass")
-    stacked_prevalence(merged, "domain_position_class", outdir / "04_annotations_by_domain_position", "Primary physicochemical annotations by domain-position class")
-    feature_heatmap(merged, outdir / "05_annotation_feature_profile_heatmap")
-    feature_dotplot(merged, outdir / "06_selected_features_by_annotation")
-    distribution_label_plot(merged, outdir / "07_distribution_labels_by_primary_annotation")
+    stacked_prevalence(merged, "method", outdir / "01_annotations_by_calling_method", "Primary physicochemical annotations by calling method")
+    stacked_prevalence(merged, "rna_target_superclass", outdir / "02_annotations_by_rna_target_superclass", "Primary physicochemical annotations by RNA-target superclass")
+    stacked_prevalence(merged, "domain_position_class", outdir / "03_annotations_by_domain_position", "Primary physicochemical annotations by domain-position class")
+    feature_heatmap(merged, outdir / "04_annotation_feature_profile_heatmap")
+
+    # NEW: per-calling-method panels
+    stacked_prevalence_per_method(
+        merged, "rna_target_superclass",
+        outdir / "05_annotations_by_rna_target_per_method",
+        "Primary physicochemical annotations by RNA-target superclass, per calling method",
+    )
+    stacked_prevalence_per_method(
+        merged, "domain_position_class",
+        outdir / "06_annotations_by_domain_position_per_method",
+        "Primary physicochemical annotations by domain-position class, per calling method",
+    )
 
     report = [
         f"Total LCR observations: {len(merged)}",

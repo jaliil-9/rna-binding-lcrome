@@ -1,0 +1,25 @@
+Total LCR observations: 23669
+Unique proteins: 2675
+With domain-position match: 23669 (100.0%)
+With RNA superclass match: 23669 (100.0%)
+
+Primary annotation counts:
+primary_physicochemical_annotation
+disorder_rich_spacer_region            5493
+acidic_region                          3859
+aromatic_sticker_region                3460
+arginine_rich_rna_contact_region       2183
+basic_enriched_region                  1777
+hydrophobic_region                     1063
+gs_rich_neutral_region                 1029
+sr_rs_repeat_region                     973
+cation_pi_rich_neighborhood             852
+mixed_charge_polyampholyte              772
+unmapped_physicochemical_properties     769
+rg_rgg_repeat_region                    724
+proline_rich_disordered_region          219
+polar_linker                            190
+serine_rich_region                      120
+aromatic_aggregation_prone_region       103
+glutamine_rich_region                    68
+glycine_rich_region                      15
