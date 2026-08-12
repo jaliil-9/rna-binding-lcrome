@@ -4,7 +4,7 @@ from pathlib import Path
 import argparse
 import numpy as np
 import pandas as pd
-import plotly.express as px
+import plotly.express as px # type: ignore
 
 CLASS_ORDER = [
     "domain_intrinsic", "domain_edge", "domain_adjacent",
@@ -84,7 +84,7 @@ def main(input_file, output_dir):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", type=Path, default=Path(r"lcr_analyses\domain_function\class_feature_analysis\lcr_position_class_analysis.xlsx"))
-    parser.add_argument("--output-dir", type=Path, default=Path(r"lcr_analyses\domain_function\class_feature_analysis\plots"))
+    parser.add_argument("--input", type=Path, default=Path(r"lcr_analyses\domain_function\after_merge\lcr_position_class_analysis.xlsx"))
+    parser.add_argument("--output-dir", type=Path, default=Path(r"lcr_analyses\domain_function\after_merge\plots"))
     args = parser.parse_args()
     main(args.input, args.output_dir)

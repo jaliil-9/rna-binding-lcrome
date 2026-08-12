@@ -170,8 +170,8 @@ def main(lcr_file: Path, pfam_file: Path, output_dir: Path) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Position-based LCR classification relative to Pfam domains")
-    parser.add_argument("--lcr-file", type=Path, default=Path(r"rbp_lcrs\lcr_methods_combined.xlsx"))
+    parser.add_argument("--lcr-file", type=Path, default=Path(r"rbp_lcrs\lcr_methods_combined_merged.xlsx"))
     parser.add_argument("--pfam-file", type=Path, default=Path(r"rbp_lcrs\pfam_lcr_overlap.xlsx"))
-    parser.add_argument("--output-dir", type=Path, default=Path(r"lcr_analyses\domain_function"))
+    parser.add_argument("--output-dir", type=Path, default=Path(r"lcr_analyses\domain_function\after_merge"))
     args = parser.parse_args()
     main(args.lcr_file, args.pfam_file, args.output_dir)

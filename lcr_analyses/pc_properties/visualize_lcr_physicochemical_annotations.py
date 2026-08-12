@@ -33,7 +33,7 @@ import seaborn as sns
 
 sns.set_theme(style="whitegrid", context="talk")
 
-ID_COLS = ["protein_id", "method", "start", "end", "length"]
+ID_COLS = ["protein_id", "source_method", "start", "end", "length"]
 FEATURE_COLUMNS = [
     "frac_polar", "frac_hydrophobic", "frac_strong_hydro", "frac_aromatic",
     "frac_disorder", "frac_positive", "frac_negative", "fcr", "ncpr",
@@ -70,7 +70,7 @@ def require_columns(df: pd.DataFrame, columns: list[str], label: str) -> None:
 def add_join_keys(df: pd.DataFrame, start_col: str, end_col: str) -> pd.DataFrame:
     out = df.copy()
     out["_protein_key"] = normalized_key(out["protein_id"])
-    out["_method_key"] = normalized_key(out["method"])
+    out["_method_key"] = normalized_key(out["source_method"])
     out["_start_key"] = coordinate_key(out[start_col])
     out["_end_key"] = coordinate_key(out[end_col])
     return out
@@ -125,10 +125,10 @@ def stacked_prevalence_per_method(
     prevalence (%) across the levels of group_col. Colors are consistent
     across panels (fixed by the global signature-frequency order).
     """
-    use = df.dropna(subset=[group_col, "primary_physicochemical_annotation", "method"]).copy()
+    use = df.dropna(subset=[group_col, "primary_physicochemical_annotation", "source_method"]).copy()
     use = use[(use[group_col].astype(str).str.strip() != "") &
               (use["primary_physicochemical_annotation"].astype(str).str.strip() != "") &
-              (use["method"].astype(str).str.strip() != "")]
+              (use["source_method"].astype(str).str.strip() != "")]
     if use.empty:
         print(f"Skipped {title}: no usable data.")
         return
@@ -136,7 +136,7 @@ def stacked_prevalence_per_method(
     sig_order = use["primary_physicochemical_annotation"].value_counts().index.tolist()
     colors = annotation_color_map(sig_order)
 
-    methods = use["method"].value_counts().index.tolist()
+    methods = use["source_method"].value_counts().index.tolist()
     n_panels = len(methods)
 
     fig, axes = plt.subplots(
@@ -148,7 +148,7 @@ def stacked_prevalence_per_method(
         axes = [axes]
 
     for ax, method in zip(axes, methods):
-        sub = use[use["method"] == method]
+        sub = use[use["source_method"] == method]
         counts = pd.crosstab(sub[group_col], sub["primary_physicochemical_annotation"])
         counts = counts.reindex(columns=sig_order, fill_value=0)
         counts = counts.loc[counts.sum(axis=1).sort_values(ascending=False).index]
@@ -186,7 +186,7 @@ def stacked_prevalence_per_method(
 
 
 def lcr_counts_by_method(df: pd.DataFrame, output: Path) -> None:
-    counts = df["method"].fillna("Unknown").value_counts().sort_values(ascending=False)
+    counts = df["source_method"].fillna("Unknown").value_counts().sort_values(ascending=False)
     fig, ax = plt.subplots(figsize=(max(7, len(counts) * 1.05), 5.5))
     bars = ax.bar(counts.index.astype(str), counts.values, color=sns.color_palette("deep", len(counts)))  # type: ignore
     ax.set_title("LCR observations by calling method")
@@ -325,7 +325,7 @@ def main() -> None:
     parser.add_argument("--features", default="lcr_analyses/pc_properties/lcr_features.xlsx", help="Physicochemical feature workbook.")
     parser.add_argument("--position", default=r"lcr_analyses\domain_function\lcr_position_classes.csv", help="Domain-position classification workbook or CSV.")
     parser.add_argument("--rna", default=r"rbp_superclasses\rbp_rna_classification.xlsx", help="RNA target superclass workbook.")
-    parser.add_argument("--output", default="lcr_analyses/pc_properties/plots_v2", help="Output directory.")
+    parser.add_argument("--output", default="lcr_analyses/pc_properties/plots", help="Output directory.")
     args = parser.parse_args()
 
     outdir = Path(args.output)
@@ -388,7 +388,7 @@ def main() -> None:
 
     merged.drop(columns=[c for c in merged.columns if c.startswith("_")], errors="ignore").to_excel(outdir / "lcr_physicochemical_visualization_data.xlsx", index=False)
 
-    stacked_prevalence(merged, "method", outdir / "01_annotations_by_calling_method", "Primary physicochemical annotations by calling method")
+    stacked_prevalence(merged, "source_method", outdir / "01_annotations_by_calling_method", "Primary physicochemical annotations by calling method")
     stacked_prevalence(merged, "rna_target_superclass", outdir / "02_annotations_by_rna_target_superclass", "Primary physicochemical annotations by RNA-target superclass")
     stacked_prevalence(merged, "domain_position_class", outdir / "03_annotations_by_domain_position", "Primary physicochemical annotations by domain-position class")
     feature_heatmap(merged, outdir / "04_annotation_feature_profile_heatmap")

@@ -18,7 +18,7 @@ import sys
 import argparse
 import pandas as pd
 
-KEY = ["protein_id", "method", "start", "end"]
+KEY = ["protein_id", "source_method", "start", "end"]
 MAPPING = {
     "rna_target_superclass": "rna_primary_class",
     "domain_position_class": "primary_class",
@@ -27,11 +27,10 @@ MAPPING = {
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("annotations", help="lcr_annotations.xlsx to fill")
-    ap.add_argument("source", help="source xlsx containing Sheet1")
-    ap.add_argument("-o", "--output", default=None,
-                    help="output file (default: <annotations>_filled.xlsx)")
-    ap.add_argument("--sheet", default="Sheet1", help="sheet in source file")
+    ap.add_argument("--annotations", default=r"lcr_analyses\pc_properties\lcr_annotations.xlsx")
+    ap.add_argument("--source", default=r"lcr_analyses\pc_properties\plots\lcr_physicochemical_visualization_data.xlsx")
+    ap.add_argument("-o", "--output", default=r"lcr_analyses\pc_properties\lcr_annotations_filled.xlsx")
+    ap.add_argument("--sheet", default="Sheet1")
     args = ap.parse_args()
 
     out = args.output or args.annotations.replace(".xlsx", "_filled.xlsx")
@@ -44,7 +43,7 @@ def main():
         df["start"] = df["start"].astype(int)
         df["end"] = df["end"].astype(int)
         df["protein_id"] = df["protein_id"].astype(str)
-        df["method"] = df["method"].astype(str)
+        df["source_method"] = df["source_method"].astype(str)
 
     keep = KEY + list(MAPPING.values())
     missing = [c for c in keep if c not in src.columns]

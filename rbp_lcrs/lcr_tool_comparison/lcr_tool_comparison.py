@@ -360,7 +360,7 @@ def save_figures(d, proteins, outdir):
     return summary.reset_index(), paths
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--lcr", required=True); ap.add_argument("--proteins", required=True); ap.add_argument("--out", default="lcr_tool_comparison")
+    ap=argparse.ArgumentParser(); ap.add_argument("--lcr", default=Path(r"rbp_lcrs\lcr_methods_combined_merged.xlsx")); ap.add_argument("--proteins", default=Path(r"datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx")); ap.add_argument("--out", default=Path(r"rbp_lcrs\lcr_tool_comparison\merged"))
     args=ap.parse_args(); outdir=Path(args.out); outdir.mkdir(parents=True, exist_ok=True)
     proteins=read_proteins(args.proteins); d=build_table(read_calls(args.lcr), proteins); summary, figs=save_figures(d, proteins, outdir)
     xlsx=outdir/"lcr_tool_comparison.xlsx"

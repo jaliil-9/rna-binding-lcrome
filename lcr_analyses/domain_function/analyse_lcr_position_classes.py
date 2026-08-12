@@ -163,8 +163,8 @@ def main(input_file: Path, output_dir: Path, metadata_file: Path | None) -> None
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--input", type=Path, default=Path(r"lcr_analyses\domain_function\lcr_position_classes.csv"))
-    p.add_argument("--output-dir", type=Path, default=Path(r"lcr_analyses\domain_function\class_feature_analysis"))
+    p.add_argument("--input", type=Path, default=Path(r"lcr_analyses\domain_function\after_merge\lcr_position_classes.csv"))
+    p.add_argument("--output-dir", type=Path, default=Path(r"lcr_analyses\domain_function\after_merge"))
     p.add_argument("--metadata", type=Path, default=Path(r"rbp_superclasses\rbp_rna_classification.xlsx"))
     args = p.parse_args()
     main(args.input, args.output_dir, args.metadata)

@@ -50,12 +50,12 @@ import re
 # Configuration
 # =========================
 
-LCR_FILE = r"rbp_lcrs\lcr_methods_combined.xlsx"
-AA_PROP_FILE = r"lcr_analyses\pc_properties\aa-physicochemical-properties-v2.csv"
+LCR_FILE = r"rbp_lcrs\lcr_methods_combined_merged.xlsx"
+AA_PROP_FILE = r"lcr_analyses\pc_properties\aa-physicochemical-properties.csv"
 LCR_SHEET = "all_results"
 
-OUTPUT_FEATURES = "lcr_features_v2_2.xlsx"
-OUTPUT_ANNOTATIONS = "lcr_annotations_v2_2.xlsx"
+OUTPUT_FEATURES = "lcr_features_v2.xlsx"
+OUTPUT_ANNOTATIONS = "lcr_annotations_v2.xlsx"
 
 # Consolidated thresholds (to be calibrated in a dedicated phase)
 THRESHOLDS = {
@@ -274,7 +274,7 @@ def compute_composition_features(seq, aa_lookup):
 
     features = {"length": L}
     for aa in "ACDEFGHIKLMNPQRSTVWY":
-        features[f"frac_{aa}"] = aa_counts[aa] / L
+        features[f"frac_{aa}"] = aa_counts[aa] / L # type: ignore
 
     n_polar = n_hydro = n_arom = n_disorder = n_pos = n_neg = 0
 
@@ -296,16 +296,16 @@ def compute_composition_features(seq, aa_lookup):
         elif ch == "Neg":
             n_neg += 1
 
-    features["frac_polar"] = n_polar / L
-    features["frac_hydrophobic"] = n_hydro / L
-    features["frac_strong_hydro"] = sum(aa_counts[a] for a in STRONG_HYDRO) / L
-    features["frac_aromatic"] = n_arom / L
-    features["frac_disorder"] = n_disorder / L
-    features["frac_positive"] = n_pos / L
-    features["frac_negative"] = n_neg / L
-    features["fcr"] = (n_pos + n_neg) / L
-    features["ncpr"] = (n_pos - n_neg) / L
-    features["frac_GS"] = (aa_counts["G"] + aa_counts["S"]) / L
+    features["frac_polar"] = n_polar / L # type: ignore
+    features["frac_hydrophobic"] = n_hydro / L # type: ignore
+    features["frac_strong_hydro"] = sum(aa_counts[a] for a in STRONG_HYDRO) / L # type: ignore
+    features["frac_aromatic"] = n_arom / L # type: ignore
+    features["frac_disorder"] = n_disorder / L # type: ignore
+    features["frac_positive"] = n_pos / L # type: ignore
+    features["frac_negative"] = n_neg / L # type: ignore
+    features["fcr"] = (n_pos + n_neg) / L # type: ignore
+    features["ncpr"] = (n_pos - n_neg) / L # type: ignore
+    features["frac_GS"] = (aa_counts["G"] + aa_counts["S"]) / L # type: ignore
 
     features.update(compute_repeat_features(seq))
 
@@ -647,7 +647,7 @@ def main():
 
         base = {
             "protein_id": row["protein_id"],
-            "method": row["method"],
+            "source_method": row["method"],
             "start": row["start"],
             "end": row["end"],
             "length": row["length"],
@@ -690,7 +690,7 @@ def main():
 
         annot_rows.append({
             "protein_id": row["protein_id"],
-            "method": row["method"],
+            "source_method": row["source_method"],
             "start": row["start"],
             "end": row["end"],
             "length": row["length"],

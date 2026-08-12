@@ -79,9 +79,9 @@ If requests is missing:
 
 Run the script:
 
-  python rbp_lcrs\run_platoloco.py `
+  python rbp_lcrs\platoloco\run_platoloco.py `
     datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta `
-    platoloco_result
+    rbp_lcrs\platoloco
 
 The script submits one asynchronous PlaToLoCo job, polls until it completes,
 retrieves each protein result, and writes the per-method CSV/FASTA outputs.
