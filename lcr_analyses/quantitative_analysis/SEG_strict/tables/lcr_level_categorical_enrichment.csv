@@ -1,0 +1,352 @@
+position,rna_class,observed,expected,log2_obs_exp,proportion_within_rna_class,analysis,p_value,has_pfam,signature,method,p_fdr
+distal_terminal,diverse,1.0,1.0304259634888437,-0.043240850394254245,0.5,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,mRNA,141.0,147.86612576064908,-0.06859642467114856,0.4912891986062718,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,ncRNA,22.0,17.517241379310345,0.32872792699270353,0.6470588235294118,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,pre-rRNA,5.0,10.304259634888439,-1.0432408503942545,0.25,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,ribosomal protein,0.0,2.0608519269776875,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,snRNA,8.0,13.39553752535497,-0.7436805685353464,0.3076923076923077,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,snoRNA,12.0,10.81947261663286,0.14940422754814164,0.5714285714285714,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,tRNA,5.0,3.0912778904665315,0.6937247437719518,0.8333333333333334,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+distal_terminal,unknown,60.0,47.91480730223124,0.32449093410623275,0.6451612903225806,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,diverse,0.0,0.4462474645030426,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,mRNA,72.0,64.0365111561866,0.16910219761987655,0.2508710801393728,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,ncRNA,2.0,7.586206896551724,-1.9233787183970876,0.058823529411764705,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,pre-rRNA,4.0,4.462474645030426,-0.15784397203411044,0.2,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,ribosomal protein,2.0,0.8924949290060852,1.164084122853252,0.5,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,snRNA,4.0,5.801217038539554,-0.5363555952878404,0.15384615384615385,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,snoRNA,8.0,4.685598377281948,0.7717667000744914,0.38095238095238093,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,tRNA,0.0,1.3387423935091278,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_adjacent,unknown,18.0,20.75050709939148,-0.20514968681246712,0.1935483870967742,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,diverse,1.0,0.032454361054766734,4.945443836377912,0.5,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,mRNA,5.0,4.657200811359027,0.10246500458958598,0.017421602787456445,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,ncRNA,0.0,0.5517241379310345,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,pre-rRNA,0.0,0.32454361054766734,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,ribosomal protein,0.0,0.06490872210953347,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,snRNA,0.0,0.42190669371196754,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,snoRNA,0.0,0.3407707910750507,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,tRNA,1.0,0.0973630831643002,3.3604813356567553,0.16666666666666666,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_edge,unknown,1.0,1.5091277890466532,-0.5937149747301199,0.010752688172043012,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,diverse,0.0,0.06490872210953347,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,mRNA,10.0,9.314401622718053,0.10246500458958598,0.03484320557491289,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,ncRNA,0.0,1.103448275862069,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,pre-rRNA,0.0,0.6490872210953347,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,ribosomal protein,2.0,0.12981744421906694,3.9454438363779114,0.5,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,snRNA,1.0,0.8438133874239351,0.2450041182368195,0.038461538461538464,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,snoRNA,0.0,0.6815415821501014,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,tRNA,0.0,0.1947261663286004,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+domain_intrinsic,unknown,3.0,3.0182555780933065,-0.008752474008963753,0.03225806451612903,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,diverse,0.0,0.15415821501014199,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,mRNA,28.0,22.121703853955374,0.33996431831624246,0.0975609756097561,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,ncRNA,1.0,2.6206896551724137,-1.3899465183160133,0.029411764705882353,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,pre-rRNA,1.0,1.54158215010142,-0.6244117719530364,0.05,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,ribosomal protein,0.0,0.30831643002028397,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,snRNA,2.0,2.004056795131846,-0.002923395206766233,0.07692307692307693,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,snoRNA,0.0,1.618661257606491,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,tRNA,0.0,0.46247464503042596,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+interdomain_linker,unknown,6.0,7.168356997971602,-0.25667998745254916,0.06451612903225806,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,diverse,0.0,0.2718052738336714,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,mRNA,31.0,39.004056795131845,-0.3313559703686735,0.10801393728222997,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,ncRNA,9.0,4.620689655172414,0.9618168061121121,0.2647058823529412,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,pre-rRNA,10.0,2.718052738336714,1.879354645920139,0.5,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,ribosomal protein,0.0,0.5436105476673428,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,snRNA,11.0,3.5334685598377282,1.638346546416344,0.4230769230769231,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,snoRNA,1.0,2.8539553752535496,-1.5129627768586211,0.047619047619047616,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,tRNA,0.0,0.8154158215010142,,0.0,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+unclassified_no_pfam,unknown,5.0,12.63894523326572,-1.33787607030053,0.053763440860215055,position_lcr,3.515163183373974e-14,,,SEG,6.071645498555046e-14
+,diverse,2.0,2.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,mRNA,287.0,287.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,ncRNA,34.0,34.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,pre-rRNA,20.0,20.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,ribosomal protein,4.0,4.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,snRNA,26.0,26.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,snoRNA,21.0,21.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,tRNA,6.0,6.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,unknown,93.0,93.0,0.0,1.0,no_pfam_lcr,,pfam_classified,,SEG,
+,diverse,0.0,0.4056795131845842,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,mRNA,29.0,58.21501014198783,-1.005338284944929,0.10104529616724739,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,ncRNA,10.0,6.896551724137931,0.5360529002402099,0.29411764705882354,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,pre-rRNA,18.0,4.056795131845842,2.1495845531581366,0.9,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,ribosomal protein,1.0,0.8113590263691683,0.30158764660318677,0.25,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,snRNA,2.0,5.273833671399594,-1.3988520715379054,0.07692307692307693,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,snoRNA,11.0,4.259634888438134,1.3687018424617239,0.5238095238095238,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,tRNA,2.0,1.2170385395537526,0.7166251458820306,0.3333333333333333,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,unknown,27.0,18.864097363083165,0.5173163376586238,0.2903225806451613,signature_sequence_count_lcr,2.7184987035199873e-09,,acidic_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.060851926977687626,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,mRNA,11.0,8.732251521298174,0.33307793273100245,0.03832752613240418,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,ncRNA,1.0,1.0344827586206897,-0.048909600480946565,0.029411764705882353,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.6085192697768763,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.12170385395537525,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,snRNA,2.0,0.7910750507099391,1.338113522628301,0.07692307692307693,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.6389452332657201,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.18255578093306288,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,unknown,1.0,2.8296146044624746,-1.5006055703386383,0.010752688172043012,signature_sequence_count_lcr,2.7184987035199873e-09,,arginine_rich_rna_contact_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.004056795131845842,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,mRNA,1.0,0.5821501014198783,0.7805369097022237,0.003484320557491289,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,ncRNA,0.0,0.06896551724137931,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.04056795131845842,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.008113590263691683,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,snRNA,0.0,0.05273833671399594,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.04259634888438134,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.012170385395537525,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,unknown,0.0,0.18864097363083165,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_aggregation_prone_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.10547667342799188,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,mRNA,18.0,15.135902636916835,0.2500221930034441,0.0627177700348432,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,ncRNA,2.0,1.793103448275862,0.15754127698648002,0.058823529411764705,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,1.054766734279919,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.21095334685598377,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,snRNA,1.0,1.3711967545638946,-0.4554355999042728,0.038461538461538464,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,snoRNA,1.0,1.1075050709939147,-0.14731330454194072,0.047619047619047616,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,tRNA,1.0,0.31643002028397565,1.6600416175156631,0.16666666666666666,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,unknown,3.0,4.904665314401623,-0.7091921921500557,0.03225806451612903,signature_sequence_count_lcr,2.7184987035199873e-09,,aromatic_sticker_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.06896551724137931,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,mRNA,7.0,9.89655172413793,-0.4995710094905114,0.024390243902439025,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,ncRNA,1.0,1.1724137931034482,-0.22948184612276715,0.029411764705882353,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,pre-rRNA,1.0,0.6896551724137931,0.5360529002402097,0.05,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.13793103448275862,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,snRNA,3.0,0.896551724137931,1.7425037777076362,0.11538461538461539,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.7241379310344828,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,tRNA,1.0,0.20689655172413793,2.273018494406416,0.16666666666666666,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,unknown,4.0,3.206896551724138,0.3188221840195407,0.043010752688172046,signature_sequence_count_lcr,2.7184987035199873e-09,,basic_enriched_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.016227180527383367,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,mRNA,2.0,2.3286004056795133,-0.2194630902977764,0.006968641114982578,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,ncRNA,0.0,0.27586206896551724,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.16227180527383367,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.032454361054766734,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,snRNA,0.0,0.21095334685598377,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,snoRNA,1.0,0.17038539553752535,2.553126413599151,0.047619047619047616,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,tRNA,1.0,0.0486815415821501,4.360481335656756,0.16666666666666666,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,unknown,0.0,0.7545638945233266,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,cation_pi_rich_neighborhood,SEG,2.7184987035199873e-09
+,diverse,2.0,0.665314401622718,1.5878918317598278,1.0,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,mRNA,103.0,95.47261663286004,0.10948543226735855,0.3588850174216028,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,ncRNA,14.0,11.310344827586206,0.30778391256709253,0.4117647058823529,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,6.653144016227181,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,ribosomal protein,2.0,1.330628803245436,0.587891831759828,0.5,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,snRNA,5.0,8.649087221095336,-0.7906197914939023,0.19230769230769232,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,snoRNA,2.0,6.9858012170385395,-1.8044255910189326,0.09523809523809523,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,1.9959432048681542,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,unknown,36.0,30.93711967545639,0.21865802209410873,0.3870967741935484,signature_sequence_count_lcr,2.7184987035199873e-09,,disorder_rich_spacer_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.004056795131845842,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,mRNA,1.0,0.5821501014198783,0.7805369097022237,0.003484320557491289,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,ncRNA,0.0,0.06896551724137931,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.04056795131845842,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.008113590263691683,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,snRNA,0.0,0.05273833671399594,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.04259634888438134,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.012170385395537525,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,unknown,0.0,0.18864097363083165,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,glutamine_rich_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.15415821501014199,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,mRNA,24.0,22.121703853955374,0.11757189697979464,0.08362369337979095,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,ncRNA,5.0,2.6206896551724137,0.9319815765713491,0.14705882352941177,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,1.54158215010142,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.30831643002028397,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,snRNA,1.0,2.004056795131846,-1.0029233952067662,0.038461538461538464,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,1.618661257606491,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.46247464503042596,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,unknown,8.0,7.168356997971602,0.15835751182629476,0.08602150537634409,signature_sequence_count_lcr,2.7184987035199873e-09,,gs_rich_neutral_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.012170385395537525,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,mRNA,1.0,1.7464503042596349,-0.8044255910189325,0.003484320557491289,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,ncRNA,0.0,0.20689655172413793,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.12170385395537525,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.02434077079107505,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,snRNA,0.0,0.15821501014198783,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.12778904665314403,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.036511156186612576,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,unknown,2.0,0.565922920892495,1.821322524548724,0.021505376344086023,signature_sequence_count_lcr,2.7184987035199873e-09,,hydrophobic_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.056795131845841784,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,mRNA,9.0,8.150101419878297,0.143106989086932,0.0313588850174216,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,ncRNA,0.0,0.9655172413793104,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,pre-rRNA,1.0,0.5679513184584178,0.816160819432945,0.05,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.11359026369168357,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,snRNA,0.0,0.7383367139959433,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.5963488843813387,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.17038539553752535,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,unknown,4.0,2.640973630831643,0.598930103212276,0.043010752688172046,signature_sequence_count_lcr,2.7184987035199873e-09,,polar_linker,SEG,2.7184987035199873e-09
+,diverse,0.0,0.008113590263691683,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,mRNA,0.0,1.1643002028397567,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,ncRNA,1.0,0.13793103448275862,2.8579809951275723,0.029411764705882353,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.08113590263691683,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.016227180527383367,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,snRNA,1.0,0.10547667342799188,3.2450041182368197,0.038461538461538464,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.08519269776876268,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.02434077079107505,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,unknown,0.0,0.3772819472616633,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,proline_rich_disordered_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.17849898580121704,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,mRNA,27.0,25.614604462474645,0.07599279322839494,0.09407665505226481,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,ncRNA,0.0,3.0344827586206895,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,1.7849898580121704,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,ribosomal protein,1.0,0.35699797160243407,1.4860122177406143,0.25,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,snRNA,2.0,2.3204868154158214,-0.21442750040047773,0.07692307692307693,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,snoRNA,6.0,1.8742393509127788,1.6786572956830101,0.2857142857142857,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,tRNA,1.0,0.5354969574036511,0.9010497170194581,0.16666666666666666,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,unknown,7.0,8.300202839756592,-0.24579167130981297,0.07526881720430108,signature_sequence_count_lcr,2.7184987035199873e-09,,rg_rgg_repeat_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.004056795131845842,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,mRNA,1.0,0.5821501014198783,0.7805369097022237,0.003484320557491289,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,ncRNA,0.0,0.06896551724137931,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.04056795131845842,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.008113590263691683,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,snRNA,0.0,0.05273833671399594,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.04259634888438134,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.012170385395537525,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,unknown,0.0,0.18864097363083165,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,serine_rich_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.23123732251521298,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,mRNA,48.0,33.182555780933065,0.5326093962586382,0.1672473867595819,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,ncRNA,0.0,3.9310344827586206,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,2.31237322515213,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.46247464503042596,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,snRNA,9.0,3.006085192697769,1.58203910551439,0.34615384615384615,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,snoRNA,0.0,2.4279918864097363,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.6937119675456389,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,unknown,0.0,10.752535496957403,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,sr_rs_repeat_region,SEG,2.7184987035199873e-09
+,diverse,0.0,0.02434077079107505,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,mRNA,5.0,3.4929006085192698,0.51750250386843,0.017421602787456445,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,ncRNA,0.0,0.41379310344827586,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,pre-rRNA,0.0,0.2434077079107505,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,ribosomal protein,0.0,0.0486815415821501,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,snRNA,0.0,0.31643002028397565,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,snoRNA,0.0,0.25557809330628806,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,tRNA,0.0,0.07302231237322515,,0.0,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,unknown,1.0,1.13184584178499,-0.1786774754512761,0.010752688172043012,signature_sequence_count_lcr,2.7184987035199873e-09,,unmapped_physicochemical_properties,SEG,2.7184987035199873e-09
+,diverse,0.0,5.377582644628099,,0.0,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,mRNA,624.0,1268.7386363636363,-1.023776966454108,0.0912014030985092,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,ncRNA,246.0,150.57231404958677,0.7082017916056068,0.30295566502463056,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,pre-rRNA,371.0,78.62396694214875,2.2383781255091475,0.875,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,ribosomal protein,18.0,15.947314049586776,0.17468345019175763,0.20930232558139536,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,snRNA,36.0,110.14772727272727,-1.61337091590691,0.06060606060606061,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,snoRNA,226.0,104.58471074380165,1.1116508134679375,0.40070921985815605,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,tRNA,56.0,35.78873966942149,0.6459210882410668,0.29015544041450775,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,unknown,577.0,384.2190082644628,0.5866424244104719,0.2784749034749035,signature_residue_count_lcr,0.0,,acidic_region,SEG,0.0
+,diverse,0.0,0.8213670798898072,,0.0,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,mRNA,258.0,193.78598484848484,0.41290683091586367,0.03770827243496054,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,ncRNA,15.0,22.9982782369146,-0.6165633573161485,0.01847290640394089,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,pre-rRNA,0.0,12.008953168044076,,0.0,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,ribosomal protein,0.0,2.4357782369146004,,0.0,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,snRNA,34.0,16.823863636363637,1.0150256847100827,0.05723905723905724,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,snoRNA,0.0,15.974173553719009,,0.0,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,tRNA,0.0,5.466339531680441,,0.0,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,unknown,22.0,58.68526170798898,-1.4154947047887474,0.010617760617760617,signature_residue_count_lcr,0.0,,arginine_rich_rna_contact_region,SEG,0.0
+,diverse,0.0,0.04244146005509642,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,mRNA,17.0,10.013257575757576,0.7636233492278508,0.0024846536100555394,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,ncRNA,0.0,1.1883608815426998,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,pre-rRNA,0.0,0.6205234159779615,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,ribosomal protein,0.0,0.12586088154269973,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,snRNA,0.0,0.8693181818181818,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,snoRNA,0.0,0.8254132231404959,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,tRNA,0.0,0.28245523415977963,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,unknown,0.0,3.0323691460055096,,0.0,signature_residue_count_lcr,0.0,,aromatic_aggregation_prone_region,SEG,0.0
+,diverse,0.0,1.602789256198347,,0.0,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,mRNA,463.0,378.14772727272725,0.2920622453657841,0.06767027185033615,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,ncRNA,41.0,44.87809917355372,-0.13038766169364505,0.050492610837438424,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,pre-rRNA,0.0,23.43388429752066,,0.0,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,ribosomal protein,0.0,4.753099173553719,,0.0,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,snRNA,18.0,32.82954545454545,-0.8669978684850057,0.030303030303030304,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,snoRNA,24.0,31.171487603305785,-0.3771926008041898,0.0425531914893617,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,tRNA,31.0,10.666838842975206,1.5391355239922424,0.16062176165803108,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,unknown,65.0,114.51652892561984,-0.817044223784652,0.03137065637065637,signature_residue_count_lcr,0.0,,aromatic_sticker_region,SEG,0.0
+,diverse,0.0,0.9262224517906336,,0.0,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,mRNA,149.0,218.52462121212122,-0.5524835069307908,0.021777258111663256,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,ncRNA,14.0,25.93422865013774,-0.8894306337526245,0.017241379310344827,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,pre-rRNA,31.0,13.542011019283747,1.1948262171986233,0.07311320754716981,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,ribosomal protein,0.0,2.746728650137741,,0.0,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,snRNA,70.0,18.97159090909091,1.8835142575191481,0.11784511784511785,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,snoRNA,0.0,18.013429752066116,,0.0,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,tRNA,26.0,6.1641701101928374,2.0765330422479593,0.13471502590673576,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,unknown,81.0,66.17699724517907,0.29159207657301806,0.03909266409266409,signature_residue_count_lcr,0.0,,basic_enriched_region,SEG,0.0
+,diverse,0.0,0.4019455922865014,,0.0,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,mRNA,62.0,94.83143939393939,-0.6130972184998909,0.009061677871967261,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,ncRNA,0.0,11.254476584022038,,0.0,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,pre-rRNA,0.0,5.876721763085399,,0.0,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,ribosomal protein,0.0,1.1919765840220387,,0.0,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,snRNA,0.0,8.232954545454545,,0.0,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,snoRNA,43.0,7.8171487603305785,2.459622262184438,0.07624113475177305,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,tRNA,56.0,2.675017217630854,4.387806744670657,0.29015544041450775,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,unknown,0.0,28.71831955922865,,0.0,signature_residue_count_lcr,0.0,,cation_pi_rich_neighborhood,SEG,0.0
+,diverse,29.0,9.149879476584022,1.6642282549745764,1.0,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,mRNA,2299.0,2158.7405303030305,0.09081661692485649,0.3360128617363344,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,ncRNA,365.0,256.19662534435264,0.5106449915567797,0.44950738916256155,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,pre-rRNA,0.0,133.7775482093664,,0.0,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,ribosomal protein,44.0,27.13412534435262,0.6973951189097757,0.5116279069767442,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,snRNA,91.0,187.41477272727272,-1.042296225627493,0.1531986531986532,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,snoRNA,47.0,177.94938016528926,-1.9207342457465797,0.08333333333333333,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,tRNA,0.0,60.89402548209367,,0.0,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,unknown,790.0,653.7431129476583,0.2731288103524879,0.3812741312741313,signature_residue_count_lcr,0.0,,disorder_rich_spacer_region,SEG,0.0
+,diverse,0.0,0.054924242424242424,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,mRNA,22.0,12.958333333333334,0.7636233492278508,0.003215434083601286,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,ncRNA,0.0,1.5378787878787878,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,pre-rRNA,0.0,0.803030303030303,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,ribosomal protein,0.0,0.16287878787878787,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,snRNA,0.0,1.125,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,snoRNA,0.0,1.0681818181818181,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,tRNA,0.0,0.36553030303030304,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,unknown,0.0,3.9242424242424243,,0.0,signature_residue_count_lcr,0.0,,glutamine_rich_region,SEG,0.0
+,diverse,0.0,1.9123622589531681,,0.0,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,mRNA,457.0,451.18560606060606,0.018473122360963386,0.06679333528208126,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,ncRNA,114.0,53.54614325068871,1.090179253050359,0.14039408866995073,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,pre-rRNA,0.0,27.96005509641873,,0.0,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,ribosomal protein,0.0,5.671143250688705,,0.0,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,snRNA,15.0,39.17045454545455,-1.3848033691214536,0.025252525252525252,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,snoRNA,0.0,37.19214876033058,,0.0,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,tRNA,0.0,12.727100550964188,,0.0,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,unknown,180.0,136.63498622589532,0.3976699647139145,0.08687258687258688,signature_residue_count_lcr,0.0,,gs_rich_neutral_region,SEG,0.0
+,diverse,0.0,0.13731060606060605,,0.0,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,mRNA,19.0,32.395833333333336,-0.7698088508532234,0.002776965799473838,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,ncRNA,0.0,3.8446969696969697,,0.0,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,pre-rRNA,0.0,2.007575757575758,,0.0,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,ribosomal protein,0.0,0.4071969696969697,,0.0,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,snRNA,0.0,2.8125,,0.0,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,snoRNA,0.0,2.6704545454545454,,0.0,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,tRNA,0.0,0.9138257575757576,,0.0,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,unknown,36.0,9.81060606060606,1.8755827382268495,0.017374517374517374,signature_residue_count_lcr,0.0,,hydrophobic_region,SEG,0.0
+,diverse,0.0,0.931215564738292,,0.0,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,mRNA,206.0,219.7026515151515,-0.09290794384416849,0.03010815551008477,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,ncRNA,0.0,26.074035812672175,,0.0,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,pre-rRNA,22.0,13.615013774104684,0.6923050818146109,0.05188679245283019,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,ribosomal protein,0.0,2.7615358126721765,,0.0,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,snRNA,0.0,19.073863636363637,,0.0,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,snoRNA,0.0,18.110537190082646,,0.0,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,tRNA,0.0,6.197400137741047,,0.0,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,unknown,145.0,66.53374655647383,1.1238947200688936,0.06998069498069498,signature_residue_count_lcr,0.0,,polar_linker,SEG,0.0
+,diverse,0.0,0.09736570247933884,,0.0,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,mRNA,0.0,22.97159090909091,,0.0,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,ncRNA,17.0,2.7262396694214877,2.6405504431986655,0.020935960591133004,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,pre-rRNA,0.0,1.4235537190082646,,0.0,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,ribosomal protein,0.0,0.2887396694214876,,0.0,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,snRNA,22.0,1.9943181818181819,3.4635360169700338,0.037037037037037035,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,snoRNA,0.0,1.8935950413223142,,0.0,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,tRNA,0.0,0.6479855371900827,,0.0,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,unknown,0.0,6.956611570247934,,0.0,signature_residue_count_lcr,0.0,,proline_rich_disordered_region,SEG,0.0
+,diverse,0.0,2.716253443526171,,0.0,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,mRNA,577.0,640.8484848484849,-0.15141198337700604,0.08433206664717918,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,ncRNA,0.0,76.05509641873279,,0.0,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,pre-rRNA,0.0,39.71349862258953,,0.0,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,ribosomal protein,24.0,8.055096418732782,1.5750606427644696,0.27906976744186046,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,snRNA,80.0,55.63636363636363,0.5239718708320078,0.13468013468013468,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,snoRNA,224.0,52.82644628099174,2.0841664664042217,0.3971631205673759,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,tRNA,24.0,18.077134986225897,0.408868360198487,0.12435233160621761,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,unknown,159.0,194.0716253443526,-0.28756243565678713,0.07673745173745174,signature_residue_count_lcr,0.0,,rg_rgg_repeat_region,SEG,0.0
+,diverse,0.0,0.05242768595041322,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,mRNA,21.0,12.369318181818182,0.7636233492278508,0.0030692779888921366,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,ncRNA,0.0,1.4679752066115703,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,pre-rRNA,0.0,0.7665289256198347,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,ribosomal protein,0.0,0.15547520661157024,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,snRNA,0.0,1.0738636363636365,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,snoRNA,0.0,1.0196280991735538,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,tRNA,0.0,0.34891528925619836,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,unknown,0.0,3.7458677685950414,,0.0,signature_residue_count_lcr,0.0,,serine_rich_region,SEG,0.0
+,diverse,0.0,4.319042699724518,,0.0,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,mRNA,1502.0,1018.9962121212121,0.5597361242180355,0.21952645425314235,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,ncRNA,0.0,120.9331955922865,,0.0,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,pre-rRNA,0.0,63.147382920110196,,0.0,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,ribosomal protein,0.0,12.808195592286502,,0.0,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,snRNA,228.0,88.4659090909091,1.3658403088356394,0.3838383838383838,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,snoRNA,0.0,83.99793388429752,,0.0,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,tRNA,0.0,28.743973829201103,,0.0,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,unknown,0.0,308.58815426997245,,0.0,signature_residue_count_lcr,0.0,,sr_rs_repeat_region,SEG,0.0
+,diverse,0.0,0.4568698347107438,,0.0,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,mRNA,166.0,107.78977272727273,0.622962942290733,0.024261911721718796,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,ncRNA,0.0,12.792355371900827,,0.0,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,pre-rRNA,0.0,6.679752066115703,,0.0,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,ribosomal protein,0.0,1.3548553719008265,,0.0,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,snRNA,0.0,9.357954545454545,,0.0,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,snoRNA,0.0,8.885330578512397,,0.0,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,tRNA,0.0,3.040547520661157,,0.0,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0
+,unknown,17.0,32.642561983471076,-0.9412195467245064,0.008204633204633204,signature_residue_count_lcr,0.0,,unmapped_physicochemical_properties,SEG,0.0

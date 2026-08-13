@@ -5,15 +5,23 @@ Each detection method is analyzed and written independently:
   <outdir>/methods/<method>/tables/
   <outdir>/methods/<method>/figures/
 
-Plot policy: histograms only (no boxplots anywhere). The seven physicochemical
-fraction histograms are grouped into one multi-panel figure per method
-(lcr_fraction_histograms.png). Protein-level signature fraction histograms are
-grouped into one multi-panel figure per method
-(protein_signature_fraction_histograms.png).
+Plot policy: histograms only (no boxplots). The seven physicochemical fraction
+histograms are grouped into one multi-panel figure per method
+(lcr_fraction_histograms.png); protein-level signature fractions into
+protein_signature_fraction_histograms.png.
 
-No method, length, or overlap filters are applied. Intervals are analyzed exactly
-as supplied. RNA-target superclass comes from the annotations table; the master
-Combined sheet supplies uniprot_accession and uniprot_length only.
+Data-integration fixes (validated by debug_lcr_join.py):
+  1. Accessions are extracted from pipe-delimited composite IDs
+     (text before the first '|'), e.g.
+     'Q9Y2T7|ensembl_protein_id=...' -> 'Q9Y2T7'.
+  2. Method labels are canonicalized on both sides:
+     'fLPS_strict' -> 'FLPS', 'SEG_strict' -> 'SEG'.
+  3. ALL sheets of the measurements workbook (composition, distribution,
+     co_occurrence) are read and merged on the interval keys, with metric
+     columns renamed back to their canonical names (frac_A, frac_polar, ...).
+
+No method, length, or overlap filters are applied. RNA-target superclass comes
+from the annotations table; the master Combined sheet supplies uniprot_length.
 """
 from __future__ import annotations
 
@@ -36,14 +44,46 @@ PROPERTY_METRICS = [
     "frac_polar", "frac_hydrophobic", "frac_strong_hydro", "frac_aromatic",
     "frac_disorder", "frac_positive", "frac_negative", "fcr", "ncpr", "frac_GS",
 ]
-# The seven fraction distributions grouped into one multi-panel figure.
 FRACTION_PANEL_METRICS = [
     "frac_GS", "frac_aromatic", "frac_disorder", "frac_hydrophobic",
     "frac_negative", "frac_polar", "frac_positive",
 ]
-# Metrics still plotted as individual histograms.
 SINGLE_HISTOGRAM_METRICS = ["length", "coverage_per_lcr", "fcr", "ncpr"]
 POSITION_NO_PFAM = "unclassifiednopfam"
+
+# Canonical method labels: normalized (lowercase, alnum-only) -> canonical.
+METHOD_ALIASES = {
+    "cast": "CAST",
+    "seg": "SEG",
+    "segstrict": "SEG",
+    "segintermediate": "SEG_intermediate",
+    "flps": "FLPS",
+    "flpsstrict": "FLPS",
+    "lcrfinder": "LCRFinder",
+    "alcor": "AlcoR",
+}
+
+# Canonical metric names: normalized (lowercase, alnum-only) -> canonical.
+METRIC_ALIASES = {
+    "fracpolar": "frac_polar", "frachydrophobic": "frac_hydrophobic",
+    "fracstronghydro": "frac_strong_hydro", "fracaromatic": "frac_aromatic",
+    "fracdisorder": "frac_disorder", "fracpositive": "frac_positive",
+    "fracnegative": "frac_negative", "fcr": "fcr", "ncpr": "ncpr",
+    "fracgs": "frac_GS",
+    "nrgmotifs": "n_RG_motifs", "rgrepeatcluster": "RG_repeat_cluster", "rgrepeatregion": "RG_repeat_region",
+    "nsrmotifs": "n_SR_motifs", "srrepeatcluster": "SR_repeat_cluster", "srrepeatregion": "SR_repeat_region",
+    "ngsmotifs": "n_GS_motifs", "gsrepeatcluster": "GS_repeat_cluster", "gsrepeatregion": "GS_repeat_region",
+    "coocpositivearomatic": "cooc_positive_aromatic",
+}
+
+DISTRIBUTION_SUBMETRICS = {
+    "nruns": "n_runs", "meanrunlength": "mean_run_length",
+    "maxrunlength": "max_run_length", "meangap": "mean_gap",
+    "cvgap": "cv_gap", "label": "label",
+}
+
+INTERVAL_KEYS = ["uniprot_accession", "method", "start", "end"]
+RAW_KEY_COLUMNS = {"proteinid", "sourcemethod", "start", "end", "length"}
 
 
 def normalized_name(x: str) -> str:
@@ -51,8 +91,37 @@ def normalized_name(x: str) -> str:
 
 
 def safe_name(x: str) -> str:
-    """Produce a portable directory/file name while retaining readable method labels."""
     return re.sub(r"[^A-Za-z0-9._-]+", "_", str(x).strip()) or "unnamed_method"
+
+
+def canonical_method(x: str) -> str:
+    """Map any method spelling to the canonical label used in the analysis."""
+    return METHOD_ALIASES.get(normalized_name(x), str(x).strip())
+
+
+def canonical_metric_name(normalized: str) -> str:
+    """Map a normalized measurements column name back to its canonical form."""
+    if re.fullmatch(r"frac[a-z]", normalized):
+        return f"frac_{normalized[-1].upper()}"
+    if normalized in METRIC_ALIASES:
+        return METRIC_ALIASES[normalized]
+    m = re.fullmatch(r"(polar|hydrophobic|aromatic|disorder|charged)(nruns|meanrunlength|maxrunlength|meangap|cvgap|label)", normalized)
+    if m:
+        return f"{m.group(1)}_{DISTRIBUTION_SUBMETRICS[m.group(2)]}"
+    return normalized
+
+
+def extract_accession(x: str) -> str:
+    """UniProt accession from a pipe-delimited composite protein ID.
+
+    'Q9Y2T7|ensembl_protein_id=ENSP...|entry=...' -> 'Q9Y2T7'
+    Also tolerates the legacy concatenated format and bare accessions.
+    """
+    text = str(x).strip()
+    if "|" in text:
+        return text.split("|", 1)[0].strip()
+    m = re.match(r"^([A-Za-z0-9]+?)(?:ensemblproteinid|$)", text)
+    return m.group(1) if m else text
 
 
 def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -82,46 +151,53 @@ def standardize_annotations(path: str) -> pd.DataFrame:
         "signature": ["primaryphysicochemicalannotation", "primary_physicochemical_annotation"],
     }
     out = pd.DataFrame({new: raw[locate_column(raw, old)] for new, old in mapping.items()})
-    out["uniprot_accession"] = out["proteinid"].astype(str).str.extract(r"^([^\s]+?)(?:ensemblproteinid|$)", expand=False)
-    out["uniprot_accession"] = out["uniprot_accession"].fillna(out["proteinid"].astype(str).str.split().str[0])
+    out["uniprot_accession"] = out["proteinid"].map(extract_accession)
     for col in ["method", "rna_class", "position", "signature"]:
         out[col] = out[col].fillna("missing").astype(str).str.strip()
+    out["method"] = out["method"].map(canonical_method)
     for col in ["start", "end", "length"]:
-        out[col] = pd.to_numeric(out[col], errors="coerce")
+        out[col] = pd.to_numeric(out[col], errors="coerce").astype("Int64")
     return out.dropna(subset=["start", "end", "length"]).copy()
 
 
 def standardize_measurements(path: str) -> pd.DataFrame:
-    raw = normalize_columns(pd.read_excel(path))
-    mapping = {
-        "measurement_protein_id": ["protein_id", "proteinid", "uniprot_accession", "uniprot"],
-        "method": ["source_method", "sourcemethod", "method"],
-        "start": ["start"], "end": ["end"], "length_measurement": ["length"],
-    }
-    out = pd.DataFrame({new: raw[locate_column(raw, old)] for new, old in mapping.items()})
-    for aa in AA:
-        col = locate_column(raw, [f"frac_{aa}", f"frac{aa}"], required=False)
-        if col:
-            out[f"frac_{aa}"] = raw[col]
-    aliases = {
-        "frac_polar": ["frac_polar"], "frac_hydrophobic": ["frac_hydrophobic"],
-        "frac_strong_hydro": ["frac_strong_hydro"], "frac_aromatic": ["frac_aromatic"],
-        "frac_disorder": ["frac_disorder"], "frac_positive": ["frac_positive"],
-        "frac_negative": ["frac_negative"], "fcr": ["fcr"], "ncpr": ["ncpr"],
-        "frac_GS": ["frac_GS", "fracgs"],
-    }
-    for canonical, choices in aliases.items():
-        col = locate_column(raw, choices, required=False)
-        if col:
-            out[canonical] = raw[col]
-    out["measurement_protein_id"] = out["measurement_protein_id"].astype(str).str.strip()
-    out["uniprot_accession"] = out["measurement_protein_id"].str.extract(r"^([^\s]+?)(?:ensemblproteinid|$)", expand=False)
-    out["uniprot_accession"] = out["uniprot_accession"].fillna(out["measurement_protein_id"])
-    out["method"] = out["method"].astype(str).str.strip()
-    for col in out.columns:
-        if col not in {"measurement_protein_id", "uniprot_accession", "method"}:
-            out[col] = pd.to_numeric(out[col], errors="coerce")
-    return out
+    """Read ALL sheets and merge them on the interval keys into one wide table.
+
+    Metric columns are renamed to canonical form (frac_A, frac_polar, ...);
+    the raw key columns of each sheet are used only for joining and dropped.
+    """
+    sheets = pd.read_excel(path, sheet_name=None)
+    frames = []
+    for sheet_name, raw in sheets.items():
+        raw = normalize_columns(raw)
+        base = pd.DataFrame({
+            "measurement_protein_id": raw[locate_column(raw, ["protein_id", "proteinid", "uniprot_accession", "uniprot"])],
+            "method": raw[locate_column(raw, ["source_method", "sourcemethod", "method"])],
+            "start": raw[locate_column(raw, ["start"])],
+            "end": raw[locate_column(raw, ["end"])],
+        })
+        metrics = raw.drop(columns=[c for c in RAW_KEY_COLUMNS if c in raw.columns])
+        metrics.columns = [canonical_metric_name(c) for c in metrics.columns]
+        metrics = metrics.loc[:, ~metrics.columns.duplicated()]
+        frame = pd.concat([base, metrics], axis=1)
+        frame["_sheet"] = sheet_name
+        frames.append(frame)
+    merged = frames[0]
+    for frame in frames[1:]:
+        merged = merged.merge(frame, on=["measurement_protein_id", "method", "start", "end"], how="outer", suffixes=("", "_dup"))
+        merged = merged.loc[:, ~merged.columns.str.endswith("_dup")]
+    merged["measurement_protein_id"] = merged["measurement_protein_id"].astype(str).str.strip()
+    merged["uniprot_accession"] = merged["measurement_protein_id"].map(extract_accession)
+    merged["method"] = merged["method"].astype(str).str.strip().map(canonical_method)
+    for col in ["start", "end"]:
+        merged[col] = pd.to_numeric(merged[col], errors="coerce").astype("Int64")
+    for col in merged.columns:
+        if col not in {"measurement_protein_id", "uniprot_accession", "method", "_sheet"}:
+            try:
+                merged[col] = pd.to_numeric(merged[col], errors="raise")
+            except (ValueError, TypeError):
+                pass  # genuinely textual column (e.g. distribution labels) — keep as-is
+    return merged
 
 
 def standardize_master(path: str) -> pd.DataFrame:
@@ -139,10 +215,25 @@ def read_and_join(args: argparse.Namespace) -> pd.DataFrame:
     ann = standardize_annotations(args.annotations)
     meas = standardize_measurements(args.measurements)
     master = standardize_master(args.master)
-    keys = ["uniprot_accession", "method", "start", "end"]
-    joined = ann.merge(meas.drop(columns="length_measurement", errors="ignore"), on=keys, how="left", validate="one_to_one")
+
+    metric_cols = [c for c in meas.columns if c not in {"measurement_protein_id", "_sheet"} | set(INTERVAL_KEYS)]
+    dup = meas.duplicated(subset=INTERVAL_KEYS).sum()
+    if dup:
+        print(f"WARNING: {dup} duplicated measurement rows on interval keys; keeping first occurrence.")
+        meas = meas.drop_duplicates(subset=INTERVAL_KEYS)
+
+    joined = ann.merge(meas[INTERVAL_KEYS + metric_cols], on=INTERVAL_KEYS, how="left", validate="one_to_one")
     joined = joined.merge(master, on="uniprot_accession", how="left", validate="many_to_one")
     joined["coverage_per_lcr"] = joined["length"] / joined["uniprot_length"]
+
+    # Runtime join-rate QC so silent mismatches cannot recur.
+    probe = "frac_polar" if "frac_polar" in joined.columns else metric_cols[0]
+    print("\nJoin QC (fraction of annotation rows with measurements / with UniProt length):")
+    for method, d in joined.groupby("method"):
+        print(f"  {method:<18} measurements: {d[probe].notna().mean():.1%}   uniprot_length: {d['uniprot_length'].notna().mean():.1%}")
+    overall = joined["uniprot_length"].notna().mean()
+    if overall < 0.95:
+        print(f"WARNING: only {overall:.1%} of rows matched a UniProt length — check accession extraction.")
     return joined
 
 
@@ -160,7 +251,7 @@ def safe_chi_square(table: pd.DataFrame) -> float:
     if table.shape[0] < 2 or table.shape[1] < 2:
         return np.nan
     try:
-        return float(chi2_contingency(table, correction=False).pvalue)  # type: ignore
+        return float(chi2_contingency(table.astype(float), correction=False).pvalue)  # type: ignore
     except ValueError:
         return np.nan
 
@@ -172,10 +263,16 @@ def categorical_enrichment(df: pd.DataFrame, feature: str, weight: str | None = 
         table = pd.pivot_table(data, index=feature, columns="rna_class", values=weight, aggfunc="sum", fill_value=0)
     else:
         table = pd.crosstab(data[feature], data["rna_class"])
-    total = table.to_numpy().sum()
-    expected = np.outer(table.sum(axis=1), table.sum(axis=0)) / total
-    fold = np.log2(np.divide(table.to_numpy(), expected, out=np.full(expected.shape, np.nan), where=expected > 0))
+    # Force float dtype: nullable Int64 weights yield object-dtype arrays that
+    # break NumPy's in-place divide/log2 below.
+    observed = table.to_numpy(dtype=float)
+    total = observed.sum()
+    expected = np.outer(table.sum(axis=1).to_numpy(dtype=float), table.sum(axis=0).to_numpy(dtype=float)) / total
+    with np.errstate(divide="ignore", invalid="ignore"):
+        ratio = np.divide(observed, expected, out=np.full(expected.shape, np.nan), where=expected > 0)
+        fold = np.log2(ratio, out=np.full(expected.shape, np.nan), where=ratio > 0)
     long = table.rename_axis(index=feature, columns="rna_class").stack().rename("observed").reset_index()  # type: ignore
+    long["observed"] = observed.ravel()
     long["expected"] = expected.ravel()
     long["log2_obs_exp"] = fold.ravel()
     long["proportion_within_rna_class"] = long["observed"] / long.groupby("rna_class")["observed"].transform("sum")
@@ -220,10 +317,7 @@ def plot_histogram(df: pd.DataFrame, metric: str, title: str, outfile: Path) -> 
 
 
 def plot_fraction_panels(df: pd.DataFrame, metrics: list[str], label_getter, title: str, outfile: Path) -> None:
-    """One multi-panel figure with a separate histogram per metric.
-
-    label_getter(metric, sub_df) returns the per-panel subtitle.
-    """
+    """One multi-panel figure with a separate histogram per metric."""
     available = [m for m in metrics if m in df.columns and df[m].notna().any()]
     if not available:
         return
@@ -285,11 +379,9 @@ def analyze_lcr_continuous(d: pd.DataFrame, method: str, tables: Path, figures: 
     result = pd.concat(summaries, ignore_index=True)
     bh_adjust(result).to_csv(tables / "lcr_level_continuous_summary.csv", index=False)
 
-    # Individual histograms: length, coverage_per_lcr, fcr, ncpr.
     for metric in SINGLE_HISTOGRAM_METRICS:
         if metric in d.columns:
             plot_histogram(d, metric, f"{metric} distribution (LCR): {method}", figures / f"lcr_{metric}_histogram.png")
-    # Seven physicochemical fractions grouped into one multi-panel figure.
     plot_fraction_panels(
         d, FRACTION_PANEL_METRICS, lambda m, x: m,
         f"LCR physicochemical fraction distributions: {method}",
@@ -329,7 +421,6 @@ def analyze_protein(d: pd.DataFrame, method: str, tables: Path, figures: Path) -
     cat = pd.concat(categorical, ignore_index=True); cat["method"] = method
     bh_adjust(cat).to_csv(tables / "protein_level_categorical_enrichment.csv", index=False)
 
-    # Coverage: histogram only (boxplot removed).
     plot_histogram(per_protein, "coverage", f"LCR coverage distribution (protein): {method}", figures / "protein_coverage_histogram.png")
     fig, ax = plt.subplots(figsize=(7, 5)); sns.scatterplot(data=per_protein, x="n_lcr", y="coverage", hue="rna_class", alpha=.7, ax=ax)
     ax.set(title=f"Coverage vs LCR count: {method}")
@@ -344,7 +435,6 @@ def analyze_protein(d: pd.DataFrame, method: str, tables: Path, figures: Path) -
     fractions.to_csv(tables / "protein_level_signature_fractions.csv", index=False)
     for signature, x in fractions.groupby("signature_for_fraction"):
         continuous.append(continuous_summary(x, "property_fraction").assign(method=method, metric=f"property_fraction__{signature}", level="protein"))
-    # Signature property fractions grouped into one multi-panel figure per method.
     pivoted = fractions.pivot_table(index=["uniprot_accession", "rna_class"], columns="signature_for_fraction", values="property_fraction", aggfunc="first").reset_index()
     signature_metrics = [c for c in pivoted.columns if c not in {"uniprot_accession", "rna_class"}]
     plot_fraction_panels(

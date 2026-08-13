@@ -1,0 +1,7 @@
+method,n_lcr,n_proteins,fraction_matched_uniprot_length
+AlcoR,2804,968,1.0
+CAST,1880,1055,1.0
+FLPS,8099,1697,1.0
+LCRFinder,6371,1008,1.0
+SEG_intermediate,1307,622,1.0
+SEG,493,296,1.0
