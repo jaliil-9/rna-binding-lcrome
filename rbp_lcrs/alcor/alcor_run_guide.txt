@@ -59,8 +59,8 @@ Go to the directory containing run_alcor.py:
 Run the analysis:
 
   python3 run_alcor.py \
-    /mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta \
-    /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/results/alcor \
+    /mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/rbps_census/ensembl_v116/Homo_sapiens.GRCh38.pep.all.fa \
+    /mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/alcor_ensembl \
     --alcor ./alcor/src/build/AlcoR
 
 Expected output files

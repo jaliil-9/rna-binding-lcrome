@@ -50,12 +50,12 @@ import re
 # Configuration
 # =========================
 
-LCR_FILE = r"rbp_lcrs\lcr_methods_combined_merged.xlsx"
+LCR_FILE = r"rbp_lcrs\ensembl_lcr_merged.xlsx"
 AA_PROP_FILE = r"lcr_analyses\pc_properties\aa-physicochemical-properties.csv"
-LCR_SHEET = "all_results"
+LCR_SHEET = "Combined"
 
-OUTPUT_FEATURES = "lcr_features_v2.xlsx"
-OUTPUT_ANNOTATIONS = "lcr_annotations_v2.xlsx"
+OUTPUT_FEATURES = "ensembl_lcr_features.xlsx"
+OUTPUT_ANNOTATIONS = "ensembl_lcr_annotations.xlsx"
 
 # Consolidated thresholds (to be calibrated in a dedicated phase)
 THRESHOLDS = {
@@ -126,7 +126,7 @@ def load_aa_properties(filepath):
 def load_lcrs(filepath, sheet_name):
     """Load LCR table."""
     df = pd.read_excel(filepath, sheet_name=sheet_name)
-    required_cols = ["protein_id", "method", "start", "end", "length", "sequence"]
+    required_cols = ["protein_id", "source_method", "start", "end", "length", "sequence"]
     for c in required_cols:
         if c not in df.columns:
             raise ValueError(f"Missing required column: {c}")
@@ -647,7 +647,7 @@ def main():
 
         base = {
             "protein_id": row["protein_id"],
-            "source_method": row["method"],
+            "source_method": row["source_method"],
             "start": row["start"],
             "end": row["end"],
             "length": row["length"],

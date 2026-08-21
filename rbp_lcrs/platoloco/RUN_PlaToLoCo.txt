@@ -12,11 +12,12 @@ Selected callers:
 - SEG strict
 - CAST
 - fLPS strict
-
+- SEG intermediate
 Expected outputs:
 - SEG_strict.csv and SEG_strict.fasta
 - CAST.csv and CAST.fasta
 - fLPS_strict.csv and fLPS_strict.fasta
+- SEG_intermediate.csv and SEG_intermediate.fasta
 - platoloco_request.json (exact submitted parameters)
 
 Each CSV/FASTA record represents one detected LCR interval. A protein with
@@ -82,6 +83,7 @@ Run the script:
   python rbp_lcrs\platoloco\run_platoloco.py `
     datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta `
     rbp_lcrs\platoloco
+
 
 The script submits one asynchronous PlaToLoCo job, polls until it completes,
 retrieves each protein result, and writes the per-method CSV/FASTA outputs.
