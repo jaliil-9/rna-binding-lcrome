@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Create a simple LCR-caller comparison workbook and four figures.
+"""
+Create a simple LCR-caller comparison workbook and four figures.
 
 Usage:
   python lcr_tool_comparison.py --lcr lcr_methods_combined.xlsx \
@@ -360,16 +360,37 @@ def save_figures(d, proteins, outdir):
     return summary.reset_index(), paths
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--lcr", default=Path(r"rbp_lcrs\lcr_methods_combined_merged.xlsx")); ap.add_argument("--proteins", default=Path(r"datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx")); ap.add_argument("--out", default=Path(r"rbp_lcrs\lcr_tool_comparison\merged"))
-    args=ap.parse_args(); outdir=Path(args.out); outdir.mkdir(parents=True, exist_ok=True)
-    proteins=read_proteins(args.proteins); d=build_table(read_calls(args.lcr), proteins); summary, figs=save_figures(d, proteins, outdir)
+    parser=argparse.ArgumentParser(); 
+    parser.add_argument("--lcr", default="rbp_lcrs/lcr_methods_combined_merged.xlsx") 
+    parser.add_argument("--proteins", default="datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx")
+    parser.add_argument("--out", default="rbp_lcrs/lcr_tool_comparison/after_merge")
+
+    args=parser.parse_args(); outdir=Path(args.out) 
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    proteins=read_proteins(args.proteins)
+    d=build_table(read_calls(args.lcr), proteins) 
+    summary, figs=save_figures(d, proteins, outdir)
+
     xlsx=outdir/"lcr_tool_comparison.xlsx"
+
     with pd.ExcelWriter(xlsx, engine="openpyxl") as w:
-        d.to_excel(w, sheet_name="Combined_results", index=False); summary.to_excel(w, sheet_name="Summary", index=False)
-        for tool, sub in d.groupby("tool", sort=True): sub.to_excel(w, sheet_name=re.sub(r"[\\/*?:\[\]]", "_", str(tool))[:31], index=False) # type: ignore
-    wb=load_workbook(xlsx); ws=wb.create_sheet("Figures")
+        d.to_excel(w, sheet_name="Combined_results", index=False)
+        summary.to_excel(w, sheet_name="Summary", index=False)
+
+        for tool, sub in d.groupby("tool", sort=True): 
+            sub.to_excel(w, sheet_name=re.sub(r"[\\/*?:\[\]]", "_", str(tool))[:31], index=False) # type: ignore
+
+    wb=load_workbook(xlsx)
+    ws=wb.create_sheet("Figures")
+
     for i,p in enumerate(figs):
-        img=XLImage(str(p)); img.width=720; img.height=400; ws.add_image(img, f"A{1+i*23}")
+        img=XLImage(str(p)) 
+        img.width=720 
+        img.height=400
+        ws.add_image(img, f"A{1+i*23}")
     wb.save(xlsx)
+
     print(f"Wrote {xlsx} and {len(figs)} PNG figures to {outdir}")
+
 if __name__ == "__main__": main()

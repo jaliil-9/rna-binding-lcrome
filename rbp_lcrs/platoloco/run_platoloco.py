@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-"""Run self-hosted PlaToLoCo and export LCR intervals as CSV and FASTA files.
+"""
+Run self-hosted PlaToLoCo and export LCR intervals as CSV and FASTA files.
 
-Usage:
-    python run_platoloco.py input.fasta output_directory
 """
 
 import csv

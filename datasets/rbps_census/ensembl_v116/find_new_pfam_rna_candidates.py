@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import re
 import time
@@ -69,9 +68,9 @@ def get_go_candidates(go_term):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mapping_xlsx", help="Updated historical-domain mapping Excel file")
-    parser.add_argument("pfam38_dat", help="Pfam 38.2 Pfam-A.hmm.dat")
-    parser.add_argument("-o", "--output", default="pfam38_new_rna_candidates.xlsx")
+    parser.add_argument("mapping_xlsx", default="datasets/rbps_census/gerstberg/rna_binding_domains.xlsx", help="Updated historical-domain mapping Excel file")
+    parser.add_argument("pfam38_dat", default="datasets/rbps_census/ensembl_v116/Pfam-A/Pfam-A38.2.hmm.dat", help="Pfam 38.2 Pfam-A.hmm.dat")
+    parser.add_argument("-o", "--output", default="datasets/rbps_census/ensembl_v116/pfam38_new_rna_candidates.xlsx")
     args = parser.parse_args()
 
     historical = pd.read_excel(args.mapping_xlsx)

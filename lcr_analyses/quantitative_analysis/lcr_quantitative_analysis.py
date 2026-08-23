@@ -1,27 +1,11 @@
 #!/usr/bin/env python3
-"""Phase 2.4.1: quantitative and diversity analysis of RBP LCRs.
+"""
+Quantitative and diversity analysis of RBP LCRs.
 
 Each detection method is analyzed and written independently:
-  <outdir>/methods/<method>/tables/
-  <outdir>/methods/<method>/figures/
+  /methods/<method>/tables/
+  /methods/<method>/figures/
 
-Plot policy: histograms only (no boxplots). The seven physicochemical fraction
-histograms are grouped into one multi-panel figure per method
-(lcr_fraction_histograms.png); protein-level signature fractions into
-protein_signature_fraction_histograms.png.
-
-Data-integration fixes (validated by debug_lcr_join.py):
-  1. Accessions are extracted from pipe-delimited composite IDs
-     (text before the first '|'), e.g.
-     'Q9Y2T7|ensembl_protein_id=...' -> 'Q9Y2T7'.
-  2. Method labels are canonicalized on both sides:
-     'fLPS_strict' -> 'FLPS', 'SEG_strict' -> 'SEG'.
-  3. ALL sheets of the measurements workbook (composition, distribution,
-     co_occurrence) are read and merged on the interval keys, with metric
-     columns renamed back to their canonical names (frac_A, frac_polar, ...).
-
-No method, length, or overlap filters are applied. RNA-target superclass comes
-from the annotations table; the master Combined sheet supplies uniprot_length.
 """
 from __future__ import annotations
 
@@ -51,19 +35,17 @@ FRACTION_PANEL_METRICS = [
 SINGLE_HISTOGRAM_METRICS = ["length", "coverage_per_lcr", "fcr", "ncpr"]
 POSITION_NO_PFAM = "unclassifiednopfam"
 
-# Canonical method labels: normalized (lowercase, alnum-only) -> canonical.
+# Canonical method labels.
 METHOD_ALIASES = {
     "cast": "CAST",
     "seg": "SEG",
-    "segstrict": "SEG",
     "segintermediate": "SEG_intermediate",
     "flps": "FLPS",
-    "flpsstrict": "FLPS",
     "lcrfinder": "LCRFinder",
     "alcor": "AlcoR",
 }
 
-# Canonical metric names: normalized (lowercase, alnum-only) -> canonical.
+# Canonical metric names.
 METRIC_ALIASES = {
     "fracpolar": "frac_polar", "frachydrophobic": "frac_hydrophobic",
     "fracstronghydro": "frac_strong_hydro", "fracaromatic": "frac_aromatic",
@@ -112,10 +94,9 @@ def canonical_metric_name(normalized: str) -> str:
 
 
 def extract_accession(x: str) -> str:
-    """UniProt accession from a pipe-delimited composite protein ID.
+    """UniProt accession
 
     'Q9Y2T7|ensembl_protein_id=ENSP...|entry=...' -> 'Q9Y2T7'
-    Also tolerates the legacy concatenated format and bare accessions.
     """
     text = str(x).strip()
     if "|" in text:
@@ -196,7 +177,7 @@ def standardize_measurements(path: str) -> pd.DataFrame:
             try:
                 merged[col] = pd.to_numeric(merged[col], errors="raise")
             except (ValueError, TypeError):
-                pass  # genuinely textual column (e.g. distribution labels) — keep as-is
+                pass
     return merged
 
 
@@ -263,8 +244,7 @@ def categorical_enrichment(df: pd.DataFrame, feature: str, weight: str | None = 
         table = pd.pivot_table(data, index=feature, columns="rna_class", values=weight, aggfunc="sum", fill_value=0)
     else:
         table = pd.crosstab(data[feature], data["rna_class"])
-    # Force float dtype: nullable Int64 weights yield object-dtype arrays that
-    # break NumPy's in-place divide/log2 below.
+
     observed = table.to_numpy(dtype=float)
     total = observed.sum()
     expected = np.outer(table.sum(axis=1).to_numpy(dtype=float), table.sum(axis=0).to_numpy(dtype=float)) / total
@@ -448,10 +428,10 @@ def analyze_protein(d: pd.DataFrame, method: str, tables: Path, figures: Path) -
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--annotations", default=r"lcr_analyses\pc_properties\lcr_annotations.xlsx")
-    parser.add_argument("--measurements", default=r"lcr_analyses\pc_properties\lcr_features.xlsx")
-    parser.add_argument("--master", default=r"datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx")
-    parser.add_argument("--outdir", default=r"lcr_analyses\results")
+    parser.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations.xlsx")
+    parser.add_argument("--measurements", default="lcr_analyses/pc_properties/lcr_features.xlsx")
+    parser.add_argument("--master", default="datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx")
+    parser.add_argument("--outdir", default="lcr_analyses/results")
     args = parser.parse_args()
 
     out = Path(args.outdir)

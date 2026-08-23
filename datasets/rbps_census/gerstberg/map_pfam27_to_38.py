@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import pandas as pd
 
@@ -20,10 +19,10 @@ def read_pfam_dat(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mapping_xlsx", help="Output from map_pfam38_domains.py")
-    parser.add_argument("pfam27_dat", help="Pfam 27 Pfam-A.hmm.dat")
-    parser.add_argument("pfam38_dat", help="Pfam 38.2 Pfam-A.hmm.dat")
-    parser.add_argument("-o", "--output", default="pfam_domain_mapping_updated.xlsx")
+    parser.add_argument("mapping_xlsx", default="datasets/rbps_census/ensembl_v116/pfam38.2_rbd_candidates.xlsx", help="Output from map_pfam38_domains.py")
+    parser.add_argument("pfam27_dat", default="datasets/rbps_census/ensembl_v116/Pfam-A/Pfam-A27.hmm.dat", help="Pfam 27 Pfam-A.hmm.dat")
+    parser.add_argument("pfam38_dat", default="datasets/rbps_census/ensembl_v116/Pfam-A/Pfam-A38.2.hmm.dat", help="Pfam 38.2 Pfam-A.hmm.dat")
+    parser.add_argument("-o", "--output", default="datasets/rbps_census/gerstberg/pfam_38_vs_27_domains_check.xlsx")
     args = parser.parse_args()
 
     mapping = pd.read_excel(args.mapping_xlsx)

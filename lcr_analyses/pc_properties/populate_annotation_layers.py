@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Populate empty rna_target_superclass and domain_position_class columns in
 lcr_annotations.xlsx from a source xlsx ("Sheet1").
@@ -8,10 +7,6 @@ Mapping:
     domain_position_class  <- primary_class
 
 Join key: protein_id + method + start + end (LCR-level unique).
-
-Usage:
-    python populate_annotation_layers.py lcr_annotations.xlsx source.xlsx
-    python populate_annotation_layers.py lcr_annotations.xlsx source.xlsx -o out.xlsx
 """
 
 import sys
@@ -27,9 +22,9 @@ MAPPING = {
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--annotations", default=r"lcr_analyses\pc_properties\lcr_annotations.xlsx")
-    ap.add_argument("--source", default=r"lcr_analyses\pc_properties\plots\lcr_physicochemical_visualization_data.xlsx")
-    ap.add_argument("-o", "--output", default=r"lcr_analyses\pc_properties\lcr_annotations_filled.xlsx")
+    ap.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations.xlsx")
+    ap.add_argument("--source", default="datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx")
+    ap.add_argument("-o", "--output", default="lcr_analyses/pc_properties/lcr_annotations_filled.xlsx")
     ap.add_argument("--sheet", default="Sheet1")
     args = ap.parse_args()
 

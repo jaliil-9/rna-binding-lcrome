@@ -1,25 +1,5 @@
-#!/usr/bin/env python3
 """
-LCR physicochemical feature extraction and behavior annotation (v2.2).
-
-Changes from v2.1 (rule-logic fixes from output review):
-  - Basic/acidic rules: dropped the charge-distribution ("compact")
-    requirement. Neutral interrupters split charge tracks into many runs,
-    causing poly-E tracts (f- ~0.8) and Arg-rich segments to be missed.
-    NCPR sign+magnitude already encodes one-sign dominance at LCR scales.
-  - hydrophobic_region now keyed on strong-hydrophobe fraction
-    (V, I, L, M, F, W, Y) instead of the Taylor/Jalview hydrophobic set,
-    which includes A, G, T and produced false "aggregation-prone" labels
-    on Ala/Thr/Gly homopolymers (and contradictory co-annotations with
-    gs_rich_neutral_region).
-  - polar_linker now requires low charge (fcr <= 0.30): spacers in the
-    stickers-and-spacers sense are UNCHARGED polar residues. Previously
-    poly-E tracts (f_polar ~0.9) and Arg-rich RP segments were mislabeled
-    as polar linkers.
-  - gs_rich_neutral_region fraction path now requires BOTH components
-    (min(frac_G, frac_S) >= 0.10) so pure poly-S tracts fall through to
-    serine_rich_region. The GS-repeat-cluster path is unchanged (a GS|SG
-    cluster contains both by definition).
+LCR physicochemical feature extraction and behavior annotation.
 
 Inputs:
     - lcr_methods_combined.xlsx  (sheet: "all_results")
@@ -46,18 +26,16 @@ import argparse
 import re
 
 
-# =========================
 # Configuration
-# =========================
 
-LCR_FILE = r"rbp_lcrs\lcr_methods_combined_merged.xlsx"
-AA_PROP_FILE = r"lcr_analyses\pc_properties\aa-physicochemical-properties.csv"
+LCR_FILE = "rbp_lcrs/lcr_methods_combined_merged.xlsx"
+AA_PROP_FILE = "lcr_analyses/pc_properties/aa-physicochemical-properties.csv"
 LCR_SHEET = "all_results"
 
-OUTPUT_FEATURES = "lcr_features_v2.xlsx"
-OUTPUT_ANNOTATIONS = "lcr_annotations_v2.xlsx"
+OUTPUT_FEATURES = "lcr_features.xlsx"
+OUTPUT_ANNOTATIONS = "lcr_annotations.xlsx"
 
-# Consolidated thresholds (to be calibrated in a dedicated phase)
+# Thresholds
 THRESHOLDS = {
     # Charge
     "f_charge_min": 0.25,        # enrichment of one charge sign
@@ -65,31 +43,38 @@ THRESHOLDS = {
     "frac_R_min": 0.12,          # Arg enrichment within basic regions
     "fcr_min": 0.30,             # polyampholyte (Das & Pappu 2013)
     "ncpr_neutral_max": 0.05,    # near-neutral net charge
+
     # Polarity / hydropathy
     "f_polar_min": 0.50,
-    "fcr_polar_linker_max": 0.30,  # polar spacers are uncharged (v2.2)
+    "fcr_polar_linker_max": 0.30,  # polar spacers are uncharged
     "f_hydro_low": 0.20,         # max hydrophobicity for polar linker
-    "frac_strong_hydro_min": 0.30,  # V,I,L,M,F,W,Y fraction (v2.2)
+    "frac_strong_hydro_min": 0.30,  # V,I,L,M,F,W,Y fraction
+
     # Aromatic
     "f_arom_min": 0.08,
+
     # Disorder
     "f_disorder_min": 0.60,
+
     # Single-AA enrichment
     "frac_S_min": 0.30,
     "frac_Q_min": 0.20,
     "frac_G_min": 0.25,
     "frac_P_min": 0.15,
+
     # GS-rich neutral signature
     "f_GS_min": 0.40,            # combined Gly+Ser fraction
-    "frac_GS_each_min": 0.10,    # both G and S must be present (v2.2)
+    "frac_GS_each_min": 0.10,    # both G and S must be present
+
     # Repeat detection (Gerstberger et al. 2014)
     "min_repeats": 3,
     "max_repeat_spacing": 10,
+
     # Co-occurrence
     "cooc_top_quantile": 0.75,
 }
 
-# Strong hydrophobes used for the aggregation-prone rule (v2.2)
+# Strong hydrophobes used for the aggregation-prone rule
 STRONG_HYDRO = "VILMFWY"
 
 # Motif regexes
@@ -97,10 +82,6 @@ RG_REGEX = r"RG{1,2}|RPR"   # RG, RGG, and Arg-Pro-Arg repeats
 RS_REGEX = r"RS|SR"          # strict: Arg required (fixes SK/TK false positives)
 GS_REGEX = r"GS|SG"
 
-
-# =========================
-# Load data
-# =========================
 
 def load_aa_properties(filepath):
     """Load AA property CSV (v2 with Disorder? column)."""
@@ -133,10 +114,7 @@ def load_lcrs(filepath, sheet_name):
     return df
 
 
-# =========================
 # Sequence → property tracks
-# =========================
-
 def encode_sequence(seq, aa_lookup):
     """Return dict of binary property tracks and signed charge track."""
     seq = seq.upper()
@@ -178,13 +156,10 @@ def encode_sequence(seq, aa_lookup):
     return tracks, L
 
 
-# =========================
 # Repeat detection
-# =========================
-
 def find_repeat_cluster(seq, motif_regex, min_repeats, max_spacing):
     """
-    Robust repeat-region detection.
+    Repeat-region detection.
 
     Finds all non-overlapping motif matches, then checks for a cluster of
     >= min_repeats motifs where consecutive matches are spaced
@@ -240,10 +215,7 @@ def compute_repeat_features(seq):
     }
 
 
-# =========================
 # Composition features
-# =========================
-
 def compute_composition_features(seq, aa_lookup):
     """Composition features for one sequence."""
     seq = seq.upper()
@@ -312,12 +284,9 @@ def compute_composition_features(seq, aa_lookup):
     return features
 
 
-# =========================
 # Distribution features
-# =========================
-
 def runs_and_gaps(binary_array):
-    """Run/gap statistics; simplified labels: compact / dispersed / insufficient."""
+    """Run/gap statistics; labels: compact / dispersed / insufficient."""
     if binary_array.sum() == 0:
         return {
             "n_runs": 0,
@@ -375,10 +344,7 @@ def compute_distribution_features(seq, aa_lookup):
     return features
 
 
-# =========================
 # Co-occurrence features
-# =========================
-
 def compute_cooccurrence_features(seq, aa_lookup):
     """Cation-pi co-occurrence score with length-adaptive window."""
     tracks, L = encode_sequence(seq, aa_lookup)
@@ -403,25 +369,28 @@ def compute_cooccurrence_features(seq, aa_lookup):
     return {"cooc_positive_aromatic": count / n_windows}
 
 
-# =========================
 # Behavior annotation rules
-# =========================
-
 def assign_behavior_labels(comp, distr, cooc, cooc_quantile=None):
     """
     Assign behavior labels. Rule order matters; first match = primary.
 
-    Signatures (v2.2):
+    Signatures:
       Repeat:    rg_rgg_repeat_region, sr_rs_repeat_region,
                  gs_rich_neutral_region
+
       Charge:    basic_enriched_region, arginine_rich_rna_contact_region,
                  acidic_region, mixed_charge_polyampholyte
+
       Hydropathy: polar_linker, hydrophobic_region
+
       Aromatic:  aromatic_sticker_region, aromatic_aggregation_prone_region,
                  cation_pi_rich_neighborhood
+
       Disorder:  disorder_rich_spacer_region
+
       Single-AA: serine_rich_region, glutamine_rich_region,
                  glycine_rich_region, proline_rich_disordered_region
+                 
       Fallback:  unmapped_physicochemical_properties
     """
     labels = []

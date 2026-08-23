@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Plot LCR composition summaries by calling method and RNA superclass.
 
@@ -12,7 +11,6 @@ Outputs
 lcr_figures/
 ├── figure_1_lcr_counts.png
 ├── figure_2_median_heatmaps.png
-├── figure_3_top_feature_boxplots.png
 └── feature_separation_ranking.csv
 """
 
@@ -244,58 +242,6 @@ def main():
     ranking.to_csv(output_dir / "feature_separation_ranking.csv", index=False)
 
     top_features = ranking["feature"].head(TOP_N_FEATURES).tolist()
-
-    # ------------------------------------------------------------------
-    # Figure 3: Boxplots for the three strongest separating features.
-    # One row per feature, one column per calling method.
-    # ------------------------------------------------------------------
-    fig, axes = plt.subplots(
-        nrows=len(top_features),
-        ncols=len(method_order),
-        figsize=(5.5 * len(method_order), 4.5 * len(top_features)),
-        squeeze=False,
-    )
-
-    for row, feature in enumerate(top_features):
-        for col, method in enumerate(method_order):
-            ax = axes[row, col]
-
-            subset = data[data["method"] == method].copy()
-
-            sns.boxplot(
-                data=subset,
-                x="rna_primary_class",
-                y=feature,
-                order=class_order,
-                color="#9ecae1",
-                showfliers=False,
-                ax=ax,
-            )
-
-            sns.stripplot(
-                data=subset,
-                x="rna_primary_class",
-                y=feature,
-                order=class_order,
-                color="black",
-                alpha=0.20,
-                size=2,
-                jitter=0.25,
-                ax=ax,
-            )
-
-            ax.set_title(str(method))
-            ax.set_xlabel("RNA superclass")
-            ax.set_ylabel(FEATURE_LABELS[feature])
-            ax.tick_params(axis="x", rotation=45)
-
-    fig.suptitle(
-        "Top LCR features separating RNA superclasses",
-        y=1.01,
-        fontsize=15,
-    )
-    fig.tight_layout()
-    save_figure(fig, output_dir / "figure_3_top_feature_boxplots.png")
 
     print(f"Saved figures to: {output_dir}")
     print("Selected features:")

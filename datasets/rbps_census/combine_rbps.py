@@ -1,13 +1,12 @@
-#!/usr/bin/env python3
 """
-Combine Pfam27/RBP and Pfam38 protein sets, then annotate proteins from UniProt.
+Combine Pfam27 and Pfam38 protein sets, then annotate proteins from UniProt.
 
 Input:
     ensembl116_pfam38_selected_proteins.xlsx
         - sheets: Strict, Borderline
         - protein column: query_name
 
-    rna_binding_proteins-2.xls
+    rna_binding_proteins.xls
         - sheet: RBP table
         - protein column: protein id
 
@@ -24,16 +23,12 @@ import pandas as pd
 import requests
 
 
-# ---------- File names ----------
-
-PFAM38_FILE = r"datasets\rbps_census\ensembl_v116\ensembl116_pfam38_selected_proteins.xlsx"
-RBP_FILE = r"datasets\rbps_census\gerstberg\rna_binding_proteins.xls"
-OUTPUT_FILE = r"datasets\rbps_census\combined_rbp_pfam38_uniprot.xlsx"
+PFAM38_FILE = "datasets/rbps_census/ensembl_v116/ensembl116_pfam38_selected_proteins.xlsx"
+RBP_FILE = "datasets/rbps_census/gerstberg/rna_binding_proteins.xls"
+OUTPUT_FILE = "datasets/rbps_census/combined_rbp_pfam38_uniprot.xlsx"
 
 UNIPROT_API = "https://rest.uniprot.org"
 
-
-# ---------- Input processing ----------
 
 def remove_ensembl_version(protein_id):
     """Convert ENSP00000xxxxx.3 to ENSP00000xxxxx."""
@@ -170,11 +165,11 @@ def is_valid_uniprot_accession(accession):
 
     pattern = (
         r"^(?:"
-        r"[OPQ][0-9][A-Z0-9]{3}[0-9]"           # 6-character format
+        r"[OPQ][0-9][A-Z0-9]{3}[0-9]"           
         r"|"
-        r"[A-NR-Z][0-9][A-Z0-9]{3}[0-9]"        # 6-character format
+        r"[A-NR-Z][0-9][A-Z0-9]{3}[0-9]"        
         r"|"
-        r"[A-Z0-9]{10}"                         # 10-character format
+        r"[A-Z0-9]{10}"                         
         r")$"
     )
 
@@ -209,9 +204,9 @@ def fetch_uniprot_batch(accessions, fields):
 
 def download_uniprot_annotations(accessions):
     """
-    Download UniProt annotations robustly.
+    Download UniProt annotations.
 
-    Uses batches of 50 accessions to avoid problematic long query URLs.
+    Using batches of 50 accessions to avoid problematic long query URLs.
     If a batch fails, it tries every accession individually and reports
     accession(s) that UniProt rejects.
     """
@@ -336,8 +331,6 @@ def select_best_uniprot_match(ensembl_to_uniprot, annotations):
     return pd.DataFrame(rows)
 
 
-# ---------- Main ----------
-
 def main():
     ensembl_ids, source_by_id = load_protein_sets()
 
@@ -373,7 +366,6 @@ def main():
     best_matches = select_best_uniprot_match(ensembl_to_uniprot, annotations)
     print("Best-match columns:", best_matches.columns.tolist())
 
-    # Force both join columns into exactly the same versionless string format.
     combined["ensembl_protein_id"] = (
         combined["ensembl_protein_id"]
         .astype(str)
@@ -396,7 +388,6 @@ def main():
         keep="first",
     )
 
-    # Diagnostic: this must be close to 1,790.
     shared_ids = set(combined["ensembl_protein_id"]) & set(
         best_matches["ensembl_protein_id"]
     )
@@ -419,7 +410,7 @@ def main():
     print(f"Rows without UniProt accession: {unmapped_count}")
 
     assert mapped_count > 1700, (
-        "Merge failed: expected approximately 1,790 UniProt-mapped proteins."
+        "Merge failed: expected 1,790 UniProt-mapped proteins."
     )
 
     output_columns = [

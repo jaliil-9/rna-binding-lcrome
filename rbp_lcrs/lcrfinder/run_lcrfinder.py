@@ -1,9 +1,6 @@
-#!/usr/bin/env python3
-"""Run the MATLAB/Octave LCRFinder implementation from a standard terminal.
+"""
+Run the MATLAB/Octave LCRFinder implementation from a standard terminal.
 
-Examples:
-    python run_lcrfinder.py input.fasta output_dir --lcrfinder-dir /path/to/LCRFinder
-    python run_lcrfinder.py input.fasta output_dir --lcrfinder-dir C:\path\to\LCRFinder --engine octave-cli
 """
 
 import argparse

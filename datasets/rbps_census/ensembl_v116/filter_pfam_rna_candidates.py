@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Keep RNA-functional Pfam candidates in three evidence tiers.
+"""
+Keep RNA-functional Pfam candidates in three evidence tiers.
 
-This is a conservative name-based triage for the output of
-find_new_pfam_rna_candidates.py. It deliberately excludes viral, prokaryotic
+This is a conservative name-based task for the output of
+find_new_pfam_rna_candidates.py. It excludes viral, prokaryotic
 system, and DNA-centric domains. Inspect the review workbook before using its
 contents as a final domain allow-list.
 """
@@ -10,7 +11,6 @@ import argparse
 import re
 import pandas as pd
 
-# Order matters: exclusions are applied before positive rules.
 EXCLUDE = re.compile(
     r"(?:flu_|flavi|rota|corona|\bcov|pico|pox|herpes|birna|bunya|arena|orbi|"
     r"seadorna|phage|\bt4\b|\bt7\b|baculo|mitovir|mycovirus|viral|virus|"
@@ -38,7 +38,6 @@ RNP = re.compile(
     r"\beif\b|\bef[gt]\b|aminoacyl|synthetase|\bpeptidyl\b)", re.I)
 
 def classify(name: str):
-    """Return tier and a short reproducible rationale, or (None, None)."""
     name = str(name)
     if EXCLUDE.search(name):
         return None, None
@@ -52,8 +51,8 @@ def classify(name: str):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("input_xlsx", help="pfam38.2_new_rna_candidates.xlsx")
-    ap.add_argument("-o", "--output", default="pfam38.2_rna_functional_tiers.xlsx")
+    ap.add_argument("input_xlsx", default="datasets/rbps_census/ensembl_v116/pfam38.2_new_rna_candidates.xlsx")
+    ap.add_argument("-o", "--output", default="datasets/rbps_census/ensembl_v116/pfam38.2_rna_functional_tiers.xlsx")
     ap.add_argument("--include-go", action="store_true", help="also classify rows sourced from GO")
     args = ap.parse_args()
 

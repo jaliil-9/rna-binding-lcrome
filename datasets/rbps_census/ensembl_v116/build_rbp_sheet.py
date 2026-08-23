@@ -1,9 +1,6 @@
-#!/usr/bin/env python3
-"""Combine the 2014 RBP census with Ensembl v116 Pfam-38 strict/borderline candidates.
+# Combine the 2014 RBP census with Ensembl v116 Pfam-38 candidates.
 
-Usage:
-  python build_rbp_sheet.py rna_binding_proteins.xls ensembl116_pfam38_filtered_proteins.xlsx combined_rbps.xlsx
-"""
+import argparse
 import sys
 import time
 from io import StringIO
@@ -188,9 +185,15 @@ def uniprot_metadata(genes, batch_size=100):
         "Subcellular location [CC]": "subcellular_location", "Domain [CC]": "uniprot_domains",
     }).drop(columns=["Gene Names", "reviewed_rank"], errors="ignore")
 
-def main(census_file, candidate_file, output_file):
-    old = read_census(census_file)
-    new = read_candidates(candidate_file)
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--census-file", default="datasets/rbps_census/ensembl_v116/rna_binding_proteins.xls")
+    parser.add_argument("--candidate-file", default="datasets/rbps_census/ensembl_v116/pfam38_filtered_proteins.xlsx")
+    parser.add_argument("--output-file", default="datasets/rbps_census/combined_rbp_pfam38_uniprot.xlsx")
+    args = parser.parse_args()
+
+    old = read_census(args.census_file)
+    new = read_candidates(args.candidate_file)
     meta = ensembl_metadata(new["ensp_key"].tolist())
     new = new.merge(meta, on="ensp_key", how="left")
 

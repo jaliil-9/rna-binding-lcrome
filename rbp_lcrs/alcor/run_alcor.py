@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-"""Run AlcoR mapper on a protein FASTA and write AlcoR.csv and AlcoR.fasta.
+"""
+Run AlcoR mapper on a protein FASTA and write AlcoR.csv and AlcoR.fasta.
 
-Example:
-    python3 run_alcor.py /path/to/combined.fasta results --alcor ./build/AlcoR
 """
 
 import argparse

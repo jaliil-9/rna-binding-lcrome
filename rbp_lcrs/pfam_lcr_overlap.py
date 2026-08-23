@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Annotate LCRs with Pfam domain overlaps using hmmscan."""
 
 import argparse

@@ -1,27 +1,18 @@
-#!/usr/bin/env python3
-"""Assign Gerstberger-style RNA target superclasses to a UniProt RBP workbook.
-
-Usage
------
-python classify_rbps.py \
-  --input rbps_input.xlsx \
-  --gerstberger gerstberger_s3.xlsx \
-  --output rbp_rna_classification.xlsx
+"""
+Assign Gerstberger-style RNA target superclasses to the co,bined RBP dataset.
 
 Inputs
-------
-1) UniProt workbook (first sheet, or --input-sheet) with columns:
-   Entry; Entry Name; Protein names; Gene Ontology (biological process);
-   Gene Ontology (molecular function); Subcellular location [CC]; Domain [CC]
-2) Gerstberger Supplementary Table S3 workbook/CSV with columns:
-   gene name; protein id; consensus RNA target; putative RNA target;
-   supporting evidence (# pubmed ID)
+  - UniProt workbook (first sheet --input-sheet) with columns:
+    Entry; Entry Name; Protein names; Gene Ontology (biological process);
+    Gene Ontology (molecular function); Subcellular location [CC]; Domain [CC]
+  - Gerstberger Supplementary Table S3 workbook/CSV with columns:
+    gene name; protein id; consensus RNA target; putative RNA target;
+    supporting evidence (# pubmed ID)
 
 Output
-------
-An XLSX file containing all_combined plus one sheet per primary RNA class.
-Only these six columns are written: uniprot_accession, rna_primary_class,
-rna_secondary_class, confidence, evidence_source, evidence_matched.
+  - XLSX file containing all_combined plus one sheet per primary RNA class.
+    Only these six columns are written: uniprot_accession, rna_primary_class,
+    rna_secondary_class, confidence, evidence_source, evidence_matched.
 """
 
 from __future__ import annotations
@@ -300,10 +291,10 @@ def classify_row(row: pd.Series, s3_protein: Dict[str, dict], s3_gene: Dict[str,
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Simple Gerstberger-style RBP RNA-target classifier")
-    parser.add_argument("--input", required=True, help="UniProt-mapped input XLSX/CSV")
-    parser.add_argument("--gerstberger", required=True, help="Original Gerstberger S3 XLSX/CSV")
-    parser.add_argument("--output", default="rbp_rna_classification.xlsx", help="Output XLSX path")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default="datasets/rbps_census/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx", help="UniProt-mapped input XLSX/CSV")
+    parser.add_argument("--gerstberger", default="rbp_superclasses/gerstberger_s3.xlsx", help="Original Gerstberger S3 XLSX/CSV")
+    parser.add_argument("--output", default="rbp_superclasses/rbp_rna_classification.xlsx", help="Output XLSX path")
     parser.add_argument("--input-sheet", default=0, help="Input sheet name or zero-based index")
     parser.add_argument("--s3-sheet", default=0, help="S3 sheet name or zero-based index")
     args = parser.parse_args()

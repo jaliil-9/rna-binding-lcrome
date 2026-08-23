@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
-"""Classify method-specific LCRs by their positions relative to retained Pfam domains.
+"""
+Classify method-specific LCRs by their positions relative to retained Pfam domains.
 
-Inputs
-------
+Inputs:
 1. lcr_methods_combined.xlsx, sheet: all_results
 2. pfam_lcr_overlap.xlsx, sheet: Pfam_hits
 
@@ -169,9 +168,9 @@ def main(lcr_file: Path, pfam_file: Path, output_dir: Path) -> None:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Position-based LCR classification relative to Pfam domains")
-    parser.add_argument("--lcr-file", type=Path, default=Path(r"rbp_lcrs\lcr_methods_combined_merged.xlsx"))
-    parser.add_argument("--pfam-file", type=Path, default=Path(r"rbp_lcrs\pfam_lcr_overlap.xlsx"))
-    parser.add_argument("--output-dir", type=Path, default=Path(r"lcr_analyses\domain_function\after_merge"))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--lcr-file", default="rbp_lcrs/lcr_methods_combined_merged.xlsx")
+    parser.add_argument("--pfam-file", default="rbp_lcrs/pfam_lcr_overlap.xlsx")
+    parser.add_argument("--output-dir", default="lcr_analyses/domain_function/")
     args = parser.parse_args()
     main(args.lcr_file, args.pfam_file, args.output_dir)

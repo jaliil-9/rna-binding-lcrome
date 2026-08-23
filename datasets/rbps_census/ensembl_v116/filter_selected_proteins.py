@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import sys
 from pathlib import Path
 import pandas as pd
@@ -45,7 +44,7 @@ def read_domtblout(path):
 df = read_domtblout(DOMTBLOUT)
 
 selected = pd.read_excel(
-    "pfam38_census_comparison.xlsx",
+    "datasets/rbps_census/ensembl_v116/pfam38_census_comparison.xlsx",
     sheet_name="2_Deduplicated"
 )
 
@@ -58,7 +57,7 @@ strict = df[
     (df["hmm_coverage"] >= 0.50)
     ].copy()
 
-# Useful but not final: retain for focused later inspection
+# Loose retained criteria for borderline candidates.
 borderline = df[
     (df["i_evalue"] <= 1e-3) &
     (df["hmm_coverage"] >= 0.30)
@@ -108,7 +107,7 @@ borderline_summary.to_csv(
 
 # Protein-level Excel workbook: one sheet per confidence class
 with pd.ExcelWriter(
-    "rna_domain_protein_classes_v2.xlsx",
+    "datasets/rbps_census/ensembl_v116/ensembl116_pfam38_selected_proteins.xlsx",
     engine="openpyxl"
 ) as writer:
     strict_summary.to_excel(writer, sheet_name="Strict", index=False)

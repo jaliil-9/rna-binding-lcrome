@@ -29,9 +29,9 @@ raw_row_ids are 0-based row indices into the INPUT file's all_results sheet.
 import sys
 import pandas as pd
 
-INPUT_XLSX = r"rbp_lcrs\lcr_methods_combined.xlsx"
-REF_XLSX = r"datasets\combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx"
-OUTPUT_XLSX = r"rbp_lcrs\lcr_methods_combined_merged.xlsx"
+INPUT_XLSX = "rbp_lcrs/lcr_methods_combined.xlsx"
+REF_XLSX = "datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx"
+OUTPUT_XLSX = "rbp_lcrs/lcr_methods_combined_merged.xlsx"
 
 RAW_SHEET = "all_results"
 REF_SHEET = "Combined"

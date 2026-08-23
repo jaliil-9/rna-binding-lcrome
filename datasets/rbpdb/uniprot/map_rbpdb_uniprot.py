@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import csv
 import io
 import re
@@ -8,7 +7,7 @@ from pathlib import Path
 
 import requests
 
-INPUT = Path(sys.argv[1])
+INPUT = Path(r"datasets\rbpdb\uniprot\rbpdb_human_current_uniprot_swissprot.csv")
 OUTDIR = Path("rbpdb_uniprot_output")
 OUTDIR.mkdir(exist_ok=True)
 

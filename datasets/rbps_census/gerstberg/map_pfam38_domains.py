@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import re
 from pathlib import Path
@@ -22,9 +21,9 @@ def read_pfam_dat(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("domains_xlsx", help="Excel file containing historical Pfam names in column 1")
-    parser.add_argument("pfam_dat", help="Pfam 38.2 Pfam-A.hmm.dat file")
-    parser.add_argument("-o", "--output", default="pfam38_2_domain_mapping.xlsx")
+    parser.add_argument("domains_xlsx", default="datasets/rbps_census/ensembl_v116/pfam38.2_rbd_candidates.xlsx", help="Excel file containing historical Pfam names in column 1")
+    parser.add_argument("pfam_dat", default="datasets/rbps_census/ensembl_v116/Pfam-A/Pfam-A38.2.hmm.dat", help="Pfam 38.2 Pfam-A.hmm.dat file")
+    parser.add_argument("-o", "--output", default="datasets/rbps_census/ensembl_v116/pfam38_2_domain_mapping.xlsx")
     args = parser.parse_args()
 
     domains = pd.read_excel(args.domains_xlsx, usecols=[0])

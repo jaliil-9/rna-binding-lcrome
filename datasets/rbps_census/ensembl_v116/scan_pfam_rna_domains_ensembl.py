@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Scan selected RNA-related Pfam HMMs against Ensembl proteins and select one isoform/gene.
+"""
+Scan selected RNA-related Pfam HMMs against Ensembl proteins and select one isoform/gene.
 
 Default threshold reproduces the Gerstberger et al. 2014 E-value criterion:
 full-sequence E-value < 0.01 AND independent-domain E-value < 0.01.
@@ -7,6 +8,7 @@ The input FASTA must contain all Ensembl protein isoforms, with headers carrying
 'gene:ENSG...' fields, so isoforms can be collapsed afterwards.
 """
 import argparse
+from email.policy import default
 import hashlib
 import os
 import re
@@ -152,12 +154,12 @@ def parse_domtbl(path, seqs, e_cutoff):
 def main():
     ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     ap.add_argument('--hmmer-bin', required=True, help='Directory containing hmmscan, hmmfetch and hmmpress')
-    ap.add_argument('--pfam-hmm', required=True, help='Pfam-A.hmm for the same Pfam release as the candidate list')
-    ap.add_argument('--candidates-xlsx', required=True, help='Tiered candidate workbook from filter_rna_functional_pfam_domains.py')
+    ap.add_argument('--pfam-hmm', default='datasets/rbps_census/ensembl_v116/Pfam-A/Pfam-A38.2.hmm', help='Pfam-A.hmm for the same Pfam release as the candidate list')
+    ap.add_argument('--candidates-xlsx', default='datasets/rbps_census/ensembl_v116/ensembl116_pfam38_selected_proteins.xlsx', help='Tiered candidate workbook from filter_rna_functional_pfam_domains.py')
     ap.add_argument('--candidates-sheet', default='retained_tiers')
     ap.add_argument('--ensembl-fasta', required=True, help='Ensembl pep.all FASTA: all isoforms, not pre-collapsed')
-    ap.add_argument('--output', default='ensembl116_rna_pfam_hits_collapsed.xlsx')
-    ap.add_argument('--workdir', default='hmmer_rna_pfam_work')
+    ap.add_argument('--output', default='datasets/rbps_census/ensembl_v116/ensembl116_pfam38_rna_proteins_isoform_collapsed.xlsx')
+    ap.add_argument('--workdir', default='datasets/rbps_census/hmmer_rna_pfam_work')
     ap.add_argument('--cpu', type=int, default=8)
     ap.add_argument('--evalue', type=float, default=0.01, help='Strict full-sequence and independent-domain E-value cutoff')
     ap.add_argument('--keep-workdir', action='store_true')

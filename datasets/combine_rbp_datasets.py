@@ -26,18 +26,8 @@ Input:
           match the rest of this human RBP census) and to headers with a
           resolvable UniProt accession (some are "Uniprot:None").
 
-Dedup strategy:
-    RBPDB and MODOMICS don't share the combined table's Ensembl-protein-ID
-    key (RBPDB only has an Ensembl *gene* ID; MODOMICS has no Ensembl ID at
-    all). The one identifier every source can be resolved to is a UniProt
-    accession, so that's used as the dedup key: a protein is only appended
-    if its UniProt accession isn't already in the combined table. A protein
-    newly introduced by both RBPDB and MODOMICS gets source "rbpdb;modomics".
-
 Output:
     combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx
-        - same columns as the input combined table, with new rows appended
-          for RBPDB- and MODOMICS-only proteins.
 """
 
 from collections import defaultdict
@@ -52,9 +42,9 @@ import requests
 # ---------- File names ----------
 
 COMBINED_FILE = "datasets/rbps_census/combined_rbp_pfam38_uniprot.xlsx"
-RBPDB_FILE = r"datasets\rbpdb\RBPDB_v1.3.1_human_2012-11-21_CSV\RBPDB_v1.3.1_proteins_human_2012-11-21.csv"
+RBPDB_FILE = "datasets/rbpdb/RBPDB_v1.3.1_human_2012-11-21_CSV/RBPDB_v1.3.1_proteins_human_2012-11-21.csv"
 MODOMICS_FILE = "datasets/modomics/protein_sequences.fasta"
-OUTPUT_FILE = "combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx"
+OUTPUT_FILE = "datasets/rbps_census/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx"
 UNMAPPED_RBPDB_FILE = "unmapped_rbpdb_genes.xlsx"
 
 UNIPROT_API = "https://rest.uniprot.org"

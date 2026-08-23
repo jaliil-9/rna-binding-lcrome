@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Summarise LCR sequence-composition features by calling method and RNA superclass.
 

@@ -1,23 +1,5 @@
-#!/usr/bin/env python3
-"""Create QC and biological-context visualizations for LCR physicochemical annotations.
-
-Example:
-python visualize_lcr_physicochemical_annotations.py \
-  --annotations lcr_physicochemical_annotations.xlsx \
-  --features lcr_physicochemical_features.xlsx \
-  --position lcr_position_classes.xlsx \
-  --rna rbp_rna_classification.xlsx \
-  --output lcr_physicochemical_figures
-
-Expected sheets:
-  annotations workbook: Sheet1
-  features workbook: composition, distribution, co_occurrence
-  RNA workbook: all_combined
-
-v2.2 update: figures 05/06 show signature prevalence per RNA-target superclass
-and per domain-position class, split into one panel per calling method.
-Feature/distribution column names aligned with v2 outputs (frac_disorder,
-compact/dispersed/insufficient labels).
+"""
+Create quality control and biological-context visualizations for LCR physicochemical annotations.
 """
 
 from __future__ import annotations
@@ -320,11 +302,11 @@ def distribution_label_plot(df: pd.DataFrame, output: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser()
     parser.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations.xlsx", help="Physicochemical annotation workbook.")
     parser.add_argument("--features", default="lcr_analyses/pc_properties/lcr_features.xlsx", help="Physicochemical feature workbook.")
-    parser.add_argument("--position", default=r"lcr_analyses\domain_function\lcr_position_classes.csv", help="Domain-position classification workbook or CSV.")
-    parser.add_argument("--rna", default=r"rbp_superclasses\rbp_rna_classification.xlsx", help="RNA target superclass workbook.")
+    parser.add_argument("--position", default="lcr_analyses/domain_function/lcr_position_classes.csv", help="Domain-position classification workbook or CSV.")
+    parser.add_argument("--rna", default="rbp_superclasses/rbp_rna_classification.xlsx", help="RNA target superclass workbook.")
     parser.add_argument("--output", default="lcr_analyses/pc_properties/plots", help="Output directory.")
     args = parser.parse_args()
 
