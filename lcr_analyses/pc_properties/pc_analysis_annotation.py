@@ -107,7 +107,7 @@ def load_aa_properties(filepath):
 def load_lcrs(filepath, sheet_name):
     """Load LCR table."""
     df = pd.read_excel(filepath, sheet_name=sheet_name)
-    required_cols = ["protein_id", "method", "start", "end", "length", "sequence"]
+    required_cols = ["protein_id", "source_method", "start", "end", "length", "sequence"]
     for c in required_cols:
         if c not in df.columns:
             raise ValueError(f"Missing required column: {c}")
@@ -616,7 +616,7 @@ def main():
 
         base = {
             "protein_id": row["protein_id"],
-            "source_method": row["method"],
+            "source_method": row["source_method"],
             "start": row["start"],
             "end": row["end"],
             "length": row["length"],

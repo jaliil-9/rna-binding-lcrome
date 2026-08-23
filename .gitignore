@@ -1,6 +1,8 @@
 # Large generated biological datasets and analysis artifacts
 *.fa
 *.gtf
+*.gz
+*.tsv
 *.hmm
 *.hmm.h3*
 *.domtblout

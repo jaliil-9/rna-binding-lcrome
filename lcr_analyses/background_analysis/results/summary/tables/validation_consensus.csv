@@ -1,0 +1,163 @@
+rna_class,signature,verdict
+diverse,acidic_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+diverse,arginine_rich_rna_contact_region,"{'external_underpowered': 5, 'concordant_null': 1}"
+diverse,aromatic_aggregation_prone_region,{'external_underpowered': 5}
+diverse,aromatic_sticker_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+diverse,basic_enriched_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+diverse,cation_pi_rich_neighborhood,"{'concordant_null': 3, 'external_underpowered': 3}"
+diverse,disorder_rich_spacer_region,"{'concordant_null': 4, 'external_underpowered': 2}"
+diverse,glutamine_rich_region,{'external_underpowered': 6}
+diverse,glycine_rich_region,{'external_underpowered': 4}
+diverse,gs_rich_neutral_region,"{'external_underpowered': 5, 'concordant_null': 1}"
+diverse,hydrophobic_region,"{'external_underpowered': 4, 'rbp_generic': 2}"
+diverse,mixed_charge_polyampholyte,{'external_underpowered': 5}
+diverse,polar_linker,{'external_underpowered': 6}
+diverse,proline_rich_disordered_region,{'external_underpowered': 6}
+diverse,rg_rgg_repeat_region,{'external_underpowered': 6}
+diverse,serine_rich_region,{'external_underpowered': 6}
+diverse,sr_rs_repeat_region,{'external_underpowered': 6}
+diverse,unmapped_physicochemical_properties,"{'external_underpowered': 4, 'concordant_null': 2}"
+mRNA,acidic_region,"{'new_external_signal': 5, 'concordant_null': 1}"
+mRNA,arginine_rich_rna_contact_region,"{'concordant_null': 3, 'new_external_signal': 3}"
+mRNA,aromatic_aggregation_prone_region,"{'external_underpowered': 3, 'concordant_null': 2}"
+mRNA,aromatic_sticker_region,"{'externally_validated': 2, 'new_external_signal': 2, 'concordant_null': 1, 'rbp_generic': 1}"
+mRNA,basic_enriched_region,"{'new_external_signal': 4, 'concordant_null': 2}"
+mRNA,cation_pi_rich_neighborhood,"{'new_external_signal': 2, 'external_underpowered': 2, 'concordant_null': 1, 'rbp_generic': 1}"
+mRNA,disorder_rich_spacer_region,"{'new_external_signal': 3, 'externally_validated': 2, 'concordant_null': 1}"
+mRNA,glutamine_rich_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+mRNA,glycine_rich_region,"{'external_underpowered': 3, 'concordant_null': 1}"
+mRNA,gs_rich_neutral_region,"{'externally_validated': 3, 'new_external_signal': 2, 'concordant_null': 1}"
+mRNA,hydrophobic_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+mRNA,mixed_charge_polyampholyte,"{'new_external_signal': 3, 'concordant_null': 1, 'externally_validated': 1}"
+mRNA,polar_linker,"{'new_external_signal': 4, 'external_underpowered': 1, 'externally_validated': 1}"
+mRNA,proline_rich_disordered_region,"{'external_underpowered': 3, 'concordant_null': 2, 'externally_validated': 1}"
+mRNA,rg_rgg_repeat_region,"{'externally_validated': 4, 'new_external_signal': 2}"
+mRNA,serine_rich_region,"{'external_underpowered': 5, 'concordant_null': 1}"
+mRNA,sr_rs_repeat_region,"{'externally_validated': 5, 'rbp_generic': 1}"
+mRNA,unmapped_physicochemical_properties,"{'concordant_null': 5, 'external_underpowered': 1}"
+ncRNA,acidic_region,"{'concordant_null': 4, 'new_external_signal': 2}"
+ncRNA,arginine_rich_rna_contact_region,"{'concordant_null': 3, 'external_underpowered': 2, 'new_external_signal': 1}"
+ncRNA,aromatic_aggregation_prone_region,"{'external_underpowered': 4, 'externally_validated': 1}"
+ncRNA,aromatic_sticker_region,"{'concordant_null': 5, 'external_underpowered': 1}"
+ncRNA,basic_enriched_region,"{'new_external_signal': 3, 'external_underpowered': 2, 'concordant_null': 1}"
+ncRNA,cation_pi_rich_neighborhood,"{'concordant_null': 3, 'external_underpowered': 3}"
+ncRNA,disorder_rich_spacer_region,{'concordant_null': 6}
+ncRNA,glutamine_rich_region,{'external_underpowered': 6}
+ncRNA,glycine_rich_region,{'external_underpowered': 4}
+ncRNA,gs_rich_neutral_region,"{'concordant_null': 3, 'external_underpowered': 2, 'new_external_signal': 1}"
+ncRNA,hydrophobic_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+ncRNA,mixed_charge_polyampholyte,"{'concordant_null': 3, 'external_underpowered': 2}"
+ncRNA,polar_linker,{'external_underpowered': 6}
+ncRNA,proline_rich_disordered_region,{'external_underpowered': 6}
+ncRNA,rg_rgg_repeat_region,{'external_underpowered': 6}
+ncRNA,serine_rich_region,"{'external_underpowered': 5, 'concordant_null': 1}"
+ncRNA,sr_rs_repeat_region,{'external_underpowered': 6}
+ncRNA,unmapped_physicochemical_properties,"{'external_underpowered': 4, 'concordant_null': 2}"
+pre-rRNA,acidic_region,"{'externally_validated': 4, 'concordant_null': 1, 'new_external_signal': 1}"
+pre-rRNA,arginine_rich_rna_contact_region,"{'new_external_signal': 2, 'externally_validated': 2, 'external_underpowered': 2}"
+pre-rRNA,aromatic_aggregation_prone_region,{'external_underpowered': 5}
+pre-rRNA,aromatic_sticker_region,"{'external_underpowered': 4, 'concordant_null': 1, 'validated_depletion': 1}"
+pre-rRNA,basic_enriched_region,"{'externally_validated': 3, 'new_external_signal': 1, 'external_underpowered': 1, 'concordant_null': 1}"
+pre-rRNA,cation_pi_rich_neighborhood,"{'concordant_null': 3, 'external_underpowered': 3}"
+pre-rRNA,disorder_rich_spacer_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+pre-rRNA,glutamine_rich_region,{'external_underpowered': 6}
+pre-rRNA,glycine_rich_region,{'external_underpowered': 4}
+pre-rRNA,gs_rich_neutral_region,"{'external_underpowered': 5, 'concordant_null': 1}"
+pre-rRNA,hydrophobic_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+pre-rRNA,mixed_charge_polyampholyte,"{'concordant_null': 2, 'external_underpowered': 2, 'new_external_signal': 1}"
+pre-rRNA,polar_linker,{'external_underpowered': 6}
+pre-rRNA,proline_rich_disordered_region,{'external_underpowered': 6}
+pre-rRNA,rg_rgg_repeat_region,{'external_underpowered': 6}
+pre-rRNA,serine_rich_region,{'external_underpowered': 6}
+pre-rRNA,sr_rs_repeat_region,{'external_underpowered': 6}
+pre-rRNA,unmapped_physicochemical_properties,"{'external_underpowered': 4, 'concordant_null': 2}"
+ribosomal protein,acidic_region,"{'external_underpowered': 3, 'concordant_null': 2, 'validated_depletion': 1}"
+ribosomal protein,arginine_rich_rna_contact_region,"{'external_underpowered': 3, 'externally_validated': 2, 'concordant_null': 1}"
+ribosomal protein,aromatic_aggregation_prone_region,{'external_underpowered': 5}
+ribosomal protein,aromatic_sticker_region,"{'external_underpowered': 4, 'concordant_null': 1, 'validated_depletion': 1}"
+ribosomal protein,basic_enriched_region,"{'concordant_null': 3, 'externally_validated': 1, 'new_external_signal': 1, 'external_underpowered': 1}"
+ribosomal protein,cation_pi_rich_neighborhood,"{'external_underpowered': 4, 'concordant_null': 1, 'validated_depletion': 1}"
+ribosomal protein,disorder_rich_spacer_region,"{'concordant_null': 3, 'external_underpowered': 2, 'validated_depletion': 1}"
+ribosomal protein,glutamine_rich_region,{'external_underpowered': 6}
+ribosomal protein,glycine_rich_region,{'external_underpowered': 4}
+ribosomal protein,gs_rich_neutral_region,{'external_underpowered': 6}
+ribosomal protein,hydrophobic_region,"{'external_underpowered': 4, 'concordant_null': 1, 'validated_depletion': 1}"
+ribosomal protein,mixed_charge_polyampholyte,"{'external_underpowered': 4, 'concordant_null': 1}"
+ribosomal protein,polar_linker,{'external_underpowered': 6}
+ribosomal protein,proline_rich_disordered_region,{'external_underpowered': 6}
+ribosomal protein,rg_rgg_repeat_region,{'external_underpowered': 6}
+ribosomal protein,serine_rich_region,{'external_underpowered': 6}
+ribosomal protein,sr_rs_repeat_region,{'external_underpowered': 6}
+ribosomal protein,unmapped_physicochemical_properties,"{'external_underpowered': 4, 'concordant_null': 1, 'validated_depletion': 1}"
+snRNA,acidic_region,"{'concordant_null': 2, 'new_external_signal': 2, 'externally_validated': 1, 'external_underpowered': 1}"
+snRNA,arginine_rich_rna_contact_region,"{'external_underpowered': 3, 'new_external_signal': 2, 'concordant_null': 1}"
+snRNA,aromatic_aggregation_prone_region,{'external_underpowered': 5}
+snRNA,aromatic_sticker_region,"{'concordant_null': 4, 'external_underpowered': 2}"
+snRNA,basic_enriched_region,"{'new_external_signal': 4, 'concordant_null': 1, 'external_underpowered': 1}"
+snRNA,cation_pi_rich_neighborhood,"{'external_underpowered': 4, 'concordant_null': 2}"
+snRNA,disorder_rich_spacer_region,{'concordant_null': 6}
+snRNA,glutamine_rich_region,{'external_underpowered': 6}
+snRNA,glycine_rich_region,{'external_underpowered': 4}
+snRNA,gs_rich_neutral_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+snRNA,hydrophobic_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+snRNA,mixed_charge_polyampholyte,"{'external_underpowered': 3, 'concordant_null': 2}"
+snRNA,polar_linker,{'external_underpowered': 6}
+snRNA,proline_rich_disordered_region,{'external_underpowered': 6}
+snRNA,rg_rgg_repeat_region,"{'external_underpowered': 3, 'new_external_signal': 3}"
+snRNA,serine_rich_region,{'external_underpowered': 6}
+snRNA,sr_rs_repeat_region,"{'new_external_signal': 4, 'external_underpowered': 1, 'externally_validated': 1}"
+snRNA,unmapped_physicochemical_properties,"{'external_underpowered': 4, 'concordant_null': 2}"
+snoRNA,acidic_region,"{'new_external_signal': 3, 'externally_validated': 2, 'external_underpowered': 1}"
+snoRNA,arginine_rich_rna_contact_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+snoRNA,aromatic_aggregation_prone_region,{'external_underpowered': 5}
+snoRNA,aromatic_sticker_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+snoRNA,basic_enriched_region,"{'external_underpowered': 3, 'externally_validated': 2, 'new_external_signal': 1}"
+snoRNA,cation_pi_rich_neighborhood,"{'external_underpowered': 5, 'concordant_null': 1}"
+snoRNA,disorder_rich_spacer_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+snoRNA,glutamine_rich_region,{'external_underpowered': 6}
+snoRNA,glycine_rich_region,{'external_underpowered': 4}
+snoRNA,gs_rich_neutral_region,{'external_underpowered': 6}
+snoRNA,hydrophobic_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+snoRNA,mixed_charge_polyampholyte,"{'external_underpowered': 4, 'new_external_signal': 1}"
+snoRNA,polar_linker,{'external_underpowered': 6}
+snoRNA,proline_rich_disordered_region,{'external_underpowered': 6}
+snoRNA,rg_rgg_repeat_region,{'external_underpowered': 6}
+snoRNA,serine_rich_region,{'external_underpowered': 6}
+snoRNA,sr_rs_repeat_region,{'external_underpowered': 6}
+snoRNA,unmapped_physicochemical_properties,{'external_underpowered': 6}
+tRNA,acidic_region,"{'concordant_null': 5, 'external_underpowered': 1}"
+tRNA,arginine_rich_rna_contact_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+tRNA,aromatic_aggregation_prone_region,{'external_underpowered': 5}
+tRNA,aromatic_sticker_region,"{'external_underpowered': 4, 'concordant_null': 1, 'validated_depletion': 1}"
+tRNA,basic_enriched_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+tRNA,cation_pi_rich_neighborhood,"{'external_underpowered': 3, 'concordant_null': 2, 'validated_depletion': 1}"
+tRNA,disorder_rich_spacer_region,"{'concordant_null': 3, 'validated_depletion': 2, 'external_underpowered': 1}"
+tRNA,glutamine_rich_region,{'external_underpowered': 6}
+tRNA,glycine_rich_region,{'external_underpowered': 4}
+tRNA,gs_rich_neutral_region,"{'external_underpowered': 5, 'concordant_null': 1}"
+tRNA,hydrophobic_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+tRNA,mixed_charge_polyampholyte,"{'external_underpowered': 3, 'concordant_null': 2}"
+tRNA,polar_linker,{'external_underpowered': 6}
+tRNA,proline_rich_disordered_region,{'external_underpowered': 6}
+tRNA,rg_rgg_repeat_region,{'external_underpowered': 6}
+tRNA,serine_rich_region,{'external_underpowered': 6}
+tRNA,sr_rs_repeat_region,{'external_underpowered': 6}
+tRNA,unmapped_physicochemical_properties,"{'external_underpowered': 4, 'concordant_null': 2}"
+unknown,acidic_region,{'new_external_signal': 6}
+unknown,arginine_rich_rna_contact_region,"{'new_external_signal': 5, 'external_underpowered': 1}"
+unknown,aromatic_aggregation_prone_region,"{'external_underpowered': 4, 'rbp_generic': 1}"
+unknown,aromatic_sticker_region,"{'concordant_null': 2, 'new_external_signal': 2, 'externally_validated': 1, 'external_underpowered': 1}"
+unknown,basic_enriched_region,"{'new_external_signal': 4, 'externally_validated': 1, 'external_underpowered': 1}"
+unknown,cation_pi_rich_neighborhood,"{'external_underpowered': 3, 'concordant_null': 2, 'rbp_generic': 1}"
+unknown,disorder_rich_spacer_region,"{'concordant_null': 4, 'new_external_signal': 2}"
+unknown,glutamine_rich_region,"{'external_underpowered': 5, 'concordant_null': 1}"
+unknown,glycine_rich_region,{'external_underpowered': 4}
+unknown,gs_rich_neutral_region,"{'concordant_null': 4, 'new_external_signal': 1, 'external_underpowered': 1}"
+unknown,hydrophobic_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+unknown,mixed_charge_polyampholyte,"{'new_external_signal': 2, 'concordant_null': 2, 'rbp_generic': 1}"
+unknown,polar_linker,"{'external_underpowered': 5, 'concordant_null': 1}"
+unknown,proline_rich_disordered_region,"{'concordant_null': 3, 'external_underpowered': 3}"
+unknown,rg_rgg_repeat_region,"{'external_underpowered': 2, 'concordant_null': 2, 'new_external_signal': 2}"
+unknown,serine_rich_region,"{'external_underpowered': 4, 'concordant_null': 2}"
+unknown,sr_rs_repeat_region,"{'external_underpowered': 3, 'new_external_signal': 2, 'concordant_null': 1}"
+unknown,unmapped_physicochemical_properties,"{'external_underpowered': 3, 'concordant_null': 2, 'rbp_generic': 1}"

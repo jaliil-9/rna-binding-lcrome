@@ -33,7 +33,7 @@ INPUT_XLSX = "rbp_lcrs/lcr_methods_combined.xlsx"
 REF_XLSX = "datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx"
 OUTPUT_XLSX = "rbp_lcrs/lcr_methods_combined_merged.xlsx"
 
-RAW_SHEET = "all_results"
+RAW_SHEET = "Combined"
 REF_SHEET = "Combined"
 REF_SEQ_COL = "uniprot_sequence"
 REF_ACC_COL = "uniprot_accession"

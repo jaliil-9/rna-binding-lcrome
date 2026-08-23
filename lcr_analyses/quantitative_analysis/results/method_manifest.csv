@@ -1,0 +1,7 @@
+method,workbook,n_lcr,n_proteins
+AlcoR,lcr_analyses\quantitative_analysis\results_v2\methods\AlcoR\tables\AlcoR_results.xlsx,2804,968
+CAST,lcr_analyses\quantitative_analysis\results_v2\methods\CAST\tables\CAST_results.xlsx,1880,1055
+FLPS,lcr_analyses\quantitative_analysis\results_v2\methods\FLPS\tables\FLPS_results.xlsx,8099,1697
+LCRFinder,lcr_analyses\quantitative_analysis\results_v2\methods\LCRFinder\tables\LCRFinder_results.xlsx,6371,1008
+SEG,lcr_analyses\quantitative_analysis\results_v2\methods\SEG\tables\SEG_results.xlsx,493,296
+SEG_intermediate,lcr_analyses\quantitative_analysis\results_v2\methods\SEG_intermediate\tables\SEG_intermediate_results.xlsx,1307,622

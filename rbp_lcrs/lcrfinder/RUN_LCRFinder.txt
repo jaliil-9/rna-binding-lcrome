@@ -134,7 +134,6 @@ Production run
 Run this from Windows PowerShell:
 
   wsl -d Ubuntu-24.04 -- bash -lc "cd ~/projects/LCRFinder && python3 run_lcrfinder.py '/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.fasta' '/mnt/c/Users/jbouziane/low-complexity/rna-binders/lcrfinder_result' --lcrfinder-dir . --engine octave --resolution Medium"
-
 Expected console messages:
 
   Running LCRFinder...

@@ -1,0 +1,937 @@
+method,rna_class,signature,internal_log2_or,internal_fdr,external_log2_or,external_fdr,n_carriers,n_class,verdict
+AlcoR,diverse,acidic_region,-2.884550492344701,0.4809660845540524,-0.5623847843449473,1.0,2.0,45.0,external_underpowered
+AlcoR,mRNA,acidic_region,-0.09073994228957012,1.0,0.4972833639767678,0.11694336044762514,70.0,658.0,concordant_null
+AlcoR,ncRNA,acidic_region,-0.8401685794772231,0.7055318280412547,1.0225777163762089,0.12175865221851635,17.0,118.0,concordant_null
+AlcoR,pre-rRNA,acidic_region,0.631273820372124,0.9419617147326997,0.9956944222252614,0.15110641694132876,16.0,113.0,concordant_null
+AlcoR,ribosomal protein,acidic_region,-1.230604739176203,0.6507734050259005,-1.2346031971965328,0.16336877795903101,5.0,157.0,concordant_null
+AlcoR,snRNA,acidic_region,-0.09306326595626607,1.0,0.7158703584276157,0.5314651917678603,11.0,93.0,concordant_null
+AlcoR,snoRNA,acidic_region,1.852881387373344,0.2147793351335233,0.17616097979400552,1.0,3.0,39.0,external_underpowered
+AlcoR,tRNA,acidic_region,0.0939648686701905,1.0,-0.30171739305506984,1.0,10.0,162.0,concordant_null
+AlcoR,unknown,acidic_region,0.3874957381655656,0.7414426219516951,0.9647899645488096,0.0094443857049192,40.0,284.0,new_external_signal
+AlcoR,diverse,arginine_rich_rna_contact_region,0.8548071745344061,1.0,1.0746180875031437,0.741135918959843,4.0,45.0,external_underpowered
+AlcoR,mRNA,arginine_rich_rna_contact_region,-0.1656102850247358,1.0,0.4211663691426188,0.35719416385593505,42.0,658.0,concordant_null
+AlcoR,ncRNA,arginine_rich_rna_contact_region,0.8297530967223821,0.6738239089885373,0.7528729712501683,0.5585848655274418,9.0,118.0,concordant_null
+AlcoR,pre-rRNA,arginine_rich_rna_contact_region,1.54971358820942,0.1412417011118465,2.002892312048932,0.00036262743766801806,19.0,113.0,new_external_signal
+AlcoR,ribosomal protein,arginine_rich_rna_contact_region,1.202046442542999,0.3821686817228203,0.8596943370705458,0.2875750874157586,13.0,157.0,concordant_null
+AlcoR,snRNA,arginine_rich_rna_contact_region,-1.49099460475963,0.6738239089885373,-0.03415825841418787,1.0,4.0,93.0,external_underpowered
+AlcoR,snoRNA,arginine_rich_rna_contact_region,-0.4009438437484729,1.0,-0.40209152256598896,1.0,1.0,39.0,external_underpowered
+AlcoR,tRNA,arginine_rich_rna_contact_region,0.1305757715365788,1.0,0.09573233075372109,1.0,8.0,162.0,concordant_null
+AlcoR,unknown,arginine_rich_rna_contact_region,-0.9480258487629849,0.2531057295061742,1.052663608861835,0.025535294464029024,27.0,284.0,new_external_signal
+AlcoR,diverse,aromatic_sticker_region,0.02554174048670009,1.0,0.15741382904375414,1.0,14.0,45.0,concordant_null
+AlcoR,mRNA,aromatic_sticker_region,-0.2195184421826027,0.9343942544965415,-0.15189959932855226,0.648599874375871,178.0,658.0,concordant_null
+AlcoR,ncRNA,aromatic_sticker_region,0.1026104694427709,1.0,0.26761055030884595,0.8320603516219182,39.0,118.0,concordant_null
+AlcoR,pre-rRNA,aromatic_sticker_region,-1.145392194320364,0.1412417011118465,0.07235425890991214,1.0,34.0,113.0,concordant_null
+AlcoR,ribosomal protein,aromatic_sticker_region,-0.619330372712084,0.6738239089885373,-1.2401607534628882,0.002304422530517585,23.0,157.0,concordant_null
+AlcoR,snRNA,aromatic_sticker_region,-0.1035227387396263,1.0,-0.07218238507153325,1.0,26.0,93.0,concordant_null
+AlcoR,snoRNA,aromatic_sticker_region,0.13811459478356,1.0,-0.8387644600038376,0.5143651518076364,7.0,39.0,concordant_null
+AlcoR,tRNA,aromatic_sticker_region,0.245213716153797,1.0,-0.09200954895020502,1.0,45.0,162.0,concordant_null
+AlcoR,unknown,aromatic_sticker_region,0.6387933771250409,0.1412417011118465,0.219379582350147,0.648599874375871,92.0,284.0,concordant_null
+AlcoR,diverse,basic_enriched_region,-0.01836820595257039,1.0,2.1064329117063783,0.11694336044762514,5.0,45.0,concordant_null
+AlcoR,mRNA,basic_enriched_region,-0.9345250872067052,0.2531057295061742,0.6706595706154875,0.15110641694132876,31.0,658.0,concordant_null
+AlcoR,ncRNA,basic_enriched_region,0.4196153936415908,1.0,1.286411577812613,0.17669495896743162,8.0,118.0,concordant_null
+AlcoR,pre-rRNA,basic_enriched_region,0.3880600541387581,1.0,2.0906871069382453,0.002525088601254065,13.0,113.0,new_external_signal
+AlcoR,ribosomal protein,basic_enriched_region,1.063144685566747,0.6738239089885373,1.0204596885965251,0.2875750874157586,9.0,157.0,concordant_null
+AlcoR,snRNA,basic_enriched_region,-0.1653112194688109,1.0,1.656461622318147,0.09330017807148784,8.0,93.0,concordant_null
+AlcoR,snoRNA,basic_enriched_region,0.9635635331985795,1.0,1.6043816591312923,0.40079663225563145,3.0,39.0,external_underpowered
+AlcoR,tRNA,basic_enriched_region,-0.05272557414746619,1.0,0.6129711214316214,0.8320603516219182,7.0,162.0,concordant_null
+AlcoR,unknown,basic_enriched_region,0.6512608944496594,0.6738239089885373,1.4425307797298952,0.0033792626893746043,22.0,284.0,new_external_signal
+AlcoR,diverse,cation_pi_rich_neighborhood,0.1546991390124564,1.0,1.3077868935208612,0.2657991497898355,8.0,45.0,concordant_null
+AlcoR,mRNA,cation_pi_rich_neighborhood,-0.3287315156521404,0.6738239089885373,0.2448369984440011,0.6274961461034188,64.0,658.0,concordant_null
+AlcoR,ncRNA,cation_pi_rich_neighborhood,0.5299286312741175,0.7651976558974357,0.07990893310068371,1.0,10.0,118.0,concordant_null
+AlcoR,pre-rRNA,cation_pi_rich_neighborhood,0.0949709309956489,1.0,0.4276630153559512,0.8704714200394068,12.0,113.0,concordant_null
+AlcoR,ribosomal protein,cation_pi_rich_neighborhood,-1.345703520220296,0.2546611336578651,-0.877586338384781,0.3382565658824424,7.0,157.0,concordant_null
+AlcoR,snRNA,cation_pi_rich_neighborhood,-0.3967762480978978,1.0,-0.8647480330555415,0.5578015261378614,4.0,93.0,external_underpowered
+AlcoR,snoRNA,cation_pi_rich_neighborhood,-0.05486921451642494,1.0,-0.4577478528421157,1.0,2.0,39.0,external_underpowered
+AlcoR,tRNA,cation_pi_rich_neighborhood,-0.3973373833756503,1.0,0.092804617093209,1.0,14.0,162.0,concordant_null
+AlcoR,unknown,cation_pi_rich_neighborhood,0.7275833692658009,0.1347923628210778,0.3883582342535936,0.5600617048065737,30.0,284.0,concordant_null
+AlcoR,diverse,disorder_rich_spacer_region,-0.6543859328324508,1.0,0.6075510184268148,0.9032375077250673,6.0,45.0,concordant_null
+AlcoR,mRNA,disorder_rich_spacer_region,0.2348746307900353,1.0,0.3243605404888862,0.3382565658824424,78.0,658.0,concordant_null
+AlcoR,ncRNA,disorder_rich_spacer_region,0.1898882694674704,1.0,-0.15834176120289345,1.0,10.0,118.0,concordant_null
+AlcoR,pre-rRNA,disorder_rich_spacer_region,0.1769698860836892,1.0,-0.24853957017447179,1.0,9.0,113.0,concordant_null
+AlcoR,ribosomal protein,disorder_rich_spacer_region,-0.2176976725111711,1.0,-0.92564678448494,0.28003724760607973,8.0,157.0,concordant_null
+AlcoR,snRNA,disorder_rich_spacer_region,-2.419860918744079,0.2147793351335233,0.8704676099580737,0.2657991497898355,15.0,93.0,concordant_null
+AlcoR,snoRNA,disorder_rich_spacer_region,0.5330598027353896,1.0,-1.4709319915109196,0.5386940137917273,1.0,39.0,external_underpowered
+AlcoR,tRNA,disorder_rich_spacer_region,0.1018722701806754,1.0,-0.03948278539950293,1.0,15.0,162.0,concordant_null
+AlcoR,unknown,disorder_rich_spacer_region,0.04281961161159589,1.0,0.5750935823252353,0.19887893620110225,39.0,284.0,concordant_null
+AlcoR,diverse,glutamine_rich_region,3.808118050898931,1.0,,1.0,0.0,45.0,external_underpowered
+AlcoR,mRNA,glutamine_rich_region,-0.9395020855364402,1.0,0.05526235452317186,1.0,2.0,658.0,external_underpowered
+AlcoR,ncRNA,glutamine_rich_region,2.223191034720189,1.0,2.5497274107617782,0.3163044567655607,2.0,118.0,external_underpowered
+AlcoR,pre-rRNA,glutamine_rich_region,2.510409872626413,1.0,,1.0,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,glutamine_rich_region,2.539208057410058,1.0,,1.0,0.0,157.0,external_underpowered
+AlcoR,snRNA,glutamine_rich_region,2.895645233959185,1.0,,1.0,0.0,93.0,external_underpowered
+AlcoR,snoRNA,glutamine_rich_region,3.945467627719214,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,glutamine_rich_region,1.782637452551489,1.0,1.3415576065559276,0.9032375077250673,1.0,162.0,external_underpowered
+AlcoR,unknown,glutamine_rich_region,3.079910764813632,0.8541849832952347,1.7623492705060708,0.34740056633922767,3.0,284.0,external_underpowered
+AlcoR,diverse,glycine_rich_region,3.808118050898931,1.0,,1.0,0.0,45.0,external_underpowered
+AlcoR,mRNA,glycine_rich_region,2.236690804389017,1.0,0.5344971328477593,1.0,1.0,658.0,external_underpowered
+AlcoR,ncRNA,glycine_rich_region,2.223191034720189,1.0,,1.0,0.0,118.0,external_underpowered
+AlcoR,pre-rRNA,glycine_rich_region,2.510409872626413,1.0,,1.0,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,glycine_rich_region,2.539208057410058,1.0,,1.0,0.0,157.0,external_underpowered
+AlcoR,snRNA,glycine_rich_region,2.895645233959185,1.0,,1.0,0.0,93.0,external_underpowered
+AlcoR,snoRNA,glycine_rich_region,3.945467627719214,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,glycine_rich_region,1.782637452551489,1.0,,1.0,0.0,162.0,external_underpowered
+AlcoR,unknown,glycine_rich_region,-0.09771472732108798,1.0,,1.0,0.0,284.0,external_underpowered
+AlcoR,diverse,gs_rich_neutral_region,0.4670867872527036,1.0,0.5841960035524402,1.0,1.0,45.0,external_underpowered
+AlcoR,mRNA,gs_rich_neutral_region,0.1590429674086847,1.0,0.780200424071784,0.15110641694132876,24.0,658.0,concordant_null
+AlcoR,ncRNA,gs_rich_neutral_region,-0.3705582387009189,1.0,-0.8165875120461619,1.0,1.0,118.0,external_underpowered
+AlcoR,pre-rRNA,gs_rich_neutral_region,-2.516583580202591,0.6738239089885373,,0.5506764348676951,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,gs_rich_neutral_region,-0.8419758125350735,1.0,,0.2677587981539156,0.0,157.0,external_underpowered
+AlcoR,snRNA,gs_rich_neutral_region,-0.4772296742036222,1.0,-0.4714520259974743,1.0,1.0,93.0,external_underpowered
+AlcoR,snoRNA,gs_rich_neutral_region,-1.078927693951582,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,gs_rich_neutral_region,-1.612044602195378,0.6738239089885373,-0.529534458437259,1.0,2.0,162.0,external_underpowered
+AlcoR,unknown,gs_rich_neutral_region,1.315967414534921,0.1347923628210778,0.05387313459874207,1.0,6.0,284.0,concordant_null
+AlcoR,diverse,hydrophobic_region,1.311972846084072,0.6738239089885373,-0.040820463890993135,1.0,4.0,45.0,external_underpowered
+AlcoR,mRNA,hydrophobic_region,-0.4811959869541845,0.6738239089885373,-0.694272182251518,0.025947696213982737,42.0,658.0,concordant_null
+AlcoR,ncRNA,hydrophobic_region,1.020383358402521,0.5000263916873507,-0.20493984365209977,1.0,10.0,118.0,concordant_null
+AlcoR,pre-rRNA,hydrophobic_region,0.4673002845507453,1.0,-0.13687556870694564,1.0,10.0,113.0,concordant_null
+AlcoR,ribosomal protein,hydrophobic_region,0.2089101068187139,1.0,-1.162435115137564,0.12753963902739174,7.0,157.0,concordant_null
+AlcoR,snRNA,hydrophobic_region,-0.6996614195965162,1.0,-0.8438799654320808,0.5314651917678603,5.0,93.0,concordant_null
+AlcoR,snoRNA,hydrophobic_region,-0.4009438437484729,1.0,0.18447184795124968,1.0,4.0,39.0,external_underpowered
+AlcoR,tRNA,hydrophobic_region,1.139828408189587,0.2582453584428035,-0.8498733659129746,0.29602846119702475,9.0,162.0,concordant_null
+AlcoR,unknown,hydrophobic_region,-0.483757811747588,0.8402271465043691,-0.06277494253230176,1.0,27.0,284.0,concordant_null
+AlcoR,diverse,mixed_charge_polyampholyte,0.6838182162518976,1.0,0.4625176429215341,1.0,4.0,45.0,external_underpowered
+AlcoR,mRNA,mixed_charge_polyampholyte,-0.1865478391766047,1.0,0.6062848201864957,0.0355901306744393,70.0,658.0,new_external_signal
+AlcoR,ncRNA,mixed_charge_polyampholyte,0.3599679137108674,1.0,0.8182539358728358,0.3184499561999735,14.0,118.0,concordant_null
+AlcoR,pre-rRNA,mixed_charge_polyampholyte,0.1309639624798403,1.0,0.7714678838106862,0.35719416385593505,13.0,113.0,concordant_null
+AlcoR,ribosomal protein,mixed_charge_polyampholyte,-1.150406607159003,0.5000263916873507,-0.4689067601216193,0.8320603516219182,8.0,157.0,concordant_null
+AlcoR,snRNA,mixed_charge_polyampholyte,-0.4580363391641972,1.0,-0.6462587029957978,0.8932318368103922,4.0,93.0,external_underpowered
+AlcoR,snoRNA,mixed_charge_polyampholyte,0.1379146065396914,1.0,-0.23925852278237214,1.0,2.0,39.0,external_underpowered
+AlcoR,tRNA,mixed_charge_polyampholyte,0.3683963979415844,1.0,0.7021597559544173,0.3108608783177612,18.0,162.0,concordant_null
+AlcoR,unknown,mixed_charge_polyampholyte,0.2245602580191582,1.0,1.0737914207585373,0.0033792626893746043,40.0,284.0,new_external_signal
+AlcoR,diverse,polar_linker,3.069625795171333,1.0,,1.0,0.0,45.0,external_underpowered
+AlcoR,mRNA,polar_linker,0.649287194725229,1.0,3.546757377470284,0.008425438574802218,5.0,658.0,new_external_signal
+AlcoR,ncRNA,polar_linker,1.484627771463917,1.0,,1.0,0.0,118.0,external_underpowered
+AlcoR,pre-rRNA,polar_linker,1.771865837338979,1.0,,1.0,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,polar_linker,1.800665747195231,1.0,,1.0,0.0,157.0,external_underpowered
+AlcoR,snRNA,polar_linker,2.157121653636287,1.0,,1.0,0.0,93.0,external_underpowered
+AlcoR,snoRNA,polar_linker,3.206978596198259,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,polar_linker,1.044036149546921,1.0,,1.0,0.0,162.0,external_underpowered
+AlcoR,unknown,polar_linker,1.492927682472423,1.0,,1.0,0.0,284.0,external_underpowered
+AlcoR,diverse,proline_rich_disordered_region,-0.1311766832551535,1.0,,1.0,0.0,45.0,external_underpowered
+AlcoR,mRNA,proline_rich_disordered_region,0.4055256442867806,1.0,0.4535279093940848,0.7020575043517575,18.0,658.0,concordant_null
+AlcoR,ncRNA,proline_rich_disordered_region,1.36978669460803,0.6738239089885373,0.8978505174521502,0.7837316475835177,4.0,118.0,external_underpowered
+AlcoR,pre-rRNA,proline_rich_disordered_region,0.2493899004048439,1.0,,0.5422070384759271,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,proline_rich_disordered_region,-1.401160941943889,1.0,-0.3917133711364585,1.0,2.0,157.0,external_underpowered
+AlcoR,snRNA,proline_rich_disordered_region,-1.044321696726431,1.0,1.2532385282848375,0.4260478658725421,4.0,93.0,external_underpowered
+AlcoR,snoRNA,proline_rich_disordered_region,0.006242065079507333,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,proline_rich_disordered_region,-0.4898010437102323,1.0,,0.3382565658824424,0.0,162.0,external_underpowered
+AlcoR,unknown,proline_rich_disordered_region,0.4515898174194246,1.0,0.5434564751224141,0.8704714200394068,8.0,284.0,concordant_null
+AlcoR,diverse,rg_rgg_repeat_region,-1.080267339846136,1.0,,1.0,0.0,45.0,external_underpowered
+AlcoR,mRNA,rg_rgg_repeat_region,1.85891385043744,0.00525067499801459,4.020991419598657,7.339669754420933e-07,11.0,658.0,externally_validated
+AlcoR,ncRNA,rg_rgg_repeat_region,-2.668237545008062,0.6507734050259005,3.5446114002717164,0.41907540089567763,1.0,118.0,external_underpowered
+AlcoR,pre-rRNA,rg_rgg_repeat_region,-0.7320078743702387,1.0,,1.0,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,rg_rgg_repeat_region,0.0994768900104809,1.0,,1.0,0.0,157.0,external_underpowered
+AlcoR,snRNA,rg_rgg_repeat_region,-1.994081870732712,0.8402271465043691,4.64239410271888,0.07082709711672416,2.0,93.0,external_underpowered
+AlcoR,snoRNA,rg_rgg_repeat_region,-0.9427797310116274,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,rg_rgg_repeat_region,-3.110423989693651,0.3821686817228203,,1.0,0.0,162.0,external_underpowered
+AlcoR,unknown,rg_rgg_repeat_region,-0.1490558093947131,1.0,,1.0,0.0,284.0,external_underpowered
+AlcoR,diverse,serine_rich_region,4.720176637520066,0.5000263916873507,3.8918611882193623,0.35719416385593505,1.0,45.0,external_underpowered
+AlcoR,mRNA,serine_rich_region,-0.09012364585837165,1.0,,0.8837579009842546,0.0,658.0,external_underpowered
+AlcoR,ncRNA,serine_rich_region,0.9976015039514835,1.0,,1.0,0.0,118.0,external_underpowered
+AlcoR,pre-rRNA,serine_rich_region,1.284858840195991,1.0,,1.0,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,serine_rich_region,1.313660478903762,1.0,,1.0,0.0,157.0,external_underpowered
+AlcoR,snRNA,serine_rich_region,1.670135155999667,1.0,,1.0,0.0,93.0,external_underpowered
+AlcoR,snoRNA,serine_rich_region,2.720026721274074,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,serine_rich_region,0.5569717568877064,1.0,,1.0,0.0,162.0,external_underpowered
+AlcoR,unknown,serine_rich_region,0.7539386727699197,1.0,,1.0,0.0,284.0,external_underpowered
+AlcoR,diverse,sr_rs_repeat_region,-1.401160941943889,1.0,,1.0,0.0,45.0,external_underpowered
+AlcoR,mRNA,sr_rs_repeat_region,1.76666700735794,0.004236101141303803,1.552324375191811,0.17669495896743162,6.0,658.0,rbp_generic
+AlcoR,ncRNA,sr_rs_repeat_region,-1.35297537020649,0.8402271465043691,,1.0,0.0,118.0,external_underpowered
+AlcoR,pre-rRNA,sr_rs_repeat_region,-1.060061390485903,1.0,,1.0,0.0,113.0,external_underpowered
+AlcoR,ribosomal protein,sr_rs_repeat_region,-2.672768881689964,0.6507734050259005,,1.0,0.0,157.0,external_underpowered
+AlcoR,snRNA,sr_rs_repeat_region,1.79535054684856,0.2404278600083662,3.5092277834823644,0.060906778801013965,3.0,93.0,external_underpowered
+AlcoR,snoRNA,sr_rs_repeat_region,-1.263637749415832,1.0,,1.0,0.0,39.0,external_underpowered
+AlcoR,tRNA,sr_rs_repeat_region,-3.432525579264751,0.2117791608384004,,1.0,0.0,162.0,external_underpowered
+AlcoR,unknown,sr_rs_repeat_region,-0.7433516072923935,0.6738239089885373,1.381539786092778,0.6796094623211799,2.0,284.0,external_underpowered
+AlcoR,diverse,unmapped_physicochemical_properties,1.019314322815069,0.6738239089885373,0.24910178155013146,1.0,6.0,45.0,concordant_null
+AlcoR,mRNA,unmapped_physicochemical_properties,-0.3454687553050811,0.6738239089885373,-0.013339084135974202,1.0,79.0,658.0,concordant_null
+AlcoR,ncRNA,unmapped_physicochemical_properties,-0.1928663067403925,1.0,0.5012204099047417,0.5736416436684709,19.0,118.0,concordant_null
+AlcoR,pre-rRNA,unmapped_physicochemical_properties,0.3255956548005448,1.0,-0.1690369158243094,1.0,12.0,113.0,concordant_null
+AlcoR,ribosomal protein,unmapped_physicochemical_properties,-0.5920380178012774,1.0,-1.1139487957710381,0.11903618803622128,9.0,157.0,concordant_null
+AlcoR,snRNA,unmapped_physicochemical_properties,-0.4288156156247027,1.0,-0.30050911125245666,1.0,9.0,93.0,concordant_null
+AlcoR,snoRNA,unmapped_physicochemical_properties,-1.68805599368526,0.6738239089885373,-0.530026825236271,1.0,3.0,39.0,external_underpowered
+AlcoR,tRNA,unmapped_physicochemical_properties,0.07551832884539073,1.0,0.42158034514561576,0.6274961461034188,25.0,162.0,concordant_null
+AlcoR,unknown,unmapped_physicochemical_properties,0.6253891351913429,0.2283322786878017,0.08516532890387328,1.0,36.0,284.0,concordant_null
+CAST,diverse,acidic_region,0.09235879902940164,1.0,-0.16187732573793082,1.0,3.0,45.0,external_underpowered
+CAST,mRNA,acidic_region,-0.5261416222983293,0.05626775002264706,1.1443434337739358,6.484542427157511e-10,111.0,658.0,new_external_signal
+CAST,ncRNA,acidic_region,0.1853854394329841,1.0,1.1756588735038742,0.01809571917657085,20.0,118.0,new_external_signal
+CAST,pre-rRNA,acidic_region,0.8865955178591739,0.06951439893282743,2.113798347139544,2.9818748018028914e-08,32.0,113.0,new_external_signal
+CAST,ribosomal protein,acidic_region,-1.853429944735081,0.03001375909326574,-1.6520111555857002,0.03189167693544432,4.0,157.0,external_underpowered
+CAST,snRNA,acidic_region,0.7150180999441118,0.3260762190024436,1.5063923867422537,0.002755274222301218,19.0,93.0,new_external_signal
+CAST,snoRNA,acidic_region,0.9910527301902258,0.3063034814613944,2.302655164592232,0.0007660702922952097,12.0,39.0,new_external_signal
+CAST,tRNA,acidic_region,-0.07076514180196825,1.0,-0.028955483692469603,1.0,13.0,162.0,concordant_null
+CAST,unknown,acidic_region,0.2577720935680039,0.7576562580539111,1.1899320588089934,4.9611757188155265e-05,49.0,284.0,new_external_signal
+CAST,diverse,arginine_rich_rna_contact_region,0.3832310909500358,1.0,0.5211607428036417,1.0,1.0,45.0,external_underpowered
+CAST,mRNA,arginine_rich_rna_contact_region,-1.791970334583344,9.030814319308437e-05,-0.06212388018519567,1.0,14.0,658.0,concordant_null
+CAST,ncRNA,arginine_rich_rna_contact_region,0.6415460290875237,0.8044211451156598,1.517922368737097,0.09077289716649883,7.0,118.0,concordant_null
+CAST,pre-rRNA,arginine_rich_rna_contact_region,1.601779432371718,0.01499785443789951,2.7440761639793823,1.5376607046252313e-06,15.0,113.0,externally_validated
+CAST,ribosomal protein,arginine_rich_rna_contact_region,2.562504704232203,0.0001933390907305807,1.991893492711673,0.0010448332005412824,13.0,157.0,externally_validated
+CAST,snRNA,arginine_rich_rna_contact_region,-1.722537340867501,0.3801652017456712,-0.5344872867462728,1.0,1.0,93.0,external_underpowered
+CAST,snoRNA,arginine_rich_rna_contact_region,-0.6127725394876852,1.0,1.5050410774403649,0.604711046283947,2.0,39.0,external_underpowered
+CAST,tRNA,arginine_rich_rna_contact_region,0.6053236326569316,0.9015940451545522,0.2735176443517884,1.0,4.0,162.0,external_underpowered
+CAST,unknown,arginine_rich_rna_contact_region,0.3994307192140429,0.8634843788960809,1.19042788434964,0.044506030593585086,14.0,284.0,new_external_signal
+CAST,diverse,aromatic_aggregation_prone_region,3.25734438867717,1.0,,1.0,0.0,45.0,external_underpowered
+CAST,mRNA,aromatic_aggregation_prone_region,0.9621146909252912,1.0,1.0899043244879256,0.7043538304892522,2.0,658.0,external_underpowered
+CAST,ncRNA,aromatic_aggregation_prone_region,3.108249718774821,0.5408502792430211,2.8350729846496066,0.5307456437920536,1.0,118.0,external_underpowered
+CAST,pre-rRNA,aromatic_aggregation_prone_region,0.7489072664102439,1.0,,1.0,0.0,113.0,external_underpowered
+CAST,ribosomal protein,aromatic_aggregation_prone_region,1.628617723755704,1.0,,1.0,0.0,157.0,external_underpowered
+CAST,snRNA,aromatic_aggregation_prone_region,1.228705132698122,1.0,,1.0,0.0,93.0,external_underpowered
+CAST,snoRNA,aromatic_aggregation_prone_region,2.309297415603965,1.0,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,aromatic_aggregation_prone_region,1.474091256571885,1.0,,1.0,0.0,162.0,external_underpowered
+CAST,unknown,aromatic_aggregation_prone_region,-0.8573564067459764,1.0,,1.0,0.0,284.0,external_underpowered
+CAST,diverse,aromatic_sticker_region,-0.07074401628676508,1.0,-1.3342720464745512,0.6437127432423334,1.0,45.0,external_underpowered
+CAST,mRNA,aromatic_sticker_region,1.101595339860642,0.0001933390907305807,0.9956559116342178,6.157338442287722e-07,95.0,658.0,externally_validated
+CAST,ncRNA,aromatic_sticker_region,0.4604552813460506,0.7660177985982627,0.7071207468173797,0.3839633763498379,14.0,118.0,concordant_null
+CAST,pre-rRNA,aromatic_sticker_region,-3.527239368859,0.0001933390907305807,-2.6723198067251905,0.01701788227966663,1.0,113.0,external_underpowered
+CAST,ribosomal protein,aromatic_sticker_region,-2.623073553564682,0.03219881148620261,-2.40234379147255,0.00464916666522256,2.0,157.0,external_underpowered
+CAST,snRNA,aromatic_sticker_region,-0.2786230399552412,1.0,0.028761251742484346,1.0,7.0,93.0,concordant_null
+CAST,snoRNA,aromatic_sticker_region,-1.919246006383759,0.2553604239636589,-1.1253251562030548,0.7530433545620489,1.0,39.0,external_underpowered
+CAST,tRNA,aromatic_sticker_region,-1.078002512001273,0.3801652017456712,-1.5819151449264046,0.040634278391673974,4.0,162.0,external_underpowered
+CAST,unknown,aromatic_sticker_region,-0.05016159029294399,1.0,0.3294299752247691,0.6983640710993166,27.0,284.0,concordant_null
+CAST,diverse,basic_enriched_region,0.5004251678438386,1.0,1.2670953950615855,0.6615645189395555,2.0,45.0,external_underpowered
+CAST,mRNA,basic_enriched_region,-2.513352327723055,2.207835123941607e-12,0.4271199909383115,0.6258147616546442,20.0,658.0,concordant_null
+CAST,ncRNA,basic_enriched_region,0.4560330421754324,0.9374216160210259,2.0188769863572325,0.00464916666522256,10.0,118.0,new_external_signal
+CAST,pre-rRNA,basic_enriched_region,2.468927118700633,3.269663037674345e-08,3.9351438411117856,6.313474577008979e-21,30.0,113.0,externally_validated
+CAST,ribosomal protein,basic_enriched_region,2.198327952434328,0.0003270017841371534,2.1874889973577227,8.168415364379109e-05,15.0,157.0,externally_validated
+CAST,snRNA,basic_enriched_region,0.5203309671279949,0.8950698927885897,2.235158873184353,0.0035889379235371213,9.0,93.0,new_external_signal
+CAST,snoRNA,basic_enriched_region,2.351624766305096,0.002735409981609589,4.078782737915223,3.798180600687968e-08,11.0,39.0,externally_validated
+CAST,tRNA,basic_enriched_region,-0.903076231358358,0.702124471811193,0.2496967673258567,1.0,4.0,162.0,external_underpowered
+CAST,unknown,basic_enriched_region,-0.1458695997215741,1.0,1.3637266373959924,0.011486152696122806,16.0,284.0,new_external_signal
+CAST,diverse,cation_pi_rich_neighborhood,1.712434645802347,0.1499509601109594,0.2202499078033136,1.0,8.0,45.0,concordant_null
+CAST,mRNA,cation_pi_rich_neighborhood,0.08744938132804747,1.0,0.4383701229411115,0.018379888676449088,137.0,658.0,new_external_signal
+CAST,ncRNA,cation_pi_rich_neighborhood,0.2457299577393397,1.0,0.09710594221056267,1.0,20.0,118.0,concordant_null
+CAST,pre-rRNA,cation_pi_rich_neighborhood,-1.212774418774851,0.04142944092556868,-0.7943123863995781,0.2607353927562492,11.0,113.0,concordant_null
+CAST,ribosomal protein,cation_pi_rich_neighborhood,-2.724660643835743,0.002837104097033471,-3.597236918194385,2.9042954292691834e-08,2.0,157.0,external_underpowered
+CAST,snRNA,cation_pi_rich_neighborhood,-0.6382045219981357,0.5268589601268526,-0.34326620740749775,0.844637877213366,12.0,93.0,concordant_null
+CAST,snoRNA,cation_pi_rich_neighborhood,-0.6715667370879892,0.878219842568426,-0.2874870810920166,1.0,5.0,39.0,concordant_null
+CAST,tRNA,cation_pi_rich_neighborhood,-0.01182543539678964,1.0,-0.9947323686243384,0.040327267941845484,14.0,162.0,concordant_null
+CAST,unknown,cation_pi_rich_neighborhood,0.7670886189199133,0.01621275518947462,0.5591275552660027,0.05075469917196318,63.0,284.0,rbp_generic
+CAST,diverse,disorder_rich_spacer_region,-0.6745888968193227,1.0,-1.012088601835386,0.6983640710993166,2.0,45.0,external_underpowered
+CAST,mRNA,disorder_rich_spacer_region,0.5525046220056803,0.05626775002264706,0.7658792780060903,5.200004185879229e-05,108.0,658.0,new_external_signal
+CAST,ncRNA,disorder_rich_spacer_region,-0.04996612179358707,1.0,0.3696361520135299,0.7530433545620489,15.0,118.0,concordant_null
+CAST,pre-rRNA,disorder_rich_spacer_region,-2.475824886297309,0.0002408544237968257,-1.495935259032881,0.06071176340415645,4.0,113.0,external_underpowered
+CAST,ribosomal protein,disorder_rich_spacer_region,-1.190068954188913,0.2553604239636589,-1.6843070146869714,0.011486152696122806,5.0,157.0,concordant_null
+CAST,snRNA,disorder_rich_spacer_region,-0.05055782988550416,1.0,0.11753992943068814,1.0,10.0,93.0,concordant_null
+CAST,snoRNA,disorder_rich_spacer_region,-0.7536380500047853,0.8506298595013234,0.12910468106361037,1.0,4.0,39.0,external_underpowered
+CAST,tRNA,disorder_rich_spacer_region,0.2692869505013692,1.0,-0.6106852282899581,0.463809047734451,11.0,162.0,concordant_null
+CAST,unknown,disorder_rich_spacer_region,0.2880004758175396,0.7126237503157257,0.5150861470583711,0.2003227420312169,40.0,284.0,concordant_null
+CAST,diverse,glutamine_rich_region,3.74416109557041,1.0,,1.0,0.0,45.0,external_underpowered
+CAST,mRNA,glutamine_rich_region,2.549617148360418,0.5921079623632751,,1.0,0.0,658.0,external_underpowered
+CAST,ncRNA,glutamine_rich_region,1.502378228290684,1.0,,1.0,0.0,118.0,external_underpowered
+CAST,pre-rRNA,glutamine_rich_region,1.235819876452166,1.0,,1.0,0.0,113.0,external_underpowered
+CAST,ribosomal protein,glutamine_rich_region,2.115477217419936,1.0,,1.0,0.0,157.0,external_underpowered
+CAST,snRNA,glutamine_rich_region,1.715584825087713,1.0,,1.0,0.0,93.0,external_underpowered
+CAST,snoRNA,glutamine_rich_region,2.796133124762043,1.0,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,glutamine_rich_region,1.960957899271702,1.0,,1.0,0.0,162.0,external_underpowered
+CAST,unknown,glutamine_rich_region,-0.3702059293815902,1.0,,1.0,0.0,284.0,external_underpowered
+CAST,diverse,gs_rich_neutral_region,-0.4061459725598509,1.0,-0.6501934074344009,1.0,1.0,45.0,external_underpowered
+CAST,mRNA,gs_rich_neutral_region,0.932627918332457,0.008931358532043061,1.1561705925545855,7.699186378003106e-07,69.0,658.0,externally_validated
+CAST,ncRNA,gs_rich_neutral_region,1.022098511482082,0.1499509601109594,1.3911993858575302,0.01809571917657085,14.0,118.0,new_external_signal
+CAST,pre-rRNA,gs_rich_neutral_region,-1.721727839148044,0.06710944450022488,-0.7399701145229868,0.7688191915924978,3.0,113.0,external_underpowered
+CAST,ribosomal protein,gs_rich_neutral_region,-2.105657360737854,0.1499509601109594,,0.0055867025795949,0.0,157.0,external_underpowered
+CAST,snRNA,gs_rich_neutral_region,-1.741081702638438,0.1595989775420349,-0.9531942205858395,0.7043538304892522,2.0,93.0,external_underpowered
+CAST,snoRNA,gs_rich_neutral_region,-3.051054158149876,0.1647579093109629,,0.6437127432423334,0.0,39.0,external_underpowered
+CAST,tRNA,gs_rich_neutral_region,-2.264252768509449,0.1210716915490368,-2.509850331161928,0.03189167693544432,1.0,162.0,external_underpowered
+CAST,unknown,gs_rich_neutral_region,0.1867203638943315,1.0,0.6962570065870304,0.2127379872840645,22.0,284.0,concordant_null
+CAST,diverse,hydrophobic_region,3.25734438867717,1.0,,1.0,0.0,45.0,external_underpowered
+CAST,mRNA,hydrophobic_region,-2.593230116704757,0.6931820167296397,,0.0011377043514625368,0.0,658.0,external_underpowered
+CAST,ncRNA,hydrophobic_region,1.015485247497419,1.0,,0.6437127432423334,0.0,118.0,external_underpowered
+CAST,pre-rRNA,hydrophobic_region,0.7489072664102439,1.0,,0.7976047270542199,0.0,113.0,external_underpowered
+CAST,ribosomal protein,hydrophobic_region,1.628617723755704,1.0,,0.5274649652145417,0.0,157.0,external_underpowered
+CAST,snRNA,hydrophobic_region,1.228705132698122,1.0,,0.7891476511644084,0.0,93.0,external_underpowered
+CAST,snoRNA,hydrophobic_region,2.309297415603965,1.0,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,hydrophobic_region,1.474091256571885,1.0,,0.5275470277705193,0.0,162.0,external_underpowered
+CAST,unknown,hydrophobic_region,4.782649177374144,0.05194406877329978,-0.8297942399791551,0.7043538304892522,2.0,284.0,external_underpowered
+CAST,diverse,mixed_charge_polyampholyte,-0.4061459725598509,1.0,0.2348235359830754,1.0,2.0,45.0,external_underpowered
+CAST,mRNA,mixed_charge_polyampholyte,-0.9861369647482761,0.007320476477925519,0.46058304181932613,0.2647430514073757,41.0,658.0,concordant_null
+CAST,ncRNA,mixed_charge_polyampholyte,0.01858712572323325,1.0,0.6553992188033494,0.6437127432423334,8.0,118.0,concordant_null
+CAST,pre-rRNA,mixed_charge_polyampholyte,0.5584293241892496,0.7269763015682932,1.33435920953399,0.03904812785854234,12.0,113.0,new_external_signal
+CAST,ribosomal protein,mixed_charge_polyampholyte,-0.7919789844771131,0.827253020352262,-1.108269168902329,0.39620800082787194,3.0,157.0,external_underpowered
+CAST,snRNA,mixed_charge_polyampholyte,0.8246354883925541,0.4500857618762344,1.3644520672491496,0.05879027898931799,10.0,93.0,concordant_null
+CAST,snoRNA,mixed_charge_polyampholyte,1.339924524181208,0.2553604239636589,2.240361719524506,0.015934558289699467,7.0,39.0,new_external_signal
+CAST,tRNA,mixed_charge_polyampholyte,-0.2174533715248982,1.0,-0.7825750917526534,0.6437127432423334,4.0,162.0,external_underpowered
+CAST,unknown,mixed_charge_polyampholyte,0.8730300204991689,0.04421911473378794,0.8797606523751375,0.05414667669857994,23.0,284.0,rbp_generic
+CAST,diverse,polar_linker,4.482515231750338,1.0,,1.0,0.0,45.0,external_underpowered
+CAST,mRNA,polar_linker,-1.365744327179852,1.0,,1.0,0.0,658.0,external_underpowered
+CAST,ncRNA,polar_linker,2.240808487598822,1.0,,1.0,0.0,118.0,external_underpowered
+CAST,pre-rRNA,polar_linker,1.974269724906582,1.0,,1.0,0.0,113.0,external_underpowered
+CAST,ribosomal protein,polar_linker,2.853874056783774,1.0,,1.0,0.0,157.0,external_underpowered
+CAST,snRNA,polar_linker,5.649422243133715,0.2231133795114838,4.037999499005982,0.30265096554841403,1.0,93.0,external_underpowered
+CAST,snoRNA,polar_linker,3.534506226396855,1.0,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,polar_linker,2.699361873458243,1.0,,1.0,0.0,162.0,external_underpowered
+CAST,unknown,polar_linker,0.3684812581164651,1.0,,1.0,0.0,284.0,external_underpowered
+CAST,diverse,proline_rich_disordered_region,2.893383089280227,1.0,,1.0,0.0,45.0,external_underpowered
+CAST,mRNA,proline_rich_disordered_region,0.2226046604013234,1.0,0.3082305342503936,1.0,1.0,658.0,external_underpowered
+CAST,ncRNA,proline_rich_disordered_region,0.651447522980149,1.0,,1.0,0.0,118.0,external_underpowered
+CAST,pre-rRNA,proline_rich_disordered_region,0.3848498724186642,1.0,,1.0,0.0,113.0,external_underpowered
+CAST,ribosomal protein,proline_rich_disordered_region,1.264613553755008,1.0,,1.0,0.0,157.0,external_underpowered
+CAST,snRNA,proline_rich_disordered_region,0.864680723511941,1.0,,1.0,0.0,93.0,external_underpowered
+CAST,snoRNA,proline_rich_disordered_region,1.945317077024957,1.0,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,proline_rich_disordered_region,1.11007992328021,1.0,,1.0,0.0,162.0,external_underpowered
+CAST,unknown,proline_rich_disordered_region,1.965111542732952,0.5422465580132925,2.2639361552937145,0.3325908403956733,2.0,284.0,external_underpowered
+CAST,diverse,rg_rgg_repeat_region,-0.1396772608870961,1.0,2.2889832935439705,0.6437127432423334,1.0,45.0,external_underpowered
+CAST,mRNA,rg_rgg_repeat_region,1.00388146680673,0.008474880065123902,3.846956043682932,1.6567234254436698e-38,59.0,658.0,externally_validated
+CAST,ncRNA,rg_rgg_repeat_region,-2.465600008634,0.04421911473378794,0.8881997779453685,0.9146800045868256,1.0,118.0,external_underpowered
+CAST,pre-rRNA,rg_rgg_repeat_region,-1.052482217297539,0.3928719789625433,2.1992065864553845,0.18271194665635873,3.0,113.0,external_underpowered
+CAST,ribosomal protein,rg_rgg_repeat_region,-0.520376874921839,1.0,1.2209115485459716,0.6696370637690741,2.0,157.0,external_underpowered
+CAST,snRNA,rg_rgg_repeat_region,0.3209215400144042,1.0,3.6520165917610057,7.253712799756474e-05,7.0,93.0,new_external_signal
+CAST,snoRNA,rg_rgg_repeat_region,0.6549808529539297,1.0,3.7972845869667986,0.01809571917657085,3.0,39.0,external_underpowered
+CAST,tRNA,rg_rgg_repeat_region,-1.996583908746535,0.2145627142484808,0.42932636981644323,1.0,1.0,162.0,external_underpowered
+CAST,unknown,rg_rgg_repeat_region,-0.1564968378257872,1.0,1.7586604245902724,0.07262408632990268,6.0,284.0,concordant_null
+CAST,diverse,serine_rich_region,3.25734438867717,1.0,,1.0,0.0,45.0,external_underpowered
+CAST,mRNA,serine_rich_region,3.038018605534771,0.3260762190024436,2.402646078622895,0.30265096554841403,2.0,658.0,external_underpowered
+CAST,ncRNA,serine_rich_region,1.015485247497419,1.0,,1.0,0.0,118.0,external_underpowered
+CAST,pre-rRNA,serine_rich_region,0.7489072664102439,1.0,,1.0,0.0,113.0,external_underpowered
+CAST,ribosomal protein,serine_rich_region,1.628617723755704,1.0,,1.0,0.0,157.0,external_underpowered
+CAST,snRNA,serine_rich_region,1.228705132698122,1.0,,1.0,0.0,93.0,external_underpowered
+CAST,snoRNA,serine_rich_region,2.309297415603965,1.0,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,serine_rich_region,1.474091256571885,1.0,,1.0,0.0,162.0,external_underpowered
+CAST,unknown,serine_rich_region,-0.8573564067459764,1.0,,1.0,0.0,284.0,external_underpowered
+CAST,diverse,sr_rs_repeat_region,-0.2846751296565003,1.0,,1.0,0.0,45.0,external_underpowered
+CAST,mRNA,sr_rs_repeat_region,1.548429768389233,6.304824038989915e-06,2.5647536525170778,3.550527095152743e-25,69.0,658.0,externally_validated
+CAST,ncRNA,sr_rs_repeat_region,-1.839279689453841,0.1309965834457702,0.10690253300641524,1.0,2.0,118.0,external_underpowered
+CAST,pre-rRNA,sr_rs_repeat_region,-2.115063500641178,0.04142944092556868,0.17018877774039057,1.0,2.0,113.0,external_underpowered
+CAST,ribosomal protein,sr_rs_repeat_region,-3.613967398756569,0.04421911473378794,,0.27730618327771794,0.0,157.0,external_underpowered
+CAST,snRNA,sr_rs_repeat_region,1.121315959982031,0.1499509601109594,2.80640032458453,4.810058650012864e-05,11.0,93.0,new_external_signal
+CAST,snoRNA,sr_rs_repeat_region,-2.930230168275355,0.2491952810808654,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,sr_rs_repeat_region,-3.769414164468811,0.03651100836669179,,0.27730618327771794,0.0,162.0,external_underpowered
+CAST,unknown,sr_rs_repeat_region,-0.4280555612039627,0.7126237503157257,1.3192396971324398,0.03041689972325742,13.0,284.0,new_external_signal
+CAST,diverse,unmapped_physicochemical_properties,2.872518422574614,0.5509865386898751,1.563652336633265,0.786468379528201,1.0,45.0,external_underpowered
+CAST,mRNA,unmapped_physicochemical_properties,0.7808219669208671,0.7576562580539111,0.19648086141105062,1.0,8.0,658.0,concordant_null
+CAST,ncRNA,unmapped_physicochemical_properties,0.5545038625066118,1.0,,1.0,0.0,118.0,external_underpowered
+CAST,pre-rRNA,unmapped_physicochemical_properties,-1.41588390296454,1.0,,1.0,0.0,113.0,external_underpowered
+CAST,ribosomal protein,unmapped_physicochemical_properties,-0.5355275606611628,1.0,,0.7976047270542199,0.0,157.0,external_underpowered
+CAST,snRNA,unmapped_physicochemical_properties,0.7710081997518116,1.0,0.5080043070833506,1.0,1.0,93.0,external_underpowered
+CAST,snoRNA,unmapped_physicochemical_properties,0.1454412448095666,1.0,,1.0,0.0,39.0,external_underpowered
+CAST,tRNA,unmapped_physicochemical_properties,-0.6901409405225817,1.0,,0.6437127432423334,0.0,162.0,external_underpowered
+CAST,unknown,unmapped_physicochemical_properties,0.1180219743569691,1.0,-1.107819157342566,0.7688191915924978,1.0,284.0,external_underpowered
+FLPS,diverse,acidic_region,-0.4572979084386571,0.5730518868320413,0.21857518253272373,0.9112152271748467,14.0,45.0,concordant_null
+FLPS,mRNA,acidic_region,0.07621166913581531,0.8247168446728642,0.9502566134786739,3.85544651868585e-14,285.0,658.0,new_external_signal
+FLPS,ncRNA,acidic_region,-0.2252494374318058,0.643300720371541,0.5424128674287176,0.1757391114613833,43.0,118.0,concordant_null
+FLPS,pre-rRNA,acidic_region,1.296641487284234,0.0001108991506406312,1.8755308968478677,2.7080296532588115e-10,67.0,113.0,externally_validated
+FLPS,ribosomal protein,acidic_region,-2.799502052387306,1.245093740678911e-13,-2.082164069432142,1.4968255873495875e-08,13.0,157.0,validated_depletion
+FLPS,snRNA,acidic_region,0.7882683601540093,0.04652738976307824,1.3071773136821516,0.0001805505055410605,46.0,93.0,externally_validated
+FLPS,snoRNA,acidic_region,1.494660601775942,0.01008906909647289,2.310907063304799,7.665813084432757e-06,26.0,39.0,externally_validated
+FLPS,tRNA,acidic_region,-1.137931001442066,0.0002842849494629311,-0.35534128046811136,0.36653855923837164,38.0,162.0,concordant_null
+FLPS,unknown,acidic_region,0.41326696540015,0.05598610788376891,1.0330195293766475,8.156834196420472e-08,127.0,284.0,new_external_signal
+FLPS,diverse,arginine_rich_rna_contact_region,-0.2220252205808478,0.9207067292237471,0.445117853415872,0.607083415008716,13.0,45.0,concordant_null
+FLPS,mRNA,arginine_rich_rna_contact_region,-0.6247487401003863,0.0005124516416895657,0.25055330510857743,0.1721174203236056,175.0,658.0,concordant_null
+FLPS,ncRNA,arginine_rich_rna_contact_region,0.2243339083118676,0.6830745334511891,0.7578274182738558,0.047510112769751464,40.0,118.0,new_external_signal
+FLPS,pre-rRNA,arginine_rich_rna_contact_region,1.003149481799147,0.003286857634169757,1.5352019134074104,8.830749989924736e-07,53.0,113.0,externally_validated
+FLPS,ribosomal protein,arginine_rich_rna_contact_region,0.8798081968258532,0.008432876662996962,0.9463382633206138,0.0009409679557843979,58.0,157.0,externally_validated
+FLPS,snRNA,arginine_rich_rna_contact_region,-0.0799567603989357,1.0,0.5120651769081493,0.3096256616237403,28.0,93.0,concordant_null
+FLPS,snoRNA,arginine_rich_rna_contact_region,-0.2503679435057842,0.9046637543618324,0.5750946405309232,0.4769055041419379,12.0,39.0,concordant_null
+FLPS,tRNA,arginine_rich_rna_contact_region,-0.4592890467343498,0.2357213347024208,-0.13200815307331779,0.8420314435523063,35.0,162.0,concordant_null
+FLPS,unknown,arginine_rich_rna_contact_region,0.3477708585312121,0.1425626112743502,0.9241022694745699,6.740428033680237e-06,104.0,284.0,new_external_signal
+FLPS,diverse,aromatic_aggregation_prone_region,-0.2003910343002863,1.0,,0.6383985916839648,0.0,45.0,external_underpowered
+FLPS,mRNA,aromatic_aggregation_prone_region,-1.27037984342892,0.008803917520640558,-0.7534801129851442,0.12530802284753134,14.0,658.0,concordant_null
+FLPS,ncRNA,aromatic_aggregation_prone_region,2.117468298667724,0.0005124516416895657,1.7543637537052184,0.0027290235715453875,13.0,118.0,externally_validated
+FLPS,pre-rRNA,aromatic_aggregation_prone_region,-0.8398829768956076,0.643300720371541,-0.25997219708489266,0.9443598091713937,3.0,113.0,external_underpowered
+FLPS,ribosomal protein,aromatic_aggregation_prone_region,-3.357540387640337,0.06191658847987418,,0.021528390016179583,0.0,157.0,external_underpowered
+FLPS,snRNA,aromatic_aggregation_prone_region,-0.5755477049312285,0.7799451034630591,-0.47319630314774525,0.929226972039897,2.0,93.0,external_underpowered
+FLPS,snoRNA,aromatic_aggregation_prone_region,0.02460752398797839,1.0,0.03875140027518956,1.0,1.0,39.0,external_underpowered
+FLPS,tRNA,aromatic_aggregation_prone_region,-0.7716668116654181,0.5763464050172425,-0.7894822514583306,0.5093088813727049,3.0,162.0,external_underpowered
+FLPS,unknown,aromatic_aggregation_prone_region,1.539238549993975,0.0006947838967042869,0.8720370831187086,0.08602753881099638,18.0,284.0,rbp_generic
+FLPS,diverse,aromatic_sticker_region,-0.3369179290277414,0.757623255111969,-0.6471873623825544,0.35884772156192896,15.0,45.0,concordant_null
+FLPS,mRNA,aromatic_sticker_region,0.4978757147476121,0.00390333042994159,0.048247686037644746,0.8754489052596655,297.0,658.0,rbp_generic
+FLPS,ncRNA,aromatic_sticker_region,0.4656013797399429,0.2628848928046252,0.135084844371397,0.8420314435523063,55.0,118.0,concordant_null
+FLPS,pre-rRNA,aromatic_sticker_region,-1.72778564446771,2.677887033464243e-06,-1.7757630410207574,2.1467799830985458e-07,21.0,113.0,validated_depletion
+FLPS,ribosomal protein,aromatic_sticker_region,-1.798178957560636,3.163738082565607e-07,-2.4163821390004814,1.3444016933180227e-15,20.0,157.0,validated_depletion
+FLPS,snRNA,aromatic_sticker_region,-0.3732317603706363,0.4909134366614198,-0.4569396417363177,0.31481531611099683,34.0,93.0,concordant_null
+FLPS,snoRNA,aromatic_sticker_region,-1.001075882871969,0.1630984839307318,-1.353456159325844,0.038044544953160404,9.0,39.0,concordant_null
+FLPS,tRNA,aromatic_sticker_region,-0.849895394532381,0.008134387795293357,-1.174144735298803,1.777718105982063e-05,42.0,162.0,validated_depletion
+FLPS,unknown,aromatic_sticker_region,0.8883431740131605,5.372120086955912e-06,0.4509156446743701,0.03994764375162342,148.0,284.0,externally_validated
+FLPS,diverse,basic_enriched_region,-0.1110313123887438,1.0,1.2042027849658485,0.09070030043255407,12.0,45.0,concordant_null
+FLPS,mRNA,basic_enriched_region,-0.798417189739321,1.091554547419087e-05,0.8574991236811874,5.3853860215112026e-08,149.0,658.0,new_external_signal
+FLPS,ncRNA,basic_enriched_region,0.3331056783053074,0.4962952464321834,1.5623054482291807,4.30527983590759e-06,38.0,118.0,new_external_signal
+FLPS,pre-rRNA,basic_enriched_region,1.350384791751545,5.822286721152556e-05,2.550486932415598,1.2592573833725674e-16,55.0,113.0,externally_validated
+FLPS,ribosomal protein,basic_enriched_region,-0.07213594670889885,1.0,0.9423651399148154,0.006059042216079599,37.0,157.0,new_external_signal
+FLPS,snRNA,basic_enriched_region,0.2014896565575171,0.7687407781505057,1.3525130636723661,0.0009409679557843979,27.0,93.0,new_external_signal
+FLPS,snoRNA,basic_enriched_region,1.809191789173885,0.001356521089857623,2.9890058650336044,1.120672553529903e-08,22.0,39.0,externally_validated
+FLPS,tRNA,basic_enriched_region,-0.6904889780970774,0.05667906952928192,0.507324573761221,0.26789604237787684,30.0,162.0,concordant_null
+FLPS,unknown,basic_enriched_region,0.4526437914334618,0.04929160873629478,1.4040433643124481,1.3896383182726046e-10,85.0,284.0,externally_validated
+FLPS,diverse,cation_pi_rich_neighborhood,0.2424625667612434,1.0,0.2168683748648108,0.9644633692046453,8.0,45.0,concordant_null
+FLPS,mRNA,cation_pi_rich_neighborhood,0.6164739300680275,0.01509872190904519,0.2561800184579426,0.22502371061172013,124.0,658.0,rbp_generic
+FLPS,ncRNA,cation_pi_rich_neighborhood,0.4279705968522723,0.5179619067889742,0.007001822428951901,1.0,19.0,118.0,concordant_null
+FLPS,pre-rRNA,cation_pi_rich_neighborhood,-1.289724489019663,0.05598610788376891,-1.101207394526945,0.05637983901706028,9.0,113.0,concordant_null
+FLPS,ribosomal protein,cation_pi_rich_neighborhood,-1.419475606830938,0.02460489231380081,-2.1845100412215066,1.6503501632357005e-05,6.0,157.0,validated_depletion
+FLPS,snRNA,cation_pi_rich_neighborhood,-0.06446839802059508,1.0,-0.0966777360464309,1.0,14.0,93.0,concordant_null
+FLPS,snoRNA,cation_pi_rich_neighborhood,-1.082010190229368,0.4212128970137353,-1.5486663714981663,0.20701928045934812,2.0,39.0,external_underpowered
+FLPS,tRNA,cation_pi_rich_neighborhood,-1.533821620634291,0.008134387795293357,-1.2315392628746251,0.006457880201146335,12.0,162.0,validated_depletion
+FLPS,unknown,cation_pi_rich_neighborhood,0.3587077517627147,0.3309688431143927,0.4665158266437999,0.10882500298572488,60.0,284.0,concordant_null
+FLPS,diverse,disorder_rich_spacer_region,-0.06907521955671486,1.0,0.3190804010951277,0.744768077939195,21.0,45.0,concordant_null
+FLPS,mRNA,disorder_rich_spacer_region,0.9574026361887302,1.521935803402795e-09,0.7268688898414216,4.336573061035963e-09,354.0,658.0,externally_validated
+FLPS,ncRNA,disorder_rich_spacer_region,0.1883189153442583,0.7687407781505057,0.5560240081994281,0.11756652474419547,60.0,118.0,concordant_null
+FLPS,pre-rRNA,disorder_rich_spacer_region,-0.7146410474947519,0.04929160873629478,-0.29734416815977177,0.5093088813727049,41.0,113.0,concordant_null
+FLPS,ribosomal protein,disorder_rich_spacer_region,-2.499274091695917,1.245093740678911e-13,-2.320814456678702,6.892843446023495e-14,19.0,157.0,validated_depletion
+FLPS,snRNA,disorder_rich_spacer_region,-0.06745086870114976,1.0,-0.08383478141106877,0.9644633692046453,37.0,93.0,concordant_null
+FLPS,snoRNA,disorder_rich_spacer_region,-0.8806683885526252,0.1765930334599461,-0.3069188563356855,0.7282420396358074,14.0,39.0,concordant_null
+FLPS,tRNA,disorder_rich_spacer_region,-0.8642487534237377,0.003995905546771698,-0.817501843038011,0.005189972188771739,46.0,162.0,validated_depletion
+FLPS,unknown,disorder_rich_spacer_region,0.1784589581412144,0.5272889602291572,0.284349634430361,0.25227467238902895,131.0,284.0,concordant_null
+FLPS,diverse,glutamine_rich_region,0.8172065144415007,0.7799451034630591,1.0354395669365128,0.7282420396358074,1.0,45.0,external_underpowered
+FLPS,mRNA,glutamine_rich_region,0.7006059368221781,0.405651340818062,0.34682471403803233,0.6547471104886474,13.0,658.0,concordant_null
+FLPS,ncRNA,glutamine_rich_region,0.1450547975889818,1.0,0.3839524474148366,0.8971228630779546,2.0,118.0,external_underpowered
+FLPS,pre-rRNA,glutamine_rich_region,-2.237713570524564,0.4752966493996505,,0.4797752167730366,0.0,113.0,external_underpowered
+FLPS,ribosomal protein,glutamine_rich_region,-0.7181985647706711,0.9046637543618324,-0.7788458490297078,0.7282420396358074,1.0,157.0,external_underpowered
+FLPS,snRNA,glutamine_rich_region,-1.978626349207433,0.4652230787864523,,0.6363630233472904,0.0,93.0,external_underpowered
+FLPS,snoRNA,glutamine_rich_region,-0.6264660529006554,1.0,,1.0,0.0,39.0,external_underpowered
+FLPS,tRNA,glutamine_rich_region,-1.042000893777179,0.5763464050172425,-0.8242173567910142,0.7282420396358074,1.0,162.0,external_underpowered
+FLPS,unknown,glutamine_rich_region,0.9128034544585191,0.2866515735345945,1.2178655809553163,0.09168247851669364,10.0,284.0,concordant_null
+FLPS,diverse,glycine_rich_region,1.15478045949628,1.0,,1.0,0.0,45.0,external_underpowered
+FLPS,mRNA,glycine_rich_region,-0.05109002104124744,1.0,0.10768531605484459,1.0,3.0,658.0,external_underpowered
+FLPS,ncRNA,glycine_rich_region,-0.2915018738579198,1.0,,1.0,0.0,118.0,external_underpowered
+FLPS,pre-rRNA,glycine_rich_region,-0.2360845809470144,1.0,,1.0,0.0,113.0,external_underpowered
+FLPS,ribosomal protein,glycine_rich_region,-0.3582795333498474,1.0,,1.0,0.0,157.0,external_underpowered
+FLPS,snRNA,glycine_rich_region,1.804875095609116,0.5763464050172425,1.710363404423839,0.5973616985741951,1.0,93.0,external_underpowered
+FLPS,snoRNA,glycine_rich_region,1.374153024648834,1.0,,1.0,0.0,39.0,external_underpowered
+FLPS,tRNA,glycine_rich_region,2.051372568159847,0.3120084413684363,1.652280971984054,0.3705320587236225,2.0,162.0,external_underpowered
+FLPS,unknown,glycine_rich_region,0.484034327286592,0.8874165946491757,,0.8442135767733677,0.0,284.0,external_underpowered
+FLPS,diverse,gs_rich_neutral_region,0.06320491175681975,1.0,0.19575485092135936,0.9492995031071386,5.0,45.0,concordant_null
+FLPS,mRNA,gs_rich_neutral_region,1.00014112350105,1.319307720693179e-05,0.9883723282950339,6.921139103199534e-09,125.0,658.0,externally_validated
+FLPS,ncRNA,gs_rich_neutral_region,-0.2016298778104115,0.8839184891120866,0.2267950982153762,0.8442135767733677,14.0,118.0,concordant_null
+FLPS,pre-rRNA,gs_rich_neutral_region,-1.470151316756053,0.01744764766347989,-0.7516457894486329,0.34864000200950324,7.0,113.0,concordant_null
+FLPS,ribosomal protein,gs_rich_neutral_region,-2.552608236103444,0.0003061178630101217,-2.387934870678084,0.0004704032494573398,3.0,157.0,external_underpowered
+FLPS,snRNA,gs_rich_neutral_region,-0.4041819832143386,0.6451216423902164,-0.07677868766991207,1.0,9.0,93.0,concordant_null
+FLPS,snoRNA,gs_rich_neutral_region,-2.042572025739362,0.1425626112743502,-1.6056508048050584,0.28312274498974094,1.0,39.0,external_underpowered
+FLPS,tRNA,gs_rich_neutral_region,-1.027471339927561,0.05636393136850189,-0.9379940967579072,0.11756652474419547,9.0,162.0,concordant_null
+FLPS,unknown,gs_rich_neutral_region,0.2854132600321418,0.4468021186341983,0.603237352181642,0.07176344540585347,43.0,284.0,concordant_null
+FLPS,diverse,hydrophobic_region,1.667969794129851,0.002547461316637622,0.5541907602478715,0.46533630389994657,17.0,45.0,rbp_generic
+FLPS,mRNA,hydrophobic_region,-0.4186908415259045,0.06110538680165548,-1.0380174971005842,5.334153983023121e-12,111.0,658.0,concordant_null
+FLPS,ncRNA,hydrophobic_region,0.5272038201333316,0.2641954522570858,-0.4091581154508169,0.36653855923837164,28.0,118.0,concordant_null
+FLPS,pre-rRNA,hydrophobic_region,0.147985820209399,0.9046637543618324,-0.7660489844867211,0.07855878441733224,22.0,113.0,concordant_null
+FLPS,ribosomal protein,hydrophobic_region,-1.668223161201315,0.001002056480511333,-2.5544559640027966,3.0987916749540187e-11,10.0,157.0,validated_depletion
+FLPS,snRNA,hydrophobic_region,-0.07234244094756909,1.0,-0.9739325284481375,0.03635975363810275,16.0,93.0,concordant_null
+FLPS,snoRNA,hydrophobic_region,-0.6340825616135265,0.6261491352352205,-1.391295080673225,0.0775292337727267,5.0,39.0,concordant_null
+FLPS,tRNA,hydrophobic_region,0.3924994456459177,0.3960947532102648,-0.6929213397611347,0.047510112769751464,33.0,162.0,concordant_null
+FLPS,unknown,hydrophobic_region,0.4008737601653561,0.1506964984637087,-0.6038187583764312,0.014970632200443493,61.0,284.0,concordant_null
+FLPS,diverse,mixed_charge_polyampholyte,-1.492403116889973,0.3537632290118858,-0.7471356674947333,0.7282420396358074,1.0,45.0,external_underpowered
+FLPS,mRNA,mixed_charge_polyampholyte,0.6197423751223299,0.04929160873629478,1.0358740963138777,5.878436895479757e-06,68.0,658.0,externally_validated
+FLPS,ncRNA,mixed_charge_polyampholyte,-0.7303248687891766,0.4343454206775445,0.030293789674563205,1.0,6.0,118.0,concordant_null
+FLPS,pre-rRNA,mixed_charge_polyampholyte,-0.6716184332942964,0.4989228700780261,0.09588213130214018,1.0,6.0,113.0,concordant_null
+FLPS,ribosomal protein,mixed_charge_polyampholyte,-3.033252337718765,0.002072398611348057,-2.561421083460954,0.016984958848372755,1.0,157.0,external_underpowered
+FLPS,snRNA,mixed_charge_polyampholyte,0.718341933608334,0.3687232188384999,1.3008750045617052,0.06319118884451416,11.0,93.0,concordant_null
+FLPS,snoRNA,mixed_charge_polyampholyte,0.05793228085774475,1.0,0.761165625928095,0.6920592950330712,3.0,39.0,external_underpowered
+FLPS,tRNA,mixed_charge_polyampholyte,-0.5264744568584564,0.4962952464321834,0.12946793082391433,0.97778945878927,9.0,162.0,concordant_null
+FLPS,unknown,mixed_charge_polyampholyte,0.3453298319517186,0.4652230787864523,1.029098831174728,0.006593687468104502,29.0,284.0,new_external_signal
+FLPS,diverse,polar_linker,-0.6589187045202137,1.0,,1.0,0.0,45.0,external_underpowered
+FLPS,mRNA,polar_linker,1.310946401338399,0.06110538680165548,1.081262602556472,0.021430917221475485,19.0,658.0,new_external_signal
+FLPS,ncRNA,polar_linker,0.8974743477283413,0.643300720371541,1.072266813217407,0.4442599601259837,3.0,118.0,external_underpowered
+FLPS,pre-rRNA,polar_linker,-0.4016861039688545,1.0,-0.11215775792002035,1.0,1.0,113.0,external_underpowered
+FLPS,ribosomal protein,polar_linker,-2.172868487647478,0.466251390985164,,0.35884772156192896,0.0,157.0,external_underpowered
+FLPS,snRNA,polar_linker,-0.1402030618577167,1.0,0.17024197278070471,1.0,1.0,93.0,external_underpowered
+FLPS,snoRNA,polar_linker,-0.439478467765858,1.0,,1.0,0.0,39.0,external_underpowered
+FLPS,tRNA,polar_linker,-2.494344607583639,0.3495255297950765,,0.35884772156192896,0.0,162.0,external_underpowered
+FLPS,unknown,polar_linker,0.005693626270666994,1.0,0.15472897340938016,1.0,4.0,284.0,external_underpowered
+FLPS,diverse,proline_rich_disordered_region,0.6480465053798576,0.7028406842619603,0.5145446013862303,0.8755072152358513,2.0,45.0,external_underpowered
+FLPS,mRNA,proline_rich_disordered_region,1.149672040938357,0.002170310634205087,0.8480242329413322,0.004403710015756193,44.0,658.0,externally_validated
+FLPS,ncRNA,proline_rich_disordered_region,-1.381842629189123,0.2689905296906877,-0.9066980474193216,0.5570448764622296,2.0,118.0,external_underpowered
+FLPS,pre-rRNA,proline_rich_disordered_region,-2.092966678208032,0.1167468432226464,-1.5932586881482849,0.3033495592121594,1.0,113.0,external_underpowered
+FLPS,ribosomal protein,proline_rich_disordered_region,-1.449953945447079,0.2042639850836643,-1.323282672895644,0.24384079296806008,2.0,157.0,external_underpowered
+FLPS,snRNA,proline_rich_disordered_region,-0.1452029624957851,1.0,-0.05693096267800508,1.0,3.0,93.0,external_underpowered
+FLPS,snoRNA,proline_rich_disordered_region,-0.453623306475207,0.9046637543618324,-0.04626403762614897,1.0,1.0,39.0,external_underpowered
+FLPS,tRNA,proline_rich_disordered_region,-0.2862762425108151,0.8955998860586992,-0.5028540263494986,0.7345204030657857,4.0,162.0,external_underpowered
+FLPS,unknown,proline_rich_disordered_region,-0.09565241415932293,1.0,0.41405621364835316,0.5732656978505138,14.0,284.0,concordant_null
+FLPS,diverse,rg_rgg_repeat_region,-0.0568210285794133,1.0,2.540461770307506,0.19325455124344673,2.0,45.0,external_underpowered
+FLPS,mRNA,rg_rgg_repeat_region,1.706887846530513,1.784336976012864e-09,3.896193524904943,1.600294983645944e-55,84.0,658.0,externally_validated
+FLPS,ncRNA,rg_rgg_repeat_region,-2.844210248615469,0.00589700749465087,0.3699227254250285,1.0,1.0,118.0,external_underpowered
+FLPS,pre-rRNA,rg_rgg_repeat_region,-0.8130822948999032,0.4039251547853484,2.056615113110011,0.08894870713486906,4.0,113.0,external_underpowered
+FLPS,ribosomal protein,rg_rgg_repeat_region,-1.255073339443888,0.1425626112743502,1.1973690654221016,0.38465641065401335,3.0,157.0,external_underpowered
+FLPS,snRNA,rg_rgg_repeat_region,0.1736745227375897,1.0,3.3310874976333134,3.786129018438359e-05,8.0,93.0,new_external_signal
+FLPS,snoRNA,rg_rgg_repeat_region,0.5967532342093246,0.7587236604338045,3.2790075344464586,0.029657685748768207,3.0,39.0,external_underpowered
+FLPS,tRNA,rg_rgg_repeat_region,-3.237628886432458,0.0005124516416895657,-0.08895068270389679,1.0,1.0,162.0,external_underpowered
+FLPS,unknown,rg_rgg_repeat_region,-0.6500620014332861,0.1425626112743502,1.4520238056399222,0.08440469832437533,7.0,284.0,concordant_null
+FLPS,diverse,serine_rich_region,1.642516085999268,0.6036775026058597,0.8971022673847712,0.7537853953743971,1.0,45.0,external_underpowered
+FLPS,mRNA,serine_rich_region,-1.195369462236075,0.2449831965165226,-1.3964511828729156,0.07699547624824889,4.0,658.0,external_underpowered
+FLPS,ncRNA,serine_rich_region,2.057030945036379,0.09763729889784903,0.7434790782715593,0.6965469899841125,3.0,118.0,external_underpowered
+FLPS,pre-rRNA,serine_rich_region,0.2309661302996916,1.0,-0.4409454928658681,0.9017888127978254,1.0,113.0,external_underpowered
+FLPS,ribosomal protein,serine_rich_region,-1.566352825841297,0.8465885294369884,,0.28312274498974094,0.0,157.0,external_underpowered
+FLPS,snRNA,serine_rich_region,0.4923501733550545,1.0,-0.1585457621651431,1.0,1.0,93.0,external_underpowered
+FLPS,snoRNA,serine_rich_region,1.867362231421881,0.5681231299996049,1.1060491576562677,0.7268173358254647,1.0,39.0,external_underpowered
+FLPS,tRNA,serine_rich_region,-1.887665110503513,0.6153418216541836,,0.28389933180938864,0.0,162.0,external_underpowered
+FLPS,unknown,serine_rich_region,1.138962080720764,0.3286870039595526,0.12060034342412009,1.0,5.0,284.0,concordant_null
+FLPS,diverse,sr_rs_repeat_region,-1.302050472073413,0.4652230787864523,,1.0,0.0,45.0,external_underpowered
+FLPS,mRNA,sr_rs_repeat_region,2.370812582964529,1.348682903220639e-15,2.9440587232906115,5.60752184688041e-38,85.0,658.0,externally_validated
+FLPS,ncRNA,sr_rs_repeat_region,-2.774344791654551,0.008134387795293357,-0.601698561423305,0.9017888127978254,1.0,118.0,external_underpowered
+FLPS,pre-rRNA,sr_rs_repeat_region,-2.718147295033536,0.01090382619111744,-0.5389628060753424,0.9017888127978254,1.0,113.0,external_underpowered
+FLPS,ribosomal protein,sr_rs_repeat_region,-4.451088572656213,0.0008908726956151315,,0.28720325848252387,0.0,157.0,external_underpowered
+FLPS,snRNA,sr_rs_repeat_region,1.200197186162841,0.04929160873629478,2.984983919964186,2.9178633710031995e-06,12.0,93.0,externally_validated
+FLPS,snoRNA,sr_rs_repeat_region,-2.712557957477343,0.2571634232638803,,1.0,0.0,39.0,external_underpowered
+FLPS,tRNA,sr_rs_repeat_region,-3.167628615040543,0.001002056480511333,-1.06057196955223,0.607083415008716,1.0,162.0,external_underpowered
+FLPS,unknown,sr_rs_repeat_region,-1.146969424432785,0.009169694584928636,0.8318748892929665,0.28389933180938864,9.0,284.0,concordant_null
+FLPS,diverse,unmapped_physicochemical_properties,0.2933802762857725,0.8839184891120866,0.11996003936195289,0.9644633692046453,8.0,45.0,concordant_null
+FLPS,mRNA,unmapped_physicochemical_properties,-0.1653370332332306,0.6379400788343205,-0.1794418892290189,0.4797752167730366,102.0,658.0,concordant_null
+FLPS,ncRNA,unmapped_physicochemical_properties,0.7533190056333341,0.09926650493998157,0.3137833085016301,0.6194771405343757,24.0,118.0,concordant_null
+FLPS,pre-rRNA,unmapped_physicochemical_properties,-0.7939242350463028,0.1982782683497588,-0.7601638388029571,0.1721174203236056,12.0,113.0,concordant_null
+FLPS,ribosomal protein,unmapped_physicochemical_properties,-1.425124157617311,0.01156761745306607,-2.065413192543689,1.6870301834495063e-05,7.0,157.0,validated_depletion
+FLPS,snRNA,unmapped_physicochemical_properties,0.3590719585286974,0.6036775026058597,-0.07910854989725734,1.0,15.0,93.0,concordant_null
+FLPS,snoRNA,unmapped_physicochemical_properties,-1.503805356485096,0.1815552129416826,-1.1211537482149188,0.30705531057443136,3.0,39.0,external_underpowered
+FLPS,tRNA,unmapped_physicochemical_properties,-0.2028724992564694,0.7687407781505057,-0.5359502158265259,0.28090222863681213,20.0,162.0,concordant_null
+FLPS,unknown,unmapped_physicochemical_properties,0.6505152081638694,0.01296651238254064,0.0805376760810508,0.9146159855550097,51.0,284.0,rbp_generic
+LCRFinder,diverse,acidic_region,-0.930647010307281,0.5778544325627676,-0.14758207888018798,1.0,7.0,45.0,concordant_null
+LCRFinder,mRNA,acidic_region,-0.5368052524997747,0.0347352642163758,1.0396209139939598,1.1333679167874855e-13,202.0,658.0,new_external_signal
+LCRFinder,ncRNA,acidic_region,-0.003983620502086028,1.0,0.7383826778737823,0.08335484294903774,31.0,118.0,concordant_null
+LCRFinder,pre-rRNA,acidic_region,1.129332611502149,0.0347352642163758,1.5691062244490852,2.4595588811691063e-06,44.0,113.0,externally_validated
+LCRFinder,ribosomal protein,acidic_region,-1.23915429105799,0.3151648487483983,-2.1144152149449886,1.1024461011767567e-05,7.0,157.0,concordant_null
+LCRFinder,snRNA,acidic_region,0.4604250568847355,0.7296515397340486,1.083729660144782,0.01024281627992506,29.0,93.0,new_external_signal
+LCRFinder,snoRNA,acidic_region,1.67037142896695,0.03762345791865838,2.722508598525379,1.6646220834987698e-07,23.0,39.0,externally_validated
+LCRFinder,tRNA,acidic_region,-0.8596477153609281,0.2244670655675308,-0.8432784597571228,0.07406696287528612,17.0,162.0,concordant_null
+LCRFinder,unknown,acidic_region,0.4568993056940854,0.1883879370441073,1.1780077441688743,3.057071716194614e-08,93.0,284.0,new_external_signal
+LCRFinder,diverse,arginine_rich_rna_contact_region,-0.6899517570281741,0.8075736522115256,0.0031568831871828904,1.0,4.0,45.0,external_underpowered
+LCRFinder,mRNA,arginine_rich_rna_contact_region,0.419127967070427,0.1553660450499274,1.6320524454426153,2.176697865142925e-26,165.0,658.0,new_external_signal
+LCRFinder,ncRNA,arginine_rich_rna_contact_region,-0.2578295634253991,1.0,0.8570489114103946,0.09603950822090786,19.0,118.0,concordant_null
+LCRFinder,pre-rRNA,arginine_rich_rna_contact_region,-0.1147715705284461,1.0,1.1844245711374275,0.01311279765324136,22.0,113.0,new_external_signal
+LCRFinder,ribosomal protein,arginine_rich_rna_contact_region,-0.6899517570281741,0.8075736522115256,-1.883898530836072,0.006933897585349974,4.0,157.0,external_underpowered
+LCRFinder,snRNA,arginine_rich_rna_contact_region,0.4418039673985658,0.7850712618315326,1.3661509728735146,0.005055562843040414,20.0,93.0,new_external_signal
+LCRFinder,snoRNA,arginine_rich_rna_contact_region,-0.9707609912358777,0.4224040876604102,1.0927940956718591,0.25359563014999603,7.0,39.0,concordant_null
+LCRFinder,tRNA,arginine_rich_rna_contact_region,-0.6333553303392695,0.5778544325627676,-0.5113407143241429,0.4747969825059898,11.0,162.0,concordant_null
+LCRFinder,unknown,arginine_rich_rna_contact_region,-0.1120251863163362,1.0,1.160336836028093,1.2188104748377064e-05,55.0,284.0,new_external_signal
+LCRFinder,diverse,aromatic_aggregation_prone_region,0.6427914188906246,1.0,,1.0,0.0,45.0,external_underpowered
+LCRFinder,mRNA,aromatic_aggregation_prone_region,0.2266564371614675,1.0,0.6730363960300891,0.7115406871242093,5.0,658.0,concordant_null
+LCRFinder,ncRNA,aromatic_aggregation_prone_region,2.182968596481104,0.2513883465611279,2.5212540838297715,0.0903473297014794,3.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,aromatic_aggregation_prone_region,-1.077593120670237,1.0,,1.0,0.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,aromatic_aggregation_prone_region,0.6427914188906246,1.0,,1.0,0.0,157.0,external_underpowered
+LCRFinder,snRNA,aromatic_aggregation_prone_region,-0.8572105304679314,1.0,,1.0,0.0,93.0,external_underpowered
+LCRFinder,snoRNA,aromatic_aggregation_prone_region,0.1745084044612369,1.0,,1.0,0.0,39.0,external_underpowered
+LCRFinder,tRNA,aromatic_aggregation_prone_region,-0.6626028147103452,1.0,,1.0,0.0,162.0,external_underpowered
+LCRFinder,unknown,aromatic_aggregation_prone_region,0.5319077838350352,0.9787940545313902,1.2360120131655994,0.4183262022806397,3.0,284.0,external_underpowered
+LCRFinder,diverse,aromatic_sticker_region,0.02947691751069645,1.0,0.045544168778348604,1.0,2.0,45.0,external_underpowered
+LCRFinder,mRNA,aromatic_sticker_region,1.125986471839787,0.0004233107752051096,1.496823315295859,1.9328474957274574e-13,89.0,658.0,externally_validated
+LCRFinder,ncRNA,aromatic_sticker_region,0.03086096370476052,1.0,0.6397000235821265,0.5614387641102763,9.0,118.0,concordant_null
+LCRFinder,pre-rRNA,aromatic_sticker_region,-4.760393978470012,0.0004233107752051096,,0.02481053163677853,0.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,aromatic_sticker_region,-1.363035897542277,0.6523435250481182,-2.5384967764717477,0.019789366077914317,1.0,157.0,external_underpowered
+LCRFinder,snRNA,aromatic_sticker_region,-0.8935522028028657,0.5778544325627676,0.15838563829401425,1.0,5.0,93.0,concordant_null
+LCRFinder,snoRNA,aromatic_sticker_region,-1.052826705330433,0.7607262863949413,-0.5152644702340307,0.998609960676669,1.0,39.0,external_underpowered
+LCRFinder,tRNA,aromatic_sticker_region,-1.939841713313184,0.09890678462269353,-1.8379418224952262,0.0773645308621417,2.0,162.0,external_underpowered
+LCRFinder,unknown,aromatic_sticker_region,0.01263845885977108,1.0,1.0520231381639344,0.005797394940054146,29.0,284.0,new_external_signal
+LCRFinder,diverse,basic_enriched_region,-0.7860039905004366,0.7995330789027991,0.496982558503888,0.8525660808380157,4.0,45.0,external_underpowered
+LCRFinder,mRNA,basic_enriched_region,-0.817795165031291,0.001350846055605738,1.3107566703341333,1.9398107284463567e-12,105.0,658.0,new_external_signal
+LCRFinder,ncRNA,basic_enriched_region,-0.3009807528512569,0.9412883089509712,1.1660440881682905,0.029992715877648818,17.0,118.0,new_external_signal
+LCRFinder,pre-rRNA,basic_enriched_region,1.424207132136249,0.003071247267122449,2.4977384899023143,1.1559808397990721e-11,34.0,113.0,externally_validated
+LCRFinder,ribosomal protein,basic_enriched_region,0.8118909439180362,0.6523435250481182,-0.11015673306194286,1.0,10.0,157.0,concordant_null
+LCRFinder,snRNA,basic_enriched_region,0.2972999734616381,0.9910194375552394,1.7683306868085873,0.00026983993076601755,19.0,93.0,new_external_signal
+LCRFinder,snoRNA,basic_enriched_region,1.329138404087921,0.1328007786562949,3.1919022560893167,6.030451549795922e-08,16.0,39.0,new_external_signal
+LCRFinder,tRNA,basic_enriched_region,-0.1919289992021864,1.0,0.23298281637386406,0.9139957524786627,13.0,162.0,concordant_null
+LCRFinder,unknown,basic_enriched_region,0.398958313016523,0.3461713787536236,1.6862255957656185,1.666851881350946e-10,56.0,284.0,new_external_signal
+LCRFinder,diverse,cation_pi_rich_neighborhood,2.34559148613412,1.0,,1.0,0.0,45.0,external_underpowered
+LCRFinder,mRNA,cation_pi_rich_neighborhood,0.2243919989827964,1.0,3.251104684530818,0.11499897516942678,2.0,658.0,external_underpowered
+LCRFinder,ncRNA,cation_pi_rich_neighborhood,0.6724013484402929,1.0,,1.0,0.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,cation_pi_rich_neighborhood,0.6259342817774622,1.0,,1.0,0.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,cation_pi_rich_neighborhood,2.34559148613412,1.0,,1.0,0.0,157.0,external_underpowered
+LCRFinder,snRNA,cation_pi_rich_neighborhood,0.8461689746779882,1.0,,1.0,0.0,93.0,external_underpowered
+LCRFinder,snoRNA,cation_pi_rich_neighborhood,1.877430011804873,1.0,,1.0,0.0,39.0,external_underpowered
+LCRFinder,tRNA,cation_pi_rich_neighborhood,3.017997483315695,0.5778544325627676,4.537399936563574,0.20139917526831966,1.0,162.0,external_underpowered
+LCRFinder,unknown,cation_pi_rich_neighborhood,0.5261060670237826,1.0,3.72558536631527,0.28322250809741634,1.0,284.0,external_underpowered
+LCRFinder,diverse,disorder_rich_spacer_region,-0.5312967182307059,0.9412883089509712,-0.22467289230648613,1.0,11.0,45.0,concordant_null
+LCRFinder,mRNA,disorder_rich_spacer_region,1.311558803505994,4.181147874971179e-09,1.3165018757723477,3.132388497070418e-27,324.0,658.0,externally_validated
+LCRFinder,ncRNA,disorder_rich_spacer_region,0.3613435200905697,0.848238038075215,0.668411903777002,0.07673170141160193,45.0,118.0,concordant_null
+LCRFinder,pre-rRNA,disorder_rich_spacer_region,-1.78199934778071,9.326533303759206e-05,-0.4348905996968318,0.3862876979500187,25.0,113.0,concordant_null
+LCRFinder,ribosomal protein,disorder_rich_spacer_region,-1.071418225151137,0.3968183237670439,-2.4519641130557734,2.4030638846800476e-10,10.0,157.0,concordant_null
+LCRFinder,snRNA,disorder_rich_spacer_region,-0.5554321828364451,0.6004283365029239,0.3717852472524996,0.49519734337887195,31.0,93.0,concordant_null
+LCRFinder,snoRNA,disorder_rich_spacer_region,-1.867764050023677,0.008496475512222854,-0.13003601816841093,1.0,10.0,39.0,concordant_null
+LCRFinder,tRNA,disorder_rich_spacer_region,-1.382890938159646,0.0157314399584007,-1.5192150993987694,1.1024461011767567e-05,19.0,162.0,validated_depletion
+LCRFinder,unknown,disorder_rich_spacer_region,-0.1451484356216354,0.9787940545313902,0.5280170541527365,0.023171788398002803,102.0,284.0,new_external_signal
+LCRFinder,diverse,glutamine_rich_region,0.6427914188906246,1.0,,1.0,0.0,45.0,external_underpowered
+LCRFinder,mRNA,glutamine_rich_region,1.026827379366274,0.5778544325627676,0.32506673183318713,0.8602926977659091,9.0,658.0,concordant_null
+LCRFinder,ncRNA,glutamine_rich_region,-1.031092941745541,1.0,,0.9139957524786627,0.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,glutamine_rich_region,-1.077593120670237,1.0,,0.9139957524786627,0.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,glutamine_rich_region,0.6427914188906246,1.0,,0.7511010710838854,0.0,157.0,external_underpowered
+LCRFinder,snRNA,glutamine_rich_region,0.8572598278839181,0.9951505852398436,0.4739059740423267,1.0,1.0,93.0,external_underpowered
+LCRFinder,snoRNA,glutamine_rich_region,0.1745084044612369,1.0,,1.0,0.0,39.0,external_underpowered
+LCRFinder,tRNA,glutamine_rich_region,-0.6626028147103452,1.0,,0.5224666776718492,0.0,162.0,external_underpowered
+LCRFinder,unknown,glutamine_rich_region,0.5319077838350352,0.9787940545313902,0.4583929746710023,0.8602926977659091,4.0,284.0,external_underpowered
+LCRFinder,diverse,glycine_rich_region,1.812139984622981,1.0,,1.0,0.0,45.0,external_underpowered
+LCRFinder,mRNA,glycine_rich_region,3.942654891879367,0.06670388739653613,1.0394002519985674,0.43197247188037147,5.0,658.0,concordant_null
+LCRFinder,ncRNA,glycine_rich_region,0.1388121605920631,1.0,,1.0,0.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,glycine_rich_region,0.09233852804886108,1.0,,1.0,0.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,glycine_rich_region,1.812139984622981,1.0,,1.0,0.0,157.0,external_underpowered
+LCRFinder,snRNA,glycine_rich_region,0.312602548663873,1.0,,1.0,0.0,93.0,external_underpowered
+LCRFinder,snoRNA,glycine_rich_region,1.343954401217361,1.0,,1.0,0.0,39.0,external_underpowered
+LCRFinder,tRNA,glycine_rich_region,0.5071196009497112,1.0,,1.0,0.0,162.0,external_underpowered
+LCRFinder,unknown,glycine_rich_region,-1.963785754830594,0.8010492103074833,,0.9139957524786627,0.0,284.0,external_underpowered
+LCRFinder,diverse,gs_rich_neutral_region,-0.1201030856537453,1.0,0.1955830056354435,1.0,3.0,45.0,external_underpowered
+LCRFinder,mRNA,gs_rich_neutral_region,0.9449917498834536,0.002439917668984513,1.219031673163613,4.483484336189392e-10,94.0,658.0,externally_validated
+LCRFinder,ncRNA,gs_rich_neutral_region,-0.5029192132142095,0.8224565166148344,0.09717930157444919,1.0,8.0,118.0,concordant_null
+LCRFinder,pre-rRNA,gs_rich_neutral_region,-2.005219633098473,0.0347352642163758,-1.1829286176182863,0.23960525819028763,3.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,gs_rich_neutral_region,-1.511142512535655,0.6523435250481182,,0.000300468567476141,0.0,157.0,external_underpowered
+LCRFinder,snRNA,gs_rich_neutral_region,-0.5222507498942546,0.8216049563367898,0.04684762602430453,1.0,6.0,93.0,concordant_null
+LCRFinder,snoRNA,gs_rich_neutral_region,-3.645603852060992,0.06670388739653613,-0.8842050202582038,0.8250012697305759,1.0,39.0,external_underpowered
+LCRFinder,tRNA,gs_rich_neutral_region,-2.089603043538081,0.0574317062472812,-2.2068823725193996,0.01331801587978182,2.0,162.0,external_underpowered
+LCRFinder,unknown,gs_rich_neutral_region,0.3293906138172828,0.7220777579884327,0.937476683298502,0.008165184696799896,34.0,284.0,new_external_signal
+LCRFinder,diverse,hydrophobic_region,1.861419383501328,0.0347352642163758,0.534086766499774,0.6515700635093251,12.0,45.0,rbp_generic
+LCRFinder,mRNA,hydrophobic_region,-0.1714153415851154,0.8462801660941065,-0.10325267748942486,0.8069936765121786,127.0,658.0,concordant_null
+LCRFinder,ncRNA,hydrophobic_region,0.516599800663143,0.623915642187874,-0.06652020917528947,1.0,23.0,118.0,concordant_null
+LCRFinder,pre-rRNA,hydrophobic_region,-0.7823455399811201,0.3151648487483983,-0.9398444218326383,0.07673170141160193,13.0,113.0,concordant_null
+LCRFinder,ribosomal protein,hydrophobic_region,-2.660489924120693,0.0574317062472812,,2.386561173067347e-14,0.0,157.0,external_underpowered
+LCRFinder,snRNA,hydrophobic_region,0.01904101278854707,1.0,-0.2754105187329623,0.8250012697305759,16.0,93.0,concordant_null
+LCRFinder,snoRNA,hydrophobic_region,-0.7252012763191609,0.7681232794960928,-0.4093297051338584,0.8525660808380157,6.0,39.0,concordant_null
+LCRFinder,tRNA,hydrophobic_region,0.04531589290529329,1.0,-1.1940429678809725,0.00428568088195283,16.0,162.0,concordant_null
+LCRFinder,unknown,hydrophobic_region,0.381529842459379,0.3968183237670439,0.03415390723538441,1.0,59.0,284.0,concordant_null
+LCRFinder,diverse,mixed_charge_polyampholyte,0.5670689696092693,1.0,1.2480201393651538,0.7957108663778192,1.0,45.0,external_underpowered
+LCRFinder,mRNA,mixed_charge_polyampholyte,0.1713253014962811,1.0,1.316627462038712,0.0028574862455631525,22.0,658.0,new_external_signal
+LCRFinder,ncRNA,mixed_charge_polyampholyte,0.5990494661606202,0.9787940545313902,1.4695122829557636,0.23327194787499653,4.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,mixed_charge_polyampholyte,-0.4111297739804093,1.0,0.6598192645774529,0.9411642629316469,2.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,mixed_charge_polyampholyte,-1.118836229509851,1.0,,0.5452531456297919,0.0,157.0,external_underpowered
+LCRFinder,snRNA,mixed_charge_polyampholyte,0.3613688344852584,1.0,1.446300104584794,0.3320505495596816,3.0,93.0,external_underpowered
+LCRFinder,snoRNA,mixed_charge_polyampholyte,0.07941988767458523,1.0,2.2319004740018764,0.2621056302911452,2.0,39.0,external_underpowered
+LCRFinder,tRNA,mixed_charge_polyampholyte,-0.7803089470995357,0.9682808294581594,-0.6116367843623736,1.0,1.0,162.0,external_underpowered
+LCRFinder,unknown,mixed_charge_polyampholyte,0.2522791564228126,1.0,1.1151182406260276,0.20139917526831966,8.0,284.0,concordant_null
+LCRFinder,diverse,polar_linker,0.6526182741904409,1.0,0.9539503521862668,0.6796501742702735,2.0,45.0,external_underpowered
+LCRFinder,mRNA,polar_linker,1.247001413804939,0.006715470471843102,1.2522942025119035,2.1149165168396935e-05,43.0,658.0,externally_validated
+LCRFinder,ncRNA,polar_linker,-0.185141739786177,1.0,0.4056869664930012,0.8695914460209192,4.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,polar_linker,-1.949668734944943,0.247537060663248,-1.1538529373482482,0.6954570025133219,1.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,polar_linker,-1.851553751355616,0.8224565166148344,,0.0903473297014794,0.0,157.0,external_underpowered
+LCRFinder,snRNA,polar_linker,-0.941809107230449,0.7681232794960928,-0.1188059902490474,1.0,2.0,93.0,external_underpowered
+LCRFinder,snoRNA,polar_linker,-0.6653555601474235,1.0,0.3931417131738875,1.0,1.0,39.0,external_underpowered
+LCRFinder,tRNA,polar_linker,-1.526201253197175,0.5757849921171627,-1.675462100825136,0.24776011151270683,1.0,162.0,external_underpowered
+LCRFinder,unknown,polar_linker,-0.261718515416944,0.9951505852398436,0.503130686412089,0.5452531456297919,11.0,284.0,concordant_null
+LCRFinder,diverse,proline_rich_disordered_region,0.5670689696092693,1.0,0.44425988901026847,1.0,1.0,45.0,external_underpowered
+LCRFinder,mRNA,proline_rich_disordered_region,0.1713253014962811,1.0,0.5128672116838268,0.35760042299862616,22.0,658.0,concordant_null
+LCRFinder,ncRNA,proline_rich_disordered_region,-0.3631765385735579,1.0,-0.20722723051140796,1.0,2.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,proline_rich_disordered_region,-2.841733533329871,0.2956593484579015,,0.2855602937233427,0.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,proline_rich_disordered_region,-1.118836229509851,1.0,,0.11499897516942678,0.0,157.0,external_underpowered
+LCRFinder,snRNA,proline_rich_disordered_region,0.7845510136997706,0.7995330789027991,0.6425398542299087,0.8069936765121786,3.0,93.0,external_underpowered
+LCRFinder,snoRNA,proline_rich_disordered_region,0.07941988767458523,1.0,0.6532067792817648,0.9085147325115298,1.0,39.0,external_underpowered
+LCRFinder,tRNA,proline_rich_disordered_region,0.5669695675315674,1.0,-0.6694705729794308,0.7661687458902445,2.0,162.0,external_underpowered
+LCRFinder,unknown,proline_rich_disordered_region,0.4130625079371198,0.9412883089509712,0.888774589365946,0.21922143905827804,12.0,284.0,concordant_null
+LCRFinder,diverse,rg_rgg_repeat_region,-1.436318419366021,1.0,,1.0,0.0,45.0,external_underpowered
+LCRFinder,mRNA,rg_rgg_repeat_region,1.434928269531891,0.005916801673153393,4.293323877123429,2.1624470930336067e-24,32.0,658.0,externally_validated
+LCRFinder,ncRNA,rg_rgg_repeat_region,-3.11343922436894,0.2278717798174064,,1.0,0.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,rg_rgg_repeat_region,-3.160093992082619,0.1547973470787511,,1.0,0.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,rg_rgg_repeat_region,0.2437827852178487,1.0,1.8570704172053727,0.633601136697501,1.0,157.0,external_underpowered
+LCRFinder,snRNA,rg_rgg_repeat_region,0.02507281134335346,1.0,3.8696357983912333,0.01331801587978182,3.0,93.0,external_underpowered
+LCRFinder,snoRNA,rg_rgg_repeat_region,1.583404514564465,0.3232518171173522,5.179657126594422,0.0014741568236218711,3.0,39.0,external_underpowered
+LCRFinder,tRNA,rg_rgg_repeat_region,-2.743885775515141,0.4100221065923232,,1.0,0.0,162.0,external_underpowered
+LCRFinder,unknown,rg_rgg_repeat_region,-0.4879941400454947,0.7995330789027991,2.894853909210942,0.008267388946424451,5.0,284.0,new_external_signal
+LCRFinder,diverse,serine_rich_region,0.1405431567910983,1.0,-0.1897321111276031,1.0,1.0,45.0,external_underpowered
+LCRFinder,mRNA,serine_rich_region,0.3359627585619283,0.8608809905124766,0.3848470937794206,0.3862876979500187,31.0,658.0,concordant_null
+LCRFinder,ncRNA,serine_rich_region,1.48475336572887,0.09287826596050444,0.8070295148058523,0.4501971709653412,7.0,118.0,concordant_null
+LCRFinder,pre-rRNA,serine_rich_region,-0.313237628515051,1.0,-0.27950881821618895,1.0,3.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,serine_rich_region,-1.537959859493611,1.0,,0.02502134906359183,0.0,157.0,external_underpowered
+LCRFinder,snRNA,serine_rich_region,-0.08178771997545047,1.0,0.008547854092037165,1.0,3.0,93.0,external_underpowered
+LCRFinder,snoRNA,serine_rich_region,-2.006862986293353,0.6787012497359538,,0.7115406871242093,0.0,39.0,external_underpowered
+LCRFinder,tRNA,serine_rich_region,-0.4165236337564281,1.0,-1.3034625731173024,0.3218157351338825,2.0,162.0,external_underpowered
+LCRFinder,unknown,serine_rich_region,-0.2856289847167819,1.0,-0.007306097108799975,1.0,10.0,284.0,concordant_null
+LCRFinder,diverse,sr_rs_repeat_region,-1.851553751355616,0.8224565166148344,,1.0,0.0,45.0,external_underpowered
+LCRFinder,mRNA,sr_rs_repeat_region,2.253938297293415,1.230660306226149e-07,5.4250286434894806,7.442974569687297e-52,53.0,658.0,externally_validated
+LCRFinder,ncRNA,sr_rs_repeat_region,-3.530090896764479,0.08098384233795686,,1.0,0.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,sr_rs_repeat_region,-1.949668734944943,0.247537060663248,2.6967261162867815,0.4454342725240891,1.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,sr_rs_repeat_region,-1.851553751355616,0.8224565166148344,,1.0,0.0,157.0,external_underpowered
+LCRFinder,snRNA,sr_rs_repeat_region,1.525840477780901,0.06670388739653613,5.772592883944063,3.5373934426969907e-11,9.0,93.0,new_external_signal
+LCRFinder,snoRNA,sr_rs_repeat_region,-2.320650101189893,0.5521172266345513,,1.0,0.0,39.0,external_underpowered
+LCRFinder,tRNA,sr_rs_repeat_region,-3.160071610555689,0.1547973470787511,,1.0,0.0,162.0,external_underpowered
+LCRFinder,unknown,sr_rs_repeat_region,-2.059261207853388,0.003071247267122449,2.595908616760037,0.08688730818568258,3.0,284.0,external_underpowered
+LCRFinder,diverse,unmapped_physicochemical_properties,-0.02591582244551651,1.0,0.012745867045336366,1.0,1.0,45.0,external_underpowered
+LCRFinder,mRNA,unmapped_physicochemical_properties,0.5511342018145331,0.472012450783204,0.6347139109971719,0.0903473297014794,32.0,658.0,concordant_null
+LCRFinder,ncRNA,unmapped_physicochemical_properties,-0.4364564829137494,1.0,-0.14087732206787543,1.0,3.0,118.0,external_underpowered
+LCRFinder,pre-rRNA,unmapped_physicochemical_properties,-0.07657240610776575,1.0,0.2986547391317168,1.0,4.0,113.0,external_underpowered
+LCRFinder,ribosomal protein,unmapped_physicochemical_properties,-1.702069916314256,0.8224565166148344,,0.05112333647497658,0.0,157.0,external_underpowered
+LCRFinder,snRNA,unmapped_physicochemical_properties,-0.2536250471032331,1.0,0.21102583226497668,1.0,3.0,93.0,external_underpowered
+LCRFinder,snoRNA,unmapped_physicochemical_properties,-0.5138607503649779,1.0,0.22169275731683266,1.0,1.0,39.0,external_underpowered
+LCRFinder,tRNA,unmapped_physicochemical_properties,-1.374430269724005,0.6787012497359538,-1.8469110566821907,0.20139917526831966,1.0,162.0,external_underpowered
+LCRFinder,unknown,unmapped_physicochemical_properties,0.2896795664580822,0.9910194375552394,0.457260567401014,0.5873729589025558,12.0,284.0,concordant_null
+SEG,diverse,acidic_region,-0.7564617697920033,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,acidic_region,-1.75229732123298,0.0008026003864941714,1.2058968400659056,0.0023584279682254097,29.0,658.0,new_external_signal
+SEG,ncRNA,acidic_region,0.8306552920906947,1.0,1.2541994897694633,0.48550565445652855,5.0,118.0,concordant_null
+SEG,pre-rRNA,acidic_region,5.018573384658091,1.025274357100497e-05,2.5998366310126295,0.00011204411840975375,12.0,113.0,externally_validated
+SEG,ribosomal protein,acidic_region,0.3560123633625458,1.0,-1.0837399877883813,1.0,1.0,157.0,external_underpowered
+SEG,snRNA,acidic_region,-1.304269428390856,1.0,0.42754461502640095,1.0,2.0,93.0,external_underpowered
+SEG,snoRNA,acidic_region,2.203972103238852,0.3688593464338619,3.2556668861064004,0.0023584279682254097,6.0,39.0,new_external_signal
+SEG,tRNA,acidic_region,2.34821939270629,1.0,-0.38318503381185975,1.0,2.0,162.0,external_underpowered
+SEG,unknown,acidic_region,0.6197726591609682,1.0,1.6872042940795382,0.0018490645589975183,17.0,284.0,new_external_signal
+SEG,diverse,arginine_rich_rna_contact_region,2.060175515029399,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,arginine_rich_rna_contact_region,0.6792500963099188,1.0,3.153876694356756,0.0004933705175524504,8.0,658.0,new_external_signal
+SEG,ncRNA,arginine_rich_rna_contact_region,1.265703592609778,1.0,3.1202646539803682,0.6620264802180723,1.0,118.0,external_underpowered
+SEG,pre-rRNA,arginine_rich_rna_contact_region,-0.5387270345385352,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,arginine_rich_rna_contact_region,1.201891969237409,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,arginine_rich_rna_contact_region,1.727074844644559,1.0,4.218047356427531,0.07099947768435723,2.0,93.0,external_underpowered
+SEG,snoRNA,arginine_rich_rna_contact_region,-0.05180790214967227,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,arginine_rich_rna_contact_region,1.56961453638772,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,arginine_rich_rna_contact_region,-1.143139817620365,1.0,2.591640137409024,0.41485029599473394,2.0,284.0,external_underpowered
+SEG,diverse,aromatic_aggregation_prone_region,5.290326097501533,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,aromatic_aggregation_prone_region,1.162814612279123,1.0,0.8028154264590771,1.0,1.0,658.0,external_underpowered
+SEG,ncRNA,aromatic_aggregation_prone_region,2.694047616231501,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,aromatic_aggregation_prone_region,2.694047616231501,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,aromatic_aggregation_prone_region,4.432464571037028,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,aromatic_aggregation_prone_region,2.240770950651302,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,aromatic_aggregation_prone_region,3.180067011862926,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,aromatic_aggregation_prone_region,4.799975391692007,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,aromatic_aggregation_prone_region,0.3757575116170324,1.0,,1.0,0.0,284.0,external_underpowered
+SEG,diverse,aromatic_sticker_region,1.142846844824245,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,aromatic_sticker_region,0.5742114991019986,1.0,1.7180239058819518,0.008476863712989736,13.0,658.0,new_external_signal
+SEG,ncRNA,aromatic_sticker_region,1.211358371061471,1.0,1.7551516392587558,0.6620264802180723,2.0,118.0,external_underpowered
+SEG,pre-rRNA,aromatic_sticker_region,-1.458670368927846,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,aromatic_sticker_region,0.284143432427892,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,aromatic_sticker_region,-0.1875578705097358,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,aromatic_sticker_region,0.8241052872371479,1.0,2.6155856490519285,0.7627906577991374,1.0,39.0,external_underpowered
+SEG,tRNA,aromatic_sticker_region,2.787930337982972,1.0,0.5469818350529052,1.0,1.0,162.0,external_underpowered
+SEG,unknown,aromatic_sticker_region,-0.7128558244997708,1.0,-0.2648327351953989,1.0,1.0,284.0,external_underpowered
+SEG,diverse,basic_enriched_region,1.755211303094216,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,basic_enriched_region,-0.8176667967681498,1.0,1.7923694000008579,0.04433497536945813,8.0,658.0,new_external_signal
+SEG,ncRNA,basic_enriched_region,0.9392737694593217,1.0,1.7587573596244703,1.0,1.0,118.0,external_underpowered
+SEG,pre-rRNA,basic_enriched_region,0.9392737694593217,1.0,1.821493114972433,1.0,1.0,113.0,external_underpowered
+SEG,ribosomal protein,basic_enriched_region,0.8968165494339413,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,basic_enriched_region,1.376323234452038,1.0,2.8565400620716335,0.3250748251345529,2.0,93.0,external_underpowered
+SEG,snoRNA,basic_enriched_region,-0.3572267583103986,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,basic_enriched_region,3.430371612786951,1.0,1.2998839514955451,1.0,1.0,162.0,external_underpowered
+SEG,unknown,basic_enriched_region,0.516461483993547,1.0,2.0883798463018333,0.1801030879090184,4.0,284.0,external_underpowered
+SEG,diverse,cation_pi_rich_neighborhood,3.690541257074854,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,cation_pi_rich_neighborhood,-0.4366028491137776,1.0,4.83645182187601,0.054242233096506415,2.0,658.0,external_underpowered
+SEG,ncRNA,cation_pi_rich_neighborhood,1.093627520770147,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,cation_pi_rich_neighborhood,1.093627520770147,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,cation_pi_rich_neighborhood,2.832577505760858,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,cation_pi_rich_neighborhood,0.6400698024879959,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,cation_pi_rich_neighborhood,3.676884990162195,1.0,8.19135088790779,0.053475683850311456,1.0,39.0,external_underpowered
+SEG,tRNA,cation_pi_rich_neighborhood,5.638073837180719,0.642067179597446,6.122747073908767,0.1801030879090184,1.0,162.0,external_underpowered
+SEG,unknown,cation_pi_rich_neighborhood,-1.227701332721513,1.0,,1.0,0.0,284.0,external_underpowered
+SEG,diverse,disorder_rich_spacer_region,2.735539301374911,1.0,0.4457476552220976,1.0,2.0,45.0,external_underpowered
+SEG,mRNA,disorder_rich_spacer_region,0.6904747311694039,0.8272544653155299,1.5948723621139689,1.8499291718973302e-12,74.0,658.0,new_external_signal
+SEG,ncRNA,disorder_rich_spacer_region,0.002768425010485446,1.0,0.45342158310751846,1.0,6.0,118.0,concordant_null
+SEG,pre-rRNA,disorder_rich_spacer_region,-4.592142516417076,0.01134667559323106,,0.11694576685041784,0.0,113.0,external_underpowered
+SEG,ribosomal protein,disorder_rich_spacer_region,0.396384792376952,1.0,-1.3920796190597768,0.48550565445652855,2.0,157.0,external_underpowered
+SEG,snRNA,disorder_rich_spacer_region,-1.075453580170578,1.0,0.5585891247377633,1.0,5.0,93.0,concordant_null
+SEG,snoRNA,disorder_rich_spacer_region,-1.422098833934984,1.0,0.6598724605749449,1.0,2.0,39.0,external_underpowered
+SEG,tRNA,disorder_rich_spacer_region,-2.442292064444264,1.0,,0.02313705406065801,0.0,162.0,external_underpowered
+SEG,unknown,disorder_rich_spacer_region,0.3720263137302978,1.0,1.1563333380201632,0.0120454647058258,24.0,284.0,new_external_signal
+SEG,diverse,glutamine_rich_region,5.290326097501533,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,glutamine_rich_region,1.162814612279123,1.0,3.24913959552399,0.6620264802180723,1.0,658.0,external_underpowered
+SEG,ncRNA,glutamine_rich_region,2.694047616231501,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,glutamine_rich_region,2.694047616231501,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,glutamine_rich_region,4.432464571037028,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,glutamine_rich_region,2.240770950651302,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,glutamine_rich_region,3.180067011862926,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,glutamine_rich_region,4.799975391692007,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,glutamine_rich_region,0.3757575116170324,1.0,,1.0,0.0,284.0,external_underpowered
+SEG,diverse,gs_rich_neutral_region,0.6918777046376682,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,gs_rich_neutral_region,0.5304501658630377,1.0,1.6720717763770476,0.0016103488208695374,18.0,658.0,new_external_signal
+SEG,ncRNA,gs_rich_neutral_region,1.38699185364209,1.0,1.741279051731291,0.48550565445652855,3.0,118.0,external_underpowered
+SEG,pre-rRNA,gs_rich_neutral_region,-1.911682014960818,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,gs_rich_neutral_region,-0.1671532521922587,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,gs_rich_neutral_region,-0.6563269520297985,1.0,0.8392542112945885,1.0,1.0,93.0,external_underpowered
+SEG,snoRNA,gs_rich_neutral_region,-1.423163389731519,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,gs_rich_neutral_region,0.2009444011608827,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,gs_rich_neutral_region,0.2175121203558257,1.0,0.8237412119232641,1.0,4.0,284.0,external_underpowered
+SEG,diverse,hydrophobic_region,4.05806905625553,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,hydrophobic_region,-1.182105125234469,1.0,-1.7050225571133397,0.48550565445652855,1.0,658.0,external_underpowered
+SEG,ncRNA,hydrophobic_region,1.461368555658014,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,hydrophobic_region,1.461368555658014,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,hydrophobic_region,3.20013961448932,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,hydrophobic_region,1.007905198085346,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,hydrophobic_region,1.947532580105864,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,hydrophobic_region,3.567684509289321,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,hydrophobic_region,2.746184124195585,1.0,0.2506830639299809,1.0,2.0,284.0,external_underpowered
+SEG,diverse,polar_linker,1.951947870593858,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,polar_linker,0.3779180437181444,1.0,2.1917655174765365,0.01309016682515331,8.0,658.0,new_external_signal
+SEG,ncRNA,polar_linker,-0.6471837122697317,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,polar_linker,1.149328959146724,1.0,2.220889232448111,0.9147192958287718,1.0,113.0,external_underpowered
+SEG,ribosomal protein,polar_linker,1.093627520770147,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,polar_linker,-1.101724062352606,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,polar_linker,-0.1601859982420437,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,polar_linker,1.461368555658014,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,polar_linker,0.7807958562945994,1.0,2.120071732921367,0.3259236094534486,3.0,284.0,external_underpowered
+SEG,diverse,proline_rich_disordered_region,4.548436624696042,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,proline_rich_disordered_region,-2.775554091843454,1.0,,1.0,0.0,658.0,external_underpowered
+SEG,ncRNA,proline_rich_disordered_region,4.382103609916761,1.0,2.6339903609388187,0.7627906577991374,1.0,118.0,external_underpowered
+SEG,pre-rRNA,proline_rich_disordered_region,1.951947870593858,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,proline_rich_disordered_region,3.690541257074854,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,proline_rich_disordered_region,3.901682304605757,1.0,2.979125846987506,0.6620264802180723,1.0,93.0,external_underpowered
+SEG,snoRNA,proline_rich_disordered_region,2.438039324640459,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,proline_rich_disordered_region,4.05806905625553,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,proline_rich_disordered_region,-0.3673472196465803,1.0,,1.0,0.0,284.0,external_underpowered
+SEG,diverse,rg_rgg_repeat_region,0.6918777046376682,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,rg_rgg_repeat_region,0.113889220516744,1.0,5.295248619103248,4.134221746391836e-14,15.0,658.0,new_external_signal
+SEG,ncRNA,rg_rgg_repeat_region,-1.911682014960818,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,rg_rgg_repeat_region,-1.911682014960818,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,rg_rgg_repeat_region,1.830994791410577,1.0,3.9657923007256115,0.48550565445652855,1.0,157.0,external_underpowered
+SEG,snRNA,rg_rgg_repeat_region,0.2131924553464815,1.0,5.477076903540394,0.021113654299838427,2.0,93.0,external_underpowered
+SEG,snoRNA,rg_rgg_repeat_region,2.650615739451413,0.3585769696205685,7.288379010114661,0.00011204411840975375,3.0,39.0,external_underpowered
+SEG,tRNA,rg_rgg_repeat_region,2.321928094887362,1.0,3.9204207929643053,0.48550565445652855,1.0,162.0,external_underpowered
+SEG,unknown,rg_rgg_repeat_region,-0.4055375275381168,1.0,4.341212456914448,0.01309016682515331,3.0,284.0,external_underpowered
+SEG,diverse,serine_rich_region,5.290326097501533,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,serine_rich_region,1.162814612279123,1.0,2.9595560510046353,0.685266523725528,1.0,658.0,external_underpowered
+SEG,ncRNA,serine_rich_region,2.694047616231501,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,serine_rich_region,2.694047616231501,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,serine_rich_region,4.432464571037028,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,serine_rich_region,2.240770950651302,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,serine_rich_region,3.180067011862926,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,serine_rich_region,4.799975391692007,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,serine_rich_region,0.3757575116170324,1.0,,1.0,0.0,284.0,external_underpowered
+SEG,diverse,sr_rs_repeat_region,0.3714706378731561,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,sr_rs_repeat_region,2.17525100013462,0.007016730585671213,5.971906638464942,9.119348180037172e-30,28.0,658.0,externally_validated
+SEG,ncRNA,sr_rs_repeat_region,-2.233983781222333,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,sr_rs_repeat_region,-2.233983781222333,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,sr_rs_repeat_region,-0.4878638126160749,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,sr_rs_repeat_region,1.813153680472085,0.470927190978694,6.688597790937183,1.5612525194633537e-08,6.0,93.0,new_external_signal
+SEG,snoRNA,sr_rs_repeat_region,-1.744813455988891,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,sr_rs_repeat_region,-0.1196138241590118,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,sr_rs_repeat_region,-4.596935142387232,0.006919540042345618,,1.0,0.0,284.0,external_underpowered
+SEG,diverse,unmapped_physicochemical_properties,3.150059695617028,1.0,,1.0,0.0,45.0,external_underpowered
+SEG,mRNA,unmapped_physicochemical_properties,1.475325265059695,1.0,1.741220426279734,0.32818449059241916,4.0,658.0,external_underpowered
+SEG,ncRNA,unmapped_physicochemical_properties,0.5527149569660428,1.0,,1.0,0.0,118.0,external_underpowered
+SEG,pre-rRNA,unmapped_physicochemical_properties,0.5527149569660428,1.0,,1.0,0.0,113.0,external_underpowered
+SEG,ribosomal protein,unmapped_physicochemical_properties,2.2920266091735,1.0,,1.0,0.0,157.0,external_underpowered
+SEG,snRNA,unmapped_physicochemical_properties,0.09896645080102093,1.0,,1.0,0.0,93.0,external_underpowered
+SEG,snoRNA,unmapped_physicochemical_properties,1.03909981968894,1.0,,1.0,0.0,39.0,external_underpowered
+SEG,tRNA,unmapped_physicochemical_properties,2.659623505633041,1.0,,1.0,0.0,162.0,external_underpowered
+SEG,unknown,unmapped_physicochemical_properties,0.08558150203615192,1.0,1.3633023825615898,1.0,1.0,284.0,external_underpowered
+SEG_intermediate,diverse,acidic_region,-2.926821701303413,0.4560738628596929,,0.6407260901938094,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,acidic_region,-1.441702446791189,3.338988604794568e-06,1.2337090201941179,3.321510591396559e-07,66.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,acidic_region,0.9379039998807642,0.4850700642457152,1.6498072813660998,0.003483340813658414,15.0,118.0,new_external_signal
+SEG_intermediate,pre-rRNA,acidic_region,3.27436751365575,1.294693509096397e-08,2.8041354277573936,1.2216005205938638e-11,28.0,113.0,externally_validated
+SEG_intermediate,ribosomal protein,acidic_region,-1.214956569596636,0.9087082136274957,-1.5697447467646906,0.21655376918216349,2.0,157.0,external_underpowered
+SEG_intermediate,snRNA,acidic_region,-0.3565558038291483,1.0,1.0587082548429914,0.29347829565279876,8.0,93.0,concordant_null
+SEG_intermediate,snoRNA,acidic_region,1.713886529864607,0.2121967441790019,2.8987723018954688,0.000141839431866564,10.0,39.0,new_external_signal
+SEG_intermediate,tRNA,acidic_region,0.1684764084372646,1.0,-0.45067847127143174,0.9993203501717989,5.0,162.0,concordant_null
+SEG_intermediate,unknown,acidic_region,0.6285255622960922,0.4074510789414661,1.6218204457962808,1.5292582045966387e-06,36.0,284.0,new_external_signal
+SEG_intermediate,diverse,arginine_rich_rna_contact_region,-0.8881175172441178,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,arginine_rich_rna_contact_region,-0.8940293066120584,0.3288342111665692,1.4934324617938666,0.0015590144578001798,20.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,arginine_rich_rna_contact_region,0.5567800664185851,1.0,1.785144480223875,0.20823598149199657,4.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,arginine_rich_rna_contact_region,-0.5672102317435365,1.0,1.473875629544679,0.39247596229588916,3.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,arginine_rich_rna_contact_region,1.483609994100009,0.6768253393465221,0.9903151610317362,0.630929101832629,3.0,157.0,external_underpowered
+SEG_intermediate,snRNA,arginine_rich_rna_contact_region,1.641145051119214,0.2121967441790019,2.9266856348503003,0.001362653036600387,7.0,93.0,new_external_signal
+SEG_intermediate,snoRNA,arginine_rich_rna_contact_region,-0.1785704270335746,1.0,1.7725992269047615,0.7774592052246735,1.0,39.0,external_underpowered
+SEG_intermediate,tRNA,arginine_rich_rna_contact_region,-0.09106795075965024,1.0,-0.29600458709426214,1.0,1.0,162.0,external_underpowered
+SEG_intermediate,unknown,arginine_rich_rna_contact_region,0.6703066465447176,0.7979898248350187,2.008167036988943,0.0016395259121511335,12.0,284.0,new_external_signal
+SEG_intermediate,diverse,aromatic_aggregation_prone_region,4.425676019725191,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,aromatic_aggregation_prone_region,1.413120660183871,1.0,0.8630134242364521,0.9993203501717989,1.0,658.0,external_underpowered
+SEG_intermediate,ncRNA,aromatic_aggregation_prone_region,2.418738300900042,1.0,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,aromatic_aggregation_prone_region,2.297370990643384,1.0,,1.0,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,aromatic_aggregation_prone_region,3.612626529614719,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,aromatic_aggregation_prone_region,2.297370990643384,1.0,,1.0,0.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,aromatic_aggregation_prone_region,3.442794094404916,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,aromatic_aggregation_prone_region,3.525353011583001,1.0,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,aromatic_aggregation_prone_region,0.5021422183873694,1.0,,1.0,0.0,284.0,external_underpowered
+SEG_intermediate,diverse,aromatic_sticker_region,0.9849789031580248,1.0,0.36487186569859426,1.0,1.0,45.0,external_underpowered
+SEG_intermediate,mRNA,aromatic_sticker_region,0.393483815605419,0.9087082136274957,1.569289715747397,6.442063164800928e-08,47.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,aromatic_sticker_region,0.6163912217794096,1.0,1.3616334916320496,0.1641194206965693,7.0,118.0,concordant_null
+SEG_intermediate,pre-rRNA,aromatic_sticker_region,-3.856720360803911,0.09710382780196662,,0.3782234288016807,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,aromatic_sticker_region,-2.531615467576599,0.6768253393465221,,0.1756881932857069,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,aromatic_sticker_region,-1.421754898505028,0.5437352497409652,0.061871052547155754,1.0,2.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,aromatic_sticker_region,-1.018307676119958,1.0,0.5738187559700906,1.0,1.0,39.0,external_underpowered
+SEG_intermediate,tRNA,aromatic_sticker_region,-0.9306228570364942,1.0,-1.494785058028933,0.5348462503400647,1.0,162.0,external_underpowered
+SEG_intermediate,unknown,aromatic_sticker_region,0.773618016837679,0.4074510789414661,1.2312586373168766,0.02631279581268911,16.0,284.0,new_external_signal
+SEG_intermediate,diverse,basic_enriched_region,-1.182002704577843,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,basic_enriched_region,-1.150577891491458,0.09710382780196662,1.725558424111585,4.84064719387673e-05,24.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,basic_enriched_region,0.2425896370367963,1.0,1.7510461471828511,0.21655376918216349,4.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,basic_enriched_region,0.4640896515153421,1.0,2.118205320030301,0.0633055029579597,5.0,113.0,concordant_null
+SEG_intermediate,ribosomal protein,basic_enriched_region,1.674989692651955,0.4758527966015189,1.6270911200245313,0.1756881932857069,5.0,157.0,concordant_null
+SEG_intermediate,snRNA,basic_enriched_region,0.4640896515153421,1.0,2.4121510023917825,0.03268028729512783,5.0,93.0,new_external_signal
+SEG_intermediate,snoRNA,basic_enriched_region,0.9708536543404835,1.0,3.03785529701507,0.0633055029579597,3.0,39.0,external_underpowered
+SEG_intermediate,tRNA,basic_enriched_region,1.988147577911585,0.2923707039654206,1.2819109051403879,0.3782234288016807,4.0,162.0,external_underpowered
+SEG_intermediate,unknown,basic_enriched_region,0.5668646435754484,0.8889175448979947,1.9740687039479188,0.001915950916950343,12.0,284.0,new_external_signal
+SEG_intermediate,diverse,cation_pi_rich_neighborhood,1.743743502361953,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,cation_pi_rich_neighborhood,2.356697063419063,0.3675945343473978,2.0931554891617896,0.0007497838105208073,13.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,cation_pi_rich_neighborhood,-0.2640749360201828,1.0,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,cation_pi_rich_neighborhood,-0.3855451789745752,1.0,1.4437225818096309,0.8581804074315107,1.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,cation_pi_rich_neighborhood,0.930473270066072,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,cation_pi_rich_neighborhood,1.399385236908146,1.0,1.726122312510356,0.7883125188694975,1.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,cation_pi_rich_neighborhood,0.7605768187915787,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,cation_pi_rich_neighborhood,0.8431677973066761,1.0,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,cation_pi_rich_neighborhood,-2.183929515155357,0.8476009457960103,,1.0,0.0,284.0,external_underpowered
+SEG_intermediate,diverse,disorder_rich_spacer_region,0.8656632205408001,1.0,0.3018539087451061,1.0,5.0,45.0,concordant_null
+SEG_intermediate,mRNA,disorder_rich_spacer_region,0.49692744503791,0.3675945343473978,1.21893569297179,5.114631775863109e-13,134.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,disorder_rich_spacer_region,-0.07650715904497629,1.0,0.3328941560391231,0.8749248887658412,14.0,118.0,concordant_null
+SEG_intermediate,pre-rRNA,disorder_rich_spacer_region,-2.949402722184516,0.000205468381415883,-2.296699512040509,0.010385469676990637,2.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,disorder_rich_spacer_region,-0.9353679428600866,0.9413978166717838,-1.9098975509354332,0.006224202708313581,4.0,157.0,external_underpowered
+SEG_intermediate,snRNA,disorder_rich_spacer_region,0.05523686393645593,1.0,0.7273703328356503,0.3708174216951759,14.0,93.0,concordant_null
+SEG_intermediate,snoRNA,disorder_rich_spacer_region,-1.15754127698648,0.6768253393465221,0.20245017493006398,1.0,4.0,39.0,external_underpowered
+SEG_intermediate,tRNA,disorder_rich_spacer_region,-0.2688460029897912,1.0,-1.657504106757548,0.014749777721652247,5.0,162.0,concordant_null
+SEG_intermediate,unknown,disorder_rich_spacer_region,0.3347920514115204,0.9413978166717838,0.5464738268548436,0.20810455277137196,39.0,284.0,concordant_null
+SEG_intermediate,diverse,glutamine_rich_region,4.425676019725191,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,glutamine_rich_region,-1.766116889028351,1.0,,1.0,0.0,658.0,external_underpowered
+SEG_intermediate,ncRNA,glutamine_rich_region,2.418738300900042,1.0,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,glutamine_rich_region,2.297370990643384,1.0,,1.0,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,glutamine_rich_region,3.612626529614719,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,glutamine_rich_region,2.297370990643384,1.0,,1.0,0.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,glutamine_rich_region,3.442794094404916,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,glutamine_rich_region,3.525353011583001,1.0,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,glutamine_rich_region,3.687156013262514,0.7773503995733886,2.6776640195591965,0.5470996582570059,1.0,284.0,external_underpowered
+SEG_intermediate,diverse,glycine_rich_region,3.686353080196439,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,glycine_rich_region,2.154471349035799,1.0,2.0262855487005575,0.7206718398915609,1.0,658.0,external_underpowered
+SEG_intermediate,ncRNA,glycine_rich_region,1.679306560764277,1.0,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,glycine_rich_region,1.557926538408753,1.0,,1.0,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,glycine_rich_region,2.873276315003308,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,glycine_rich_region,1.557926538408753,1.0,,1.0,0.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,glycine_rich_region,2.703435970601012,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,glycine_rich_region,2.785998848922693,1.0,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,glycine_rich_region,-0.2376915577193305,1.0,,1.0,0.0,284.0,external_underpowered
+SEG_intermediate,diverse,gs_rich_neutral_region,0.3759781223691026,1.0,0.19522798897092483,1.0,1.0,45.0,external_underpowered
+SEG_intermediate,mRNA,gs_rich_neutral_region,0.8833352473163937,0.2447773660587595,1.366591696434265,3.208489856051582e-06,46.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,gs_rich_neutral_region,0.6898704764309048,1.0,0.9726574461402215,0.436262974805562,6.0,118.0,concordant_null
+SEG_intermediate,pre-rRNA,gs_rich_neutral_region,-1.088209255878124,0.9413978166717838,-0.3929728858167759,1.0,2.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,gs_rich_neutral_region,-2.206924924707415,0.8889175448979947,,0.12789879850942282,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,gs_rich_neutral_region,-1.088209255878124,0.9413978166717838,-0.10777282418051355,1.0,2.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,gs_rich_neutral_region,-2.377412945176347,0.6768253393465221,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,gs_rich_neutral_region,-0.6024662483604609,1.0,-1.6644289347566021,0.3335898308636186,1.0,162.0,external_underpowered
+SEG_intermediate,unknown,gs_rich_neutral_region,-0.1159358975818926,1.0,0.3776540029897281,0.8951398588884975,10.0,284.0,concordant_null
+SEG_intermediate,diverse,hydrophobic_region,4.259930037255105,0.2053135560316537,1.1070336469230961,0.7400937924588449,2.0,45.0,external_underpowered
+SEG_intermediate,mRNA,hydrophobic_region,-1.648718762868565,0.4758527966015189,-2.321048000279688,0.000981697025724208,3.0,658.0,external_underpowered
+SEG_intermediate,ncRNA,hydrophobic_region,1.080325543291692,1.0,-1.0635053979593814,0.8050195482530741,1.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,hydrophobic_region,-0.7890272497373495,1.0,,0.37918420448527757,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,hydrophobic_region,0.5272826906124777,1.0,,0.1756881932857069,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,hydrophobic_region,-0.7890272497373495,1.0,,0.4906531225241954,0.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,hydrophobic_region,0.357361788381947,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,hydrophobic_region,2.232539425051346,0.9413978166717838,-1.5223788060883066,0.39247596229588916,1.0,162.0,external_underpowered
+SEG_intermediate,unknown,hydrophobic_region,1.684545251168875,0.4074510789414661,-0.7338829112820182,0.6286751940368388,4.0,284.0,external_underpowered
+SEG_intermediate,diverse,mixed_charge_polyampholyte,0.1127078328928878,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,mixed_charge_polyampholyte,0.2354786833132324,1.0,2.0338550856546997,0.0006192652457758275,14.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,mixed_charge_polyampholyte,-1.897301102561444,1.0,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,mixed_charge_polyampholyte,-0.3429458761564454,1.0,1.2790919483928975,0.8852665049087434,1.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,mixed_charge_polyampholyte,-0.7011109844157051,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,mixed_charge_polyampholyte,0.4880169446359493,1.0,2.314138895492098,0.3335898308636186,2.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,mixed_charge_polyampholyte,1.7257866700732,0.7773503995733886,3.60102004328026,0.10667792348456748,2.0,39.0,external_underpowered
+SEG_intermediate,tRNA,mixed_charge_polyampholyte,0.935381816945533,1.0,0.7574827849160097,1.0,1.0,162.0,external_underpowered
+SEG_intermediate,unknown,mixed_charge_polyampholyte,0.3091905627498231,1.0,1.8406377846828856,0.11619800154215652,5.0,284.0,concordant_null
+SEG_intermediate,diverse,polar_linker,1.023083613113041,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,polar_linker,1.206392342313189,0.6497388238750228,1.9346564200775072,0.011815682844999252,9.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,polar_linker,-0.9854111810524143,1.0,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,polar_linker,0.6137469966067945,1.0,1.8010959315859218,0.7714778991329808,1.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,polar_linker,0.2096439285944599,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,polar_linker,-1.10696051967173,1.0,,1.0,0.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,polar_linker,0.03969832696393763,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,polar_linker,0.1223139220653156,1.0,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,polar_linker,0.2557296052105604,1.0,1.7002784320591773,0.33376227010742443,3.0,284.0,external_underpowered
+SEG_intermediate,diverse,proline_rich_disordered_region,1.906592795000404,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,proline_rich_disordered_region,-0.1785116729009483,1.0,0.04136217624118148,1.0,4.0,658.0,external_underpowered
+SEG_intermediate,ncRNA,proline_rich_disordered_region,1.706989636614427,1.0,0.9341321109002663,0.9924805730283185,1.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,proline_rich_disordered_region,-0.222571471295212,1.0,,1.0,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,proline_rich_disordered_region,1.093350476334709,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,proline_rich_disordered_region,1.582462162069508,1.0,1.279267596948954,0.8852665049087434,1.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,proline_rich_disordered_region,0.9234621208159388,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,proline_rich_disordered_region,1.006049044672805,1.0,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,proline_rich_disordered_region,0.7187519264901859,1.0,0.40550759432892225,1.0,2.0,284.0,external_underpowered
+SEG_intermediate,diverse,rg_rgg_repeat_region,-1.560323846158297,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,rg_rgg_repeat_region,0.6981482753166894,0.3793867219855179,4.471571423127372,8.411111433577511e-36,45.0,658.0,new_external_signal
+SEG_intermediate,ncRNA,rg_rgg_repeat_region,-3.577436314019476,0.1872949521010145,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,rg_rgg_repeat_region,-2.057572408138532,0.3834778405251945,1.9958776260956999,0.7206718398915609,1.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,rg_rgg_repeat_region,0.7826117482043277,1.0,2.2658536413483406,0.33376227010742443,2.0,157.0,external_underpowered
+SEG_intermediate,snRNA,rg_rgg_repeat_region,0.05920121538602872,1.0,4.216522385145881,0.00034576373708882256,5.0,93.0,new_external_signal
+SEG_intermediate,snoRNA,rg_rgg_repeat_region,1.05761297844883,0.9413978166717838,4.842226679769167,0.003483340813658414,3.0,39.0,external_underpowered
+SEG_intermediate,tRNA,rg_rgg_repeat_region,-0.7733608102911074,1.0,1.474268462618812,0.8530367559493772,1.0,162.0,external_underpowered
+SEG_intermediate,unknown,rg_rgg_repeat_region,0.08606461679655072,1.0,2.8036025173926413,0.005172931353237019,6.0,284.0,new_external_signal
+SEG_intermediate,diverse,serine_rich_region,3.198565049486214,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,serine_rich_region,0.564568107044373,1.0,0.5549245435368885,1.0,2.0,658.0,external_underpowered
+SEG_intermediate,ncRNA,serine_rich_region,1.191409364769727,1.0,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,serine_rich_region,1.070016586630859,1.0,,1.0,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,serine_rich_region,2.385460919338964,1.0,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,serine_rich_region,3.179883246612111,0.7538181469918827,2.645228689747257,0.5470996582570059,1.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,serine_rich_region,2.215612639489522,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,serine_rich_region,2.298179492114754,1.0,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,serine_rich_region,-0.7259922803436825,1.0,,1.0,0.0,284.0,external_underpowered
+SEG_intermediate,diverse,sr_rs_repeat_region,0.02969949931841969,1.0,,1.0,0.0,45.0,external_underpowered
+SEG_intermediate,mRNA,sr_rs_repeat_region,1.772955423222549,3.647200321770657e-05,4.811705062999826,1.4717400526032379e-52,61.0,658.0,externally_validated
+SEG_intermediate,ncRNA,sr_rs_repeat_region,-3.752783149977571,0.1319629366311077,,1.0,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,sr_rs_repeat_region,-2.234763652600553,0.3288342111665692,1.8631667700328156,0.7602764877658986,1.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,sr_rs_repeat_region,-2.550265340274388,0.6768253393465221,,1.0,0.0,157.0,external_underpowered
+SEG_intermediate,snRNA,sr_rs_repeat_region,0.6937048841123643,1.0,4.761595786893138,1.3937318864061777e-07,8.0,93.0,new_external_signal
+SEG_intermediate,snoRNA,sr_rs_repeat_region,-2.720932737594797,0.5077635784904738,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,sr_rs_repeat_region,-2.637955588335041,0.6768253393465221,,1.0,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,sr_rs_repeat_region,-0.8259270280940257,0.4850700642457152,2.670891661329757,0.007189713604890111,6.0,284.0,new_external_signal
+SEG_intermediate,diverse,unmapped_physicochemical_properties,3.593438282788501,0.2923707039654206,2.2078201289057118,0.3533799057172418,2.0,45.0,external_underpowered
+SEG_intermediate,mRNA,unmapped_physicochemical_properties,0.790658238134237,1.0,0.6361851598315479,0.5400706644142551,12.0,658.0,concordant_null
+SEG_intermediate,ncRNA,unmapped_physicochemical_properties,-1.248261385616719,1.0,,0.8474175331916323,0.0,118.0,external_underpowered
+SEG_intermediate,pre-rRNA,unmapped_physicochemical_properties,-1.369850899816232,1.0,,1.0,0.0,113.0,external_underpowered
+SEG_intermediate,ribosomal protein,unmapped_physicochemical_properties,1.704831176369077,1.0,-0.37622081634438465,1.0,1.0,157.0,external_underpowered
+SEG_intermediate,snRNA,unmapped_physicochemical_properties,-1.369850899816232,1.0,0.38241657007192154,1.0,1.0,93.0,external_underpowered
+SEG_intermediate,snoRNA,unmapped_physicochemical_properties,-0.2229194332293911,1.0,,1.0,0.0,39.0,external_underpowered
+SEG_intermediate,tRNA,unmapped_physicochemical_properties,-0.1402913411215542,1.0,,0.6407260901938094,0.0,162.0,external_underpowered
+SEG_intermediate,unknown,unmapped_physicochemical_properties,-0.06342538014163358,1.0,-0.0008006601555478794,1.0,3.0,284.0,external_underpowered

@@ -1,0 +1,14 @@
+{
+  "tool": "LCRFinder",
+  "resolution": "Medium",
+  "input_fasta": "/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/rbps_census/ensembl_v116/finalized_background.fa",
+  "lcrfinder_dir": "/home/jbouziane/projects/LCRFinder",
+  "engine": "/usr/bin/octave",
+  "command": [
+    "/usr/bin/octave",
+    "--quiet",
+    "--eval",
+    "addpath('/home/jbouziane/projects/LCRFinder'); run_lcrfinder_batch('/mnt/c/Users/jbouziane/low-complexity/rna-binders/datasets/rbps_census/ensembl_v116/finalized_background.fa', '/mnt/c/Users/jbouziane/low-complexity/rna-binders/rbp_lcrs/lcrfinder_ensembl', 'Medium');"
+  ],
+  "started_utc": "2026-08-17T11:36:13.751932+00:00"
+}

@@ -22,6 +22,9 @@ METHOD_LABELS = {
     "SEG_strict": "SEG_strict",
     "seg_strict": "SEG_strict",
 
+    "SEG_intermediate": "SEG_intermediate",
+    "seg_intermediate": "SEG_intermediate",
+
     "CAST": "CAST",
     "cast": "CAST",
 
@@ -48,7 +51,7 @@ def make_payload(fasta_text):
         "sequences": fasta_text,
         "methods": {
             "seg_default": False,
-            "seg_intermediate": False,
+            "seg_intermediate": True,
             "seg_strict": True,
             "cast": True,
             "flps": False,
@@ -62,7 +65,8 @@ def make_payload(fasta_text):
             "aafrequency": False,
         },
         "params": {
-            "seg": {"window": 12, "k1": 2.2, "k2": 2.5},
+            "seg_strict": {},
+            "seg_intermediate": {"window": 15, "k1": 1.9, "k2": 2.5},
             "cast": {"threshold": 40, "matrix": 1},
             "flps": {
                 "min_tract_len": 15,
