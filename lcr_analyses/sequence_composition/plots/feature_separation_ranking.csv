@@ -1,7 +1,0 @@
-feature,feature_label,median_variance_between_classes
-lcr_length,LCR length,42.19781746031746
-mmpr,MMPR,9.052658730158731
-aa_richness,AA richness,0.5695833333333333
-shannon_entropy,Shannon entropy,0.012065837928672784
-dipeptide_dominance,Dipeptide dominance,0.000996802563186161
-dominant_aa_fraction,Dominant AA fraction,0.0004489306794241048

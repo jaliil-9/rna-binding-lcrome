@@ -1,0 +1,6 @@
+"Group","Features","Source in your pipeline"
+"Architecture","coverage, n_LCR (multiplicity), mean LCR length","continuous_protein, A_architecture"
+"Position","proportions in domain-edge / domain-intrinsic / domain-adjacent / interdomain / terminal categories","categorical_protein position-presence"
+"Signature presence","binary carrier indicators per physicochemical signature","categorical_protein signature-presence"
+"Signature occupancy","fraction of LCR residues per signature (among carriers)","property fractions, A_signatures occupancy"
+"Composition","frac_polar, frac_hydrophobic, frac_aromatic, frac_disorder, frac_GS, frac_positive, frac_negative, fcr, ncpr","continuous_lcr aggregated per protein"

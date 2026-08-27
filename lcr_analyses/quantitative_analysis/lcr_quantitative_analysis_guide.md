@@ -1,4 +1,4 @@
-# Results Guide — Phase 2.4.1 (LCR diversity across RNA classes)
+# Results Guide — (LCR diversity across RNA classes)
 
 **Companion to:** `lcr_quantitative_analysis.py` outputs → `results/methods/<method>/tables/<method>_results.xlsx` + `figures/`.
 

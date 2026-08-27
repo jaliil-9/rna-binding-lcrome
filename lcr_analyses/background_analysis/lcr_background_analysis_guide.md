@@ -1,23 +1,23 @@
-# Results Guide — Phase 2.5 (RBP LCRs vs. proteome background)
+# Results Guide — (RBP LCRs vs. proteome background)
 
 **Companion to:** `comparison.py` outputs → `results/methods/<method>/tables/<method>_results.xlsx` + `results/summary/tables/`.
 
 ## 1. What this analysis asks
 
-Are the LCR features found within the RBP set (Phase 2.4.1) **enriched relative to the full proteome** — globally (Mode A) and per RNA-target class (Mode B)? The reference is the **non-RBP background** (20,427-protein UniProt reviewed proteome, 1,669 RBP-labeled; see `phase2_5_background_construction.md`).
+Are the LCR features found within the RBP set **enriched relative to the full proteome** — globally (Mode A) and per RNA-target class (Mode B)? The reference is the **non-RBP background** (20,427-protein UniProt reviewed proteome, 1,669 RBP-labeled; see `phase2_5_background_construction.md`).
 
 Two modes:
 - **Mode A (group):** all RBPs vs. background — what marks the RBPome overall.
 - **Mode B (class):** each RNA class vs. background — what marks each class.
 
-## 2. Statistical contract (identical to Phase 2.4.1)
+## 2. Statistical contract
 
 | Question type | p-value | Effect size |
 |---|---|---|
 | Binary (carrier rates) | Fisher exact | log2 odds ratio (Haldane-corrected) |
 | Continuous | Mann–Whitney | Cliff's δ (group vs. background) |
 
-MW is KW with two groups — the same test family as 2.4.1. BH-FDR per block × method; α = 0.05; effect sizes lead; n < 5 → `descriptive_only`. Rung 1 (proteome-wide) is descriptive only: the proteome contains the RBPs, so it cannot be tested against.
+MW is KW with two groups — the same test. BH-FDR per block × method; α = 0.05; effect sizes lead; n < 5 → `descriptive_only`. Rung 1 (proteome-wide) is descriptive only: the proteome contains the RBPs, so it cannot be tested against.
 
 ## 3. The workbook, sheet by sheet
 

@@ -1,0 +1,7 @@
+"Method","Length-adjusted result"
+"AlcoR","No significant difference in any length bin; consistent with its unstratified null result"
+"CAST","RBP enrichment in the first four bins; the longest bin is directionally positive but not FDR-supported"
+"FLPS","No length-bin contrast survives FDR; incidence is near-saturated in both groups"
+"LCRFinder","Enrichment in the three central bins; not supported in the shortest or longest bins"
+"Strict SEG","Enrichment in the four upper bins; no difference in the shortest bin"
+"Intermediate SEG","Enrichment in bins 2–5; no difference in the shortest bin"

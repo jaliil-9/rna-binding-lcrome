@@ -1,0 +1,4 @@
+"Metric","Cross-method interpretation"
+"Number of LCRs per carrier","Most consistent: higher in RBPs in five of six methods"
+"Total LCR coverage among carriers","Higher in CAST, FLPS, LCRFinder, and intermediate SEG; null in AlcoR and strict SEG"
+"Mean LCR length per carrier","Higher in CAST, FLPS, LCRFinder, strict SEG, and intermediate SEG; null in AlcoR"

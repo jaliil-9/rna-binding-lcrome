@@ -1,0 +1,6 @@
+"RNA class","Recurring pattern","Supporting method-level results"
+"Ribosomal protein","Favors one LCR and disfavors 3+ LCRs in permissive methods","FLPS: 49.2% one LCR vs 16.9% reference; 13.6% 3+ vs 66.2% reference. AlcoR also shows enrichment of one-LCR proteins (61.5% vs 37.7%). FLPS_results-4.xlsx+1"
+"mRNA","Favors 3+ LCRs in permissive methods","FLPS: 72.0% 3+ vs 56.3% reference, log2OR +0.99. LCRFinder: 80.0% vs 66.7%, log2OR +1.00. FLPS_results-4.xlsx+1"
+"tRNA","Favors lower multiplicity / is depleted for 3+ LCRs in multiple methods","FLPS: 38.6% 3+ vs 64.8%, log2OR −1.54. LCRFinder: 41.2% vs 74.5%, log2OR −2.05. FLPS_results-4.xlsx+1"
+"Unknown","Shows a method-dependent pattern, but 3+ enrichment occurs in several methods","AlcoR: 46.9% vs 34.5%, log2OR +0.75. CAST: 26.9% vs 15.7%, log2OR +0.98. AlcoR_results-2.xlsx+1"
+"Other RNA classes","Mostly no clear multiplicity shift in the currently reviewed protein-level outputs","Examples include ncRNA, pre-rRNA, snRNA, and snoRNA in the FLPS multiplicity table, where the category contrasts do not produce an FDR-supported shift. FLPS_results-4.xlsx"

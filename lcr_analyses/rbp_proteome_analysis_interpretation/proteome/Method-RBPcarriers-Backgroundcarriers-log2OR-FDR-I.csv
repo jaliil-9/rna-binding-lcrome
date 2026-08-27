@@ -1,0 +1,7 @@
+"Method","RBP carriers","Background carriers","log2OR","FDR","Interpretation"
+"AlcoR","729/1,669 = 43.7%","8,146/18,758 = 43.4%","'+0.015","0.857","No RBPome-wide incidence difference"
+"CAST","930/1,669 = 55.7%","8,137/18,758 = 43.4%","'+0.716","3.76×10−223.76\times10^{-22}3.76×10−22","Clear enrichment"
+"FLPS","1,490/1,669 = 89.3%","16,413/18,758 = 87.5%","'+0.247","0.0360","Small nominal enrichment; near saturation limits interpretation"
+"LCRFinder","887/1,669 = 53.1%","8,201/18,758 = 43.7%","'+0.546","1.45×10−131.45\times10^{-13}1.45×10−13","Clear enrichment"
+"Strict SEG","264/1,669 = 15.8%","1,600/18,758 = 8.53%","'+1.013","5.72×10−205.72\times10^{-20}5.72×10−20","Strong enrichment"
+"Intermediate SEG","544/1,669 = 32.6%","4,193/18,758 = 22.4%","'+0.749","5.47×10−205.47\times10^{-20}5.47×10−20","Clear enrichment"
