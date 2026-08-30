@@ -1,0 +1,599 @@
+"""
+LCR clustering — Analysis B: carrier phenotype (LCR carriers only, per method).
+
+For each method:
+  - Restrict to proteins with n_lcr > 0.
+  - Build protein-level features:
+      * architecture: n_lcr, coverage, mean_lcr_length
+      * position presence
+      * signature presence
+      * LCR-residue-weighted physicochemical fractions
+  - Run PAM, hierarchical, HDBSCAN.
+  - Save cluster labels and summaries.
+"""
+from __future__ import annotations
+
+import argparse
+import re
+from pathlib import Path
+from typing import List, Tuple
+from scipy.spatial.distance import squareform
+
+import numpy as np
+import pandas as pd
+from sklearn.metrics import pairwise_distances
+from sklearn.preprocessing import RobustScaler
+import hdbscan
+import kmedoids
+
+
+# ---------------- configuration ----------------
+
+METHOD_ALIASES = {
+    "cast": "CAST",
+    "seg": "SEG",
+    "segstrict": "SEG",
+    "segintermediate": "SEG_intermediate",
+    "flps": "FLPS",
+    "flpsstrict": "FLPS",
+    "lcrfinder": "LCRFinder",
+    "alcor": "AlcoR",
+}
+
+POSITION_CLASSES = [
+    "domain_intrinsic",
+    "domain_edge",
+    "domain_adjacent",
+    "interdomain_linker",
+    "distal_terminal",
+]
+
+SIGNATURES = [
+    "rg_rgg_repeat_region",
+    "sr_rs_repeat_region",
+    "gs_rich_neutral_region",
+    "basic_enriched_region",
+    "arginine_rich_rna_contact_region",
+    "acidic_region",
+    "mixed_charge_polyampholyte",
+    "polar_linker",
+    "hydrophobic_region",
+    "aromatic_sticker_region",
+    "aromatic_aggregation_prone_region",
+    "cation_pi_rich_neighborhood",
+    "disorder_rich_spacer_region",
+    "serine_rich_region",
+    "glutamine_rich_region",
+    "glycine_rich_region",
+    "proline_rich_disordered_region",
+    "unmapped_physicochemical_properties",
+]
+
+PROPERTY_METRICS = [
+    "frac_polar",
+    "frac_hydrophobic",
+    "frac_strong_hydro",
+    "frac_aromatic",
+    "frac_disorder",
+    "frac_positive",
+    "frac_negative",
+    "fcr",
+    "ncpr",
+    "frac_GS",
+]
+
+K_VALUES = [2, 3, 4, 5, 6]
+
+PROPERTY_METRIC_ALIASES = {normalized: canonical for canonical in PROPERTY_METRICS for normalized in [re.sub(r"[^a-z0-9]+", "", canonical.lower())]}
+
+MIN_CLUSTER_SIZE_ABS = 10
+MIN_CLUSTER_SIZE_FRAC = 0.03
+
+
+# ---------------- helpers ----------------
+
+def normalized_name(x: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(x).strip().lower())
+
+def canonical_method(x: str) -> str:
+    return METHOD_ALIASES.get(normalized_name(x), str(x).strip())
+
+def extract_accession(x: str) -> str:
+    text = str(x).strip()
+    if "|" in text:
+        return text.split("|", 1)[0].strip()
+    return text
+
+def load_annotations(path: str) -> pd.DataFrame:
+    raw = pd.read_excel(path)
+    raw.columns = [normalized_name(c) for c in raw.columns]
+    out = pd.DataFrame({
+        "uniprot_accession": raw["proteinid"].map(extract_accession),
+        "method": raw["sourcemethod"].map(canonical_method),
+        "start": pd.to_numeric(raw["start"], errors="coerce").astype("Int64"),
+        "end": pd.to_numeric(raw["end"], errors="coerce").astype("Int64"),
+        "length": pd.to_numeric(raw["length"], errors="coerce"),
+        "rna_class": raw["rnatargetsuperclass"].fillna("missing").astype(str),
+        "position": raw["domainpositionclass"].fillna("position_no_pfam").astype(str),
+        "signature": raw["primaryphysicochemicalannotation"].fillna("unmapped_physicochemical_properties").astype(str),
+    })
+    return out.dropna(subset=["start", "end", "length"]).copy()
+
+def load_features(path: str) -> pd.DataFrame:
+    """
+    Load physicochemical LCR metrics from the composition sheet.
+
+    Returns one row per:
+    accession × method × LCR start × LCR end.
+    """
+    raw = pd.read_excel(path, sheet_name="composition")
+    raw.columns = [normalized_name(c) for c in raw.columns]
+
+    out = pd.DataFrame({
+        "uniprot_accession": raw["proteinid"].map(extract_accession),
+        "method": raw["sourcemethod"].map(canonical_method),
+        "start": pd.to_numeric(
+            raw["start"],
+            errors="coerce",
+        ).astype("Int64"),
+        "end": pd.to_numeric(
+            raw["end"],
+            errors="coerce",
+        ).astype("Int64"),
+    })
+
+    for metric in PROPERTY_METRICS:
+        normalized_metric = normalized_name(metric)
+
+        if normalized_metric in raw.columns:
+            out[metric] = pd.to_numeric(
+                raw[normalized_metric],
+                errors="coerce",
+            )
+        else:
+            out[metric] = np.nan
+
+    interval_keys = [
+        "uniprot_accession",
+        "method",
+        "start",
+        "end",
+    ]
+
+    if out.duplicated(interval_keys).any():
+        out = (
+            out.groupby(
+                interval_keys,
+                as_index=False,
+            )[PROPERTY_METRICS]
+            .first()
+        )
+
+    return out
+
+def load_master(path: str) -> pd.DataFrame:
+    raw = pd.read_excel(path, sheet_name="Combined")
+    raw.columns = [normalized_name(c) for c in raw.columns]
+    acc_col = len_col = None
+    for c in raw.columns:
+        if c in {"uniprot_accession", "uniprotaccession"}:
+            acc_col = c
+        if c in {"uniprot_length", "uniprotlength"}:
+            len_col = c
+    if acc_col is None or len_col is None:
+        raise ValueError("Master file must contain accession and length columns")
+    out = raw[[acc_col, len_col]].copy()
+    out.columns = ["uniprot_accession", "uniprot_length"]
+    out["uniprot_accession"] = out["uniprot_accession"].astype(str).str.strip()
+    out["uniprot_length"] = pd.to_numeric(out["uniprot_length"], errors="coerce")
+    return out.drop_duplicates("uniprot_accession")
+
+def load_rna_classes(path: str) -> pd.DataFrame:
+    df = pd.read_excel(path)
+    df.columns = [normalized_name(c) for c in df.columns]
+    out = df[["uniprotaccession", "rnaprimaryclass"]].dropna(subset=["uniprotaccession"]).copy()
+    out["uniprot_accession"] = out["uniprotaccession"].astype(str).str.strip()
+    out = out.drop_duplicates("uniprot_accession")
+    return out[["uniprot_accession", "rnaprimaryclass"]]
+
+def build_carrier_table(
+    ann: pd.DataFrame,
+    feat: pd.DataFrame,
+    master: pd.DataFrame,
+) -> pd.DataFrame:
+    """Aggregate LCR-level data to protein level for carriers only."""
+    # architecture
+    arch = (
+        ann.groupby("uniprot_accession")
+        .agg(
+            n_lcr=("length", "size"),
+            lcr_residues=("length", "sum"),
+            mean_lcr_length=("length", "mean"),
+        )
+        .reset_index()
+    )
+    p = master.merge(arch, on="uniprot_accession", how="inner")
+    p = p[p["n_lcr"] > 0].copy()
+    p["coverage"] = p["lcr_residues"] / p["uniprot_length"]
+
+    # position presence
+    ann_pos = ann[ann["position"] != "position_no_pfam"].copy()
+    pos_present = (
+        ann_pos.groupby(["uniprot_accession", "position"])
+        .size()
+        .reset_index(name="count")
+    )
+    pos_present["present"] = 1
+    pos_piv = pos_present.pivot_table(
+        index="uniprot_accession",
+        columns="position",
+        values="present",
+        fill_value=0,
+    )
+    for col in POSITION_CLASSES:
+        if col not in pos_piv.columns:
+            pos_piv[col] = 0
+    pos_piv = pos_piv[POSITION_CLASSES]
+    p = p.merge(pos_piv, on="uniprot_accession", how="left")
+    p[POSITION_CLASSES] = p[POSITION_CLASSES].fillna(0).astype(int)
+
+    # signature presence
+    sig_present = (
+        ann.groupby(["uniprot_accession", "signature"])
+        .size()
+        .reset_index(name="count")
+    )
+    sig_present["present"] = 1
+    sig_piv = sig_present.pivot_table(
+        index="uniprot_accession",
+        columns="signature",
+        values="present",
+        fill_value=0,
+    )
+    for sig in SIGNATURES:
+        if sig not in sig_piv.columns:
+            sig_piv[sig] = 0
+    sig_piv = sig_piv[SIGNATURES]
+    p = p.merge(sig_piv, on="uniprot_accession", how="left")
+    p[SIGNATURES] = p[SIGNATURES].fillna(0).astype(int)
+
+    # LCR-residue-weighted physicochemical fractions
+    merged = ann.merge(
+        feat,
+        on=["uniprot_accession", "method", "start", "end"],
+        how="left",
+        validate="one_to_many",
+    )
+    merged = merged[merged["uniprot_accession"].isin(p["uniprot_accession"])].copy()
+    for metric in PROPERTY_METRICS:
+        if metric not in merged.columns:
+            merged[metric] = np.nan
+
+    missing_metrics = merged[PROPERTY_METRICS].columns[
+        merged[PROPERTY_METRICS].isna().any()
+    ].tolist()
+
+    if missing_metrics:
+        raise ValueError(
+            "Missing LCR physicochemical values after annotation-feature join "
+            f"for method {merged['method'].iloc[0] if len(merged) else 'unknown'}: "
+            f"{missing_metrics}"
+        )
+    # weight by LCR length
+    merged["weight"] = merged["length"]
+    agg = (
+        merged.groupby("uniprot_accession")[PROPERTY_METRICS + ["weight"]]
+        .apply(lambda g: (g[PROPERTY_METRICS].multiply(g["weight"], axis=0)).sum() / g["weight"].sum())
+        .reset_index()
+    )
+    p = p.merge(agg, on="uniprot_accession", how="left")
+    for m in PROPERTY_METRICS:
+        p[m] = pd.to_numeric(p[m], errors="coerce")
+
+    return p
+
+def gower_mixed_distance(
+    df: pd.DataFrame,
+    binary_cols: List[str],
+    continuous_cols: List[str],
+) -> np.ndarray:
+    """Equal-weight binary and continuous mixed distance in [0, 1]."""
+    components = []
+    if binary_cols:
+        components.append(pairwise_distances(df[binary_cols], metric="hamming"))
+    if continuous_cols:
+        X = df[continuous_cols].astype(float).to_numpy()
+        lo, hi = np.nanmin(X, axis=0), np.nanmax(X, axis=0)
+        span = hi - lo
+        keep = span > 0
+        if keep.any():
+            X = (X[:, keep] - lo[keep]) / span[keep]
+            components.append(pairwise_distances(X, metric="manhattan") / X.shape[1])
+    if not components:
+        raise ValueError("No variable clustering features remain.")
+    distance = np.mean(components, axis=0)
+    np.fill_diagonal(distance, 0.0)
+    return distance
+
+def run_pam(distance: np.ndarray, k: int, random_state: int = 0) -> Tuple[np.ndarray, object]:
+    km = kmedoids.KMedoids(n_clusters=k, metric="precomputed", random_state=random_state, init="build")
+    labels = km.fit_predict(distance)
+    return labels, km
+
+def run_hierarchical(distance: np.ndarray, k: int) -> np.ndarray:
+    from scipy.cluster.hierarchy import linkage, fcluster
+    return fcluster(linkage(squareform(distance, checks=False), method="average"), t=k, criterion="maxclust")
+
+def run_hdbscan(
+    X: np.ndarray,
+    min_cluster_size: int,
+    min_samples: int | None = None,
+    metric: str = "euclidean",
+) -> Tuple[np.ndarray, np.ndarray]:
+    if min_samples is None:
+        min_samples = min_cluster_size
+    clusterer = hdbscan.HDBSCAN(
+        min_cluster_size=min_cluster_size,
+        min_samples=min_samples,
+        metric=metric,
+        cluster_selection_method="eom",
+    )
+    clusterer.fit(X)
+    labels = clusterer.labels_
+    membership = clusterer.probabilities_ if hasattr(clusterer, "probabilities_") else None
+    return labels, membership
+
+def summarize_clusters(
+    df: pd.DataFrame,
+    labels: np.ndarray,
+    rna_col: str | None = None,
+) -> pd.DataFrame:
+    out = df.copy()
+    out["cluster"] = labels
+    summ = []
+    for c in sorted(set(labels)):
+        if c == -1:
+            continue
+        sub = out[out["cluster"] == c]
+        row = {
+            "cluster": int(c),
+            "size": int(len(sub)),
+        }
+        # architecture
+        for col in ["n_lcr", "coverage", "mean_lcr_length"]:
+            if col in sub.columns:
+                row[f"median_{col}"] = float(sub[col].median())
+        # position
+        for pos in POSITION_CLASSES:
+            if pos in sub.columns:
+                row[f"prop_{pos}"] = float(sub[pos].mean())
+        # signature
+        for sig in SIGNATURES:
+            if sig in sub.columns:
+                row[f"prop_sig_{sig}"] = float(sub[sig].mean())
+        # composition
+        for m in PROPERTY_METRICS:
+            if m in sub.columns:
+                row[f"median_{m}"] = float(sub[m].median())
+        # RNA class
+        if rna_col and rna_col in sub.columns:
+            class_counts = sub[rna_col].value_counts().to_dict()
+            for cls, cnt in class_counts.items():
+                row[f"class_{cls}"] = int(cnt)
+        summ.append(row)
+    return pd.DataFrame(summ)
+
+# ---------------- main ----------------
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--annotations", default="lcr_analyses/pc_properties/lcr_annotations.xlsx")
+    ap.add_argument("--features", default="lcr_analyses/pc_properties/lcr_features.xlsx")
+    ap.add_argument("--master", default="datasets/combined_rbp_pfam38_rbpdb_modomics_uniprot.xlsx")
+    ap.add_argument("--rna-classes", default="rbp_superclasses/rbp_rna_classification.xlsx")
+    ap.add_argument("--outdir", default="lcr_analyses/clustering/carriers")
+    args = ap.parse_args()
+
+    out = Path(args.outdir)
+    out.mkdir(parents=True, exist_ok=True)
+
+    print("Loading data...")
+    ann = load_annotations(args.annotations)
+    feat = load_features(args.features)
+    master = load_master(args.master)
+    rna = load_rna_classes(args.rna_classes)
+
+    rbps = master[master["uniprot_accession"].isin(rna["uniprot_accession"])].copy()
+    print(f"RBP universe: {len(rbps)} proteins")
+
+    ann = ann[ann["uniprot_accession"].isin(rbps["uniprot_accession"])].copy()
+    feat = feat[feat["uniprot_accession"].isin(rbps["uniprot_accession"])].copy()
+
+    results = []
+
+    for method, d in ann.groupby("method", sort=True):
+        print(f"\n=== Method: {method} ===")
+        method_dir = out / str(method)
+        method_dir.mkdir(parents=True, exist_ok=True)
+
+        d_feat = feat[feat["method"] == method].copy()
+        p = build_carrier_table(d, d_feat, rbps)
+        p = p.merge(rna, on="uniprot_accession", how="left")
+
+                # Feature definitions
+        binary_cols = POSITION_CLASSES + SIGNATURES
+        continuous_cols = [
+            "n_lcr",
+            "coverage",
+            "mean_lcr_length",
+        ] + PROPERTY_METRICS
+
+        # Remove features that are constant for the current method.
+        # This avoids giving non-informative columns any weight.
+        binary_cols = [
+            col for col in binary_cols
+            if p[col].nunique(dropna=False) > 1
+        ]
+
+        continuous_cols = [
+            col for col in continuous_cols
+            if p[col].notna().any()
+            and p[col].nunique(dropna=True) > 1
+        ]
+
+        if len(p) < max(K_VALUES):
+            print(
+                f"Skipping {method}: only {len(p)} carrier proteins; "
+                f"cannot run all K_VALUES={K_VALUES}."
+            )
+            continue
+
+        missing_continuous = p[continuous_cols].columns[
+            p[continuous_cols].isna().any()
+        ].tolist()
+
+        if missing_continuous:
+            raise ValueError(
+                f"{method}: missing values remain in continuous clustering "
+                f"features: {missing_continuous}"
+            )
+
+        # One protein-level matrix for the current method.
+        X = p[binary_cols + continuous_cols].copy().astype(float)
+
+        print("Computing Gower-style distance...")
+        dist = gower_mixed_distance(
+            X,
+            binary_cols=binary_cols,
+            continuous_cols=continuous_cols,
+        )
+
+        out_df = p[
+            [
+                "uniprot_accession",
+                "uniprot_length",
+                "rnaprimaryclass",
+            ]
+        ].copy()
+
+        out_df["method"] = method
+
+        pam_summaries = {}
+        hierarchical_summaries = {}
+
+        # PAM and hierarchical clustering for all candidate k values.
+        for k in K_VALUES:
+            print(f"Running PAM (k={k})...")
+
+            labels_pam, _ = run_pam(
+                dist,
+                k=k,
+                random_state=0,
+            )
+
+            out_df[f"cluster_pam_k{k}"] = labels_pam
+
+            pam_summaries[f"k{k}"] = summarize_clusters(
+                p,
+                labels_pam,
+                rna_col="rnaprimaryclass",
+            )
+
+            print(f"Running hierarchical clustering (k={k})...")
+
+            labels_hc = run_hierarchical(
+                dist,
+                k=k,
+            )
+
+            out_df[f"cluster_hierarchical_k{k}"] = labels_hc
+
+            hierarchical_summaries[f"k{k}"] = summarize_clusters(
+                p,
+                labels_hc,
+                rna_col="rnaprimaryclass",
+            )
+
+            results.append({
+                "method": method,
+                "analysis": "carriers",
+                "algorithm": "pam",
+                "k": k,
+                "n_proteins": len(p),
+            })
+
+            results.append({
+                "method": method,
+                "analysis": "carriers",
+                "algorithm": "hierarchical",
+                "k": k,
+                "n_proteins": len(p),
+            })
+
+        # HDBSCAN runs once because it determines its own cluster count.
+        print("Running HDBSCAN...")
+
+        X_hdbscan = p[
+            binary_cols + continuous_cols
+        ].astype(float).to_numpy()
+
+        Xs = RobustScaler().fit_transform(X_hdbscan)
+
+        min_cs = max(
+            MIN_CLUSTER_SIZE_ABS,
+            int(MIN_CLUSTER_SIZE_FRAC * len(Xs)),
+        )
+
+        min_cs = min(min_cs, len(Xs))
+        min_s = min(
+            max(5, min_cs // 2),
+            min_cs,
+        )
+
+        labels_hdbscan, membership = run_hdbscan(
+            Xs,
+            min_cluster_size=min_cs,
+            min_samples=min_s,
+            metric="euclidean",
+        )
+
+        out_df["cluster_hdbscan"] = labels_hdbscan
+
+        if membership is not None:
+            out_df["hdbscan_confidence"] = membership
+        else:
+            out_df["hdbscan_confidence"] = np.nan
+
+        out_df.to_csv(
+            method_dir / "protein_clusters.csv",
+            index=False,
+        )
+
+        with pd.ExcelWriter(
+            method_dir / "cluster_summaries_pam.xlsx",
+            engine="openpyxl",
+        ) as writer:
+            for sheet_name, summary_df in pam_summaries.items():
+                summary_df.to_excel(
+                    writer,
+                    sheet_name=sheet_name,
+                    index=False,
+                )
+
+        with pd.ExcelWriter(
+            method_dir / "cluster_summaries_hierarchical.xlsx",
+            engine="openpyxl",
+        ) as writer:
+            for sheet_name, summary_df in hierarchical_summaries.items():
+                summary_df.to_excel(
+                    writer,
+                    sheet_name=sheet_name,
+                    index=False,
+                )
+
+    pd.DataFrame(results).to_csv(out / "method_manifest.csv", index=False)
+    print(f"\nDone. Outputs under: {out.resolve()}")
+
+
+if __name__ == "__main__":
+    main()
