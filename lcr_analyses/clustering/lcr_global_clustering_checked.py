@@ -253,7 +253,7 @@ def run_hdbscan(
     X: np.ndarray,
     min_cluster_size: int,
     min_samples: int | None = None,
-    metric: str = "euclidean",
+    metric: str = "manhattan",
 ) -> Tuple[np.ndarray, np.ndarray]:
     if min_samples is None:
         min_samples = min_cluster_size
@@ -440,13 +440,11 @@ def main() -> None:
         X_num = p[binary_cols + continuous_cols].astype(float).to_numpy()
         scaler = RobustScaler()
         Xs = scaler.fit_transform(X_num)
-        min_cs = max(MIN_CLUSTER_SIZE_ABS, int(MIN_CLUSTER_SIZE_FRAC * len(Xs)))
-        min_s = max(5, min_cs // 2)
         labels_hdbscan, membership = run_hdbscan(
             Xs,
-            min_cluster_size=min_cs,
-            min_samples=min_s,
-            metric="euclidean",
+            min_cluster_size=10,
+            min_samples=20,
+            metric="manhattan",
         )
 
         # save results

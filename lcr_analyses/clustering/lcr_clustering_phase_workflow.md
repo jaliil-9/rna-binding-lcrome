@@ -350,7 +350,7 @@ For each detection method:
 6. Compute one Gower-style distance matrix for PAM and hierarchical clustering.
 7. Run PAM for every value in `K_VALUES`.
 8. Run hierarchical clustering for every value in `K_VALUES` using the same distance matrix.
-9. Run HDBSCAN once on the method-specific robust-scaled encoded matrix.
+9. Run HDBSCAN.
 10. Save protein-level assignments and algorithm-specific cluster summaries.
 
 No labels, enrichment tests, external-background comparisons, or cross-method comparisons are used during these ten steps.
@@ -444,52 +444,6 @@ For HDBSCAN, record method, analysis, protein count, selected cluster count, and
 
 ---
 
-## Current implementation corrections
-
-### Multi-k execution
-
-A fixed statement such as:
-
-```python
-k = 4
-```
-
-or:
-
-```python
-k = 5
-```
-
-must be replaced with a loop over `K_VALUES`.
-
-For every `k`, append an assignment column to the current method-specific protein table:
-
-```python
-out_df[f"cluster_pam_k{k}"] = labels_pam
-out_df[f"cluster_hierarchical_k{k}"] = labels_hc
-```
-
-### HDBSCAN confidence
-
-The scripts return `clusterer.probabilities_`, already one confidence value per protein. Store it directly:
-
-```python
-out_df["hdbscan_confidence"] = membership
-```
-
-This also works when HDBSCAN selects no clusters; all labels can be `-1` and confidence values can be zero.
-
-### Package consistency
-
-The two current scripts use different k-medoids packages:
-
-- Global analysis: `kmedoids`.
-- Carrier analysis: `sklearn_extra.cluster.KMedoids`.
-
-This is workable, but their valid initialization options differ. Keep the existing imports only if each script uses package-compatible parameters. A later cleanup may unify both scripts under one implementation, but that is not required for the first run.
-
----
-
 ## Deferred work
 
 The following are deliberately outside the present workflow-building phase:
@@ -521,24 +475,3 @@ These steps should be implemented only after the method-specific clustering outp
 7. Keep all protein identifiers and raw output metadata so cluster membership can later be traced back to LCR coordinates, domains, and sequences.
 
 ---
-
-## Minimal run checklist
-
-Before running:
-
-- [ ] Confirm input paths resolve from the chosen working directory.
-- [ ] Confirm annotation methods map to the six canonical method names.
-- [ ] Confirm `uniprot_accession` joins correctly across annotation, feature, master, and RNA-class tables.
-- [ ] Confirm each method has at least `k = 6` eligible proteins for the relevant analysis.
-- [ ] Remove zero-variance clustering columns per method.
-- [ ] Confirm hierarchical clustering uses `squareform(distance, checks=False)`.
-- [ ] Confirm HDBSCAN confidence is stored from `probabilities_` directly.
-- [ ] Confirm PAM initialization matches the installed package.
-
-After running:
-
-- [ ] Confirm all methods produced `protein_clusters.csv`.
-- [ ] Confirm assignment columns exist for PAM and hierarchical `k = 2`–`6`.
-- [ ] Confirm all ten summary files per method are present.
-- [ ] Confirm HDBSCAN labels and confidence vectors have the same length as the protein table.
-- [ ] Confirm no unexpected missing values entered the feature matrix.

@@ -82,12 +82,9 @@ PROPERTY_METRICS = [
     "frac_GS",
 ]
 
-K_VALUES = [2, 3, 4, 5, 6]
+K_VALUES = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 PROPERTY_METRIC_ALIASES = {normalized: canonical for canonical in PROPERTY_METRICS for normalized in [re.sub(r"[^a-z0-9]+", "", canonical.lower())]}
-
-MIN_CLUSTER_SIZE_ABS = 10
-MIN_CLUSTER_SIZE_FRAC = 0.03
 
 
 # ---------------- helpers ----------------
@@ -328,7 +325,7 @@ def run_hdbscan(
     X: np.ndarray,
     min_cluster_size: int,
     min_samples: int | None = None,
-    metric: str = "euclidean",
+    metric: str = "manhattan",
 ) -> Tuple[np.ndarray, np.ndarray]:
     if min_samples is None:
         min_samples = min_cluster_size
@@ -341,7 +338,7 @@ def run_hdbscan(
     clusterer.fit(X)
     labels = clusterer.labels_
     membership = clusterer.probabilities_ if hasattr(clusterer, "probabilities_") else None
-    return labels, membership
+    return labels, membership # type: ignore
 
 def summarize_clusters(
     df: pd.DataFrame,
@@ -362,19 +359,19 @@ def summarize_clusters(
         # architecture
         for col in ["n_lcr", "coverage", "mean_lcr_length"]:
             if col in sub.columns:
-                row[f"median_{col}"] = float(sub[col].median())
+                row[f"median_{col}"] = float(sub[col].median()) # type: ignore
         # position
         for pos in POSITION_CLASSES:
             if pos in sub.columns:
-                row[f"prop_{pos}"] = float(sub[pos].mean())
+                row[f"prop_{pos}"] = float(sub[pos].mean()) # type: ignore
         # signature
         for sig in SIGNATURES:
             if sig in sub.columns:
-                row[f"prop_sig_{sig}"] = float(sub[sig].mean())
+                row[f"prop_sig_{sig}"] = float(sub[sig].mean()) # type: ignore
         # composition
         for m in PROPERTY_METRICS:
             if m in sub.columns:
-                row[f"median_{m}"] = float(sub[m].median())
+                row[f"median_{m}"] = float(sub[m].median()) # type: ignore
         # RNA class
         if rna_col and rna_col in sub.columns:
             class_counts = sub[rna_col].value_counts().to_dict()
@@ -539,22 +536,11 @@ def main() -> None:
 
         Xs = RobustScaler().fit_transform(X_hdbscan)
 
-        min_cs = max(
-            MIN_CLUSTER_SIZE_ABS,
-            int(MIN_CLUSTER_SIZE_FRAC * len(Xs)),
-        )
-
-        min_cs = min(min_cs, len(Xs))
-        min_s = min(
-            max(5, min_cs // 2),
-            min_cs,
-        )
-
         labels_hdbscan, membership = run_hdbscan(
             Xs,
-            min_cluster_size=min_cs,
-            min_samples=min_s,
-            metric="euclidean",
+            min_cluster_size=10,
+            min_samples=20,
+            metric="manhattan",
         )
 
         out_df["cluster_hdbscan"] = labels_hdbscan

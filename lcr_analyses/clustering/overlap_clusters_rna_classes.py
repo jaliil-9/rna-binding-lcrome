@@ -66,14 +66,14 @@ def make_tables(df: pd.DataFrame, cluster_col: str, class_col: str) -> dict[str,
     for cluster in clusters:
         cluster_size = int(counts.loc[cluster].sum())
         for rna_class in classes:
-            a = int(counts.loc[cluster, rna_class])
+            a = int(counts.loc[cluster, rna_class]) # type: ignore
             b = cluster_size - a
             class_total = int(counts[rna_class].sum())
             c = class_total - a
             d = n_total - a - b - c
             expected = cluster_size * class_total / n_total
             try:
-                p_value = float(fisher_exact([[a, b], [c, d]], alternative="two-sided")[1])
+                p_value = float(fisher_exact([[a, b], [c, d]], alternative="two-sided")[1]) # type: ignore
             except ValueError:
                 p_value = np.nan
             rows.append({
@@ -170,7 +170,7 @@ def process_file(path: Path, output_root: Path, class_col: str, requested_k: set
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--input", default="lcr_analyses/clustering/carriers", help="A protein_clusters.csv file or a directory containing method subdirectories.")
-    ap.add_argument("--outdir", default="lcr_analyses/clustering/rna_class_overlap")
+    ap.add_argument("--outdir", default="lcr_analyses/clustering/carriers/rna_class_overlap")
     ap.add_argument("--class-col", default="rnaprimaryclass")
     ap.add_argument("--k-values", nargs="*", type=int, default=None, help="Optional PAM/hierarchical k values, e.g. --k-values 2 3 4 5 6")
     args = ap.parse_args()
