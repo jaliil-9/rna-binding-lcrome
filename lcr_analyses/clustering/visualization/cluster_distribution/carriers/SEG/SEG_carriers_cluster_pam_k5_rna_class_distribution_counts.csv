@@ -1,0 +1,10 @@
+rna_class,0,1,2,3,4
+mRNA,50,21,27,30,42
+tRNA,0,2,1,0,0
+pre-rRNA,1,13,0,0,0
+snRNA,1,2,2,6,8
+snoRNA,1,6,3,0,0
+ncRNA,4,2,2,5,1
+ribosomal protein,0,1,1,2,0
+diverse,1,0,0,1,0
+unknown,17,18,8,12,5
