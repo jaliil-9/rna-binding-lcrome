@@ -1,0 +1,7 @@
+"Archetype","CAST","LCRFinder","fLPS","SEG","SEG-int"
+"acidic, net-negative","c1: 0.88, NCPR−0.14","c2: 0.98, NCPR−0.61, FCR 0.80","c4: 0.89, −0.14","c1: 1.00, −0.66","c1: 0.99, −0.52"
+"basic/Arg, net-positive","c4: basic 0.57, +0.18","c3: Arg 0.72, +0.42","c2: 0.62/0.62, +0.26","c4: SR/RS 0.62, +0.42","c4: basic 0.68, +0.24"
+"charge-dual (acidic+basic, NCPR≈0)","—","c1: 0.94+0.71, −0.04","c1: 0.86+0.43, 0.00","—","—"
+"neutral disorder-spacer","c2: 0.71, FCR 0.13","c0: 0.90, FCR 0.05","c0: 0.85, FCR 0.16","c0/c3, FCR 0.04","c0: 0.80, FCR 0.09"
+"aromatic-sticker / hydrophobic","c3: aro 0.67","c4: hydro 0.87","c3: aro 0.60, hydro 0.31","—","—"
+"repeat cluster","— (absorbed)","— (absorbed)","— (absorbed)","c2: RG/RGG 0.55","c2: RG/RGG 0.67, c3: SR/RS 0.88"
