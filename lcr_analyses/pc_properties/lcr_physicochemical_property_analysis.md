@@ -225,15 +225,6 @@ Charge logic follows the Das–Pappu framework, in which FCR and NCPR discrimina
 
 ---
 
-## 4. Input scope and filtering conditions
-
-- **AlcoR entries are excluded** from annotation. AlcoR predicts aliphatic coiled-coil regions — structurally distinct from LCRs — and its predictions include extended folded domains outside the disordered-region scope of this taxonomy.
-- **LCRFinder entries shorter than 10 residues are excluded.** Below this length, composition fractions are dominated by single residues and distribution/co-occurrence statistics are not meaningful.
-
-All remaining LCR calls (CAST, SEG, fLPS, and LCRFinder ≥10 aa) are annotated with the full rule set.
-
----
-
 ## 5. Threshold status
 
 Thresholds marked * derive directly from the cited literature (`fcr_min`, repeat-cluster parameters). All others are provisional values calibrated qualitatively on the current RBP LCR dataset and will be revisited in a dedicated calibration phase. The annotation schema (signatures, metric families, two-level logic) is independent of specific threshold choices.
