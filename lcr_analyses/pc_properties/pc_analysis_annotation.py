@@ -595,6 +595,9 @@ def main():
     parser.add_argument("--aa_file", default=AA_PROP_FILE)
     parser.add_argument("--output_features", default=OUTPUT_FEATURES)
     parser.add_argument("--output_annotations", default=OUTPUT_ANNOTATIONS)
+    parser.add_argument("--cooc_cutoff", type=float, default=None,
+                    help="Frozen cation-pi co-occurrence cutoff. If omitted, "
+                         "computed from this input's q75 (legacy behavior).")
     args = parser.parse_args()
 
     print("Loading amino-acid properties (v2)...")
@@ -635,13 +638,15 @@ def main():
     distr_df = pd.DataFrame(distr_rows)
     cooc_df = pd.DataFrame(cooc_rows)
 
-    # 75th percentile threshold for cation-pi co-occurrence
-    cooc_vals = cooc_df["cooc_positive_aromatic"].dropna()
-    cooc_quantile = (
-        float(np.quantile(cooc_vals, THRESHOLDS["cooc_top_quantile"]))
-        if len(cooc_vals) > 0
-        else None
-    )
+    if args.cooc_cutoff is not None:
+        cooc_quantile = args.cooc_cutoff
+        print(f"Using frozen cation-pi cutoff: {cooc_quantile}")
+    else:
+        cooc_vals = cooc_df["cooc_positive_aromatic"].dropna()
+        cooc_quantile = (float(np.quantile(cooc_vals, THRESHOLDS["cooc_top_quantile"]))
+                        if len(cooc_vals) > 0 else None)
+        print(f"WARNING: computed input-specific cation-pi cutoff {cooc_quantile} "
+            f"(legacy; not comparable across runs)")
 
     print("Assigning behavior annotations...")
     for idx, row in lcrs.iterrows():
