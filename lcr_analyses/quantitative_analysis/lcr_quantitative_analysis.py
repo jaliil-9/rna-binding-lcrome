@@ -229,42 +229,27 @@ def bh_adjust_per_block(df: pd.DataFrame, block_col: str) -> pd.DataFrame:
             .apply(bh_adjust))
 
 def fisher_cell(a_pos: int, a_tot: int, b_pos: int, b_tot: int) -> dict:
-    """One 2x2 cell: group vs. rest. Fisher p + Haldane log2 odds ratio."""
+    """One 2x2 cell: group vs. rest. Fisher p + Haldane log2 odds ratio.
+    log2_or is NaN when either arm has zero carriers (Haldane sign artifact),
+    matching compare_binary() in the background analysis."""
     a_neg, b_neg = a_tot - a_pos, b_tot - b_pos
-    table = np.array([[a_pos, a_neg], [b_pos, b_neg]], dtype=float)
     try:
-        p_value = float(fisher_exact(table).pvalue)
+        p_value = float(fisher_exact([[a_pos, a_neg], [b_pos, b_neg]]).pvalue)
     except (ValueError, ZeroDivisionError):
         p_value = np.nan
-    if a_pos == 0:
-        # zero-carrier binary rows: effect size not meaningful; counts still reported
+    if a_pos == 0 or b_pos == 0:
         log2_or = np.nan
     else:
         log2_or = float(np.log2(((a_pos + 0.5) * (b_neg + 0.5)) /
                                 ((a_neg + 0.5) * (b_pos + 0.5))))
-    return {"p_value": p_value, "log2_or": log2_or}
-
-
-def categorical_enrichment(df: pd.DataFrame, feature: str, weight: str | None = None) -> tuple[pd.DataFrame, float]:
-    cols = [feature, "rna_class"] + ([weight] if weight else [])
-    data = df[cols].dropna().copy()
-    if weight:
-        table = pd.pivot_table(data, index=feature, columns="rna_class", values=weight, aggfunc="sum", fill_value=0)
-    else:
-        table = pd.crosstab(data[feature], data["rna_class"])
-
-    observed = table.to_numpy(dtype=float)
-    total = observed.sum()
-    expected = np.outer(table.sum(axis=1).to_numpy(dtype=float), table.sum(axis=0).to_numpy(dtype=float)) / total
-    with np.errstate(divide="ignore", invalid="ignore"):
-        ratio = np.divide(observed, expected, out=np.full(expected.shape, np.nan), where=expected > 0)
-        fold = np.log2(ratio, out=np.full(expected.shape, np.nan), where=ratio > 0)
-    long = table.rename_axis(index=feature, columns="rna_class").stack().rename("observed").reset_index()  # type: ignore
-    long["observed"] = observed.ravel()
-    long["expected"] = expected.ravel()
-    long["log2_obs_exp"] = fold.ravel()
-    long["proportion_within_rna_class"] = long["observed"] / long.groupby("rna_class")["observed"].transform("sum")
-    return long, safe_chi_square(table)
+    return {
+        "n_pos_group": a_pos, "n_tot_group": a_tot,
+        "n_pos_ref": b_pos, "n_tot_ref": b_tot,
+        "rate_group": a_pos / a_tot if a_tot else np.nan,
+        "rate_ref": b_pos / b_tot if b_tot else np.nan,
+        "log2_or": log2_or, "p_value": p_value,
+        "descriptive_only": bool(min(a_pos, a_neg, b_pos, b_neg) < MIN_N),
+    }
 
 
 def categorical_enrichment(data: pd.DataFrame, feature: str,

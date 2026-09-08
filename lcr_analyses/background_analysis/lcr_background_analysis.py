@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 2.5 (v2.2): RBP LCRs vs. the proteome background.
+"""RBP LCRs vs. the proteome background.
 
 Pipeline: load universe -> join LCRs -> per method { Mode A (RBP vs background),
 Mode B (per RNA class vs background) } -> one Excel workbook per method ->
@@ -24,13 +24,6 @@ Design invariants:
 - Validation grid: internal (2.4.1, class vs. other RBPs) and external
   (2.5, class vs. background) log2 OR side by side.
 
-v2.2 review fixes:
-- load_features now restores canonical metric names (frac_A, frac_polar, ...)
-  -- v1/v2.1 normalized names never mapped back, so composition blocks
-  silently covered only fcr/ncpr/length.
-- Sheets drop all-empty columns; occupancy rows with zero carriers dropped.
-- Zero-carrier binary rows: log2_or = NaN (counts still reported).
-
 Inputs
 ------
 --annotations  ensembl_lcr_annotations.xlsx  (proteome-run annotation output)
@@ -39,7 +32,7 @@ Inputs
 --labels       finalized_background_labels.tsv
 --classes      rbp_rna_classification.xlsx   (per-class sheets)
 --patch        finalized_label_patch.tsv
---internal-dir Phase 2.4.1 v2 methods dir (per-method *_results.xlsx)
+--internal-dir quantitative analysis methods dir (per-method *_results.xlsx)
 --outdir       results dir (methods/ + summary/ created below)
 """
 from __future__ import annotations
