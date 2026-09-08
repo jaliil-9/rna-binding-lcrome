@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from scipy.stats import fisher_exact, kruskal, mannwhitneyu
+from scipy.stats import fisher_exact, mannwhitneyu
 from statsmodels.stats.multitest import multipletests
 
 sns.set_theme(style="whitegrid", context="notebook")
@@ -231,10 +231,18 @@ def bh_adjust_per_block(df: pd.DataFrame, block_col: str) -> pd.DataFrame:
 def fisher_cell(a_pos: int, a_tot: int, b_pos: int, b_tot: int) -> dict:
     """One 2x2 cell: group vs. rest. Fisher p + Haldane log2 odds ratio."""
     a_neg, b_neg = a_tot - a_pos, b_tot - b_pos
+    table = np.array([[a_pos, a_neg], [b_pos, b_neg]], dtype=float)
     try:
-        return float(chi2_contingency(table.astype(float), correction=False).pvalue)  # type: ignore
-    except ValueError:
-        return np.nan
+        p_value = float(fisher_exact(table).pvalue)
+    except (ValueError, ZeroDivisionError):
+        p_value = np.nan
+    if a_pos == 0:
+        # zero-carrier binary rows: effect size not meaningful; counts still reported
+        log2_or = np.nan
+    else:
+        log2_or = float(np.log2(((a_pos + 0.5) * (b_neg + 0.5)) /
+                                ((a_neg + 0.5) * (b_pos + 0.5))))
+    return {"p_value": p_value, "log2_or": log2_or}
 
 
 def categorical_enrichment(df: pd.DataFrame, feature: str, weight: str | None = None) -> tuple[pd.DataFrame, float]:
@@ -258,28 +266,6 @@ def categorical_enrichment(df: pd.DataFrame, feature: str, weight: str | None = 
     long["proportion_within_rna_class"] = long["observed"] / long.groupby("rna_class")["observed"].transform("sum")
     return long, safe_chi_square(table)
 
-
-def continuous_summary(df: pd.DataFrame, metric: str) -> pd.DataFrame:
-    x = df[["rna_class", metric]].dropna().copy()
-    summary = x.groupby("rna_class")[metric].agg(
-        n="size", median="median", mean="mean", sd="std",
-        q1=lambda s: s.quantile(.25), q3=lambda s: s.quantile(.75),
-    ).reset_index()
-    summary["iqr"] = summary["q3"] - summary["q1"]
-    groups = [g[metric].to_numpy() for _, g in x.groupby("rna_class") if len(g) >= 2]
-    try:
-        p = float(kruskal(*groups).pvalue) if len(groups) >= 2 else np.nan
-    except ValueError:
-        p = np.nan
-    or_h = ((a_pos + 0.5) * (b_neg + 0.5)) / ((b_pos + 0.5) * (a_neg + 0.5))
-    return {
-        "n_pos_group": a_pos, "n_tot_group": a_tot,
-        "n_pos_ref": b_pos, "n_tot_ref": b_tot,
-        "rate_group": a_pos / a_tot if a_tot else np.nan,
-        "rate_ref": b_pos / b_tot if b_tot else np.nan,
-        "log2_or": float(np.log2(or_h)), "p_value": p,
-        "descriptive_only": bool(min(a_pos, a_neg, b_pos, b_neg) < MIN_N),
-    }
 
 def categorical_enrichment(data: pd.DataFrame, feature: str,
                            weight: str | None = None,
@@ -316,7 +302,7 @@ def continuous_summary(df: pd.DataFrame, metric: str) -> pd.DataFrame:
     x = df[["rna_class", metric]].dropna()
     groups = [g[metric].to_numpy() for _, g in x.groupby("rna_class") if len(g) >= 2]
     try:
-        p_kw = float(kruskal(*groups).pvalue) if len(groups) >= 2 else np.nan
+        p_kw = float(mannwhitneyu(*groups).pvalue) if len(groups) >= 2 else np.nan
     except ValueError:
         p_kw = np.nan
     rows = []
