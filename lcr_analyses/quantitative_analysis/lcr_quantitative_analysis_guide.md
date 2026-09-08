@@ -6,9 +6,9 @@
 
 How do LCR characteristics vary across **RNA-target superclasses** (mRNA, tRNA, pre-rRNA, snRNA, snoRNA, ncRNA, ribosomal protein, diverse, unknown), within the RBP set, per detection method?
 
-**Reference design:** every contrast is **one-vs-rest** — each class is compared against all other classes pooled. There is no external (non-RBP) background in this phase; that is Phase 2.5.
+**Reference design:** every contrast is **one-vs-rest** — each class is compared against all other classes pooled. There is no external (non-RBP) background in this phase.
 
-## 2. Statistical contract
+## 2. Statistical contract 
 
 | Question type | p-value | Effect size |
 |---|---|---|
