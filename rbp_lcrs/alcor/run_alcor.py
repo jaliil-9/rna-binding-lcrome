@@ -68,7 +68,18 @@ def masked_intervals(sequence):
 
 
 def protein_id(header):
-    return header[1:].split("|", 1)[0].split()[0]
+    """UniProt accession from a FASTA header.
+
+    '>sp|A0A087X1C5|...' or '>tr|...|...' -> 'A0A087X1C5'
+    '>Q5T200|ensembl_protein_id=...'     -> 'Q5T200'
+    """
+    text = header[1:].strip()
+    if "|" in text:
+        parts = text.split("|")
+        if parts[0] in {"sp", "tr"} and len(parts) > 1:
+            return parts[1].strip()
+        return parts[0].strip()
+    return text.split()[0]
 
 
 def description(fragment):
